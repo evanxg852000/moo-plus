@@ -1,8 +1,0 @@
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Release\Moo.exe
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Release\Moo.pdb
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\Moo.mainWindow.resources
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\Moo.Properties.Resources.resources
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\Moo.csproj.GenerateResource.Cache
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\Moo.exe
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Release\Moo.pdb
