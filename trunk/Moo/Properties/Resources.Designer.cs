@@ -277,6 +277,41 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap s_createproject {
+            get {
+                object obj = ResourceManager.GetObject("s_createproject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_createproject1 {
+            get {
+                object obj = ResourceManager.GetObject("s_createproject1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_gotoweb {
+            get {
+                object obj = ResourceManager.GetObject("s_gotoweb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_help {
+            get {
+                object obj = ResourceManager.GetObject("s_help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_openproject {
+            get {
+                object obj = ResourceManager.GetObject("s_openproject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
@@ -308,6 +343,13 @@ namespace Moo.Properties {
         internal static System.Drawing.Bitmap show_startpage {
             get {
                 object obj = ResourceManager.GetObject("show_startpage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap startpage {
+            get {
+                object obj = ResourceManager.GetObject("startpage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

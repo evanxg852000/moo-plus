@@ -78,6 +78,7 @@
             this.MBuildOutput = new System.Windows.Forms.MenuItem();
             this.MCodeBExplorer = new System.Windows.Forms.MenuItem();
             this.MProjectExplorer = new System.Windows.Forms.MenuItem();
+            this.MFileExplorer = new System.Windows.Forms.MenuItem();
             this.MSearchMenu = new System.Windows.Forms.MenuItem();
             this.MSearch = new System.Windows.Forms.MenuItem();
             this.MFindNext = new System.Windows.Forms.MenuItem();
@@ -115,6 +116,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.MStatusProBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MStatusLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MStatusColumnLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MStatusEncodingLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.busyPBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.MMiscToolbar = new System.Windows.Forms.ToolStrip();
@@ -151,9 +155,7 @@
             this.MTBCloseCurentFile = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.MStatusLineLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MStatusColumnLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MStatusEncodingLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MDockArea = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.statusStrip1.SuspendLayout();
             this.MMiscToolbar.SuspendLayout();
             this.MBuilToolbar.SuspendLayout();
@@ -455,7 +457,8 @@
             this.MViewMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MBuildOutput,
             this.MCodeBExplorer,
-            this.MProjectExplorer});
+            this.MProjectExplorer,
+            this.MFileExplorer});
             this.MViewMenu.Text = "View";
             // 
             // MBuildOutput
@@ -472,6 +475,11 @@
             // 
             this.MProjectExplorer.Index = 2;
             this.MProjectExplorer.Text = "Project Explorer";
+            // 
+            // MFileExplorer
+            // 
+            this.MFileExplorer.Index = 3;
+            this.MFileExplorer.Text = "File Explorer";
             // 
             // MSearchMenu
             // 
@@ -696,7 +704,7 @@
             this.MStatusLineLabel,
             this.MStatusColumnLabel,
             this.MStatusEncodingLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 542);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 563);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(992, 22);
             this.statusStrip1.TabIndex = 2;
@@ -714,6 +722,27 @@
             this.MStatusLbl.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.MStatusLbl.Size = new System.Drawing.Size(104, 17);
             this.MStatusLbl.Text = "Build Succed...";
+            // 
+            // MStatusLineLabel
+            // 
+            this.MStatusLineLabel.Name = "MStatusLineLabel";
+            this.MStatusLineLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.MStatusLineLabel.Size = new System.Drawing.Size(44, 17);
+            this.MStatusLineLabel.Text = "Ln: 45";
+            // 
+            // MStatusColumnLabel
+            // 
+            this.MStatusColumnLabel.Name = "MStatusColumnLabel";
+            this.MStatusColumnLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.MStatusColumnLabel.Size = new System.Drawing.Size(36, 17);
+            this.MStatusColumnLabel.Text = "Cl: 3";
+            // 
+            // MStatusEncodingLabel
+            // 
+            this.MStatusEncodingLabel.Name = "MStatusEncodingLabel";
+            this.MStatusEncodingLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.MStatusEncodingLabel.Size = new System.Drawing.Size(39, 17);
+            this.MStatusEncodingLabel.Text = "ANSI";
             // 
             // busyPBar
             // 
@@ -1149,37 +1178,28 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // MStatusLineLabel
+            // MDockArea
             // 
-            this.MStatusLineLabel.Name = "MStatusLineLabel";
-            this.MStatusLineLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.MStatusLineLabel.Size = new System.Drawing.Size(44, 17);
-            this.MStatusLineLabel.Text = "Ln: 45";
-            // 
-            // MStatusColumnLabel
-            // 
-            this.MStatusColumnLabel.Name = "MStatusColumnLabel";
-            this.MStatusColumnLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.MStatusColumnLabel.Size = new System.Drawing.Size(36, 17);
-            this.MStatusColumnLabel.Text = "Cl: 3";
-            // 
-            // MStatusEncodingLabel
-            // 
-            this.MStatusEncodingLabel.Name = "MStatusEncodingLabel";
-            this.MStatusEncodingLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.MStatusEncodingLabel.Size = new System.Drawing.Size(39, 17);
-            this.MStatusEncodingLabel.Text = "ANSI";
+            this.MDockArea.ActiveAutoHideContent = null;
+            this.MDockArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.MDockArea.Location = new System.Drawing.Point(0, 28);
+            this.MDockArea.Name = "MDockArea";
+            this.MDockArea.Size = new System.Drawing.Size(992, 536);
+            this.MDockArea.TabIndex = 8;
             // 
             // MMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(992, 564);
+            this.ClientSize = new System.Drawing.Size(992, 585);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
             this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.MDockArea);
             this.Controls.Add(this.MFileToolBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -1327,6 +1347,8 @@
         private System.Windows.Forms.ToolStripStatusLabel MStatusLineLabel;
         private System.Windows.Forms.ToolStripStatusLabel MStatusColumnLabel;
         private System.Windows.Forms.ToolStripStatusLabel MStatusEncodingLabel;
+        private System.Windows.Forms.MenuItem MFileExplorer;
+        private WeifenLuo.WinFormsUI.Docking.DockPanel MDockArea;
 
 
     }

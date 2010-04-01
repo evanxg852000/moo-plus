@@ -46,8 +46,18 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.2.2864.18696, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildOutput.Designer.cs">
+      <DependentUpon>BuildOutput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +66,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuildOutput.resx">
+      <DependentUpon>BuildOutput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -63,6 +77,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -78,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -124,9 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\help.png" />
@@ -214,6 +235,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\show_startpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_createproject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_createproject1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_gotoweb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_openproject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_createproject2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
