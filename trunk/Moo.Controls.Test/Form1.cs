@@ -23,6 +23,27 @@ namespace Moo.Controls.Test
             MessageBox.Show(itemTag);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            projectBrowser1.BuildNodes(@"C:\Users\Administrator\Desktop\projects\sample",
+                "sample.mpr", 
+                "sample");
+            brunchBrowser1.BuildNodes();
+            fileBrowser1.BuildNodes();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            projectBrowser1.Refresh();
+            fileBrowser1.Refresh();
+        }
+
+        private void projectBrowser1_ItemSelected(string itemTag)
+        {
+            MessageBox.Show(itemTag);
+        }
+
+        
         
     }
 }

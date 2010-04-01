@@ -53,12 +53,32 @@
     <Compile Include="BrunchBrowser.Designer.cs">
       <DependentUpon>BrunchBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileBrowser.Designer.cs">
+      <DependentUpon>FileBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="ProjectBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectBrowser.Designer.cs">
+      <DependentUpon>ProjectBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BrunchBrowser.resx">
       <DependentUpon>BrunchBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileBrowser.resx">
+      <DependentUpon>FileBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectBrowser.resx">
+      <DependentUpon>ProjectBrowser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

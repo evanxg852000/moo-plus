@@ -8,11 +8,6 @@ using System.Windows.Forms;
 
 namespace Moo.Controls
 {
-    #region Global
-        public enum Images { home = 0, folder, ofolder, file, brunch }
-        public delegate void ItemSelectedHandler(string itemTag);
-    #endregion
-
     public partial class BrunchBrowser : TreeView
     {
         public event ItemSelectedHandler ItemSelected;
@@ -26,7 +21,12 @@ namespace Moo.Controls
         public BrunchBrowser()
         {
             InitializeComponent();
+        }
+
+        public override void Refresh()
+        {
             BuildNodes();
+            this.CollapseAll();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -34,7 +34,7 @@ namespace Moo.Controls
             base.OnPaint(pe);
         }
         
-        private void BuildNodes()
+        public void BuildNodes()
         {
             //building the root node 
             TreeNode Root = new TreeNode("Brunchs");
@@ -57,7 +57,7 @@ namespace Moo.Controls
                     DirectoryInfo dibis = new DirectoryInfo(item.FullName);
                     foreach (FileInfo itembis in dibis.GetFiles())
                     {
-                        TreeNode BrunchItem = new TreeNode(itembis.Name.Split('.')[0]);
+                        TreeNode BrunchItem = new TreeNode(Path.GetFileNameWithoutExtension(itembis.Name));
                         BrunchItem.Name = itembis.Name;
                         BrunchItem.ImageIndex = (int)Images.brunch;
                         BrunchItem.SelectedImageIndex = (int)Images.brunch;

@@ -1,6 +1,6 @@
 ﻿namespace Moo.Controls
 {
-    partial class BrunchBrowser
+    partial class FileBrowser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrunchBrowser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileBrowser));
             this.ListImage = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
@@ -37,25 +37,24 @@
             // 
             this.ListImage.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListImage.ImageStream")));
             this.ListImage.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListImage.Images.SetKeyName(0, "home.png");
-            this.ListImage.Images.SetKeyName(1, "folder.png");
-            this.ListImage.Images.SetKeyName(2, "ofolder.png");
-            this.ListImage.Images.SetKeyName(3, "file.png");
-            this.ListImage.Images.SetKeyName(4, "brunch.png");
+            this.ListImage.Images.SetKeyName(0, "e_drive.png");
+            this.ListImage.Images.SetKeyName(1, "e_fclose.png");
+            this.ListImage.Images.SetKeyName(2, "e_fopen.png");
+            this.ListImage.Images.SetKeyName(3, "e_file.png");
             // 
-            // BrunchBrowser
+            // FileBrowser
             // 
             this.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.ImageIndex = 0;
             this.ImageList = this.ListImage;
+            this.LineColor = System.Drawing.Color.Black;
             this.SelectedImageIndex = 0;
-            this.ShowPlusMinus = false;
-            this.ShowRootLines = false;
             this.ResumeLayout(false);
 
         }
 
-        #endregion  
+        #endregion
+
         private System.Windows.Forms.ImageList ListImage;
     }
 }

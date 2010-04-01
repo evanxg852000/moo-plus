@@ -1,6 +1,6 @@
 ﻿namespace Moo.Controls
 {
-    partial class BrunchBrowser
+    partial class ProjectBrowser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrunchBrowser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectBrowser));
             this.ListImage = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
@@ -43,11 +43,12 @@
             this.ListImage.Images.SetKeyName(3, "file.png");
             this.ListImage.Images.SetKeyName(4, "brunch.png");
             // 
-            // BrunchBrowser
+            // ProjectBrowser
             // 
             this.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.ImageIndex = 0;
             this.ImageList = this.ListImage;
+            this.LineColor = System.Drawing.Color.Black;
             this.SelectedImageIndex = 0;
             this.ShowPlusMinus = false;
             this.ShowRootLines = false;
@@ -55,7 +56,8 @@
 
         }
 
-        #endregion  
+        #endregion
+
         private System.Windows.Forms.ImageList ListImage;
     }
 }
