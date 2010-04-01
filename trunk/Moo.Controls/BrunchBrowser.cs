@@ -8,11 +8,21 @@ using System.Windows.Forms;
 
 namespace Moo.Controls
 {
-
-    public enum Images { home = 0, folder, ofolder, brunch, file }
+    #region Global
+        public enum Images { home = 0, folder, ofolder, file, brunch }
+        public delegate void ItemSelectedHandler(string itemTag);
+    #endregion
 
     public partial class BrunchBrowser : TreeView
     {
+        public event ItemSelectedHandler ItemSelected;
+        private string rootfolder = "brunchs";
+        public string RootFolder
+        {
+            get { return rootfolder; }
+            set { rootfolder = value; }
+        }
+
         public BrunchBrowser()
         {
             InitializeComponent();
@@ -22,13 +32,6 @@ namespace Moo.Controls
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
-        }
-
-        private string rootfolder = "brunchs";
-        public string RootFolder
-        {
-            get { return rootfolder; }
-            set { rootfolder = value; }
         }
         
         private void BuildNodes()
@@ -73,7 +76,27 @@ namespace Moo.Controls
             //add the root to the brunchbrowserview
             this.Nodes.Add(Root);
             this.CollapseAll();
+            //add handler
+            this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
 
+        }
+
+        void BrunchBrowser_DoubleClick(object sender, EventArgs e)
+        {  
+            if (this.SelectedNode.Level == 2)
+            {
+                if (ItemSelected != null)
+                {
+                    try
+                    {
+                        ItemSelected(this.SelectedNode.Tag.ToString());
+                    }
+                    catch
+                    {
+                        //do nothing
+                    }
+                } 
+            }
         }
 
         

@@ -17,5 +17,12 @@ namespace Moo.Controls.Test
         }
 
         
+
+        private void brunchBrowser1_ItemSelected(string itemTag)
+        {
+            MessageBox.Show(itemTag);
+        }
+
+        
     }
 }

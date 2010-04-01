@@ -45,6 +45,8 @@
             this.brunchBrowser1.ShowRootLines = false;
             this.brunchBrowser1.Size = new System.Drawing.Size(284, 264);
             this.brunchBrowser1.TabIndex = 0;
+           
+            this.brunchBrowser1.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.brunchBrowser1_ItemSelected);
             // 
             // Form1
             // 
