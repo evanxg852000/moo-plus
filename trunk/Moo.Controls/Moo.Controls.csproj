@@ -59,6 +59,12 @@
     <Compile Include="FileBrowser.Designer.cs">
       <DependentUpon>FileBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileFounder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileFounder.Designer.cs">
+      <DependentUpon>FileFounder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="ProjectBrowser.cs">
       <SubType>Component</SubType>
@@ -75,6 +81,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileBrowser.resx">
       <DependentUpon>FileBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileFounder.resx">
+      <DependentUpon>FileFounder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectBrowser.resx">

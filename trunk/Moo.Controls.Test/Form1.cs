@@ -43,6 +43,23 @@ namespace Moo.Controls.Test
             MessageBox.Show(itemTag);
         }
 
+        private void fileBrowser1_ItemSelected(string itemTag)
+        {
+            MessageBox.Show(itemTag);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fileFounder1.SearchTerm =searchterm.Text;
+            fileFounder1.SearchFile();
+        }
+
+        private void fileFounder1_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
         
         
     }

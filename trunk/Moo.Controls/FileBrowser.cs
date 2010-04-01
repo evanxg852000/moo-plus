@@ -42,6 +42,7 @@ namespace Moo.Controls
                     drive.StateImageIndex = (int)FSystemImages.drive;
                     drive.SelectedImageIndex = (int)FSystemImages.drive;
                     drive.Tag = s;
+                    drive.ToolTipText = s;
                     this.Nodes.Add(drive);
                 }   
             }
@@ -79,6 +80,7 @@ namespace Moo.Controls
                         sbn.ImageIndex = (int)Images.folder;
                         sbn.SelectedImageIndex = (int)Images.ofolder;
                         sbn.Tag = folder.FullName;
+                        sbn.ToolTipText = folder.FullName;    
                         //add to tn
                         parent.Nodes.Add(sbn);
                     
@@ -99,6 +101,7 @@ namespace Moo.Controls
                     sbn.ImageIndex = (int)Images.file;
                     sbn.SelectedImageIndex = (int)Images.file;
                     sbn.Tag = fi.FullName;
+                    sbn.ToolTipText = fi.FullName;
                     //add to tn
                     parent.Nodes.Add(sbn);
                 }

@@ -7,3 +7,4 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\ob
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Debug\Moo.Controls.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Debug\Moo.Controls.ProjectBrowser.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Debug\Moo.Controls.FileBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Debug\Moo.Controls.FileFounder.resources
