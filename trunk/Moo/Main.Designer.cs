@@ -93,6 +93,21 @@
             this.MStopRunProject = new System.Windows.Forms.MenuItem();
             this.menuItem74 = new System.Windows.Forms.MenuItem();
             this.MConfigProject = new System.Windows.Forms.MenuItem();
+            this.MLanguageMenu = new System.Windows.Forms.MenuItem();
+            this.MAspLang = new System.Windows.Forms.MenuItem();
+            this.MBatchLang = new System.Windows.Forms.MenuItem();
+            this.MCsharpLang = new System.Windows.Forms.MenuItem();
+            this.MCppLang = new System.Windows.Forms.MenuItem();
+            this.MCssLang = new System.Windows.Forms.MenuItem();
+            this.MDLang = new System.Windows.Forms.MenuItem();
+            this.MHtmlLang = new System.Windows.Forms.MenuItem();
+            this.MHydroLang = new System.Windows.Forms.MenuItem();
+            this.MJavaLang = new System.Windows.Forms.MenuItem();
+            this.MJavascriptLang = new System.Windows.Forms.MenuItem();
+            this.MPascalLang = new System.Windows.Forms.MenuItem();
+            this.MPhpLang = new System.Windows.Forms.MenuItem();
+            this.MSqlLang = new System.Windows.Forms.MenuItem();
+            this.MXmlLang = new System.Windows.Forms.MenuItem();
             this.MSettingsMenu = new System.Windows.Forms.MenuItem();
             this.MPreferences = new System.Windows.Forms.MenuItem();
             this.MEncodingAnsi = new System.Windows.Forms.MenuItem();
@@ -103,9 +118,6 @@
             this.menuItem58 = new System.Windows.Forms.MenuItem();
             this.menuItem59 = new System.Windows.Forms.MenuItem();
             this.MPluginManager = new System.Windows.Forms.MenuItem();
-            this.MSvn = new System.Windows.Forms.MenuItem();
-            this.menuItem61 = new System.Windows.Forms.MenuItem();
-            this.menuItem62 = new System.Windows.Forms.MenuItem();
             this.MCBManager = new System.Windows.Forms.MenuItem();
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
@@ -171,6 +183,7 @@
             this.MViewMenu,
             this.MSearchMenu,
             this.MProjectMenu,
+            this.MLanguageMenu,
             this.MSettingsMenu,
             this.MToolsMenu,
             this.MHelpMenu});
@@ -571,9 +584,99 @@
             this.MConfigProject.Index = 6;
             this.MConfigProject.Text = "Configuration";
             // 
+            // MLanguageMenu
+            // 
+            this.MLanguageMenu.Index = 5;
+            this.MLanguageMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.MAspLang,
+            this.MBatchLang,
+            this.MCsharpLang,
+            this.MCppLang,
+            this.MCssLang,
+            this.MDLang,
+            this.MHtmlLang,
+            this.MHydroLang,
+            this.MJavaLang,
+            this.MJavascriptLang,
+            this.MPascalLang,
+            this.MPhpLang,
+            this.MSqlLang,
+            this.MXmlLang});
+            this.MLanguageMenu.Text = "Language";
+            // 
+            // MAspLang
+            // 
+            this.MAspLang.Index = 0;
+            this.MAspLang.Text = "ASP";
+            // 
+            // MBatchLang
+            // 
+            this.MBatchLang.Index = 1;
+            this.MBatchLang.Text = "Batch";
+            // 
+            // MCsharpLang
+            // 
+            this.MCsharpLang.Index = 2;
+            this.MCsharpLang.Text = "C#";
+            // 
+            // MCppLang
+            // 
+            this.MCppLang.Index = 3;
+            this.MCppLang.Text = "C++";
+            // 
+            // MCssLang
+            // 
+            this.MCssLang.Index = 4;
+            this.MCssLang.Text = "CSS";
+            // 
+            // MDLang
+            // 
+            this.MDLang.Index = 5;
+            this.MDLang.Text = "D";
+            // 
+            // MHtmlLang
+            // 
+            this.MHtmlLang.Index = 6;
+            this.MHtmlLang.Text = "HTML";
+            // 
+            // MHydroLang
+            // 
+            this.MHydroLang.Index = 7;
+            this.MHydroLang.Text = "Hydro";
+            // 
+            // MJavaLang
+            // 
+            this.MJavaLang.Index = 8;
+            this.MJavaLang.Text = "Java";
+            // 
+            // MJavascriptLang
+            // 
+            this.MJavascriptLang.Index = 9;
+            this.MJavascriptLang.Text = "JavaScript";
+            // 
+            // MPascalLang
+            // 
+            this.MPascalLang.Index = 10;
+            this.MPascalLang.Text = "Pascal";
+            // 
+            // MPhpLang
+            // 
+            this.MPhpLang.Index = 11;
+            this.MPhpLang.Text = "PHP";
+            // 
+            // MSqlLang
+            // 
+            this.MSqlLang.Index = 12;
+            this.MSqlLang.Text = "SQL";
+            // 
+            // MXmlLang
+            // 
+            this.MXmlLang.Index = 13;
+            this.MXmlLang.Text = "XML";
+            // 
             // MSettingsMenu
             // 
-            this.MSettingsMenu.Index = 5;
+            this.MSettingsMenu.Index = 6;
             this.MSettingsMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPreferences,
             this.MEncodingAnsi,
@@ -598,10 +701,9 @@
             // 
             // MToolsMenu
             // 
-            this.MToolsMenu.Index = 6;
+            this.MToolsMenu.Index = 7;
             this.MToolsMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPlugins,
-            this.MSvn,
             this.MCBManager});
             this.MToolsMenu.Text = "Tools";
             // 
@@ -635,32 +737,14 @@
             this.MPluginManager.Index = 3;
             this.MPluginManager.Text = "Plugin Manager";
             // 
-            // MSvn
-            // 
-            this.MSvn.Index = 1;
-            this.MSvn.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem61,
-            this.menuItem62});
-            this.MSvn.Text = "SVN";
-            // 
-            // menuItem61
-            // 
-            this.menuItem61.Index = 0;
-            this.menuItem61.Text = "Checkout";
-            // 
-            // menuItem62
-            // 
-            this.menuItem62.Index = 1;
-            this.menuItem62.Text = "Import";
-            // 
             // MCBManager
             // 
-            this.MCBManager.Index = 2;
+            this.MCBManager.Index = 1;
             this.MCBManager.Text = "Code Brunch Manager";
             // 
             // MHelpMenu
             // 
-            this.MHelpMenu.Index = 7;
+            this.MHelpMenu.Index = 8;
             this.MHelpMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MHelpContent,
             this.MTipOfDay,
@@ -704,9 +788,9 @@
             this.MStatusLineLabel,
             this.MStatusColumnLabel,
             this.MStatusEncodingLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 563);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 671);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(992, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1134, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1184,9 +1268,9 @@
             this.MDockArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.MDockArea.Location = new System.Drawing.Point(0, 28);
+            this.MDockArea.Location = new System.Drawing.Point(1, 29);
             this.MDockArea.Name = "MDockArea";
-            this.MDockArea.Size = new System.Drawing.Size(992, 536);
+            this.MDockArea.Size = new System.Drawing.Size(1134, 644);
             this.MDockArea.TabIndex = 8;
             // 
             // MMainWindow
@@ -1194,7 +1278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(992, 585);
+            this.ClientSize = new System.Drawing.Size(1134, 693);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
             this.Controls.Add(this.MEditToolbar);
@@ -1204,8 +1288,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Menu = this.MMainMenu;
-            this.MinimumSize = new System.Drawing.Size(1008, 621);
+            this.MinimumSize = new System.Drawing.Size(1100, 700);
             this.Name = "MMainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moo { + }";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1239,7 +1324,6 @@
         private System.Windows.Forms.MenuItem MProjectMenu;
         private System.Windows.Forms.MenuItem MToolsMenu;
         private System.Windows.Forms.MenuItem MPlugins;
-        private System.Windows.Forms.MenuItem MSvn;
         private System.Windows.Forms.MenuItem MHelpMenu;
         private System.Windows.Forms.MenuItem MHelpContent;
         private System.Windows.Forms.MenuItem MContent;
@@ -1300,8 +1384,6 @@
         private System.Windows.Forms.MenuItem menuItem58;
         private System.Windows.Forms.MenuItem menuItem59;
         private System.Windows.Forms.MenuItem MPluginManager;
-        private System.Windows.Forms.MenuItem menuItem61;
-        private System.Windows.Forms.MenuItem menuItem62;
         private System.Windows.Forms.MenuItem MTipOfDay;
         private System.Windows.Forms.MenuItem menuItem64;
         private System.Windows.Forms.MenuItem MReportBug;
@@ -1349,6 +1431,21 @@
         private System.Windows.Forms.ToolStripStatusLabel MStatusEncodingLabel;
         private System.Windows.Forms.MenuItem MFileExplorer;
         private WeifenLuo.WinFormsUI.Docking.DockPanel MDockArea;
+        private System.Windows.Forms.MenuItem MLanguageMenu;
+        private System.Windows.Forms.MenuItem MAspLang;
+        private System.Windows.Forms.MenuItem MBatchLang;
+        private System.Windows.Forms.MenuItem MCsharpLang;
+        private System.Windows.Forms.MenuItem MCppLang;
+        private System.Windows.Forms.MenuItem MCssLang;
+        private System.Windows.Forms.MenuItem MDLang;
+        private System.Windows.Forms.MenuItem MHtmlLang;
+        private System.Windows.Forms.MenuItem MHydroLang;
+        private System.Windows.Forms.MenuItem MJavaLang;
+        private System.Windows.Forms.MenuItem MJavascriptLang;
+        private System.Windows.Forms.MenuItem MPascalLang;
+        private System.Windows.Forms.MenuItem MPhpLang;
+        private System.Windows.Forms.MenuItem MSqlLang;
+        private System.Windows.Forms.MenuItem MXmlLang;
 
 
     }
