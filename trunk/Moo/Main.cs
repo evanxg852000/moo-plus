@@ -26,6 +26,26 @@ namespace Moo
             MStartPage.Show(MDockArea);
             MStartPage.DockState = DockState.Document;
 
+            //project Browser
+            FProjectBrowser MProjectBrowser = new FProjectBrowser();
+            MProjectBrowser.Show(MDockArea);
+            MProjectBrowser.DockState = DockState.DockLeftAutoHide;
+
+            //brunch Browser
+            FBrunchBrowser MBrunchBrowser = new FBrunchBrowser();
+            MBrunchBrowser.Show(MDockArea);
+            MBrunchBrowser.DockState = DockState.DockLeftAutoHide;
+
+            //file system  Browser
+            FFileSystBrowser MFileSystBrowser = new FFileSystBrowser();
+            MFileSystBrowser.Show(MDockArea);
+            MFileSystBrowser.DockState = DockState.DockRightAutoHide;  
+
+             //file Searcher
+            FFileSearcher MFileSearcher = new FFileSearcher();
+            MFileSearcher.Show(MDockArea);
+            MFileSearcher.DockState = DockState.DockBottomAutoHide; 
+            
 
             //creating buildoutput window
             BuildOutput MBuildOutput = new BuildOutput();

@@ -58,6 +58,30 @@
     <Compile Include="BuildOutput.Designer.cs">
       <DependentUpon>BuildOutput.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBrunchBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBrunchBrowser.Designer.cs">
+      <DependentUpon>FBrunchBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFileSearcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFileSearcher.Designer.cs">
+      <DependentUpon>FFileSearcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFileSystBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFileSystBrowser.Designer.cs">
+      <DependentUpon>FFileSystBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProjectBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProjectBrowser.Designer.cs">
+      <DependentUpon>FProjectBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +92,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BuildOutput.resx">
       <DependentUpon>BuildOutput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBrunchBrowser.resx">
+      <DependentUpon>FBrunchBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFileSearcher.resx">
+      <DependentUpon>FFileSearcher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFileSystBrowser.resx">
+      <DependentUpon>FFileSystBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProjectBrowser.resx">
+      <DependentUpon>FProjectBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
@@ -262,6 +302,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\s_createproject2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moo.Controls\Moo.Controls.csproj">
+      <Project>{079D30F4-5015-47D8-AC97-25CF47F90479}</Project>
+      <Name>Moo.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\projet_brow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startpage1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

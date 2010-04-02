@@ -9,3 +9,9 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\M
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.BuildOutput.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.StartPage.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.FProjectBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.FBrunchBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.FFileSystBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.FFileSearcher.resources

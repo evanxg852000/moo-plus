@@ -256,6 +256,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap projet_brow_refresh {
+            get {
+                object obj = ResourceManager.GetObject("projet_brow_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap redo {
             get {
                 object obj = ResourceManager.GetObject("redo", resourceCulture);
