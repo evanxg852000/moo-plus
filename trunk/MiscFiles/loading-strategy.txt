@@ -1,0 +1,24 @@
+MOnStart:
+
+Initialise app (default state) 
+
+Load Recents Files [4]->(menu)
+Load recents projects [4]->(menu and startpage)
+
+Load Plugins
+
+Load App settings (apply)
+
+Load Compilers variable ()
+
+Setup scintilla
+
+
+
+MOnClose:
+
+Save Recents Files
+Save Recent project
+
+
+Save App settings
