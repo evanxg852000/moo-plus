@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Moo.Core;
 using WeifenLuo.WinFormsUI;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -17,6 +18,7 @@ namespace Moo
         {
             InitializeComponent();
             UiInitialisation();
+            
         }
 
         private void UiInitialisation()
@@ -54,7 +56,26 @@ namespace Moo
             MBuildOutput.DockState = DockState.DockBottomAutoHide;    
         }
        
+        public void test()
+        {
+            CodeEditorConfig cec = new CodeEditorConfig() ;
+            
+            //startpage
+            CodeEditor MCED = new CodeEditor(cec);
+            MCED.Show(MDockArea);
+            MCED.DockState = DockState.Document;
 
+            
+            //loading
+            //AppSettings appset =AppSettings.Load();
+            //MessageBox.Show(appset.EditorConfig.Font);
+
+            ////saving
+            //appset.EditorConfig = cec;
+            //MessageBox.Show(appset.EditorConfig.Font);
+            //AppSettings.Save(appset);
+
+        }
 
     }
 }
