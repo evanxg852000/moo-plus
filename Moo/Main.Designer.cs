@@ -75,6 +75,22 @@
             this.MFoldAll = new System.Windows.Forms.MenuItem();
             this.MUnfoldAll = new System.Windows.Forms.MenuItem();
             this.MViewMenu = new System.Windows.Forms.MenuItem();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
+            this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.menuItem4 = new System.Windows.Forms.MenuItem();
+            this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuItem7 = new System.Windows.Forms.MenuItem();
+            this.menuItem8 = new System.Windows.Forms.MenuItem();
+            this.menuItem9 = new System.Windows.Forms.MenuItem();
+            this.menuItem10 = new System.Windows.Forms.MenuItem();
+            this.menuItem11 = new System.Windows.Forms.MenuItem();
+            this.menuItem12 = new System.Windows.Forms.MenuItem();
+            this.menuItem13 = new System.Windows.Forms.MenuItem();
+            this.menuItem14 = new System.Windows.Forms.MenuItem();
+            this.menuItem15 = new System.Windows.Forms.MenuItem();
+            this.menuItem19 = new System.Windows.Forms.MenuItem();
             this.MBuildOutput = new System.Windows.Forms.MenuItem();
             this.MCodeBExplorer = new System.Windows.Forms.MenuItem();
             this.MProjectExplorer = new System.Windows.Forms.MenuItem();
@@ -156,22 +172,6 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.MDockArea = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.menuItem10 = new System.Windows.Forms.MenuItem();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
-            this.menuItem12 = new System.Windows.Forms.MenuItem();
-            this.menuItem13 = new System.Windows.Forms.MenuItem();
-            this.menuItem14 = new System.Windows.Forms.MenuItem();
-            this.menuItem15 = new System.Windows.Forms.MenuItem();
-            this.menuItem19 = new System.Windows.Forms.MenuItem();
             this.statusStrip1.SuspendLayout();
             this.MMiscToolbar.SuspendLayout();
             this.MBuilToolbar.SuspendLayout();
@@ -478,6 +478,101 @@
             this.MProjectExplorer,
             this.MFileExplorer});
             this.MViewMenu.Text = "View";
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 0;
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem2,
+            this.menuItem3,
+            this.menuItem4,
+            this.menuItem5,
+            this.menuItem6,
+            this.menuItem7,
+            this.menuItem8,
+            this.menuItem9,
+            this.menuItem10,
+            this.menuItem11,
+            this.menuItem12,
+            this.menuItem13,
+            this.menuItem14,
+            this.menuItem15});
+            this.menuItem1.Text = "Language";
+            // 
+            // menuItem2
+            // 
+            this.menuItem2.Index = 0;
+            this.menuItem2.Text = "ASP";
+            // 
+            // menuItem3
+            // 
+            this.menuItem3.Index = 1;
+            this.menuItem3.Text = "Batch";
+            // 
+            // menuItem4
+            // 
+            this.menuItem4.Index = 2;
+            this.menuItem4.Text = "C#";
+            // 
+            // menuItem5
+            // 
+            this.menuItem5.Index = 3;
+            this.menuItem5.Text = "C++";
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 4;
+            this.menuItem6.Text = "CSS";
+            // 
+            // menuItem7
+            // 
+            this.menuItem7.Index = 5;
+            this.menuItem7.Text = "D";
+            // 
+            // menuItem8
+            // 
+            this.menuItem8.Index = 6;
+            this.menuItem8.Text = "HTML";
+            // 
+            // menuItem9
+            // 
+            this.menuItem9.Index = 7;
+            this.menuItem9.Text = "Hydro";
+            // 
+            // menuItem10
+            // 
+            this.menuItem10.Index = 8;
+            this.menuItem10.Text = "Java";
+            // 
+            // menuItem11
+            // 
+            this.menuItem11.Index = 9;
+            this.menuItem11.Text = "Javascript";
+            // 
+            // menuItem12
+            // 
+            this.menuItem12.Index = 10;
+            this.menuItem12.Text = "Pascal";
+            // 
+            // menuItem13
+            // 
+            this.menuItem13.Index = 11;
+            this.menuItem13.Text = "PHP";
+            // 
+            // menuItem14
+            // 
+            this.menuItem14.Index = 12;
+            this.menuItem14.Text = "SQL";
+            // 
+            // menuItem15
+            // 
+            this.menuItem15.Index = 13;
+            this.menuItem15.Text = "XML";
+            // 
+            // menuItem19
+            // 
+            this.menuItem19.Index = 1;
+            this.menuItem19.Text = "-";
             // 
             // MBuildOutput
             // 
@@ -1207,101 +1302,6 @@
             this.MDockArea.Name = "MDockArea";
             this.MDockArea.Size = new System.Drawing.Size(992, 536);
             this.MDockArea.TabIndex = 8;
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.Index = 0;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem2,
-            this.menuItem3,
-            this.menuItem4,
-            this.menuItem5,
-            this.menuItem6,
-            this.menuItem7,
-            this.menuItem8,
-            this.menuItem9,
-            this.menuItem10,
-            this.menuItem11,
-            this.menuItem12,
-            this.menuItem13,
-            this.menuItem14,
-            this.menuItem15});
-            this.menuItem1.Text = "Language";
-            // 
-            // menuItem2
-            // 
-            this.menuItem2.Index = 0;
-            this.menuItem2.Text = "ASP";
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Index = 1;
-            this.menuItem3.Text = "Batch";
-            // 
-            // menuItem4
-            // 
-            this.menuItem4.Index = 2;
-            this.menuItem4.Text = "C#";
-            // 
-            // menuItem5
-            // 
-            this.menuItem5.Index = 3;
-            this.menuItem5.Text = "C++";
-            // 
-            // menuItem6
-            // 
-            this.menuItem6.Index = 4;
-            this.menuItem6.Text = "CSS";
-            // 
-            // menuItem7
-            // 
-            this.menuItem7.Index = 5;
-            this.menuItem7.Text = "D";
-            // 
-            // menuItem8
-            // 
-            this.menuItem8.Index = 6;
-            this.menuItem8.Text = "HTML";
-            // 
-            // menuItem9
-            // 
-            this.menuItem9.Index = 7;
-            this.menuItem9.Text = "Hydro";
-            // 
-            // menuItem10
-            // 
-            this.menuItem10.Index = 8;
-            this.menuItem10.Text = "Java";
-            // 
-            // menuItem11
-            // 
-            this.menuItem11.Index = 9;
-            this.menuItem11.Text = "Javascript";
-            // 
-            // menuItem12
-            // 
-            this.menuItem12.Index = 10;
-            this.menuItem12.Text = "Pascal";
-            // 
-            // menuItem13
-            // 
-            this.menuItem13.Index = 11;
-            this.menuItem13.Text = "PHP";
-            // 
-            // menuItem14
-            // 
-            this.menuItem14.Index = 12;
-            this.menuItem14.Text = "SQL";
-            // 
-            // menuItem15
-            // 
-            this.menuItem15.Index = 13;
-            this.menuItem15.Text = "XML";
-            // 
-            // menuItem19
-            // 
-            this.menuItem19.Index = 1;
-            this.menuItem19.Text = "-";
             // 
             // MMainWindow
             // 

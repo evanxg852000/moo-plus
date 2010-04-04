@@ -15,3 +15,5 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\M
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.exe
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.CodeEditor.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.dll
