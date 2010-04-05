@@ -18,7 +18,7 @@ namespace Moo
         {
             InitializeComponent();
             UiInitialisation();
-            
+            test();
         }
 
         private void UiInitialisation()
@@ -64,7 +64,7 @@ namespace Moo
             CodeEditor MCED = new CodeEditor(cec);
             MCED.Show(MDockArea);
             MCED.DockState = DockState.Document;
-
+            MCED.SetLanguage("cs");
             
             //loading
             //AppSettings appset =AppSettings.Load();

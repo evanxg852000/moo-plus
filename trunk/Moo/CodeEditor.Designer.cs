@@ -36,22 +36,41 @@
             // EditorView
             // 
             this.EditorView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EditorView.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditorView.IsBraceMatching = true;
+            this.EditorView.LineWrap.VisualFlags = ScintillaNet.WrapVisualFlag.End;
             this.EditorView.Location = new System.Drawing.Point(0, 0);
-            this.EditorView.Margins.Margin0.IsFoldMargin = true;
-            this.EditorView.Margins.Margin0.IsMarkerMargin = true;
+            this.EditorView.Margins.Margin0.Width = 20;
+            this.EditorView.Margins.Margin1.IsClickable = true;
+            this.EditorView.Margins.Margin1.Width = 20;
+            this.EditorView.Margins.Margin2.Width = 16;
             this.EditorView.Name = "EditorView";
             this.EditorView.Size = new System.Drawing.Size(475, 239);
             this.EditorView.Styles.BraceBad.FontName = "Verdana";
+            this.EditorView.Styles.BraceBad.Size = 9F;
             this.EditorView.Styles.BraceLight.FontName = "Verdana";
-            this.EditorView.Styles.ControlChar.FontName = "Verdana";
+            this.EditorView.Styles.BraceLight.Size = 9F;
+            this.EditorView.Styles.ControlChar.BackColor = System.Drawing.Color.White;
+            this.EditorView.Styles.ControlChar.Bold = true;
+            this.EditorView.Styles.ControlChar.CharacterSet = ScintillaNet.CharacterSet.Ansi;
+            this.EditorView.Styles.ControlChar.FontName = "Consolas";
+            this.EditorView.Styles.ControlChar.Size = 8.25F;
             this.EditorView.Styles.Default.FontName = "Verdana";
+            this.EditorView.Styles.Default.Size = 9F;
             this.EditorView.Styles.IndentGuide.FontName = "Verdana";
+            this.EditorView.Styles.IndentGuide.Size = 9F;
             this.EditorView.Styles.LastPredefined.FontName = "Verdana";
+            this.EditorView.Styles.LastPredefined.Size = 9F;
             this.EditorView.Styles.LineNumber.Bold = true;
-            this.EditorView.Styles.LineNumber.FontName = "Verdana";
+            this.EditorView.Styles.LineNumber.FontName = "Consolas";
+            this.EditorView.Styles.LineNumber.ForeColor = System.Drawing.Color.Black;
+            this.EditorView.Styles.LineNumber.Size = 8.25F;
             this.EditorView.Styles.Max.FontName = "Verdana";
+            this.EditorView.Styles.Max.Size = 9F;
             this.EditorView.TabIndex = 0;
+            this.EditorView.StyleNeeded += new System.EventHandler<ScintillaNet.StyleNeededEventArgs>(this.EditorView_StyleNeeded);
+            this.EditorView.ModifiedChanged += new System.EventHandler(this.EditorView_ModifiedChanged);
+            this.EditorView.DocumentChange += new System.EventHandler<ScintillaNet.NativeScintillaEventArgs>(this.EditorView_DocumentChange);
             // 
             // CodeEditor
             // 
@@ -62,7 +81,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeEditor";
             this.TabText = "CodeEditor";
-            this.Text = "CodeEditor";
+            this.Text = "Sample.cs *";
             ((System.ComponentModel.ISupportInitialize)(this.EditorView)).EndInit();
             this.ResumeLayout(false);
 

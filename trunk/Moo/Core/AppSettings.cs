@@ -123,7 +123,8 @@ namespace Moo.Core
                 }
                 catch (Exception e)
                 {
-                    //Log exception MooExceptioner.Log(e, dateTime)      
+                    //Log exception MooExceptioner.Log(e, dateTime) 
+                    e.ToString();
                 }
             }
             return ASObject;
@@ -140,7 +141,8 @@ namespace Moo.Core
                 }
                 catch (Exception e)
                 {
-                    //Log exception MooExceptioner.Log(e, dateTime)      
+                    //Log exception MooExceptioner.Log(e, dateTime)
+                    e.ToString();
                 }
             
             }
