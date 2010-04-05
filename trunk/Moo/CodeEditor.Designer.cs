@@ -80,7 +80,7 @@
             this.Controls.Add(this.EditorView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeEditor";
-            this.TabText = "CodeEditor";
+            this.TabText = "Sample.cs *";
             this.Text = "Sample.cs *";
             ((System.ComponentModel.ISupportInitialize)(this.EditorView)).EndInit();
             this.ResumeLayout(false);
