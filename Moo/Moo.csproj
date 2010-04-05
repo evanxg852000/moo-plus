@@ -97,6 +97,7 @@
     <Compile Include="FProjectBrowser.Designer.cs">
       <DependentUpon>FProjectBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="LexerInitializer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
