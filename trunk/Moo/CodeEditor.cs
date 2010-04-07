@@ -107,8 +107,12 @@ namespace Moo
             this.EditorView.Clipboard.Paste();
         }
         public void Delete()
+        {   
+            this.EditorView.Commands.Execute(BindableCommand.DeleteBackNotLine);
+        }
+        public void SelectAll()
         {
-            this.EditorView.Selection.Text.Replace(EditorView.Selection.Text, "");
+            this.EditorView.Commands.Execute(BindableCommand.SelectAll);
         }
         public void CommentLine()
         { 
