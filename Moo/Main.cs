@@ -126,6 +126,113 @@ namespace Moo
             }
         }
        
+        //edit menu Handlers
+        private void UndoPreviousAction(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.UndoAction();
+            }
+        }
+        private void RedoPreviousAction(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.RedoAction();
+            }
+        }
+        private void CutSelection(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Cut();
+            }
+        }
+        private void CopySelection(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Copy();
+            }
+        }
+        private void PasteSelection(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Paste();
+            }
+        }
+        private void DeleteSelection(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Delete();
+            }
+        }
+        private void SelectAll(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.SelectAll();
+            }
+        }
+        private void CommentBlock(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.CommentLine();
+            }
+        }
+        private void UncommentBlock(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.UnCommentLine();
+            }
+        }
+        private void ToUpperCase(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.ToUpperCase();
+            }
+        }
+        private void ToLowerCase(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.ToLowerCase();
+            }
+        }
+        private void FoldAll(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.FoldAll();
+            }
+        }
+        private void UnfoldAll(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.UnFoldAll();
+            }
+        }
+
+
         //view menu handlers (the remaining is define in toolbar section)
         private void SetCodeLanguage(object sender, EventArgs e)
         {
@@ -380,6 +487,7 @@ namespace Moo
         
         #endregion
 
+       
         
 
         

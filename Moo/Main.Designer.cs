@@ -400,12 +400,14 @@
             this.MUndo.Index = 0;
             this.MUndo.Shortcut = System.Windows.Forms.Shortcut.CtrlZ;
             this.MUndo.Text = "Undo";
+            this.MUndo.Click += new System.EventHandler(this.UndoPreviousAction);
             // 
             // MRedo
             // 
             this.MRedo.Index = 1;
             this.MRedo.Shortcut = System.Windows.Forms.Shortcut.CtrlY;
             this.MRedo.Text = "Redo";
+            this.MRedo.Click += new System.EventHandler(this.RedoPreviousAction);
             // 
             // MSeparator7
             // 
@@ -417,24 +419,28 @@
             this.MCut.Index = 3;
             this.MCut.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
             this.MCut.Text = "Cut";
+            this.MCut.Click += new System.EventHandler(this.CutSelection);
             // 
             // MCopy
             // 
             this.MCopy.Index = 4;
             this.MCopy.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
             this.MCopy.Text = "Copy";
+            this.MCopy.Click += new System.EventHandler(this.CopySelection);
             // 
             // MPaste
             // 
             this.MPaste.Index = 5;
             this.MPaste.Shortcut = System.Windows.Forms.Shortcut.CtrlV;
             this.MPaste.Text = "Patse";
+            this.MPaste.Click += new System.EventHandler(this.PasteSelection);
             // 
             // MDelete
             // 
             this.MDelete.Index = 6;
             this.MDelete.Shortcut = System.Windows.Forms.Shortcut.CtrlDel;
             this.MDelete.Text = "Delete";
+            this.MDelete.Click += new System.EventHandler(this.DeleteSelection);
             // 
             // MSeparator8
             // 
@@ -446,6 +452,7 @@
             this.MSelectAll.Index = 8;
             this.MSelectAll.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
             this.MSelectAll.Text = "Sellect All";
+            this.MSelectAll.Click += new System.EventHandler(this.SelectAll);
             // 
             // MSeparator9
             // 
@@ -476,21 +483,25 @@
             // 
             this.MComment.Index = 11;
             this.MComment.Text = "Comment ";
+            this.MComment.Click += new System.EventHandler(this.CommentBlock);
             // 
             // MUncomment
             // 
             this.MUncomment.Index = 12;
             this.MUncomment.Text = "Uncomment";
+            this.MUncomment.Click += new System.EventHandler(this.UncommentBlock);
             // 
             // MToUpperCase
             // 
             this.MToUpperCase.Index = 13;
             this.MToUpperCase.Text = "To Upper Case";
+            this.MToUpperCase.Click += new System.EventHandler(this.ToUpperCase);
             // 
             // MToLowerCase
             // 
             this.MToLowerCase.Index = 14;
             this.MToLowerCase.Text = "To Lower Case";
+            this.MToLowerCase.Click += new System.EventHandler(this.ToLowerCase);
             // 
             // MSeparator10
             // 
@@ -502,12 +513,14 @@
             this.MFoldAll.Index = 16;
             this.MFoldAll.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftF;
             this.MFoldAll.Text = "Fold All";
+            this.MFoldAll.Click += new System.EventHandler(this.FoldAll);
             // 
             // MUnfoldAll
             // 
             this.MUnfoldAll.Index = 17;
             this.MUnfoldAll.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftU;
             this.MUnfoldAll.Text = "Unfold All";
+            this.MUnfoldAll.Click += new System.EventHandler(this.UnfoldAll);
             // 
             // MViewMenu
             // 
