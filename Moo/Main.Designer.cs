@@ -34,80 +34,91 @@
             this.MFileMenu = new System.Windows.Forms.MenuItem();
             this.MNew = new System.Windows.Forms.MenuItem();
             this.MNewFile = new System.Windows.Forms.MenuItem();
-            this.menuItem36 = new System.Windows.Forms.MenuItem();
+            this.MNewPrject = new System.Windows.Forms.MenuItem();
             this.MOpen = new System.Windows.Forms.MenuItem();
             this.MReload = new System.Windows.Forms.MenuItem();
-            this.menuItem18 = new System.Windows.Forms.MenuItem();
+            this.MSeparator1 = new System.Windows.Forms.MenuItem();
             this.MSave = new System.Windows.Forms.MenuItem();
             this.MSaveAs = new System.Windows.Forms.MenuItem();
             this.MSaveAll = new System.Windows.Forms.MenuItem();
             this.MClose = new System.Windows.Forms.MenuItem();
             this.MCloseAll = new System.Windows.Forms.MenuItem();
-            this.menuItem24 = new System.Windows.Forms.MenuItem();
+            this.MSeparator2 = new System.Windows.Forms.MenuItem();
             this.MPrint = new System.Windows.Forms.MenuItem();
-            this.menuItem27 = new System.Windows.Forms.MenuItem();
+            this.MSeparator3 = new System.Windows.Forms.MenuItem();
             this.MRecentFiles = new System.Windows.Forms.MenuItem();
             this.menuItem16 = new System.Windows.Forms.MenuItem();
             this.menuItem17 = new System.Windows.Forms.MenuItem();
-            this.menuItem33 = new System.Windows.Forms.MenuItem();
+            this.MSeparator4 = new System.Windows.Forms.MenuItem();
             this.MClearRecentFiles = new System.Windows.Forms.MenuItem();
             this.MRecentProjects = new System.Windows.Forms.MenuItem();
             this.menuItem30 = new System.Windows.Forms.MenuItem();
-            this.menuItem31 = new System.Windows.Forms.MenuItem();
+            this.MSeparator5 = new System.Windows.Forms.MenuItem();
             this.MClearRecentProjects = new System.Windows.Forms.MenuItem();
-            this.menuItem34 = new System.Windows.Forms.MenuItem();
+            this.MSeparator6 = new System.Windows.Forms.MenuItem();
             this.MExit = new System.Windows.Forms.MenuItem();
             this.MEditMenu = new System.Windows.Forms.MenuItem();
             this.MUndo = new System.Windows.Forms.MenuItem();
             this.MRedo = new System.Windows.Forms.MenuItem();
-            this.menuItem39 = new System.Windows.Forms.MenuItem();
+            this.MSeparator7 = new System.Windows.Forms.MenuItem();
             this.MCut = new System.Windows.Forms.MenuItem();
             this.MCopy = new System.Windows.Forms.MenuItem();
             this.MPaste = new System.Windows.Forms.MenuItem();
             this.MDelete = new System.Windows.Forms.MenuItem();
-            this.menuItem41 = new System.Windows.Forms.MenuItem();
-            this.menuItem42 = new System.Windows.Forms.MenuItem();
-            this.menuItem43 = new System.Windows.Forms.MenuItem();
+            this.MSeparator8 = new System.Windows.Forms.MenuItem();
+            this.MSelectAll = new System.Windows.Forms.MenuItem();
+            this.MSeparator9 = new System.Windows.Forms.MenuItem();
             this.MInsert = new System.Windows.Forms.MenuItem();
             this.MICodeBrunch = new System.Windows.Forms.MenuItem();
             this.MICodeSumarry = new System.Windows.Forms.MenuItem();
-            this.menuItem49 = new System.Windows.Forms.MenuItem();
+            this.MComment = new System.Windows.Forms.MenuItem();
+            this.MUncomment = new System.Windows.Forms.MenuItem();
+            this.MToUpperCase = new System.Windows.Forms.MenuItem();
+            this.MToLowerCase = new System.Windows.Forms.MenuItem();
+            this.MSeparator10 = new System.Windows.Forms.MenuItem();
             this.MFoldAll = new System.Windows.Forms.MenuItem();
             this.MUnfoldAll = new System.Windows.Forms.MenuItem();
             this.MViewMenu = new System.Windows.Forms.MenuItem();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.menuItem10 = new System.Windows.Forms.MenuItem();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
-            this.menuItem12 = new System.Windows.Forms.MenuItem();
-            this.menuItem13 = new System.Windows.Forms.MenuItem();
-            this.menuItem14 = new System.Windows.Forms.MenuItem();
-            this.menuItem15 = new System.Windows.Forms.MenuItem();
-            this.menuItem19 = new System.Windows.Forms.MenuItem();
+            this.MLanguage = new System.Windows.Forms.MenuItem();
+            this.MASPLanguage = new System.Windows.Forms.MenuItem();
+            this.MBatchLanguage = new System.Windows.Forms.MenuItem();
+            this.MCsharpLanguage = new System.Windows.Forms.MenuItem();
+            this.MCppLanguage = new System.Windows.Forms.MenuItem();
+            this.MCssLanguage = new System.Windows.Forms.MenuItem();
+            this.MDLanguage = new System.Windows.Forms.MenuItem();
+            this.MHtmlLanguage = new System.Windows.Forms.MenuItem();
+            this.MHydroLanguage = new System.Windows.Forms.MenuItem();
+            this.MIlasmLanguage = new System.Windows.Forms.MenuItem();
+            this.MJavaLanguage = new System.Windows.Forms.MenuItem();
+            this.MJavascriptLanguage = new System.Windows.Forms.MenuItem();
+            this.MPascalLanguage = new System.Windows.Forms.MenuItem();
+            this.MPhpLanguage = new System.Windows.Forms.MenuItem();
+            this.MSqlLanguage = new System.Windows.Forms.MenuItem();
+            this.MXmlLanguage = new System.Windows.Forms.MenuItem();
+            this.MSeparator11 = new System.Windows.Forms.MenuItem();
+            this.MStartPage = new System.Windows.Forms.MenuItem();
             this.MBuildOutput = new System.Windows.Forms.MenuItem();
             this.MCodeBExplorer = new System.Windows.Forms.MenuItem();
             this.MProjectExplorer = new System.Windows.Forms.MenuItem();
             this.MFileExplorer = new System.Windows.Forms.MenuItem();
+            this.MSeparator12 = new System.Windows.Forms.MenuItem();
+            this.MZoomIn = new System.Windows.Forms.MenuItem();
+            this.MZoomOut = new System.Windows.Forms.MenuItem();
+            this.MResetZoom = new System.Windows.Forms.MenuItem();
             this.MSearchMenu = new System.Windows.Forms.MenuItem();
             this.MSearch = new System.Windows.Forms.MenuItem();
+            this.MReplace = new System.Windows.Forms.MenuItem();
             this.MFindNext = new System.Windows.Forms.MenuItem();
             this.MFindPrevious = new System.Windows.Forms.MenuItem();
-            this.menuItem54 = new System.Windows.Forms.MenuItem();
+            this.MSeparator13 = new System.Windows.Forms.MenuItem();
             this.MGoto = new System.Windows.Forms.MenuItem();
             this.MProjectMenu = new System.Windows.Forms.MenuItem();
             this.MBuildProject = new System.Windows.Forms.MenuItem();
             this.MCleanProject = new System.Windows.Forms.MenuItem();
-            this.menuItem73 = new System.Windows.Forms.MenuItem();
+            this.MSeparator14 = new System.Windows.Forms.MenuItem();
             this.MRunProject = new System.Windows.Forms.MenuItem();
             this.MStopRunProject = new System.Windows.Forms.MenuItem();
-            this.menuItem74 = new System.Windows.Forms.MenuItem();
+            this.MSeparator15 = new System.Windows.Forms.MenuItem();
             this.MConfigProject = new System.Windows.Forms.MenuItem();
             this.MSettingsMenu = new System.Windows.Forms.MenuItem();
             this.MPreferences = new System.Windows.Forms.MenuItem();
@@ -117,7 +128,7 @@
             this.MPlugins = new System.Windows.Forms.MenuItem();
             this.menuItem57 = new System.Windows.Forms.MenuItem();
             this.menuItem58 = new System.Windows.Forms.MenuItem();
-            this.menuItem59 = new System.Windows.Forms.MenuItem();
+            this.MSeparator16 = new System.Windows.Forms.MenuItem();
             this.MPluginManager = new System.Windows.Forms.MenuItem();
             this.MSvn = new System.Windows.Forms.MenuItem();
             this.menuItem61 = new System.Windows.Forms.MenuItem();
@@ -126,7 +137,7 @@
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
             this.MTipOfDay = new System.Windows.Forms.MenuItem();
-            this.menuItem64 = new System.Windows.Forms.MenuItem();
+            this.MSeparator17 = new System.Windows.Forms.MenuItem();
             this.MReportBug = new System.Windows.Forms.MenuItem();
             this.MContent = new System.Windows.Forms.MenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -137,8 +148,24 @@
             this.MStatusEncodingLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.busyPBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MDockArea = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.MEditToolbar = new System.Windows.Forms.ToolStrip();
+            this.MTUndo = new System.Windows.Forms.ToolStripButton();
+            this.MTBRedo = new System.Windows.Forms.ToolStripButton();
+            this.MTBCut = new System.Windows.Forms.ToolStripButton();
+            this.MTBCopy = new System.Windows.Forms.ToolStripButton();
+            this.MTBPaste = new System.Windows.Forms.ToolStripButton();
+            this.MTBEndline = new System.Windows.Forms.ToolStripButton();
+            this.MTBWhiteSapce = new System.Windows.Forms.ToolStripButton();
+            this.MTBFind = new System.Windows.Forms.ToolStripButton();
+            this.MTBReplace = new System.Windows.Forms.ToolStripButton();
+            this.MTBZoomIn = new System.Windows.Forms.ToolStripButton();
+            this.MTBZoomOut = new System.Windows.Forms.ToolStripButton();
+            this.MTBPrint = new System.Windows.Forms.ToolStripButton();
             this.MMiscToolbar = new System.Windows.Forms.ToolStrip();
             this.MTBShowStart = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowProject = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowBrunchBrowser = new System.Windows.Forms.ToolStripButton();
             this.MTBShowConsole = new System.Windows.Forms.ToolStripButton();
             this.MTBShowDrive = new System.Windows.Forms.ToolStripButton();
             this.MTBPreferences = new System.Windows.Forms.ToolStripButton();
@@ -150,18 +177,6 @@
             this.MTBStop = new System.Windows.Forms.ToolStripButton();
             this.MTBClean = new System.Windows.Forms.ToolStripButton();
             this.MTBConfig = new System.Windows.Forms.ToolStripButton();
-            this.MEditToolbar = new System.Windows.Forms.ToolStrip();
-            this.MTUndo = new System.Windows.Forms.ToolStripButton();
-            this.MTBRedo = new System.Windows.Forms.ToolStripButton();
-            this.MTBCut = new System.Windows.Forms.ToolStripButton();
-            this.MTBCopy = new System.Windows.Forms.ToolStripButton();
-            this.MTBPaste = new System.Windows.Forms.ToolStripButton();
-            this.MTBEndline = new System.Windows.Forms.ToolStripButton();
-            this.MTBFind = new System.Windows.Forms.ToolStripButton();
-            this.MTBReplace = new System.Windows.Forms.ToolStripButton();
-            this.MTBZoomIn = new System.Windows.Forms.ToolStripButton();
-            this.MTBZoomOut = new System.Windows.Forms.ToolStripButton();
-            this.MTBPrint = new System.Windows.Forms.ToolStripButton();
             this.MFileToolBar = new System.Windows.Forms.ToolStrip();
             this.MTBNewProject = new System.Windows.Forms.ToolStripButton();
             this.MTBNewFile = new System.Windows.Forms.ToolStripButton();
@@ -171,11 +186,10 @@
             this.MTBCloseCurentFile = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.MDockArea = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.statusStrip1.SuspendLayout();
+            this.MEditToolbar.SuspendLayout();
             this.MMiscToolbar.SuspendLayout();
             this.MBuilToolbar.SuspendLayout();
-            this.MEditToolbar.SuspendLayout();
             this.MFileToolBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,18 +212,18 @@
             this.MNew,
             this.MOpen,
             this.MReload,
-            this.menuItem18,
+            this.MSeparator1,
             this.MSave,
             this.MSaveAs,
             this.MSaveAll,
             this.MClose,
             this.MCloseAll,
-            this.menuItem24,
+            this.MSeparator2,
             this.MPrint,
-            this.menuItem27,
+            this.MSeparator3,
             this.MRecentFiles,
             this.MRecentProjects,
-            this.menuItem34,
+            this.MSeparator6,
             this.MExit});
             this.MFileMenu.Text = "File";
             // 
@@ -218,7 +232,7 @@
             this.MNew.Index = 0;
             this.MNew.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MNewFile,
-            this.menuItem36});
+            this.MNewPrject});
             this.MNew.Text = "&New";
             // 
             // MNewFile
@@ -226,11 +240,13 @@
             this.MNewFile.Index = 0;
             this.MNewFile.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
             this.MNewFile.Text = "File";
+            this.MNewFile.Click += new System.EventHandler(this.NewFile);
             // 
-            // menuItem36
+            // MNewPrject
             // 
-            this.menuItem36.Index = 1;
-            this.menuItem36.Text = "Project";
+            this.MNewPrject.Index = 1;
+            this.MNewPrject.Text = "Project";
+            this.MNewPrject.Click += new System.EventHandler(this.NewProject);
             // 
             // MOpen
             // 
@@ -242,10 +258,10 @@
             this.MReload.Index = 2;
             this.MReload.Text = "Reload";
             // 
-            // menuItem18
+            // MSeparator1
             // 
-            this.menuItem18.Index = 3;
-            this.menuItem18.Text = "-";
+            this.MSeparator1.Index = 3;
+            this.MSeparator1.Text = "-";
             // 
             // MSave
             // 
@@ -274,20 +290,21 @@
             this.MCloseAll.Index = 8;
             this.MCloseAll.Text = "Close All";
             // 
-            // menuItem24
+            // MSeparator2
             // 
-            this.menuItem24.Index = 9;
-            this.menuItem24.Text = "-";
+            this.MSeparator2.Index = 9;
+            this.MSeparator2.Text = "-";
             // 
             // MPrint
             // 
             this.MPrint.Index = 10;
             this.MPrint.Text = "Print";
+            this.MPrint.Click += new System.EventHandler(this.PrintCode);
             // 
-            // menuItem27
+            // MSeparator3
             // 
-            this.menuItem27.Index = 11;
-            this.menuItem27.Text = "-";
+            this.MSeparator3.Index = 11;
+            this.MSeparator3.Text = "-";
             // 
             // MRecentFiles
             // 
@@ -295,7 +312,7 @@
             this.MRecentFiles.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem16,
             this.menuItem17,
-            this.menuItem33,
+            this.MSeparator4,
             this.MClearRecentFiles});
             this.MRecentFiles.Text = "Recents Files";
             // 
@@ -309,10 +326,10 @@
             this.menuItem17.Index = 1;
             this.menuItem17.Text = "Main.cpp";
             // 
-            // menuItem33
+            // MSeparator4
             // 
-            this.menuItem33.Index = 2;
-            this.menuItem33.Text = "-";
+            this.MSeparator4.Index = 2;
+            this.MSeparator4.Text = "-";
             // 
             // MClearRecentFiles
             // 
@@ -324,7 +341,7 @@
             this.MRecentProjects.Index = 13;
             this.MRecentProjects.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem30,
-            this.menuItem31,
+            this.MSeparator5,
             this.MClearRecentProjects});
             this.MRecentProjects.Text = "Recents Projects";
             // 
@@ -333,25 +350,26 @@
             this.menuItem30.Index = 0;
             this.menuItem30.Text = "Mypro.pro";
             // 
-            // menuItem31
+            // MSeparator5
             // 
-            this.menuItem31.Index = 1;
-            this.menuItem31.Text = "-";
+            this.MSeparator5.Index = 1;
+            this.MSeparator5.Text = "-";
             // 
             // MClearRecentProjects
             // 
             this.MClearRecentProjects.Index = 2;
             this.MClearRecentProjects.Text = "Clear...";
             // 
-            // menuItem34
+            // MSeparator6
             // 
-            this.menuItem34.Index = 14;
-            this.menuItem34.Text = "-";
+            this.MSeparator6.Index = 14;
+            this.MSeparator6.Text = "-";
             // 
             // MExit
             // 
             this.MExit.Index = 15;
             this.MExit.Text = "Exit";
+            this.MExit.Click += new System.EventHandler(this.ExitApplication);
             // 
             // MEditMenu
             // 
@@ -359,16 +377,20 @@
             this.MEditMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MUndo,
             this.MRedo,
-            this.menuItem39,
+            this.MSeparator7,
             this.MCut,
             this.MCopy,
             this.MPaste,
             this.MDelete,
-            this.menuItem41,
-            this.menuItem42,
-            this.menuItem43,
+            this.MSeparator8,
+            this.MSelectAll,
+            this.MSeparator9,
             this.MInsert,
-            this.menuItem49,
+            this.MComment,
+            this.MUncomment,
+            this.MToUpperCase,
+            this.MToLowerCase,
+            this.MSeparator10,
             this.MFoldAll,
             this.MUnfoldAll});
             this.MEditMenu.Text = "Edit";
@@ -385,10 +407,10 @@
             this.MRedo.Shortcut = System.Windows.Forms.Shortcut.CtrlY;
             this.MRedo.Text = "Redo";
             // 
-            // menuItem39
+            // MSeparator7
             // 
-            this.menuItem39.Index = 2;
-            this.menuItem39.Text = "-";
+            this.MSeparator7.Index = 2;
+            this.MSeparator7.Text = "-";
             // 
             // MCut
             // 
@@ -411,24 +433,24 @@
             // MDelete
             // 
             this.MDelete.Index = 6;
-            this.MDelete.Shortcut = System.Windows.Forms.Shortcut.Del;
+            this.MDelete.Shortcut = System.Windows.Forms.Shortcut.CtrlDel;
             this.MDelete.Text = "Delete";
             // 
-            // menuItem41
+            // MSeparator8
             // 
-            this.menuItem41.Index = 7;
-            this.menuItem41.Text = "-";
+            this.MSeparator8.Index = 7;
+            this.MSeparator8.Text = "-";
             // 
-            // menuItem42
+            // MSelectAll
             // 
-            this.menuItem42.Index = 8;
-            this.menuItem42.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
-            this.menuItem42.Text = "Sellect All";
+            this.MSelectAll.Index = 8;
+            this.MSelectAll.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
+            this.MSelectAll.Text = "Sellect All";
             // 
-            // menuItem43
+            // MSeparator9
             // 
-            this.menuItem43.Index = 9;
-            this.menuItem43.Text = "-";
+            this.MSeparator9.Index = 9;
+            this.MSeparator9.Text = "-";
             // 
             // MInsert
             // 
@@ -450,20 +472,40 @@
             this.MICodeSumarry.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
             this.MICodeSumarry.Text = "Code Summary";
             // 
-            // menuItem49
+            // MComment
             // 
-            this.menuItem49.Index = 11;
-            this.menuItem49.Text = "-";
+            this.MComment.Index = 11;
+            this.MComment.Text = "Comment ";
+            // 
+            // MUncomment
+            // 
+            this.MUncomment.Index = 12;
+            this.MUncomment.Text = "Uncomment";
+            // 
+            // MToUpperCase
+            // 
+            this.MToUpperCase.Index = 13;
+            this.MToUpperCase.Text = "To Upper Case";
+            // 
+            // MToLowerCase
+            // 
+            this.MToLowerCase.Index = 14;
+            this.MToLowerCase.Text = "To Lower Case";
+            // 
+            // MSeparator10
+            // 
+            this.MSeparator10.Index = 15;
+            this.MSeparator10.Text = "-";
             // 
             // MFoldAll
             // 
-            this.MFoldAll.Index = 12;
+            this.MFoldAll.Index = 16;
             this.MFoldAll.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftF;
             this.MFoldAll.Text = "Fold All";
             // 
             // MUnfoldAll
             // 
-            this.MUnfoldAll.Index = 13;
+            this.MUnfoldAll.Index = 17;
             this.MUnfoldAll.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftU;
             this.MUnfoldAll.Text = "Unfold All";
             // 
@@ -471,137 +513,213 @@
             // 
             this.MViewMenu.Index = 2;
             this.MViewMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem1,
-            this.menuItem19,
+            this.MLanguage,
+            this.MSeparator11,
+            this.MStartPage,
             this.MBuildOutput,
             this.MCodeBExplorer,
             this.MProjectExplorer,
-            this.MFileExplorer});
+            this.MFileExplorer,
+            this.MSeparator12,
+            this.MZoomIn,
+            this.MZoomOut,
+            this.MResetZoom});
             this.MViewMenu.Text = "View";
             // 
-            // menuItem1
+            // MLanguage
             // 
-            this.menuItem1.Index = 0;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem2,
-            this.menuItem3,
-            this.menuItem4,
-            this.menuItem5,
-            this.menuItem6,
-            this.menuItem7,
-            this.menuItem8,
-            this.menuItem9,
-            this.menuItem10,
-            this.menuItem11,
-            this.menuItem12,
-            this.menuItem13,
-            this.menuItem14,
-            this.menuItem15});
-            this.menuItem1.Text = "Language";
+            this.MLanguage.Index = 0;
+            this.MLanguage.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.MASPLanguage,
+            this.MBatchLanguage,
+            this.MCsharpLanguage,
+            this.MCppLanguage,
+            this.MCssLanguage,
+            this.MDLanguage,
+            this.MHtmlLanguage,
+            this.MHydroLanguage,
+            this.MIlasmLanguage,
+            this.MJavaLanguage,
+            this.MJavascriptLanguage,
+            this.MPascalLanguage,
+            this.MPhpLanguage,
+            this.MSqlLanguage,
+            this.MXmlLanguage});
+            this.MLanguage.Text = "Language";
             // 
-            // menuItem2
+            // MASPLanguage
             // 
-            this.menuItem2.Index = 0;
-            this.menuItem2.Text = "ASP";
+            this.MASPLanguage.Index = 0;
+            this.MASPLanguage.Tag = "asp";
+            this.MASPLanguage.Text = "ASP";
+            this.MASPLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem3
+            // MBatchLanguage
             // 
-            this.menuItem3.Index = 1;
-            this.menuItem3.Text = "Batch";
+            this.MBatchLanguage.Index = 1;
+            this.MBatchLanguage.Tag = "batch";
+            this.MBatchLanguage.Text = "Batch";
+            this.MBatchLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem4
+            // MCsharpLanguage
             // 
-            this.menuItem4.Index = 2;
-            this.menuItem4.Text = "C#";
+            this.MCsharpLanguage.Index = 2;
+            this.MCsharpLanguage.Tag = "cs";
+            this.MCsharpLanguage.Text = "C#";
+            this.MCsharpLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem5
+            // MCppLanguage
             // 
-            this.menuItem5.Index = 3;
-            this.menuItem5.Text = "C++";
+            this.MCppLanguage.Index = 3;
+            this.MCppLanguage.Tag = "cpp";
+            this.MCppLanguage.Text = "C++";
+            this.MCppLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem6
+            // MCssLanguage
             // 
-            this.menuItem6.Index = 4;
-            this.menuItem6.Text = "CSS";
+            this.MCssLanguage.Index = 4;
+            this.MCssLanguage.Tag = "css";
+            this.MCssLanguage.Text = "CSS";
+            this.MCssLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem7
+            // MDLanguage
             // 
-            this.menuItem7.Index = 5;
-            this.menuItem7.Text = "D";
+            this.MDLanguage.Index = 5;
+            this.MDLanguage.Tag = "D";
+            this.MDLanguage.Text = "D";
+            this.MDLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem8
+            // MHtmlLanguage
             // 
-            this.menuItem8.Index = 6;
-            this.menuItem8.Text = "HTML";
+            this.MHtmlLanguage.Index = 6;
+            this.MHtmlLanguage.Tag = "html";
+            this.MHtmlLanguage.Text = "HTML";
+            this.MHtmlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem9
+            // MHydroLanguage
             // 
-            this.menuItem9.Index = 7;
-            this.menuItem9.Text = "Hydro";
+            this.MHydroLanguage.Index = 7;
+            this.MHydroLanguage.Tag = "hydro";
+            this.MHydroLanguage.Text = "Hydro";
+            this.MHydroLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem10
+            // MIlasmLanguage
             // 
-            this.menuItem10.Index = 8;
-            this.menuItem10.Text = "Java";
+            this.MIlasmLanguage.Index = 8;
+            this.MIlasmLanguage.Tag = "ilasm";
+            this.MIlasmLanguage.Text = "Ilasm";
+            this.MIlasmLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem11
+            // MJavaLanguage
             // 
-            this.menuItem11.Index = 9;
-            this.menuItem11.Text = "Javascript";
+            this.MJavaLanguage.Index = 9;
+            this.MJavaLanguage.Tag = "java";
+            this.MJavaLanguage.Text = "Java";
+            this.MJavaLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem12
+            // MJavascriptLanguage
             // 
-            this.menuItem12.Index = 10;
-            this.menuItem12.Text = "Pascal";
+            this.MJavascriptLanguage.Index = 10;
+            this.MJavascriptLanguage.Tag = "js";
+            this.MJavascriptLanguage.Text = "Javascript";
+            this.MJavascriptLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem13
+            // MPascalLanguage
             // 
-            this.menuItem13.Index = 11;
-            this.menuItem13.Text = "PHP";
+            this.MPascalLanguage.Index = 11;
+            this.MPascalLanguage.Tag = "pascal";
+            this.MPascalLanguage.Text = "Pascal";
+            this.MPascalLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem14
+            // MPhpLanguage
             // 
-            this.menuItem14.Index = 12;
-            this.menuItem14.Text = "SQL";
+            this.MPhpLanguage.Index = 12;
+            this.MPhpLanguage.Tag = "phpscript";
+            this.MPhpLanguage.Text = "PHP";
+            this.MPhpLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem15
+            // MSqlLanguage
             // 
-            this.menuItem15.Index = 13;
-            this.menuItem15.Text = "XML";
+            this.MSqlLanguage.Index = 13;
+            this.MSqlLanguage.Tag = "mssql";
+            this.MSqlLanguage.Text = "SQL";
+            this.MSqlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
-            // menuItem19
+            // MXmlLanguage
             // 
-            this.menuItem19.Index = 1;
-            this.menuItem19.Text = "-";
+            this.MXmlLanguage.Index = 14;
+            this.MXmlLanguage.Tag = "xml";
+            this.MXmlLanguage.Text = "XML";
+            this.MXmlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
+            // 
+            // MSeparator11
+            // 
+            this.MSeparator11.Index = 1;
+            this.MSeparator11.Text = "-";
+            // 
+            // MStartPage
+            // 
+            this.MStartPage.Checked = true;
+            this.MStartPage.Index = 2;
+            this.MStartPage.Text = "Start Page";
+            this.MStartPage.Click += new System.EventHandler(this.ToggleStartPage);
             // 
             // MBuildOutput
             // 
-            this.MBuildOutput.Index = 2;
+            this.MBuildOutput.Index = 3;
             this.MBuildOutput.Text = "Build Output";
+            this.MBuildOutput.Click += new System.EventHandler(this.ToggleConsoleOutput);
             // 
             // MCodeBExplorer
             // 
-            this.MCodeBExplorer.Index = 3;
+            this.MCodeBExplorer.Index = 4;
             this.MCodeBExplorer.Text = "Code Brunch Explorer";
+            this.MCodeBExplorer.Click += new System.EventHandler(this.ToggleCodeBrucnhExplorer);
             // 
             // MProjectExplorer
             // 
-            this.MProjectExplorer.Index = 4;
+            this.MProjectExplorer.Index = 5;
             this.MProjectExplorer.Text = "Project Explorer";
+            this.MProjectExplorer.Click += new System.EventHandler(this.ToggleProjectExplorer);
             // 
             // MFileExplorer
             // 
-            this.MFileExplorer.Index = 5;
+            this.MFileExplorer.Index = 6;
             this.MFileExplorer.Text = "File Explorer";
+            this.MFileExplorer.Click += new System.EventHandler(this.ToggleFileBrowser);
+            // 
+            // MSeparator12
+            // 
+            this.MSeparator12.Index = 7;
+            this.MSeparator12.Text = "-";
+            // 
+            // MZoomIn
+            // 
+            this.MZoomIn.Index = 8;
+            this.MZoomIn.Text = "Zoom In";
+            this.MZoomIn.Click += new System.EventHandler(this.ZoomInCode);
+            // 
+            // MZoomOut
+            // 
+            this.MZoomOut.Index = 9;
+            this.MZoomOut.Text = "Zoom Out";
+            this.MZoomOut.Click += new System.EventHandler(this.ZoomOutCode);
+            // 
+            // MResetZoom
+            // 
+            this.MResetZoom.Index = 10;
+            this.MResetZoom.Text = "Reset Zoom";
+            this.MResetZoom.Click += new System.EventHandler(this.ResetZoomCode);
             // 
             // MSearchMenu
             // 
             this.MSearchMenu.Index = 3;
             this.MSearchMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MSearch,
+            this.MReplace,
             this.MFindNext,
             this.MFindPrevious,
-            this.menuItem54,
+            this.MSeparator13,
             this.MGoto});
             this.MSearchMenu.Text = "Search";
             // 
@@ -611,26 +729,31 @@
             this.MSearch.Shortcut = System.Windows.Forms.Shortcut.CtrlF;
             this.MSearch.Text = "Search";
             // 
+            // MReplace
+            // 
+            this.MReplace.Index = 1;
+            this.MReplace.Text = "Replace";
+            // 
             // MFindNext
             // 
-            this.MFindNext.Index = 1;
+            this.MFindNext.Index = 2;
             this.MFindNext.Shortcut = System.Windows.Forms.Shortcut.F3;
             this.MFindNext.Text = "Find Next";
             // 
             // MFindPrevious
             // 
-            this.MFindPrevious.Index = 2;
+            this.MFindPrevious.Index = 3;
             this.MFindPrevious.Shortcut = System.Windows.Forms.Shortcut.ShiftF3;
             this.MFindPrevious.Text = "Find Previous";
             // 
-            // menuItem54
+            // MSeparator13
             // 
-            this.menuItem54.Index = 3;
-            this.menuItem54.Text = "-";
+            this.MSeparator13.Index = 4;
+            this.MSeparator13.Text = "-";
             // 
             // MGoto
             // 
-            this.MGoto.Index = 4;
+            this.MGoto.Index = 5;
             this.MGoto.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.MGoto.Text = "Go to Line...";
             // 
@@ -640,10 +763,10 @@
             this.MProjectMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MBuildProject,
             this.MCleanProject,
-            this.menuItem73,
+            this.MSeparator14,
             this.MRunProject,
             this.MStopRunProject,
-            this.menuItem74,
+            this.MSeparator15,
             this.MConfigProject});
             this.MProjectMenu.Text = "Project";
             // 
@@ -658,10 +781,10 @@
             this.MCleanProject.Index = 1;
             this.MCleanProject.Text = "Clean ...";
             // 
-            // menuItem73
+            // MSeparator14
             // 
-            this.menuItem73.Index = 2;
-            this.menuItem73.Text = "-";
+            this.MSeparator14.Index = 2;
+            this.MSeparator14.Text = "-";
             // 
             // MRunProject
             // 
@@ -674,10 +797,10 @@
             this.MStopRunProject.Index = 4;
             this.MStopRunProject.Text = "Stop";
             // 
-            // menuItem74
+            // MSeparator15
             // 
-            this.menuItem74.Index = 5;
-            this.menuItem74.Text = "-";
+            this.MSeparator15.Index = 5;
+            this.MSeparator15.Text = "-";
             // 
             // MConfigProject
             // 
@@ -724,7 +847,7 @@
             this.MPlugins.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItem57,
             this.menuItem58,
-            this.menuItem59,
+            this.MSeparator16,
             this.MPluginManager});
             this.MPlugins.Text = "Plugins";
             // 
@@ -738,10 +861,10 @@
             this.menuItem58.Index = 1;
             this.menuItem58.Text = "Class Gen";
             // 
-            // menuItem59
+            // MSeparator16
             // 
-            this.menuItem59.Index = 2;
-            this.menuItem59.Text = "-";
+            this.MSeparator16.Index = 2;
+            this.MSeparator16.Text = "-";
             // 
             // MPluginManager
             // 
@@ -777,7 +900,7 @@
             this.MHelpMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MHelpContent,
             this.MTipOfDay,
-            this.menuItem64,
+            this.MSeparator17,
             this.MReportBug,
             this.MContent});
             this.MHelpMenu.Text = "Help";
@@ -793,10 +916,10 @@
             this.MTipOfDay.Index = 1;
             this.MTipOfDay.Text = "Tip of the Day";
             // 
-            // menuItem64
+            // MSeparator17
             // 
-            this.menuItem64.Index = 2;
-            this.menuItem64.Text = "-";
+            this.MSeparator17.Index = 2;
+            this.MSeparator17.Text = "-";
             // 
             // MReportBug
             // 
@@ -870,6 +993,175 @@
             this.statusInfo.Size = new System.Drawing.Size(81, 17);
             this.statusInfo.Text = "Build Succeed";
             // 
+            // MDockArea
+            // 
+            this.MDockArea.ActiveAutoHideContent = null;
+            this.MDockArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.MDockArea.DefaultFloatWindowSize = new System.Drawing.Size(240, 300);
+            this.MDockArea.Location = new System.Drawing.Point(0, 28);
+            this.MDockArea.Name = "MDockArea";
+            this.MDockArea.Size = new System.Drawing.Size(992, 536);
+            this.MDockArea.TabIndex = 8;
+            // 
+            // MEditToolbar
+            // 
+            this.MEditToolbar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.MEditToolbar.Dock = System.Windows.Forms.DockStyle.None;
+            this.MEditToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MTUndo,
+            this.MTBRedo,
+            this.MTBCut,
+            this.MTBCopy,
+            this.MTBPaste,
+            this.MTBEndline,
+            this.MTBWhiteSapce,
+            this.MTBFind,
+            this.MTBReplace,
+            this.MTBZoomIn,
+            this.MTBZoomOut,
+            this.MTBPrint});
+            this.MEditToolbar.Location = new System.Drawing.Point(192, 0);
+            this.MEditToolbar.Name = "MEditToolbar";
+            this.MEditToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.MEditToolbar.Size = new System.Drawing.Size(330, 28);
+            this.MEditToolbar.TabIndex = 4;
+            this.MEditToolbar.Text = "mainToolstrip";
+            // 
+            // MTUndo
+            // 
+            this.MTUndo.AutoSize = false;
+            this.MTUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTUndo.Image = global::Moo.Properties.Resources.undo;
+            this.MTUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTUndo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTUndo.Name = "MTUndo";
+            this.MTUndo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTUndo.Size = new System.Drawing.Size(26, 26);
+            this.MTUndo.ToolTipText = "Undo Previous Action";
+            // 
+            // MTBRedo
+            // 
+            this.MTBRedo.AutoSize = false;
+            this.MTBRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBRedo.Image = global::Moo.Properties.Resources.redo;
+            this.MTBRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBRedo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBRedo.Name = "MTBRedo";
+            this.MTBRedo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBRedo.Size = new System.Drawing.Size(26, 26);
+            this.MTBRedo.ToolTipText = "Redo Previous Action";
+            // 
+            // MTBCut
+            // 
+            this.MTBCut.AutoSize = false;
+            this.MTBCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBCut.Image = global::Moo.Properties.Resources.cut;
+            this.MTBCut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBCut.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBCut.Name = "MTBCut";
+            this.MTBCut.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBCut.Size = new System.Drawing.Size(26, 26);
+            this.MTBCut.ToolTipText = "Cut";
+            // 
+            // MTBCopy
+            // 
+            this.MTBCopy.AutoSize = false;
+            this.MTBCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBCopy.Image = global::Moo.Properties.Resources.copy;
+            this.MTBCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBCopy.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBCopy.Name = "MTBCopy";
+            this.MTBCopy.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBCopy.Size = new System.Drawing.Size(26, 26);
+            this.MTBCopy.ToolTipText = "Copy";
+            // 
+            // MTBPaste
+            // 
+            this.MTBPaste.AutoSize = false;
+            this.MTBPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBPaste.Image = global::Moo.Properties.Resources.paste;
+            this.MTBPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBPaste.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBPaste.Name = "MTBPaste";
+            this.MTBPaste.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBPaste.Size = new System.Drawing.Size(26, 26);
+            this.MTBPaste.ToolTipText = "Paste";
+            // 
+            // MTBEndline
+            // 
+            this.MTBEndline.CheckOnClick = true;
+            this.MTBEndline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBEndline.Image = global::Moo.Properties.Resources.endline;
+            this.MTBEndline.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBEndline.Name = "MTBEndline";
+            this.MTBEndline.Size = new System.Drawing.Size(23, 25);
+            this.MTBEndline.ToolTipText = "Show End Line";
+            this.MTBEndline.Click += new System.EventHandler(this.ShowEndLine);
+            // 
+            // MTBWhiteSapce
+            // 
+            this.MTBWhiteSapce.CheckOnClick = true;
+            this.MTBWhiteSapce.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBWhiteSapce.Image = global::Moo.Properties.Resources.whitespace;
+            this.MTBWhiteSapce.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBWhiteSapce.Name = "MTBWhiteSapce";
+            this.MTBWhiteSapce.Size = new System.Drawing.Size(23, 25);
+            this.MTBWhiteSapce.ToolTipText = "Show White Space";
+            this.MTBWhiteSapce.Click += new System.EventHandler(this.ShowWhiteSpace);
+            // 
+            // MTBFind
+            // 
+            this.MTBFind.AutoSize = false;
+            this.MTBFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBFind.Image = global::Moo.Properties.Resources.zoom;
+            this.MTBFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBFind.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBFind.Name = "MTBFind";
+            this.MTBFind.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBFind.Size = new System.Drawing.Size(26, 26);
+            this.MTBFind.ToolTipText = "Find ...";
+            // 
+            // MTBReplace
+            // 
+            this.MTBReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBReplace.Image = global::Moo.Properties.Resources.replace;
+            this.MTBReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBReplace.Name = "MTBReplace";
+            this.MTBReplace.Size = new System.Drawing.Size(23, 25);
+            this.MTBReplace.ToolTipText = "Replace...";
+            // 
+            // MTBZoomIn
+            // 
+            this.MTBZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBZoomIn.Image = global::Moo.Properties.Resources.zoom_in;
+            this.MTBZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBZoomIn.Name = "MTBZoomIn";
+            this.MTBZoomIn.Size = new System.Drawing.Size(23, 25);
+            this.MTBZoomIn.ToolTipText = "Zoom In";
+            this.MTBZoomIn.Click += new System.EventHandler(this.ZoomInCode);
+            // 
+            // MTBZoomOut
+            // 
+            this.MTBZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBZoomOut.Image = global::Moo.Properties.Resources.zoom_out;
+            this.MTBZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBZoomOut.Name = "MTBZoomOut";
+            this.MTBZoomOut.Size = new System.Drawing.Size(23, 25);
+            this.MTBZoomOut.ToolTipText = "Zoom Out";
+            this.MTBZoomOut.Click += new System.EventHandler(this.ZoomOutCode);
+            // 
+            // MTBPrint
+            // 
+            this.MTBPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBPrint.Image = global::Moo.Properties.Resources.print;
+            this.MTBPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBPrint.Name = "MTBPrint";
+            this.MTBPrint.Size = new System.Drawing.Size(23, 25);
+            this.MTBPrint.ToolTipText = "Print";
+            this.MTBPrint.Click += new System.EventHandler(this.PrintCode);
+            // 
             // MMiscToolbar
             // 
             this.MMiscToolbar.AutoSize = false;
@@ -877,11 +1169,13 @@
             this.MMiscToolbar.Dock = System.Windows.Forms.DockStyle.None;
             this.MMiscToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MTBShowStart,
+            this.MTBShowProject,
+            this.MTBShowBrunchBrowser,
             this.MTBShowConsole,
             this.MTBShowDrive,
             this.MTBPreferences,
             this.MTBPlugin});
-            this.MMiscToolbar.Location = new System.Drawing.Point(682, 0);
+            this.MMiscToolbar.Location = new System.Drawing.Point(703, 0);
             this.MMiscToolbar.Name = "MMiscToolbar";
             this.MMiscToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.MMiscToolbar.Size = new System.Drawing.Size(1000, 28);
@@ -902,6 +1196,29 @@
             this.MTBShowStart.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBShowStart.Size = new System.Drawing.Size(26, 26);
             this.MTBShowStart.ToolTipText = "Show Start Page";
+            this.MTBShowStart.Click += new System.EventHandler(this.ToggleStartPage);
+            // 
+            // MTBShowProject
+            // 
+            this.MTBShowProject.CheckOnClick = true;
+            this.MTBShowProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowProject.Image = global::Moo.Properties.Resources.s_createproject;
+            this.MTBShowProject.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowProject.Name = "MTBShowProject";
+            this.MTBShowProject.Size = new System.Drawing.Size(23, 25);
+            this.MTBShowProject.ToolTipText = "Show Project Browser";
+            this.MTBShowProject.Click += new System.EventHandler(this.ToggleProjectExplorer);
+            // 
+            // MTBShowBrunchBrowser
+            // 
+            this.MTBShowBrunchBrowser.CheckOnClick = true;
+            this.MTBShowBrunchBrowser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowBrunchBrowser.Image = global::Moo.Properties.Resources.tbrunchicon;
+            this.MTBShowBrunchBrowser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowBrunchBrowser.Name = "MTBShowBrunchBrowser";
+            this.MTBShowBrunchBrowser.Size = new System.Drawing.Size(23, 25);
+            this.MTBShowBrunchBrowser.ToolTipText = "Show Brunch Browser";
+            this.MTBShowBrunchBrowser.Click += new System.EventHandler(this.ToggleCodeBrucnhExplorer);
             // 
             // MTBShowConsole
             // 
@@ -915,6 +1232,7 @@
             this.MTBShowConsole.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBShowConsole.Size = new System.Drawing.Size(26, 26);
             this.MTBShowConsole.ToolTipText = "Output";
+            this.MTBShowConsole.Click += new System.EventHandler(this.ToggleConsoleOutput);
             // 
             // MTBShowDrive
             // 
@@ -928,6 +1246,7 @@
             this.MTBShowDrive.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBShowDrive.Size = new System.Drawing.Size(26, 26);
             this.MTBShowDrive.ToolTipText = "File Explorer";
+            this.MTBShowDrive.Click += new System.EventHandler(this.ToggleFileBrowser);
             // 
             // MTBPreferences
             // 
@@ -964,7 +1283,7 @@
             this.MTBStop,
             this.MTBClean,
             this.MTBConfig});
-            this.MBuilToolbar.Location = new System.Drawing.Point(499, 0);
+            this.MBuilToolbar.Location = new System.Drawing.Point(520, 0);
             this.MBuilToolbar.Name = "MBuilToolbar";
             this.MBuilToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.MBuilToolbar.Size = new System.Drawing.Size(185, 28);
@@ -1040,147 +1359,6 @@
             this.MTBConfig.Size = new System.Drawing.Size(26, 26);
             this.MTBConfig.ToolTipText = "Configuration";
             // 
-            // MEditToolbar
-            // 
-            this.MEditToolbar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
-            this.MEditToolbar.Dock = System.Windows.Forms.DockStyle.None;
-            this.MEditToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MTUndo,
-            this.MTBRedo,
-            this.MTBCut,
-            this.MTBCopy,
-            this.MTBPaste,
-            this.MTBEndline,
-            this.MTBFind,
-            this.MTBReplace,
-            this.MTBZoomIn,
-            this.MTBZoomOut,
-            this.MTBPrint});
-            this.MEditToolbar.Location = new System.Drawing.Point(192, 0);
-            this.MEditToolbar.Name = "MEditToolbar";
-            this.MEditToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MEditToolbar.Size = new System.Drawing.Size(307, 28);
-            this.MEditToolbar.TabIndex = 4;
-            this.MEditToolbar.Text = "mainToolstrip";
-            // 
-            // MTUndo
-            // 
-            this.MTUndo.AutoSize = false;
-            this.MTUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTUndo.Image = global::Moo.Properties.Resources.undo;
-            this.MTUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTUndo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTUndo.Name = "MTUndo";
-            this.MTUndo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTUndo.Size = new System.Drawing.Size(26, 26);
-            this.MTUndo.ToolTipText = "Undo Previous Action";
-            // 
-            // MTBRedo
-            // 
-            this.MTBRedo.AutoSize = false;
-            this.MTBRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBRedo.Image = global::Moo.Properties.Resources.redo;
-            this.MTBRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBRedo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBRedo.Name = "MTBRedo";
-            this.MTBRedo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBRedo.Size = new System.Drawing.Size(26, 26);
-            this.MTBRedo.ToolTipText = "Redo Previous Action";
-            // 
-            // MTBCut
-            // 
-            this.MTBCut.AutoSize = false;
-            this.MTBCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBCut.Image = global::Moo.Properties.Resources.cut;
-            this.MTBCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBCut.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBCut.Name = "MTBCut";
-            this.MTBCut.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBCut.Size = new System.Drawing.Size(26, 26);
-            this.MTBCut.ToolTipText = "Cut";
-            // 
-            // MTBCopy
-            // 
-            this.MTBCopy.AutoSize = false;
-            this.MTBCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBCopy.Image = global::Moo.Properties.Resources.copy;
-            this.MTBCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBCopy.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBCopy.Name = "MTBCopy";
-            this.MTBCopy.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBCopy.Size = new System.Drawing.Size(26, 26);
-            this.MTBCopy.ToolTipText = "Copy";
-            // 
-            // MTBPaste
-            // 
-            this.MTBPaste.AutoSize = false;
-            this.MTBPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPaste.Image = global::Moo.Properties.Resources.paste;
-            this.MTBPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBPaste.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBPaste.Name = "MTBPaste";
-            this.MTBPaste.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBPaste.Size = new System.Drawing.Size(26, 26);
-            this.MTBPaste.ToolTipText = "Paste";
-            // 
-            // MTBEndline
-            // 
-            this.MTBEndline.CheckOnClick = true;
-            this.MTBEndline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBEndline.Image = global::Moo.Properties.Resources.endline;
-            this.MTBEndline.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBEndline.Name = "MTBEndline";
-            this.MTBEndline.Size = new System.Drawing.Size(23, 25);
-            this.MTBEndline.ToolTipText = "Show End Line";
-            // 
-            // MTBFind
-            // 
-            this.MTBFind.AutoSize = false;
-            this.MTBFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBFind.Image = global::Moo.Properties.Resources.zoom;
-            this.MTBFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBFind.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBFind.Name = "MTBFind";
-            this.MTBFind.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBFind.Size = new System.Drawing.Size(26, 26);
-            this.MTBFind.ToolTipText = "Find ...";
-            // 
-            // MTBReplace
-            // 
-            this.MTBReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBReplace.Image = global::Moo.Properties.Resources.replace;
-            this.MTBReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBReplace.Name = "MTBReplace";
-            this.MTBReplace.Size = new System.Drawing.Size(23, 25);
-            this.MTBReplace.ToolTipText = "Replace...";
-            // 
-            // MTBZoomIn
-            // 
-            this.MTBZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBZoomIn.Image = global::Moo.Properties.Resources.zoom_in;
-            this.MTBZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBZoomIn.Name = "MTBZoomIn";
-            this.MTBZoomIn.Size = new System.Drawing.Size(23, 25);
-            this.MTBZoomIn.ToolTipText = "Zoom In";
-            // 
-            // MTBZoomOut
-            // 
-            this.MTBZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBZoomOut.Image = global::Moo.Properties.Resources.zoom_out;
-            this.MTBZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBZoomOut.Name = "MTBZoomOut";
-            this.MTBZoomOut.Size = new System.Drawing.Size(23, 25);
-            this.MTBZoomOut.ToolTipText = "Zoom Out";
-            // 
-            // MTBPrint
-            // 
-            this.MTBPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPrint.Image = global::Moo.Properties.Resources.print;
-            this.MTBPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBPrint.Name = "MTBPrint";
-            this.MTBPrint.Size = new System.Drawing.Size(23, 25);
-            this.MTBPrint.ToolTipText = "Print";
-            // 
             // MFileToolBar
             // 
             this.MFileToolBar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
@@ -1210,6 +1388,7 @@
             this.MTBNewProject.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBNewProject.Size = new System.Drawing.Size(26, 26);
             this.MTBNewProject.ToolTipText = "Create New Project";
+            this.MTBNewProject.Click += new System.EventHandler(this.NewProject);
             // 
             // MTBNewFile
             // 
@@ -1222,6 +1401,7 @@
             this.MTBNewFile.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBNewFile.Size = new System.Drawing.Size(26, 26);
             this.MTBNewFile.ToolTipText = "Create New File";
+            this.MTBNewFile.Click += new System.EventHandler(this.NewFile);
             // 
             // MTBOpen
             // 
@@ -1291,27 +1471,15 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // MDockArea
-            // 
-            this.MDockArea.ActiveAutoHideContent = null;
-            this.MDockArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.MDockArea.DefaultFloatWindowSize = new System.Drawing.Size(240, 300);
-            this.MDockArea.Location = new System.Drawing.Point(0, 28);
-            this.MDockArea.Name = "MDockArea";
-            this.MDockArea.Size = new System.Drawing.Size(992, 536);
-            this.MDockArea.TabIndex = 8;
-            // 
             // MMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(992, 585);
+            this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
-            this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MDockArea);
             this.Controls.Add(this.MFileToolBar);
@@ -1321,14 +1489,15 @@
             this.MinimumSize = new System.Drawing.Size(1008, 621);
             this.Name = "MMainWindow";
             this.Text = "Moo { + }";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppShuttingDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.MEditToolbar.ResumeLayout(false);
+            this.MEditToolbar.PerformLayout();
             this.MMiscToolbar.ResumeLayout(false);
             this.MMiscToolbar.PerformLayout();
             this.MBuilToolbar.ResumeLayout(false);
             this.MBuilToolbar.PerformLayout();
-            this.MEditToolbar.ResumeLayout(false);
-            this.MEditToolbar.PerformLayout();
             this.MFileToolBar.ResumeLayout(false);
             this.MFileToolBar.PerformLayout();
             this.ResumeLayout(false);
@@ -1372,62 +1541,62 @@
         private System.Windows.Forms.MenuItem menuItem16;
         private System.Windows.Forms.MenuItem menuItem17;
         private System.Windows.Forms.MenuItem MClearRecentFiles;
-        private System.Windows.Forms.MenuItem menuItem18;
+        private System.Windows.Forms.MenuItem MSeparator1;
         private System.Windows.Forms.MenuItem MSave;
         private System.Windows.Forms.MenuItem MSaveAs;
         private System.Windows.Forms.MenuItem MSaveAll;
         private System.Windows.Forms.MenuItem MClose;
         private System.Windows.Forms.MenuItem MCloseAll;
-        private System.Windows.Forms.MenuItem menuItem24;
+        private System.Windows.Forms.MenuItem MSeparator2;
         private System.Windows.Forms.MenuItem MPrint;
-        private System.Windows.Forms.MenuItem menuItem27;
+        private System.Windows.Forms.MenuItem MSeparator3;
         private System.Windows.Forms.MenuItem MExit;
         private System.Windows.Forms.MenuItem MNewFile;
-        private System.Windows.Forms.MenuItem menuItem36;
-        private System.Windows.Forms.MenuItem menuItem33;
+        private System.Windows.Forms.MenuItem MNewPrject;
+        private System.Windows.Forms.MenuItem MSeparator4;
         private System.Windows.Forms.MenuItem MRecentProjects;
         private System.Windows.Forms.MenuItem menuItem30;
-        private System.Windows.Forms.MenuItem menuItem31;
+        private System.Windows.Forms.MenuItem MSeparator5;
         private System.Windows.Forms.MenuItem MClearRecentProjects;
-        private System.Windows.Forms.MenuItem menuItem34;
+        private System.Windows.Forms.MenuItem MSeparator6;
         private System.Windows.Forms.MenuItem MUndo;
         private System.Windows.Forms.MenuItem MRedo;
-        private System.Windows.Forms.MenuItem menuItem39;
+        private System.Windows.Forms.MenuItem MSeparator7;
         private System.Windows.Forms.MenuItem MDelete;
-        private System.Windows.Forms.MenuItem menuItem41;
-        private System.Windows.Forms.MenuItem menuItem42;
-        private System.Windows.Forms.MenuItem menuItem43;
+        private System.Windows.Forms.MenuItem MSeparator8;
+        private System.Windows.Forms.MenuItem MSelectAll;
+        private System.Windows.Forms.MenuItem MSeparator9;
         private System.Windows.Forms.MenuItem MInsert;
         private System.Windows.Forms.MenuItem MICodeBrunch;
         private System.Windows.Forms.MenuItem MICodeSumarry;
-        private System.Windows.Forms.MenuItem menuItem49;
+        private System.Windows.Forms.MenuItem MSeparator10;
         private System.Windows.Forms.MenuItem MFoldAll;
         private System.Windows.Forms.MenuItem MUnfoldAll;
         private System.Windows.Forms.MenuItem MSearchMenu;
         private System.Windows.Forms.MenuItem MSearch;
         private System.Windows.Forms.MenuItem MFindNext;
         private System.Windows.Forms.MenuItem MFindPrevious;
-        private System.Windows.Forms.MenuItem menuItem54;
+        private System.Windows.Forms.MenuItem MSeparator13;
         private System.Windows.Forms.MenuItem MGoto;
         private System.Windows.Forms.MenuItem MSettingsMenu;
         private System.Windows.Forms.MenuItem menuItem57;
         private System.Windows.Forms.MenuItem menuItem58;
-        private System.Windows.Forms.MenuItem menuItem59;
+        private System.Windows.Forms.MenuItem MSeparator16;
         private System.Windows.Forms.MenuItem MPluginManager;
         private System.Windows.Forms.MenuItem menuItem61;
         private System.Windows.Forms.MenuItem menuItem62;
         private System.Windows.Forms.MenuItem MTipOfDay;
-        private System.Windows.Forms.MenuItem menuItem64;
+        private System.Windows.Forms.MenuItem MSeparator17;
         private System.Windows.Forms.MenuItem MReportBug;
         private System.Windows.Forms.MenuItem MPreferences;
         private System.Windows.Forms.MenuItem MEncodingAnsi;
         private System.Windows.Forms.MenuItem MEncodingUtf8;
         private System.Windows.Forms.MenuItem MBuildProject;
         private System.Windows.Forms.MenuItem MCleanProject;
-        private System.Windows.Forms.MenuItem menuItem73;
+        private System.Windows.Forms.MenuItem MSeparator14;
         private System.Windows.Forms.MenuItem MRunProject;
         private System.Windows.Forms.MenuItem MStopRunProject;
-        private System.Windows.Forms.MenuItem menuItem74;
+        private System.Windows.Forms.MenuItem MSeparator15;
         private System.Windows.Forms.MenuItem MConfigProject;
         private System.Windows.Forms.MenuItem MCBManager;
         private System.Windows.Forms.MenuItem MProjectExplorer;
@@ -1463,22 +1632,36 @@
         private System.Windows.Forms.ToolStripStatusLabel MStatusEncodingLabel;
         private System.Windows.Forms.MenuItem MFileExplorer;
         private WeifenLuo.WinFormsUI.Docking.DockPanel MDockArea;
-        private System.Windows.Forms.MenuItem menuItem1;
-        private System.Windows.Forms.MenuItem menuItem2;
-        private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem menuItem4;
-        private System.Windows.Forms.MenuItem menuItem5;
-        private System.Windows.Forms.MenuItem menuItem6;
-        private System.Windows.Forms.MenuItem menuItem7;
-        private System.Windows.Forms.MenuItem menuItem8;
-        private System.Windows.Forms.MenuItem menuItem9;
-        private System.Windows.Forms.MenuItem menuItem10;
-        private System.Windows.Forms.MenuItem menuItem11;
-        private System.Windows.Forms.MenuItem menuItem12;
-        private System.Windows.Forms.MenuItem menuItem13;
-        private System.Windows.Forms.MenuItem menuItem14;
-        private System.Windows.Forms.MenuItem menuItem15;
-        private System.Windows.Forms.MenuItem menuItem19;
+        private System.Windows.Forms.MenuItem MLanguage;
+        private System.Windows.Forms.MenuItem MASPLanguage;
+        private System.Windows.Forms.MenuItem MBatchLanguage;
+        private System.Windows.Forms.MenuItem MCsharpLanguage;
+        private System.Windows.Forms.MenuItem MCppLanguage;
+        private System.Windows.Forms.MenuItem MCssLanguage;
+        private System.Windows.Forms.MenuItem MDLanguage;
+        private System.Windows.Forms.MenuItem MHtmlLanguage;
+        private System.Windows.Forms.MenuItem MHydroLanguage;
+        private System.Windows.Forms.MenuItem MJavaLanguage;
+        private System.Windows.Forms.MenuItem MJavascriptLanguage;
+        private System.Windows.Forms.MenuItem MPascalLanguage;
+        private System.Windows.Forms.MenuItem MPhpLanguage;
+        private System.Windows.Forms.MenuItem MSqlLanguage;
+        private System.Windows.Forms.MenuItem MXmlLanguage;
+        private System.Windows.Forms.MenuItem MSeparator11;
+        private System.Windows.Forms.MenuItem MSeparator12;
+        private System.Windows.Forms.MenuItem MZoomIn;
+        private System.Windows.Forms.MenuItem MZoomOut;
+        private System.Windows.Forms.MenuItem MResetZoom;
+        private System.Windows.Forms.MenuItem MReplace;
+        private System.Windows.Forms.MenuItem MIlasmLanguage;
+        private System.Windows.Forms.MenuItem MStartPage;
+        private System.Windows.Forms.ToolStripButton MTBShowProject;
+        private System.Windows.Forms.ToolStripButton MTBShowBrunchBrowser;
+        private System.Windows.Forms.MenuItem MComment;
+        private System.Windows.Forms.MenuItem MUncomment;
+        private System.Windows.Forms.ToolStripButton MTBWhiteSapce;
+        private System.Windows.Forms.MenuItem MToUpperCase;
+        private System.Windows.Forms.MenuItem MToLowerCase;
 
 
     }

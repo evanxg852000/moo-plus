@@ -165,6 +165,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap folder {
             get {
                 object obj = ResourceManager.GetObject("folder", resourceCulture);
@@ -375,6 +382,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap tbrunchicon {
+            get {
+                object obj = ResourceManager.GetObject("tbrunchicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap undo {
             get {
                 object obj = ResourceManager.GetObject("undo", resourceCulture);
@@ -385,6 +399,13 @@ namespace Moo.Properties {
         internal static System.Drawing.Bitmap warning {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap whitespace {
+            get {
+                object obj = ResourceManager.GetObject("whitespace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

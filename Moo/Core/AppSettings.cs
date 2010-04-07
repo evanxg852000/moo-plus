@@ -25,12 +25,14 @@ namespace Moo.Core
     }
     
     [Serializable]
-    class AppSettings
+    public class AppSettings
     {
         private List<string> activeplugins;
         private List<string> recentprojects;
         private List<string> recentfiles;
-       
+        
+        [NonSerialized] //because we don't wana load with the last current project
+        private Project currentproject = null;
         private string lastworkingdir;
         private CodeEditorConfig editorconfig=null;
 
@@ -59,7 +61,12 @@ namespace Moo.Core
             get { return recentfiles;}
             set { recentfiles=value;}
         }
-        
+       
+        public Project CurrentProject
+        {
+            get { return currentproject; }
+            set { currentproject = value; }
+        }
         public string LastWorkingDir 
         {
             get { return lastworkingdir;}
@@ -109,44 +116,44 @@ namespace Moo.Core
         private   AppSettings()
         {
         
-        }        
-        public static AppSettings Load()
-        {
-            //deserialize the object to load
-            AppSettings ASObject = new AppSettings();
-            using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Read))
-            {
-                try
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    ASObject = (AppSettings)bf.Deserialize(fs);
-                }
-                catch (Exception e)
-                {
-                    //Log exception MooExceptioner.Log(e, dateTime) 
-                    e.ToString();
-                }
-            }
-            return ASObject;
         }
         public static void Save(AppSettings MooAppSettings)
-        { 
+        {
             //serialize the object to save
-            using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Write))
+            try
             {
-                try
+                using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Write))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(fs, MooAppSettings);
                 }
-                catch (Exception e)
-                {
-                    //Log exception MooExceptioner.Log(e, dateTime)
-                    e.ToString();
-                }
-            
+            }
+            catch (Exception e)
+            {
+                //Log exception MooExceptioner.Log(e, dateTime)
+                e.ToString();
             }
         }
+        public static AppSettings Load()
+        {
+            //deserialize the object to load
+            AppSettings ASObject = new AppSettings();
+            try
+            {
+                using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Read))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    ASObject = (AppSettings)bf.Deserialize(fs);
+                }
+            }
+            catch (Exception e)
+            {
+                //Log exception MooExceptioner.Log(e, dateTime) 
+                e.ToString();
+            }
+             return ASObject;    
+        }
+       
 
     }
 
