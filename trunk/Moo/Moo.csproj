@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Core\AppSettings.cs" />
     <Compile Include="Core\GlobalTypes.cs" />
+    <Compile Include="Core\Project.cs" />
     <Compile Include="FBrunchBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +98,7 @@
     <Compile Include="FProjectBrowser.Designer.cs">
       <DependentUpon>FProjectBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="LexerInitializer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -336,7 +338,19 @@
     <None Include="Resources\startpage1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <None Include="Resources\ctxtbackgroud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctxtbackgroud1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tbrunchicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whitespace.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

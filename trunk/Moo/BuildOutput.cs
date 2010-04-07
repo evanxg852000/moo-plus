@@ -16,5 +16,9 @@ namespace Moo
         {
             InitializeComponent();
         }
+        public void SetOutputContent(string content)
+        {
+            this.Content.Text = content;
+        }
     }
 }

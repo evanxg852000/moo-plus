@@ -63,7 +63,8 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox Content;
+        private System.Windows.Forms.TextBox Content;
+
 
     }
 }

@@ -69,7 +69,6 @@
             this.EditorView.Styles.Max.Size = 9F;
             this.EditorView.TabIndex = 0;
             this.EditorView.StyleNeeded += new System.EventHandler<ScintillaNet.StyleNeededEventArgs>(this.EditorView_StyleNeeded);
-            this.EditorView.ModifiedChanged += new System.EventHandler(this.EditorView_ModifiedChanged);
             this.EditorView.DocumentChange += new System.EventHandler<ScintillaNet.NativeScintillaEventArgs>(this.EditorView_DocumentChange);
             // 
             // CodeEditor
@@ -78,10 +77,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 239);
             this.Controls.Add(this.EditorView);
+            this.DockAreas = WeifenLuo.WinFormsUI.Docking.DockAreas.Document;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeEditor";
-            this.TabText = "Sample.cs *";
-            this.Text = "Sample.cs *";
             ((System.ComponentModel.ISupportInitialize)(this.EditorView)).EndInit();
             this.ResumeLayout(false);
 
