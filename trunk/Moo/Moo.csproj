@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ScintillaNet, Version=2.2.3728.39155, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dlls\ScintillaNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -329,6 +325,10 @@
     <ProjectReference Include="..\Moo.Controls\Moo.Controls.csproj">
       <Project>{079D30F4-5015-47D8-AC97-25CF47F90479}</Project>
       <Name>Moo.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScintillaNet\ScintillaNet.csproj">
+      <Project>{F9B6DABD-BBC1-4638-8CE6-A5C9506BFDCB}</Project>
+      <Name>ScintillaNet</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
