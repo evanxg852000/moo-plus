@@ -144,10 +144,7 @@ namespace Moo
         }
         public void InsertCodeSummary()
         {
-            string s=@"/// <summary> 
-                       ///                       
-                       /// </summary> 
-                     /// <param name=""ParamName"" ></param>";
+            string s = "/// <summary> \n/// \n/// </summary> \n/// <param name=\"ParamName\" ></param>";         
             Insert(s);
         }
         //view methods
@@ -204,11 +201,11 @@ namespace Moo
         }
         public void FindNext()
         {
-            this.EditorView.FindReplace.FindNext(this.EditorView.FindReplace.LastFindString);
+            this.EditorView.Commands.Execute(BindableCommand.FindNext);
         }
         public void FindPrevious()
         {
-            this.EditorView.FindReplace.FindPrevious(this.EditorView.FindReplace.LastFindString);
+            this.EditorView.Commands.Execute(BindableCommand.FindPrevious);
         }
         public void GotoLine()
         {
@@ -216,13 +213,18 @@ namespace Moo
         }
 
         //print methods
+        public void PageSetup()
+        {
+            this.EditorView.Printing.ShowPageSetupDialog();
+        }
         public void Print()
         {
             this.EditorView.Printing.Print();
         }
         public void PrintPreview()
-        {
+        {  
             this.EditorView.Printing.PrintPreview();
+            
         }
         
         //zoom methods
@@ -271,8 +273,31 @@ namespace Moo
             if (iscustomelexerinit)
                 LexerInitializer.StyleNeeded((Scintilla)sender, e.Range);
         }
-       
+        private void CloseSafely(object sender, FormClosingEventArgs e)
+        {
+            if(this.EditorView.Modified)
+            {
+                this.Save();
+                // Prompt if not saved
+                string message =String.Format( "The text in the {0} has changed.{1} Do you want to save the changes?",this.FileName,Environment.NewLine);
+                DialogResult dr = MessageBox.Show(this, message,"Moo { + }", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Cancel)
+                {
+                    // Stop closing
+                    e.Cancel = true;
+                    return;
+                }
+                else if (dr == DialogResult.Yes)
+                {
+                    // Try to save before closing
+                    e.Cancel = !this.Save();
+                    return;
+                }
+            }
+        }
     #endregion
+
+        
 
 
 

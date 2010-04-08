@@ -1,6 +1,7 @@
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\SciLexer.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.exe
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Evansofts.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll

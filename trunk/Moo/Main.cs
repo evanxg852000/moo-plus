@@ -6,9 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
 using Moo.Core;
 using WeifenLuo.WinFormsUI;
 using WeifenLuo.WinFormsUI.Docking;
+using Evansofts.Extension;
 
 namespace Moo
 {
@@ -22,6 +25,7 @@ namespace Moo
         private FFileSystBrowser MOO_FILE_SYSTBROWSER;
         private FFileSearcher MOO_FILE_SEARCHER;
         private BuildOutput MOO_BUILD_OUTPUT;
+        private List<Type> MOO_PLUGIN_LIST;
         #endregion
        
         public MMainWindow()
@@ -76,7 +80,62 @@ namespace Moo
         }
         private void LoadPlugins()
         {
+            MOO_PLUGIN_LIST = new List<Type>();
             //load plugins here
+             string PluginPath = Path.GetDirectoryName(Application.ExecutablePath)+@"\plugins\"; 
+            DirectoryInfo dirInfo = new DirectoryInfo(PluginPath);
+            FileInfo[] PluginFiles = dirInfo.GetFiles("*.dll");
+
+            foreach (FileInfo f in PluginFiles)
+            { 
+                Assembly dinamicDll = Assembly.LoadFile(f.FullName);
+                Type[] pluginDefineTypes = dinamicDll.GetTypes();
+
+                if (pluginDefineTypes.Count() != 0)
+                {
+                    foreach (Type t in pluginDefineTypes)
+                    {
+                        //check if that type is a class and iplement Iplugable
+                        if ((t.IsClass) && (t.GetInterface("Evansofts.Extension.IPlugable") != null))
+                        {
+                            //check if it does implement the Run methode 
+                            MethodInfo method = t.GetMethod("Run");
+                            if (method != null)
+                            {
+                                MenuItem mi = new MenuItem(t.Name, new EventHandler(PluginLauncher));
+                                mi.Tag = t.Name;
+                                this.MPlugins.MenuItems.Add(mi);
+                                MOO_PLUGIN_LIST.Add(t);
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+            //create
+        }
+        private void PluginLauncher(object sender, EventArgs e)
+        {
+            //the text of the menu is the class name
+            MenuItem mi = (MenuItem)sender;
+            string classname = mi.Tag.ToString();
+
+            foreach (Type t in MOO_PLUGIN_LIST)
+            {
+                if (t.Name == classname)
+                {
+                    //create an instance of objecttype
+                    object[] pinfos = new object[] { };
+                    object thepluginobject = Activator.CreateInstance(t, pinfos);
+                    object[] arguments = new object[] { "evance" };
+                    //result feedback object 
+                    object result;
+                    MethodInfo method = t.GetMethod("Run");
+                    result = method.Invoke(thepluginobject, arguments);
+                }
+            }
         }
         private List<CodeEditor> GetCodeEditors()
         {
@@ -108,7 +167,7 @@ namespace Moo
         private void NewFile(object sender, EventArgs e)
         {
             //startpage
-            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, "C:\\samples\\helloworld.java");
+            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, "C:\\sample\\helloworld.java");
             MCED.Show(MDockArea);
             MCED.DockState = DockState.Document;
             MCED.SetLanguage("php");
@@ -116,6 +175,48 @@ namespace Moo
         private void NewProject(object sender, EventArgs e)
         {
             //new project code 
+        }
+        private void SaveCurrentEditor(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Save();
+            }
+        }
+        private void SaveAll(object sender, EventArgs e)
+        {
+            List<CodeEditor> listeditors = this.GetCodeEditors();
+            foreach (CodeEditor ce in listeditors)
+            {
+                ce.Save();
+            } 
+        }
+        private void CloseCurrentEditor(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Close();
+            }
+        }
+        private void CloseAll(object sender, EventArgs e)
+        {
+            List<CodeEditor> listeditors = this.GetCodeEditors();
+            foreach (CodeEditor ce in listeditors)
+            {
+                ce.Close();
+            } 
+        }
+
+        
+        private void PrintSetup(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.PageSetup();
+            }
         }
         private void PrintCode(object sender, EventArgs e)
         {
@@ -125,7 +226,14 @@ namespace Moo
                 ce.Print();
             }
         }
-       
+        private void PrintPrevious(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.PrintPreview();
+            }
+        }
         //edit menu Handlers
         private void UndoPreviousAction(object sender, EventArgs e)
         {
@@ -183,6 +291,25 @@ namespace Moo
                 ce.SelectAll();
             }
         }
+        private void InsertCodeSumarry(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.InsertCodeSummary();
+            }
+        }
+        private void InsertCodeBrunch(object sender, EventArgs e)
+        {
+            //show code brunch dialog
+            //get content and 
+            string content = "to be writtent";
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.InsertCodeBrunch(content);
+            }
+        }
         private void CommentBlock(object sender, EventArgs e)
         {
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
@@ -232,7 +359,6 @@ namespace Moo
             }
         }
 
-
         //view menu handlers (the remaining is define in toolbar section)
         private void SetCodeLanguage(object sender, EventArgs e)
         {
@@ -275,7 +401,49 @@ namespace Moo
                 ce.ResetZoom();
             }  
         }
-        
+
+        //Search menu
+        private void SearchDialog(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Search();
+            }
+        }
+        private void ReplaceDialog(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Replace();
+            }
+        }
+        private void FindNext(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.FindNext();
+            }
+        }
+        private void FindPrevious(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.FindPrevious();
+            }
+        }
+        private void GotoLine(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.GotoLine();
+            }
+        }
+
         
         //toolbar
         private void ShowEndLine(object sender, EventArgs e)
@@ -472,8 +640,6 @@ namespace Moo
             }
         }
         
-       
-
 
         private void AppShuttingDown(object sender, FormClosingEventArgs e)
         {
@@ -486,6 +652,13 @@ namespace Moo
        
         
         #endregion
+
+        
+       
+        
+
+        
+
 
        
         

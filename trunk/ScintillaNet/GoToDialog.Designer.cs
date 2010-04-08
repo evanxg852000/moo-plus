@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoToDialog));
             this.lblCurrentLine = new System.Windows.Forms.Label();
             this.txtCurrentLine = new System.Windows.Forms.TextBox();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
@@ -55,7 +56,7 @@
             this.txtCurrentLine.Location = new System.Drawing.Point(132, 8);
             this.txtCurrentLine.Name = "txtCurrentLine";
             this.txtCurrentLine.ReadOnly = true;
-            this.txtCurrentLine.Size = new System.Drawing.Size(63, 21);
+            this.txtCurrentLine.Size = new System.Drawing.Size(81, 21);
             this.txtCurrentLine.TabIndex = 1;
             // 
             // err
@@ -67,7 +68,7 @@
             this.txtMaxLine.Location = new System.Drawing.Point(132, 33);
             this.txtMaxLine.Name = "txtMaxLine";
             this.txtMaxLine.ReadOnly = true;
-            this.txtMaxLine.Size = new System.Drawing.Size(63, 21);
+            this.txtMaxLine.Size = new System.Drawing.Size(81, 21);
             this.txtMaxLine.TabIndex = 3;
             // 
             // lblMaxLine
@@ -83,7 +84,7 @@
             // 
             this.txtGotoLine.Location = new System.Drawing.Point(132, 58);
             this.txtGotoLine.Name = "txtGotoLine";
-            this.txtGotoLine.Size = new System.Drawing.Size(63, 21);
+            this.txtGotoLine.Size = new System.Drawing.Size(81, 21);
             this.txtGotoLine.TabIndex = 5;
             // 
             // lblGotoLine
@@ -97,7 +98,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(39, 85);
+            this.btnOK.Location = new System.Drawing.Point(61, 94);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
@@ -108,7 +109,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(120, 85);
+            this.btnCancel.Location = new System.Drawing.Point(160, 94);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -121,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(225, 113);
+            this.ClientSize = new System.Drawing.Size(247, 126);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtGotoLine);
@@ -132,6 +133,7 @@
             this.Controls.Add(this.lblCurrentLine);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GoToDialog";
