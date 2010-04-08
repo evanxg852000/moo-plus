@@ -115,7 +115,7 @@ namespace Moo.Core
 
         private   AppSettings()
         {
-        
+            //just default constructor
         }
         public static void Save(AppSettings MooAppSettings)
         {
@@ -128,11 +128,7 @@ namespace Moo.Core
                     bf.Serialize(fs, MooAppSettings);
                 }
             }
-            catch (Exception e)
-            {
-                //Log exception MooExceptioner.Log(e, dateTime)
-                e.ToString();
-            }
+            catch (Exception e) { Exceptioner.Log(e); }
         }
         public static AppSettings Load()
         {
@@ -146,12 +142,8 @@ namespace Moo.Core
                     ASObject = (AppSettings)bf.Deserialize(fs);
                 }
             }
-            catch (Exception e)
-            {
-                //Log exception MooExceptioner.Log(e, dateTime) 
-                e.ToString();
-            }
-             return ASObject;    
+            catch (Exception e) { Exceptioner.Log(e); }
+            return ASObject;    
         }
        
 

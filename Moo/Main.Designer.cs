@@ -49,14 +49,14 @@
             this.MPrint = new System.Windows.Forms.MenuItem();
             this.MSeparator3 = new System.Windows.Forms.MenuItem();
             this.MRecentFiles = new System.Windows.Forms.MenuItem();
-            this.menuItem16 = new System.Windows.Forms.MenuItem();
-            this.menuItem17 = new System.Windows.Forms.MenuItem();
-            this.MSeparator4 = new System.Windows.Forms.MenuItem();
             this.MClearRecentFiles = new System.Windows.Forms.MenuItem();
+            this.MSeparator4 = new System.Windows.Forms.MenuItem();
+            this.menuItem17 = new System.Windows.Forms.MenuItem();
+            this.menuItem16 = new System.Windows.Forms.MenuItem();
             this.MRecentProjects = new System.Windows.Forms.MenuItem();
-            this.menuItem30 = new System.Windows.Forms.MenuItem();
-            this.MSeparator5 = new System.Windows.Forms.MenuItem();
             this.MClearRecentProjects = new System.Windows.Forms.MenuItem();
+            this.MSeparator5 = new System.Windows.Forms.MenuItem();
+            this.menuItem30 = new System.Windows.Forms.MenuItem();
             this.MSeparator6 = new System.Windows.Forms.MenuItem();
             this.MExit = new System.Windows.Forms.MenuItem();
             this.MEditMenu = new System.Windows.Forms.MenuItem();
@@ -128,8 +128,8 @@
             this.MEncodingUtf8 = new System.Windows.Forms.MenuItem();
             this.MToolsMenu = new System.Windows.Forms.MenuItem();
             this.MPlugins = new System.Windows.Forms.MenuItem();
-            this.MSeparator16 = new System.Windows.Forms.MenuItem();
             this.MPluginManager = new System.Windows.Forms.MenuItem();
+            this.MSeparator16 = new System.Windows.Forms.MenuItem();
             this.MSvn = new System.Windows.Forms.MenuItem();
             this.menuItem61 = new System.Windows.Forms.MenuItem();
             this.menuItem62 = new System.Windows.Forms.MenuItem();
@@ -334,25 +334,25 @@
             this.menuItem16});
             this.MRecentFiles.Text = "Recents Files";
             // 
-            // menuItem16
+            // MClearRecentFiles
             // 
-            this.menuItem16.Index = 3;
-            this.menuItem16.Text = "Sample.txt";
-            // 
-            // menuItem17
-            // 
-            this.menuItem17.Index = 2;
-            this.menuItem17.Text = "Main.cpp";
+            this.MClearRecentFiles.Index = 0;
+            this.MClearRecentFiles.Text = "Clear...";
             // 
             // MSeparator4
             // 
             this.MSeparator4.Index = 1;
             this.MSeparator4.Text = "-";
             // 
-            // MClearRecentFiles
+            // menuItem17
             // 
-            this.MClearRecentFiles.Index = 0;
-            this.MClearRecentFiles.Text = "Clear...";
+            this.menuItem17.Index = 2;
+            this.menuItem17.Text = "Main.cpp";
+            // 
+            // menuItem16
+            // 
+            this.menuItem16.Index = 3;
+            this.menuItem16.Text = "Sample.txt";
             // 
             // MRecentProjects
             // 
@@ -363,20 +363,20 @@
             this.menuItem30});
             this.MRecentProjects.Text = "Recents Projects";
             // 
-            // menuItem30
+            // MClearRecentProjects
             // 
-            this.menuItem30.Index = 2;
-            this.menuItem30.Text = "Mypro.pro";
+            this.MClearRecentProjects.Index = 0;
+            this.MClearRecentProjects.Text = "Clear...";
             // 
             // MSeparator5
             // 
             this.MSeparator5.Index = 1;
             this.MSeparator5.Text = "-";
             // 
-            // MClearRecentProjects
+            // menuItem30
             // 
-            this.MClearRecentProjects.Index = 0;
-            this.MClearRecentProjects.Text = "Clear...";
+            this.menuItem30.Index = 2;
+            this.menuItem30.Text = "Mypro.pro";
             // 
             // MSeparator6
             // 
@@ -887,15 +887,15 @@
             this.MSeparator16});
             this.MPlugins.Text = "Plugins";
             // 
-            // MSeparator16
-            // 
-            this.MSeparator16.Index = 1;
-            this.MSeparator16.Text = "-";
-            // 
             // MPluginManager
             // 
             this.MPluginManager.Index = 0;
             this.MPluginManager.Text = "Plugin Manager";
+            // 
+            // MSeparator16
+            // 
+            this.MSeparator16.Index = 1;
+            this.MSeparator16.Text = "-";
             // 
             // MSvn
             // 

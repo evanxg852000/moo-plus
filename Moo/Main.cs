@@ -159,7 +159,9 @@ namespace Moo
             MCED.Show(MDockArea);
             MCED.DockState = DockState.Document;
             MCED.SetLanguage("cs");
+           
 
+            
         }
 
         #region Menu Event Handlers
