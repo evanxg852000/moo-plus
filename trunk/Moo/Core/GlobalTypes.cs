@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Moo.Core
 {
-    enum ProjectType
+   public enum ProjectCategory
     {
         Csharp=0 ,
         Java,

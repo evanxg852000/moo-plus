@@ -72,6 +72,7 @@
       <DependentUpon>CodeEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\AppSettings.cs" />
+    <Compile Include="Core\Exceptioner.cs" />
     <Compile Include="Core\GlobalTypes.cs" />
     <Compile Include="Core\Project.cs" />
     <Compile Include="FBrunchBrowser.cs">
@@ -355,6 +356,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\whitespace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

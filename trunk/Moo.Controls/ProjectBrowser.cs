@@ -19,19 +19,16 @@ namespace Moo.Controls
         {
             InitializeComponent();
         }
-
         public override void Refresh()
         {
             this.Nodes.Clear();
             BuildNodes(this.projectfolder,this.projectfile,this.projectname);
             this.ExpandAll();
         }
-
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
         }
-
         public void BuildNodes(string pfolder, string pfile,string pname)
         {
             this.projectfolder = pfolder;
@@ -58,8 +55,7 @@ namespace Moo.Controls
             this.ExpandAll();
             //add handler
             this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);       
-        }
-        
+        }       
         private void ScanDir(string dirpath, TreeNode  parent)
         {
             
@@ -97,8 +93,7 @@ namespace Moo.Controls
                 //be sillent
             }
             parent.ExpandAll();
-        }
-   
+        }  
         void ProjectBrowser_DoubleClick(object sender, EventArgs e)
         {
            bool isfile= Path.HasExtension(this.SelectedNode.Tag.ToString());
