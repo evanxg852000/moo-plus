@@ -44,6 +44,8 @@
             this.MClose = new System.Windows.Forms.MenuItem();
             this.MCloseAll = new System.Windows.Forms.MenuItem();
             this.MSeparator2 = new System.Windows.Forms.MenuItem();
+            this.MPageSetup = new System.Windows.Forms.MenuItem();
+            this.MPrintPreview = new System.Windows.Forms.MenuItem();
             this.MPrint = new System.Windows.Forms.MenuItem();
             this.MSeparator3 = new System.Windows.Forms.MenuItem();
             this.MRecentFiles = new System.Windows.Forms.MenuItem();
@@ -126,8 +128,6 @@
             this.MEncodingUtf8 = new System.Windows.Forms.MenuItem();
             this.MToolsMenu = new System.Windows.Forms.MenuItem();
             this.MPlugins = new System.Windows.Forms.MenuItem();
-            this.menuItem57 = new System.Windows.Forms.MenuItem();
-            this.menuItem58 = new System.Windows.Forms.MenuItem();
             this.MSeparator16 = new System.Windows.Forms.MenuItem();
             this.MPluginManager = new System.Windows.Forms.MenuItem();
             this.MSvn = new System.Windows.Forms.MenuItem();
@@ -219,6 +219,8 @@
             this.MClose,
             this.MCloseAll,
             this.MSeparator2,
+            this.MPageSetup,
+            this.MPrintPreview,
             this.MPrint,
             this.MSeparator3,
             this.MRecentFiles,
@@ -268,6 +270,7 @@
             this.MSave.Index = 4;
             this.MSave.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
             this.MSave.Text = "&Save";
+            this.MSave.Click += new System.EventHandler(this.SaveCurrentEditor);
             // 
             // MSaveAs
             // 
@@ -278,76 +281,91 @@
             // 
             this.MSaveAll.Index = 6;
             this.MSaveAll.Text = "Save All";
+            this.MSaveAll.Click += new System.EventHandler(this.SaveAll);
             // 
             // MClose
             // 
             this.MClose.Index = 7;
             this.MClose.Shortcut = System.Windows.Forms.Shortcut.CtrlW;
             this.MClose.Text = "Close";
+            this.MClose.Click += new System.EventHandler(this.CloseCurrentEditor);
             // 
             // MCloseAll
             // 
             this.MCloseAll.Index = 8;
             this.MCloseAll.Text = "Close All";
+            this.MCloseAll.Click += new System.EventHandler(this.CloseAll);
             // 
             // MSeparator2
             // 
             this.MSeparator2.Index = 9;
             this.MSeparator2.Text = "-";
             // 
+            // MPageSetup
+            // 
+            this.MPageSetup.Index = 10;
+            this.MPageSetup.Text = "Page Setup";
+            this.MPageSetup.Click += new System.EventHandler(this.PrintSetup);
+            // 
+            // MPrintPreview
+            // 
+            this.MPrintPreview.Index = 11;
+            this.MPrintPreview.Text = "Print Preview";
+            this.MPrintPreview.Click += new System.EventHandler(this.PrintPrevious);
+            // 
             // MPrint
             // 
-            this.MPrint.Index = 10;
+            this.MPrint.Index = 12;
             this.MPrint.Text = "Print";
             this.MPrint.Click += new System.EventHandler(this.PrintCode);
             // 
             // MSeparator3
             // 
-            this.MSeparator3.Index = 11;
+            this.MSeparator3.Index = 13;
             this.MSeparator3.Text = "-";
             // 
             // MRecentFiles
             // 
-            this.MRecentFiles.Index = 12;
+            this.MRecentFiles.Index = 14;
             this.MRecentFiles.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem16,
-            this.menuItem17,
+            this.MClearRecentFiles,
             this.MSeparator4,
-            this.MClearRecentFiles});
+            this.menuItem17,
+            this.menuItem16});
             this.MRecentFiles.Text = "Recents Files";
             // 
             // menuItem16
             // 
-            this.menuItem16.Index = 0;
+            this.menuItem16.Index = 3;
             this.menuItem16.Text = "Sample.txt";
             // 
             // menuItem17
             // 
-            this.menuItem17.Index = 1;
+            this.menuItem17.Index = 2;
             this.menuItem17.Text = "Main.cpp";
             // 
             // MSeparator4
             // 
-            this.MSeparator4.Index = 2;
+            this.MSeparator4.Index = 1;
             this.MSeparator4.Text = "-";
             // 
             // MClearRecentFiles
             // 
-            this.MClearRecentFiles.Index = 3;
+            this.MClearRecentFiles.Index = 0;
             this.MClearRecentFiles.Text = "Clear...";
             // 
             // MRecentProjects
             // 
-            this.MRecentProjects.Index = 13;
+            this.MRecentProjects.Index = 15;
             this.MRecentProjects.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem30,
+            this.MClearRecentProjects,
             this.MSeparator5,
-            this.MClearRecentProjects});
+            this.menuItem30});
             this.MRecentProjects.Text = "Recents Projects";
             // 
             // menuItem30
             // 
-            this.menuItem30.Index = 0;
+            this.menuItem30.Index = 2;
             this.menuItem30.Text = "Mypro.pro";
             // 
             // MSeparator5
@@ -357,17 +375,17 @@
             // 
             // MClearRecentProjects
             // 
-            this.MClearRecentProjects.Index = 2;
+            this.MClearRecentProjects.Index = 0;
             this.MClearRecentProjects.Text = "Clear...";
             // 
             // MSeparator6
             // 
-            this.MSeparator6.Index = 14;
+            this.MSeparator6.Index = 16;
             this.MSeparator6.Text = "-";
             // 
             // MExit
             // 
-            this.MExit.Index = 15;
+            this.MExit.Index = 17;
             this.MExit.Text = "Exit";
             this.MExit.Click += new System.EventHandler(this.ExitApplication);
             // 
@@ -472,12 +490,14 @@
             this.MICodeBrunch.Index = 0;
             this.MICodeBrunch.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftB;
             this.MICodeBrunch.Text = "Code Brunch";
+            this.MICodeBrunch.Click += new System.EventHandler(this.InsertCodeBrunch);
             // 
             // MICodeSumarry
             // 
             this.MICodeSumarry.Index = 1;
             this.MICodeSumarry.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
             this.MICodeSumarry.Text = "Code Summary";
+            this.MICodeSumarry.Click += new System.EventHandler(this.InsertCodeSumarry);
             // 
             // MComment
             // 
@@ -741,23 +761,27 @@
             this.MSearch.Index = 0;
             this.MSearch.Shortcut = System.Windows.Forms.Shortcut.CtrlF;
             this.MSearch.Text = "Search";
+            this.MSearch.Click += new System.EventHandler(this.SearchDialog);
             // 
             // MReplace
             // 
             this.MReplace.Index = 1;
             this.MReplace.Text = "Replace";
+            this.MReplace.Click += new System.EventHandler(this.ReplaceDialog);
             // 
             // MFindNext
             // 
             this.MFindNext.Index = 2;
             this.MFindNext.Shortcut = System.Windows.Forms.Shortcut.F3;
             this.MFindNext.Text = "Find Next";
+            this.MFindNext.Click += new System.EventHandler(this.FindNext);
             // 
             // MFindPrevious
             // 
             this.MFindPrevious.Index = 3;
             this.MFindPrevious.Shortcut = System.Windows.Forms.Shortcut.ShiftF3;
             this.MFindPrevious.Text = "Find Previous";
+            this.MFindPrevious.Click += new System.EventHandler(this.FindPrevious);
             // 
             // MSeparator13
             // 
@@ -769,6 +793,7 @@
             this.MGoto.Index = 5;
             this.MGoto.Shortcut = System.Windows.Forms.Shortcut.CtrlG;
             this.MGoto.Text = "Go to Line...";
+            this.MGoto.Click += new System.EventHandler(this.GotoLine);
             // 
             // MProjectMenu
             // 
@@ -858,30 +883,18 @@
             // 
             this.MPlugins.Index = 0;
             this.MPlugins.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem57,
-            this.menuItem58,
-            this.MSeparator16,
-            this.MPluginManager});
+            this.MPluginManager,
+            this.MSeparator16});
             this.MPlugins.Text = "Plugins";
-            // 
-            // menuItem57
-            // 
-            this.menuItem57.Index = 0;
-            this.menuItem57.Text = "Sample";
-            // 
-            // menuItem58
-            // 
-            this.menuItem58.Index = 1;
-            this.menuItem58.Text = "Class Gen";
             // 
             // MSeparator16
             // 
-            this.MSeparator16.Index = 2;
+            this.MSeparator16.Index = 1;
             this.MSeparator16.Text = "-";
             // 
             // MPluginManager
             // 
-            this.MPluginManager.Index = 3;
+            this.MPluginManager.Index = 0;
             this.MPluginManager.Text = "Plugin Manager";
             // 
             // MSvn
@@ -1053,6 +1066,7 @@
             this.MTUndo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTUndo.Size = new System.Drawing.Size(26, 26);
             this.MTUndo.ToolTipText = "Undo Previous Action";
+            this.MTUndo.Click += new System.EventHandler(this.UndoPreviousAction);
             // 
             // MTBRedo
             // 
@@ -1065,6 +1079,7 @@
             this.MTBRedo.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBRedo.Size = new System.Drawing.Size(26, 26);
             this.MTBRedo.ToolTipText = "Redo Previous Action";
+            this.MTBRedo.Click += new System.EventHandler(this.RedoPreviousAction);
             // 
             // MTBCut
             // 
@@ -1077,6 +1092,7 @@
             this.MTBCut.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBCut.Size = new System.Drawing.Size(26, 26);
             this.MTBCut.ToolTipText = "Cut";
+            this.MTBCut.Click += new System.EventHandler(this.CutSelection);
             // 
             // MTBCopy
             // 
@@ -1089,6 +1105,7 @@
             this.MTBCopy.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBCopy.Size = new System.Drawing.Size(26, 26);
             this.MTBCopy.ToolTipText = "Copy";
+            this.MTBCopy.Click += new System.EventHandler(this.CopySelection);
             // 
             // MTBPaste
             // 
@@ -1101,6 +1118,7 @@
             this.MTBPaste.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBPaste.Size = new System.Drawing.Size(26, 26);
             this.MTBPaste.ToolTipText = "Paste";
+            this.MTBPaste.Click += new System.EventHandler(this.PasteSelection);
             // 
             // MTBEndline
             // 
@@ -1135,6 +1153,7 @@
             this.MTBFind.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBFind.Size = new System.Drawing.Size(26, 26);
             this.MTBFind.ToolTipText = "Find ...";
+            this.MTBFind.Click += new System.EventHandler(this.SearchDialog);
             // 
             // MTBReplace
             // 
@@ -1144,6 +1163,7 @@
             this.MTBReplace.Name = "MTBReplace";
             this.MTBReplace.Size = new System.Drawing.Size(23, 25);
             this.MTBReplace.ToolTipText = "Replace...";
+            this.MTBReplace.Click += new System.EventHandler(this.ReplaceDialog);
             // 
             // MTBZoomIn
             // 
@@ -1439,6 +1459,7 @@
             this.MTBSave.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBSave.Size = new System.Drawing.Size(26, 26);
             this.MTBSave.ToolTipText = "Save Curent File";
+            this.MTBSave.Click += new System.EventHandler(this.SaveCurrentEditor);
             // 
             // MTBSaveAll
             // 
@@ -1451,6 +1472,7 @@
             this.MTBSaveAll.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBSaveAll.Size = new System.Drawing.Size(26, 26);
             this.MTBSaveAll.ToolTipText = "Save All";
+            this.MTBSaveAll.Click += new System.EventHandler(this.SaveAll);
             // 
             // MTBCloseCurentFile
             // 
@@ -1463,6 +1485,7 @@
             this.MTBCloseCurentFile.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBCloseCurentFile.Size = new System.Drawing.Size(26, 26);
             this.MTBCloseCurentFile.ToolTipText = "Close Current File";
+            this.MTBCloseCurentFile.Click += new System.EventHandler(this.CloseCurrentEditor);
             // 
             // openToolStripButton
             // 
@@ -1592,8 +1615,6 @@
         private System.Windows.Forms.MenuItem MSeparator13;
         private System.Windows.Forms.MenuItem MGoto;
         private System.Windows.Forms.MenuItem MSettingsMenu;
-        private System.Windows.Forms.MenuItem menuItem57;
-        private System.Windows.Forms.MenuItem menuItem58;
         private System.Windows.Forms.MenuItem MSeparator16;
         private System.Windows.Forms.MenuItem MPluginManager;
         private System.Windows.Forms.MenuItem menuItem61;
@@ -1675,6 +1696,8 @@
         private System.Windows.Forms.ToolStripButton MTBWhiteSapce;
         private System.Windows.Forms.MenuItem MToUpperCase;
         private System.Windows.Forms.MenuItem MToLowerCase;
+        private System.Windows.Forms.MenuItem MPrintPreview;
+        private System.Windows.Forms.MenuItem MPageSetup;
 
 
     }

@@ -56,7 +56,7 @@ namespace ScintillaNet
 		{
 			PrintPreviewDialog ppd = new PrintPreviewDialog();
 			ppd.WindowState = FormWindowState.Maximized;
-
+            ppd.ShowIcon = false;
 			ppd.Document = _printDocument;
 			return ppd.ShowDialog();
 		}
