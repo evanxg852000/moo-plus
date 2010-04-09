@@ -14,8 +14,13 @@ using ScintillaNet;
 
 namespace Moo
 {
+   
+    public delegate void CaretPositionHandler(int line, int col);
+
     public partial class CodeEditor : DockContent
     {
+        
+        public event CaretPositionHandler CaretPositionChanged;
         private int LineMarginWidth = 20;
         private string filepath;
         private string filename;
@@ -295,8 +300,27 @@ namespace Moo
                 }
             }
         }
+        private void CaretPositionChangedEmiter(object sender, EventArgs e)
+        {
+            //fire the event
+            if (CaretPositionChanged != null)
+            {
+                try
+                {
+                    CaretPositionChanged(this.EditorView.Caret.LineNumber, this.EditorView.Caret.Position);
+                }
+                catch
+                {
+                    //do nothing
+                }
+            }
+        }
     #endregion
 
+   
+        
+
+       
         
 
 

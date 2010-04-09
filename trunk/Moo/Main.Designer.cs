@@ -989,15 +989,15 @@
             // 
             this.MStatusLineLabel.Name = "MStatusLineLabel";
             this.MStatusLineLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.MStatusLineLabel.Size = new System.Drawing.Size(44, 17);
-            this.MStatusLineLabel.Text = "Ln: 45";
+            this.MStatusLineLabel.Size = new System.Drawing.Size(38, 17);
+            this.MStatusLineLabel.Text = "Ln: 0";
             // 
             // MStatusColumnLabel
             // 
             this.MStatusColumnLabel.Name = "MStatusColumnLabel";
             this.MStatusColumnLabel.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.MStatusColumnLabel.Size = new System.Drawing.Size(36, 17);
-            this.MStatusColumnLabel.Text = "Cl: 3";
+            this.MStatusColumnLabel.Text = "Cl: 0";
             // 
             // MStatusEncodingLabel
             // 
