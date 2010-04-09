@@ -17,23 +17,19 @@ namespace Moo.Controls
             get { return rootfolder; }
             set { rootfolder = value; }
         }
-
         public BrunchBrowser()
         {
             InitializeComponent();
         }
-
         public override void Refresh()
         {
             BuildNodes();
             this.CollapseAll();
         }
-
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
-        }
-        
+        }        
         public void BuildNodes()
         {
             //building the root node 
@@ -80,7 +76,6 @@ namespace Moo.Controls
             this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
 
         }
-
         void BrunchBrowser_DoubleClick(object sender, EventArgs e)
         {  
             if (this.SelectedNode.Level == 2)

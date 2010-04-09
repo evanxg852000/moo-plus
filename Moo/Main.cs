@@ -159,20 +159,24 @@ namespace Moo
             MCED.Show(MDockArea);
             MCED.DockState = DockState.Document;
             MCED.SetLanguage("cs");
-           
+            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
 
             
         }
+          
 
         #region Menu Event Handlers
         //file menu handlers
         private void NewFile(object sender, EventArgs e)
         {
             //startpage
+            Moo.Dialogs.NewProFileDialog nd = new Moo.Dialogs.NewProFileDialog();
+            nd.ShowDialog();
             CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, "C:\\sample\\helloworld.java");
             MCED.Show(MDockArea);
             MCED.DockState = DockState.Document;
             MCED.SetLanguage("php");
+            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
         }
         private void NewProject(object sender, EventArgs e)
         {
@@ -652,6 +656,12 @@ namespace Moo
             Application.Exit();
         }
        
+        //window updaters
+        private void UpdateSatutsLineColumn(int line, int col)
+        {
+            this.MStatusLineLabel.Text = "Ln : " + line.ToString();
+            this.MStatusColumnLabel.Text = "Col : " + col.ToString();
+        }
         
         #endregion
 

@@ -68,6 +68,7 @@
             this.EditorView.Styles.Max.FontName = "Verdana";
             this.EditorView.Styles.Max.Size = 9F;
             this.EditorView.TabIndex = 0;
+            this.EditorView.TextChanged += new System.EventHandler<System.EventArgs>(this.CaretPositionChangedEmiter);
             this.EditorView.StyleNeeded += new System.EventHandler<ScintillaNet.StyleNeededEventArgs>(this.EditorView_StyleNeeded);
             this.EditorView.DocumentChange += new System.EventHandler<ScintillaNet.NativeScintillaEventArgs>(this.EditorView_DocumentChange);
             // 
