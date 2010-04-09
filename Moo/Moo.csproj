@@ -106,6 +106,7 @@
       <DependentUpon>FProjectBrowser.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\MiscHelper.cs" />
     <Compile Include="LexerInitializer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

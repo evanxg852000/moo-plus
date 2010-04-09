@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Moo.Core;
+using Moo.Helpers;
 using WeifenLuo.WinFormsUI;
 using WeifenLuo.WinFormsUI.Docking;
 using Evansofts.Extension;
@@ -66,7 +67,6 @@ namespace Moo
 
             //creating buildoutput window
             MOO_BUILD_OUTPUT = new BuildOutput();
-           // MOO_BUILD_OUTPUT.SetC "some log out put";
             MOO_BUILD_OUTPUT.Show(MDockArea);
             MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide;    
         }
@@ -154,14 +154,8 @@ namespace Moo
         //just for test to be deleted 
         public void test()
         {
-            //startpage
-            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, "C:\\samples\\helloworld.cs");
-            MCED.Show(MDockArea);
-            MCED.DockState = DockState.Document;
-            MCED.SetLanguage("cs");
-            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
 
-            
+            MOO_BUILD_OUTPUT.SetOutputContent("some log out put");
         }
           
 
@@ -169,14 +163,20 @@ namespace Moo
         //file menu handlers
         private void NewFile(object sender, EventArgs e)
         {
-            //startpage
-            Moo.Dialogs.NewProFileDialog nd = new Moo.Dialogs.NewProFileDialog();
-            nd.ShowDialog();
-            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, "C:\\sample\\helloworld.java");
-            MCED.Show(MDockArea);
-            MCED.DockState = DockState.Document;
-            MCED.SetLanguage("php");
-            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+            //open the new dialog
+            Moo.Dialogs.NewProFileDialog newdialog = new Moo.Dialogs.NewProFileDialog("FILE");
+            if (newdialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileExtention=Moo.Helpers.MiscHelper.GetFileExtention(newdialog.RType);
+                string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(newdialog.RType);
+                string filename = newdialog.RFolder +@"\"+ newdialog.RName + fileExtention;
+                
+                CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
+                MCED.SetLanguage(fileLanguage);
+                MCED.Show(MDockArea);
+                MCED.DockState = DockState.Document;
+                MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);   
+            }  
         }
         private void NewProject(object sender, EventArgs e)
         {
