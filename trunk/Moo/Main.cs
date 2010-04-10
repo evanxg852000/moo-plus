@@ -45,7 +45,7 @@ namespace Moo
             MOO_START_PAGE.Show(MDockArea);
             MOO_START_PAGE.DockState = DockState.Document;
             MOO_START_PAGE.NewProjectRequested += new NewProjectRequestHandler(NewProject);
-           // MOO_PROJECT_BROWSER.OpenProjectRequested +=new OpenProjectRequestHandler(OpenProject);
+            MOO_START_PAGE.OpenProjectRequested += new OpenProjectRequestHandler(OpenPrjectFile);
 
             //project Browser
             MOO_PROJECT_BROWSER = new FProjectBrowser();
@@ -53,6 +53,7 @@ namespace Moo
             MOO_PROJECT_BROWSER.DockState = DockState.DockLeftAutoHide;
             MOO_PROJECT_BROWSER.NewProjectRequested +=new NewProjectRequestHandler(NewProject);
             MOO_PROJECT_BROWSER.NewFileRequested +=new NewFileRequestHandler(NewFile);
+            MOO_PROJECT_BROWSER.OpenProjectRequested += new OpenProjectRequestHandler(OpenPrjectFile);
 
             //brunch Browser
             MOO_BRUNCH_BROWSER = new FBrunchBrowser();
@@ -179,7 +180,7 @@ namespace Moo
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
                 string fileExtention=Moo.Helpers.MiscHelper.GetFileExtention(newdialog.RType);
-                string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(newdialog.RType);
+                string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileExtention);
                 string filename = newdialog.RFolder +@"\"+ newdialog.RName + fileExtention;
                 
                 CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
@@ -204,12 +205,63 @@ namespace Moo
                 MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
             }  
         }
+        private void OpenPrjectFile(object sender, EventArgs e)
+        {
+            string filter = "All files (*.*)|*.*|Moo Project (*.mpr)|*.mpr|Text file (*.txt)|*.txt|Html file ((*.html))|*.html|Xml file(*.xml)|*.xml";
+            //we check if the sender was a (StartPage) or a (FProjectBrowser) to restrict for only project file
+            //because those components can only send project open event
+            if ((sender.GetType() == typeof(StartPage)) || (sender.GetType() == typeof(FProjectBrowser)))
+            {
+                filter ="Moo Project (*.mpr)|*.mpr";
+            } 
+            string lastworkingdir = @"C:\";
+            string openfilepath;
+            string openfilename;
+            string openfilecontent = FileHelper.GetContent(filter, lastworkingdir, out openfilepath, out openfilename);
+            string openfileextesion = Path.GetExtension(openfilepath);
+            if (openfilepath != String.Empty)
+            {
+                if (openfileextesion == ".mpr")
+                {
+                    //deal with project
+
+
+                }
+                else 
+                {
+                    //deal with file
+                    string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
+                    CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
+                    MCED.SetLanguage(fileLanguage);
+                    MCED.SetContent(openfilecontent);
+                    MCED.Show(MDockArea);
+                    MCED.DockState = DockState.Document;
+                    MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+                }
+            }
+        }      
+        private void ReloadCurrentEditor(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.Reload();
+            }
+        }
         private void SaveCurrentEditor(object sender, EventArgs e)
         {
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
             {
                 CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
                 ce.Save();
+            }
+        }
+        private void SaveAs(object sender, EventArgs e)
+        {
+            if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
+            {
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
+                ce.SaveAs();
             }
         }
         private void SaveAll(object sender, EventArgs e)
@@ -694,20 +746,8 @@ namespace Moo
         
         #endregion
 
-       
-       
         
-
-        
-
-
-       
-        
-
-        
-
-        
-        
+             
         
        
     }

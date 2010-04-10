@@ -27,7 +27,7 @@ namespace Moo
             {
                 try
                 {
-                    NewProjectRequested(sender,e);
+                    NewProjectRequested(this,e);
                 }
                 catch
                 {
@@ -41,7 +41,7 @@ namespace Moo
             {
                 try
                 {
-                    OpenProjectRequested(sender,e);
+                    OpenProjectRequested(this,e);
                 }
                 catch
                 {
