@@ -60,6 +60,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap aboutpage {
+            get {
+                object obj = ResourceManager.GetObject("aboutpage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bmrk_add {
             get {
                 object obj = ResourceManager.GetObject("bmrk_add", resourceCulture);

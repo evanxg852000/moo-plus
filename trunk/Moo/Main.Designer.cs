@@ -957,6 +957,7 @@
             this.MContent.Index = 4;
             this.MContent.Shortcut = System.Windows.Forms.Shortcut.F1;
             this.MContent.Text = "&About";
+            this.MContent.Click += new System.EventHandler(this.ShowAboutMoo);
             // 
             // statusStrip1
             // 

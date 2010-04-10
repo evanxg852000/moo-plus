@@ -51,7 +51,6 @@ namespace Moo.Controls
         {
             base.OnPaint(pe);
         }
-
         public void SearchFile()
         {
             //start the deamon worker here
@@ -60,7 +59,6 @@ namespace Moo.Controls
             this.li.Clear();
             DeamonSearcher.RunWorkerAsync();
         }
-
         private void FileFounder_DoubleClick(object sender, EventArgs e)
         {
             if (this.SelectedItems.Count != 0)
@@ -78,7 +76,6 @@ namespace Moo.Controls
                 }
             }
         }
-
         private void  DeamonSearcher_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             foreach (ListViewItem item in this.li)
@@ -97,7 +94,6 @@ namespace Moo.Controls
                     }
                 }
         }
-
         private void DeamonSearcher_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (SearchProgressChanged != null)
@@ -112,7 +108,6 @@ namespace Moo.Controls
                 }
             }
         }
-
         private void DeamonSearcher_DoWork(object sender, DoWorkEventArgs e)
         {
             //search file and update

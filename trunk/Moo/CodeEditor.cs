@@ -282,7 +282,6 @@ namespace Moo
         {
             if(this.EditorView.Modified)
             {
-                this.Save();
                 // Prompt if not saved
                 string message =String.Format( "The text in the {0} has changed.{1} Do you want to save the changes?",this.FileName,Environment.NewLine);
                 DialogResult dr = MessageBox.Show(this, message,"Moo { + }", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);

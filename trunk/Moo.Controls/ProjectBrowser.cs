@@ -31,6 +31,9 @@ namespace Moo.Controls
         }
         public void BuildNodes(string pfolder, string pfile,string pname)
         {
+            //clear everything
+            this.Nodes.Clear();
+
             this.projectfolder = pfolder;
             this.projectfile = pfile;
             this.projectname = pname;
