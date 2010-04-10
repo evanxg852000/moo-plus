@@ -25,7 +25,7 @@ namespace Moo.Dialogs
         }
 
  
-        public NewProFileDialog(string type)
+        public NewProFileDialog(string type,string currentprojectfolder)
         {
             InitializeComponent();
             
@@ -34,6 +34,10 @@ namespace Moo.Dialogs
                 this.Text += "File";
                 this.NameTbx.Text = "< File Name >";
                 this.FolderTbx.Text = "< File Folder >";
+                if (currentprojectfolder!=String.Empty)
+                {
+                    this.FolderTbx.Text = currentprojectfolder;
+                }
                 this.TypeCbx.Items.AddRange(new string[]{"C#","C++","Html","Php"});
             }
             else 
@@ -41,7 +45,7 @@ namespace Moo.Dialogs
                 this.Text += "Project";
                 this.NameTbx.Text = "< Project Name >";
                 this.FolderTbx.Text = "< Project Folder >";
-                this.TypeCbx.Items.AddRange(new string[]{"C Sharp","Hydro","Ilasm","Website"});
+                this.TypeCbx.Items.AddRange(new string[] { "C Sharp", "Hydro", "Ilasm", "Website", "Unmanaged" });
 
             }
            this.TypeCbx.SelectedIndex = 0; 

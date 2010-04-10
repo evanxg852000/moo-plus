@@ -6,16 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using WeifenLuo.WinFormsUI.Docking;
 
-namespace Moo
+namespace Moo.Dialogs
 {
-    public partial class FBrunchBrowser : DockContent
+    public partial class AboutDialog : Form
     {
-        public FBrunchBrowser()
+        public AboutDialog()
         {
             InitializeComponent();
-            BrunchBrowserTree.BuildNodes();
-        } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

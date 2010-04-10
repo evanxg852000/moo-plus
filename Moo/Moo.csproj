@@ -75,6 +75,12 @@
     <Compile Include="Core\Exceptioner.cs" />
     <Compile Include="Core\GlobalTypes.cs" />
     <Compile Include="Core\Project.cs" />
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\NewProFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CodeEditor.resx">
       <DependentUpon>CodeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\NewProFileDialog.resx">
@@ -366,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\whitespace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutpage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

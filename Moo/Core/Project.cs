@@ -60,8 +60,8 @@ namespace Moo.Core
         {
             //pfolder= c:\\projects\
             //pname= myfirstproject
-            string ppath=pfolder+pname+@"\"+pname+".mpr" ;
-            pfolder = pfolder + pname;
+            string ppath=pfolder+@"\"+pname+@"\"+pname+".mpr" ;
+            pfolder = pfolder +@"\"+ pname;
             //create the object that will be serialised
             Project projectObject = new Project(ppath, ptype);
             try
@@ -69,7 +69,7 @@ namespace Moo.Core
                 //create the project folder
                 Directory.CreateDirectory(pfolder);
                 //serialize and save 
-                using (FileStream fs = new FileStream(ppath, FileMode.Open, FileAccess.Write))
+                using (FileStream fs = new FileStream(ppath, FileMode.Create, FileAccess.Write))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(fs, projectObject);

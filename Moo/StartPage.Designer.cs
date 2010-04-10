@@ -72,6 +72,7 @@
             this.SOpenProject.TabIndex = 2;
             this.SOpenProject.Text = "Open Project";
             this.SOpenProject.UseVisualStyleBackColor = true;
+            this.SOpenProject.Click += new System.EventHandler(this.RequestOpenProject);
             // 
             // SNewProject
             // 
@@ -84,6 +85,7 @@
             this.SNewProject.TabIndex = 1;
             this.SNewProject.Text = "New Project";
             this.SNewProject.UseVisualStyleBackColor = true;
+            this.SNewProject.Click += new System.EventHandler(this.RequestNewProject);
             // 
             // pictureBox1
             // 

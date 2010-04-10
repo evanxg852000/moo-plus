@@ -15,20 +15,17 @@ namespace Moo.Controls
         public FileBrowser()
         {
             InitializeComponent();
-        }
-        
+        }     
         public override void Refresh()
         {
             this.Nodes.Clear();
             BuildNodes();
             this.ExpandAll();
         }
-
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
         }
-
         public void BuildNodes()
         {
             try
@@ -54,7 +51,6 @@ namespace Moo.Controls
             //add handler
             this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);
         }
-
         private void ScanDir(string dirpath, TreeNode parent)
         {
 
@@ -112,7 +108,6 @@ namespace Moo.Controls
             }
             parent.ExpandAll();
         }
-
         void ProjectBrowser_DoubleClick(object sender, EventArgs e)
         {
             bool isfile = Path.HasExtension(this.SelectedNode.Tag.ToString());

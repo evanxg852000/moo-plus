@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Moo.Core;
+using Moo.Dialogs;
 using Moo.Helpers;
 using WeifenLuo.WinFormsUI;
 using WeifenLuo.WinFormsUI.Docking;
@@ -43,17 +44,21 @@ namespace Moo
             MOO_START_PAGE = new StartPage();
             MOO_START_PAGE.Show(MDockArea);
             MOO_START_PAGE.DockState = DockState.Document;
+            MOO_START_PAGE.NewProjectRequested += new NewProjectRequestHandler(NewProject);
+           // MOO_PROJECT_BROWSER.OpenProjectRequested +=new OpenProjectRequestHandler(OpenProject);
 
             //project Browser
             MOO_PROJECT_BROWSER = new FProjectBrowser();
             MOO_PROJECT_BROWSER.Show(MDockArea);
             MOO_PROJECT_BROWSER.DockState = DockState.DockLeftAutoHide;
+            MOO_PROJECT_BROWSER.NewProjectRequested +=new NewProjectRequestHandler(NewProject);
+            MOO_PROJECT_BROWSER.NewFileRequested +=new NewFileRequestHandler(NewFile);
 
             //brunch Browser
             MOO_BRUNCH_BROWSER = new FBrunchBrowser();
             MOO_BRUNCH_BROWSER.Show(MDockArea);
             MOO_BRUNCH_BROWSER.DockState = DockState.DockLeftAutoHide;
-
+            
             //file system  Browser
             MOO_FILE_SYSTBROWSER = new FFileSystBrowser();
             MOO_FILE_SYSTBROWSER.Show(MDockArea);
@@ -163,8 +168,14 @@ namespace Moo
         //file menu handlers
         private void NewFile(object sender, EventArgs e)
         {
+            //get the current project folder to passed in for quick adding to the current project
+            string currentprojectfolder="";
+            if(MOO_APPLICATION_SETTINGS.CurrentProject !=null)
+            {
+                currentprojectfolder=MOO_APPLICATION_SETTINGS.CurrentProject.ProjectFolder ;
+            }
             //open the new dialog
-            Moo.Dialogs.NewProFileDialog newdialog = new Moo.Dialogs.NewProFileDialog("FILE");
+            NewProFileDialog newdialog = new NewProFileDialog("FILE",currentprojectfolder);
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
                 string fileExtention=Moo.Helpers.MiscHelper.GetFileExtention(newdialog.RType);
@@ -180,7 +191,18 @@ namespace Moo
         }
         private void NewProject(object sender, EventArgs e)
         {
-            //new project code 
+            //open the new dialog
+            NewProFileDialog newdialog = new NewProFileDialog("Project","");
+            if (newdialog.ShowDialog() == DialogResult.OK)
+            {
+                ProjectCategory projecttype = Moo.Helpers.MiscHelper.GetProjectType(newdialog.RType);
+                string projectfolder = newdialog.RFolder;
+                string projectname =newdialog.RName;
+                Project PRJT= Project.Create(projectfolder, projectname, projecttype);
+                MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
+                //load the project into the project browser
+                MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
+            }  
         }
         private void SaveCurrentEditor(object sender, EventArgs e)
         {
@@ -450,7 +472,14 @@ namespace Moo
             }
         }
 
-        
+        //Help menu
+        private void ShowAboutMoo(object sender, EventArgs e)
+        {
+            AboutDialog AbtDlg = new AboutDialog();
+            AbtDlg.ShowDialog();
+        }
+
+      
         //toolbar
         private void ShowEndLine(object sender, EventArgs e)
         {
@@ -646,7 +675,7 @@ namespace Moo
             }
         }
         
-
+        //exitting event
         private void AppShuttingDown(object sender, FormClosingEventArgs e)
         {
             SaveAppState();
@@ -665,7 +694,7 @@ namespace Moo
         
         #endregion
 
-        
+       
        
         
 
