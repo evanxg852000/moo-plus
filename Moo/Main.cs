@@ -214,18 +214,19 @@ namespace Moo
             {
                 filter ="Moo Project (*.mpr)|*.mpr";
             } 
-            string lastworkingdir = @"C:\";
             string openfilepath;
             string openfilename;
-            string openfilecontent = FileHelper.GetContent(filter, lastworkingdir, out openfilepath, out openfilename);
+            string openfilecontent = FileHelper.GetContent(filter, out openfilepath, out openfilename);
             string openfileextesion = Path.GetExtension(openfilepath);
             if (openfilepath != String.Empty)
             {
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
-
-
+                    Project PRJT = Project.Open(openfilepath);
+                    MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
+                    //load the project into the project browser
+                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder,PRJT.ProjectFile,PRJT.ProjectName);
                 }
                 else 
                 {

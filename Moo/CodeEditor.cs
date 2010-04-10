@@ -269,10 +269,9 @@ namespace Moo
         public bool SaveAs()
         {
             string filter="Text file (*.txt)|*.txt|Html file ((*.html))|*.html|Xml file(*.xml)|*.xml|All files (*.*)|*.*";
-            string lastworkingdir = @"C:\";
             string newfilepath;
             string newfilename;
-            if( FileHelper.SaveAs(this.EditorView.Text, filter, lastworkingdir,out newfilepath,out newfilename) )
+            if( FileHelper.SaveAs(this.EditorView.Text, filter,out newfilepath,out newfilename) )
             {
                 //update the editor
                 this.filepath=newfilepath;
