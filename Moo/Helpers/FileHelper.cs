@@ -22,7 +22,7 @@ namespace Moo.Helpers
             }
             return string.Empty;   
         }
-        public static string GetContent(string filter, string initialdir)
+        public static string GetContent(string filter, string initialdir, out string filepath, out string filename)
         {         
             OpenFileDialog openfiledialog = new OpenFileDialog();
             openfiledialog.Title = "Open ...";
@@ -30,11 +30,14 @@ namespace Moo.Helpers
             openfiledialog.InitialDirectory = initialdir;
             if (openfiledialog.ShowDialog() == DialogResult.OK)
             {
-                string filepath = openfiledialog.FileName;
+                filepath = openfiledialog.FileName;
+                filename = Path.GetFileName(filepath);
                 return GetContent(filepath);
             }
             else
             {
+                filepath = "";
+                filename = "";
                 return string.Empty;
             }
             
@@ -56,7 +59,7 @@ namespace Moo.Helpers
             }
             return false;
         }
-        public static bool SaveAs(string content,string filter,string initialdir)
+        public static bool SaveAs(string content, string filter, string initialdir, out string filepath, out string filename)
         {
            SaveFileDialog savefiledialog = new SaveFileDialog();
            savefiledialog.Title = "Save As ...";
@@ -64,11 +67,14 @@ namespace Moo.Helpers
            savefiledialog.InitialDirectory = initialdir;
            if (savefiledialog.ShowDialog() == DialogResult.OK)
             {
-                string filepath = savefiledialog.FileName;
+                filepath = savefiledialog.FileName;
+                filename = Path.GetFileName(filepath);
                 return Save(filepath, content);
             }
            else
            {
+               filepath ="";
+               filename ="";
                return false;
            }
         }

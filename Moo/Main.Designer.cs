@@ -247,18 +247,21 @@
             // MNewPrject
             // 
             this.MNewPrject.Index = 1;
+            this.MNewPrject.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
             this.MNewPrject.Text = "Project";
             this.MNewPrject.Click += new System.EventHandler(this.NewProject);
             // 
             // MOpen
             // 
             this.MOpen.Index = 1;
-            this.MOpen.Text = "&Open...";
+            this.MOpen.Text = "&Open";
+            this.MOpen.Click += new System.EventHandler(this.OpenPrjectFile);
             // 
             // MReload
             // 
             this.MReload.Index = 2;
             this.MReload.Text = "Reload";
+            this.MReload.Click += new System.EventHandler(this.ReloadCurrentEditor);
             // 
             // MSeparator1
             // 
@@ -276,6 +279,7 @@
             // 
             this.MSaveAs.Index = 5;
             this.MSaveAs.Text = "Save As...";
+            this.MSaveAs.Click += new System.EventHandler(this.SaveAs);
             // 
             // MSaveAll
             // 
@@ -1448,6 +1452,7 @@
             this.MTBOpen.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBOpen.Size = new System.Drawing.Size(26, 26);
             this.MTBOpen.ToolTipText = "Open Project/File ";
+            this.MTBOpen.Click += new System.EventHandler(this.OpenPrjectFile);
             // 
             // MTBSave
             // 

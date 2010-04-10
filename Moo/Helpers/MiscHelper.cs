@@ -51,21 +51,24 @@ namespace Moo.Helpers
             }
             return fileextention;
         }
-        public static string GetLanguage(string type)
+        public static string GetLanguage(string FileExtention)
         {
             string language = "none";
-            switch (type)
+            switch (FileExtention)
             {
-                case "C#":
+                case ".cs":
                     language = "cs";
                     break;
-                case "C++":
+                case ".cpp":
                     language = "cpp";
                     break;
-                case "Php":
+                case ".h":
+                    language = "cpp";
+                    break;
+                case ".php":
                     language = "php";
                     break;
-                case "Html":
+                case ".html":
                     language = "html";
                     break;
             }

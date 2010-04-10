@@ -57,6 +57,13 @@ namespace Moo
         }
 
         //code edition
+        public void SetContent(string content)
+        { 
+            this.EditorView.Text = content;
+            this.EditorView.Modified=false;
+            if (this.TabText.EndsWith(" *"))
+                this.TabText = this.TabText.Substring(0, this.TabText.Length - 2);
+        }
         public void SetLanguage(string language)
         {
             if ("ini".Equals(language, StringComparison.OrdinalIgnoreCase))
@@ -249,13 +256,46 @@ namespace Moo
         //saving methods
         public bool Save()
         {
-            return FileHelper.Save(this.filepath, this.EditorView.Text);
+            if (FileHelper.Save(this.filepath, this.EditorView.Text))
+            {
+                //update the editor
+                this.EditorView.Modified = false;
+                if (this.TabText.EndsWith(" *"))
+                    this.TabText = this.TabText.Substring(0, this.TabText.Length - 2);
+                return true;
+            }
+            return false;  
         }
         public bool SaveAs()
         {
-            string filter="Text File|*.txt|Html File|*.html|*.ini|Xml File|*.xml|Dopa File|*.dpa";
+            string filter="Text file (*.txt)|*.txt|Html file ((*.html))|*.html|Xml file(*.xml)|*.xml|All files (*.*)|*.*";
             string lastworkingdir = @"C:\";
-            return FileHelper.SaveAs(this.EditorView.Text, filter, lastworkingdir);
+            string newfilepath;
+            string newfilename;
+            if( FileHelper.SaveAs(this.EditorView.Text, filter, lastworkingdir,out newfilepath,out newfilename) )
+            {
+                //update the editor
+                this.filepath=newfilepath;
+                this.filename = newfilename;
+                this.TabText = newfilename;
+                this.EditorView.Modified = false;
+                this.SetLanguage(Path.GetExtension(filepath));
+                if (this.TabText.EndsWith(" *"))
+                    this.TabText = this.TabText.Substring(0, this.TabText.Length - 2);
+                return true;
+            }
+            return false;
+        }
+        public bool Reload()
+        {
+            this.EditorView.Text = FileHelper.GetContent(this.FilePath);
+            this.EditorView.Modified = false;
+            if (this.TabText.EndsWith(" *"))
+                this.TabText = this.TabText.Substring(0, this.TabText.Length - 2);
+            if(this.EditorView.Text!=String.Empty) 
+            return true ;
+            else 
+            return false;
         }
 
 
@@ -270,8 +310,11 @@ namespace Moo
                 this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth;    
             }
             //update the title to notify that the doc has changed
-            if (!this.TabText.EndsWith(" *"))
-               TabText += " *";     
+            if (this.EditorView.Modified)
+            {
+                if (!this.TabText.EndsWith(" *"))
+                    TabText += " *";
+            }
         }
         private void EditorView_StyleNeeded(object sender, StyleNeededEventArgs e)
         {
