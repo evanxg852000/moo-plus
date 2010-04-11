@@ -19,6 +19,8 @@ namespace Moo.Core
         private bool createflag = false;  //pour savoir si le project es deja creer
         //only for C# and Ilasm project
         private string projecticon = "";
+        private string assemblytype = "executable"; //or dll
+        private string assemblyname ;
 
         public string ProjectFile
         {
