@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.AccessControl;
 using System.IO;
+using Moo.Helpers;
 
 namespace Moo.Core
 {
@@ -17,8 +18,8 @@ namespace Moo.Core
         private ProjectCategory projecttype;
         private DateTime creationdate;
         private bool createflag = false;  //pour savoir si le project es deja creer
-        //only for C# and Ilasm project
         private string projecticon = "";
+        //only for C# and Ilasm project
         private string assemblytype = "executable"; //or dll
         private string assemblyname ;
 
@@ -47,6 +48,21 @@ namespace Moo.Core
             get { return createflag; }
             set { createflag = value; }
         }
+        public string ProjectIcon
+        {
+            get { return projecticon; }
+            set { projecticon = value; }
+        }
+        public string AssemblyType
+        {
+            get { return assemblytype; }
+            set { assemblytype = value; }
+        }
+        public string AssemblyName
+        {
+            get { return assemblyname; }
+            set { assemblyname = value; }
+        }
 
         public Project()
         { 
@@ -60,6 +76,34 @@ namespace Moo.Core
             this.projecttype = ptype;
             this.creationdate = DateTime.Now.Date;
         }
+
+        //to get the project folder content for compilation
+        public List<string> GetProjectFiles(string filter)
+        {
+            //searchterm=*.cs, *.il, *.php
+            return Moo.Helpers.FileHelper.GetFolderFileList(this.projectfolder,filter,SearchOption.AllDirectories);
+        }
+        private void CopyTemplate()
+        {
+            string source = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\templates\";
+            string destination = this.projectfolder;
+            switch (this.projecttype)
+            {
+                case ProjectCategory.Csharp:
+                    FileHelper.CopyFolder(source + @"csharp\", destination);
+                    break;
+                case ProjectCategory.Hydro:
+                    FileHelper.CopyFolder(source + @"hydro\", destination);
+                    break;
+                case ProjectCategory.Ilasm:
+                    FileHelper.CopyFolder(source + @"ilasm\", destination);
+                    break;
+                case ProjectCategory.Website:
+                    FileHelper.CopyFolder(source + @"website\", destination);
+                    break;
+            }
+        }
+
         public static Project Create(string pfolder, string pname, ProjectCategory ptype)
         {
             //pfolder= c:\\projects\
@@ -72,6 +116,8 @@ namespace Moo.Core
             {
                 //create the project folder
                 Directory.CreateDirectory(pfolder);
+                //copy the template file in the folder
+                projectObject.CopyTemplate();
                 //serialize and save 
                 using (FileStream fs = new FileStream(ppath, FileMode.Create, FileAccess.Write))
                 {
@@ -106,6 +152,6 @@ namespace Moo.Core
             
             return projectObject;
         }
-
+  
     }
 }

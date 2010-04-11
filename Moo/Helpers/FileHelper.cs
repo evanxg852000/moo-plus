@@ -77,5 +77,54 @@ namespace Moo.Helpers
            }
         }
 
+        public static List<string> GetFolderFileList(string folder,string filter,SearchOption so)
+        {
+           List<string> FileList = new List<string>();
+           try
+           {
+                DirectoryInfo di = new DirectoryInfo(folder);
+                FileInfo[] files = di.GetFiles(filter, so);
+                foreach (FileInfo fi in files)
+                {
+                    FileList.Add(fi.FullName);
+                }
+            }
+            catch (Exception e)
+            {
+                //Log exception MooExceptioner.Log(e, dateTime)
+                e.ToString();
+            }
+            return FileList;
+        }
+        public static void CopyFolder(string from , string to)
+        {
+            try
+            {
+                DirectoryInfo source = new DirectoryInfo(from);
+                DirectoryInfo destination = new DirectoryInfo(to);
+                if (!destination.Exists) 
+                    destination.Create();
+                FileInfo[] Files = source.GetFiles();
+                foreach(FileInfo fi in Files)
+                {
+                   fi.CopyTo(Path.Combine(destination.FullName,fi.Name),false);
+                }
+                // for subfolders
+                DirectoryInfo[] folders = source.GetDirectories();
+                foreach (DirectoryInfo folder in folders)
+                {
+                    //construct new destination 
+                    string newdestination = Path.Combine(destination.FullName, folder.Name);
+                    //recursive CopyFolder()
+                    CopyFolder(folder.FullName,newdestination);
+                }
+            }
+            catch (Exception e)
+            {
+                //Log exception MooExceptioner.Log(e, dateTime)
+                e.ToString();
+            }
+        }
+   
     }
 }

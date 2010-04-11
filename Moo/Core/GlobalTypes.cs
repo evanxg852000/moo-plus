@@ -24,6 +24,4 @@ namespace Moo.Core
    public delegate void OpenProjectRequestHandler(object sender, EventArgs e);
    public delegate void NewFileRequestHandler(object sender, EventArgs e);
 
-
-
 }
