@@ -16,7 +16,9 @@ namespace Moo.Core
         private string projectfolder = ""; // is a fullpath like c:\\projects\sample\
         private ProjectCategory projecttype;
         private DateTime creationdate;
-        private bool createflag = false;
+        private bool createflag = false;  //pour savoir si le project es deja creer
+        //only for C# and Ilasm project
+        private string projecticon = "";
 
         public string ProjectFile
         {
