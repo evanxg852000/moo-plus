@@ -17,11 +17,13 @@ namespace Moo.Core
         private string projectfolder = ""; // is a fullpath like c:\\projects\sample\
         private ProjectCategory projecttype;
         private DateTime creationdate;
-        private bool createflag = false;  //pour savoir si le project es deja creer
         private string projecticon = "";
         //only for C# and Ilasm project
-        private string assemblytype = "executable"; //or dll
-        private string assemblyname ;
+        private string assemblyname;
+        private string assemblytype ; //or dll
+        private string buildtarget;
+        private List<string> refferences;
+        
 
         public string ProjectFile
         {
@@ -43,11 +45,6 @@ namespace Moo.Core
         {
             get { return creationdate; }
         }
-        public bool CreateFlag
-        {
-            get { return createflag; }
-            set { createflag = value; }
-        }
         public string ProjectIcon
         {
             get { return projecticon; }
@@ -63,6 +60,16 @@ namespace Moo.Core
             get { return assemblyname; }
             set { assemblyname = value; }
         }
+        public string BuildTarget
+        {
+            get { return buildtarget; }
+            set { buildtarget = value; }
+        }
+        public List<string> Refferences
+        {
+            get { return refferences; }
+            set { refferences = value; }
+        }
 
         public Project()
         { 
@@ -75,11 +82,15 @@ namespace Moo.Core
             this.projectname = Path.GetFileNameWithoutExtension(projectfilepath);
             this.projecttype = ptype;
             this.creationdate = DateTime.Now.Date;
+            this.projecticon = "moo.ico";
+            this.assemblyname=this.projectname;
+            this.assemblytype = "Executable (.exe)";//Dll
+            this.buildtarget = "Debug";//Release
+            this.refferences = new List<string>();
         }
-
-        //to get the project folder content for compilation
-        public List<string> GetProjectFiles(string filter)
+        public List<string> GetProjectFiles(string filter) 
         {
+            //to get the project folder content for compilation
             //searchterm=*.cs, *.il, *.php
             return Moo.Helpers.FileHelper.GetFolderFileList(this.projectfolder,filter,SearchOption.AllDirectories);
         }
@@ -103,7 +114,8 @@ namespace Moo.Core
                     break;
             }
         }
-
+        
+       
         public static Project Create(string pfolder, string pname, ProjectCategory ptype)
         {
             //pfolder= c:\\projects\
@@ -118,18 +130,12 @@ namespace Moo.Core
                 Directory.CreateDirectory(pfolder);
                 //copy the template file in the folder
                 projectObject.CopyTemplate();
-                //serialize and save 
-                using (FileStream fs = new FileStream(ppath, FileMode.Create, FileAccess.Write))
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(fs, projectObject);
-                    projectObject.CreateFlag = true;
-                }
-               
+                projectObject.Save();  
             }
-            catch 
+            catch (Exception e)
             {
-            
+                //use ecexptioner
+                e.ToString();
             }
             return projectObject;
         }
@@ -152,6 +158,22 @@ namespace Moo.Core
             
             return projectObject;
         }
-  
+        public void Save()
+        {
+            try
+            {
+               // Serialise and save
+                using (FileStream fs = new FileStream(this.projectfile, FileMode.Create, FileAccess.Write))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(fs, this);
+                }
+            }
+            catch (Exception e)
+            {
+                //use ecexptioner
+                e.ToString();
+            }
+        }
     }
 }
