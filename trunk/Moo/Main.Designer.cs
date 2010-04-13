@@ -848,6 +848,7 @@
             // 
             this.MConfigProject.Index = 6;
             this.MConfigProject.Text = "Configuration";
+            this.MConfigProject.Click += new System.EventHandler(this.ProjectConfigure);
             // 
             // MSettingsMenu
             // 
