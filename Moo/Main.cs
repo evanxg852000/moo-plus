@@ -525,6 +525,16 @@ namespace Moo
             }
         }
 
+        //Project menu
+        private void ProjectConfigure(object sender, EventArgs e)
+        {
+            if (MOO_APPLICATION_SETTINGS.CurrentProject != null)
+            {
+                ProjectConfigDialog pcd = new ProjectConfigDialog(MOO_APPLICATION_SETTINGS.CurrentProject);
+                pcd.ShowDialog();
+            }
+        }
+
         //Help menu
         private void ShowAboutMoo(object sender, EventArgs e)
         {
@@ -747,7 +757,7 @@ namespace Moo
         
         #endregion
 
-        
+       
              
         
        

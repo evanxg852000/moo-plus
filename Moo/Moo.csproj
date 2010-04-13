@@ -87,6 +87,12 @@
     <Compile Include="Dialogs\NewProFileDialog.Designer.cs">
       <DependentUpon>NewProFileDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ProjectConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProjectConfigDialog.Designer.cs">
+      <DependentUpon>ProjectConfigDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FBrunchBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\NewProFileDialog.resx">
       <DependentUpon>NewProFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProjectConfigDialog.resx">
+      <DependentUpon>ProjectConfigDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBrunchBrowser.resx">
       <DependentUpon>FBrunchBrowser.cs</DependentUpon>
@@ -379,6 +388,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\aboutpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
