@@ -49,6 +49,14 @@ namespace Moo.Dialogs
                 ListViewItem item = new ListViewItem(new string[] { refname, s });
                 RefferencesListView.Items.Add(item);
             }
+            if ((CurrentProject.ProjectType == ProjectCategory.Unmanaged) || (CurrentProject.ProjectType == ProjectCategory.Website))
+            {
+                this.AssemblyTypeCbx.Enabled = false;
+                this.BuildTargetCbx.Enabled = false;
+                this.RefferencesListView.Enabled = false;
+                this.AddRefBt.Enabled = false;
+                this.RemoveRefBt.Enabled = false;
+            }
         }
         private string SelectFile(string filter)
         {
