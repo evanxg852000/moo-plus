@@ -927,6 +927,7 @@
             // 
             this.MReportBug.Index = 3;
             this.MReportBug.Text = "Report Bug";
+            this.MReportBug.Click += new System.EventHandler(this.ReportBug);
             // 
             // MContent
             // 

@@ -102,6 +102,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bug {
+            get {
+                object obj = ResourceManager.GetObject("bug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap buil_run {
             get {
                 object obj = ResourceManager.GetObject("buil_run", resourceCulture);
@@ -371,6 +378,13 @@ namespace Moo.Properties {
         internal static System.Drawing.Bitmap save_all {
             get {
                 object obj = ResourceManager.GetObject("save_all", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap send_bug {
+            get {
+                object obj = ResourceManager.GetObject("send_bug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
