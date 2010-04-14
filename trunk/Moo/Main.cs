@@ -161,10 +161,7 @@ namespace Moo
             //show tip of the day
 
         }
-       
-
-        
-        
+ 
         //just for test to be deleted 
         public void test()
         {
@@ -543,6 +540,15 @@ namespace Moo
             }
         }
 
+        //Settings menu
+        
+
+        //Tools menu
+        private void ManageUpdate(object sender, EventArgs e)
+        {
+            UpdateDialog.Show(MOO_ONLINE_INFO);
+        }
+
         //Help menu
         private void ShowAboutMoo(object sender, EventArgs e)
         {
@@ -551,7 +557,7 @@ namespace Moo
         }
 
       
-        //toolbar
+        //Toolbar
         private void ShowEndLine(object sender, EventArgs e)
         {
             ToolStripButton tsb = (ToolStripButton)sender;
@@ -765,10 +771,7 @@ namespace Moo
         
         #endregion      
 
-        private void CheckForUpdate(object sender, EventArgs e)
-        {
-            UpdateDialog.Show(MOO_ONLINE_INFO.Updates);
-        }
+       
        
     }
 }
