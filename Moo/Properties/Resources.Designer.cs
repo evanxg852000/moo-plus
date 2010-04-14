@@ -214,6 +214,20 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap p_add {
+            get {
+                object obj = ResourceManager.GetObject("p_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap p_delete {
+            get {
+                object obj = ResourceManager.GetObject("p_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap page_add {
             get {
                 object obj = ResourceManager.GetObject("page_add", resourceCulture);
@@ -434,6 +448,13 @@ namespace Moo.Properties {
         internal static System.Drawing.Bitmap wizard {
             get {
                 object obj = ResourceManager.GetObject("wizard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap workbacgroud {
+            get {
+                object obj = ResourceManager.GetObject("workbacgroud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -34,7 +34,7 @@ namespace Moo.Helpers
         public string Description;
     }
 
-    class MooOnlineInfo
+    public class MooOnlineInfo
     {
         private static string hosturl="www.evansofts.com";
         private static string configfileurl="http://evansofts.com/moo/moo-online-info.xml";
@@ -186,7 +186,7 @@ namespace Moo.Helpers
             Ping PingObject = new Ping();
             try
             {
-                PingReply result = PingObject.Send(MooOnlineInfo.hosturl,1000);
+                PingReply result = PingObject.Send(MooOnlineInfo.hosturl,2000);
                 if (result.Status == IPStatus.Success)
                    return true;
             }

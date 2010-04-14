@@ -5,35 +5,40 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Net;
+using System.IO;
+using System.Windows.Forms;
 using Moo.Helpers;
 
 namespace Moo.Dialogs
 {
     public partial class UpdateDialog : Form
     {
-        private List<Update> Updates;
-        private WebClient DownloadClient; 
-        
-        private UpdateDialog(List<Update> mooiupdates)
+        private static UpdateDialog Instance;
+        private MooOnlineInfo OnLineInfo;
+        private WebClient DownloadClient;
+        public UpdateDialog(MooOnlineInfo info)
         {
             InitializeComponent();
-            this.Updates = mooiupdates;
-            if (this.Updates.Count!=0)
+            this.OnLineInfo = info;
+            if ((this.OnLineInfo.Plugins.Count != 0) || (this.OnLineInfo.Updates.Count != 0))
             {
-                this.DownloadBt.Enabled = true;
-                this.DeamonBt.Enabled = true;
-                UpdateDetails.Text="";
-                foreach (Update u in this.Updates)
-                {
-                    this.UpdateDetails.Text += String.Format("\n {0} \n {1}  \n", u.Name, u.Link);
-                }
+                //add element to listview
+                
                 DownloadClient = new WebClient();
-                DownloadClient.DownloadProgressChanged +=new DownloadProgressChangedEventHandler(DownloadClientWorkProgressChanged);
-                DownloadClient.DownloadFileCompleted +=new AsyncCompletedEventHandler(DownloadClientWorkCompleted);
-            }  
+                DownloadClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadClientWorkProgressChanged);
+                DownloadClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadClientWorkCompleted);
+            }
         }
+        public static void Show(MooOnlineInfo info)
+        {
+            if (UpdateDialog.Instance == null)
+            {
+                Instance = new UpdateDialog(info);
+            }
+            Instance.ShowDialog();
+        }
+
         private void DownloadClientWorkProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             this.DownloadProgress.Value = e.ProgressPercentage;
@@ -42,43 +47,19 @@ namespace Moo.Dialogs
         {
             if (e.Error != null)
             {
-                MessageBox.Show("");
+                MessageBox.Show(e.Error.InnerException.ToString());
+                //send Exceptioner e.InnerException   
             }
             else
             {
-               //success
+                if (!this.Visible)
+                {
+                    MessageBox.Show("Update Completed !!");
+                }
             }
-            this.DownloadBt.Enabled = false;
+            
         }
 
-
-        private void CancelUpdate(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void RunAsDeamon(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-        private void InstallUpdate(object sender, EventArgs e)
-        { 
-            Update u = this.Updates[0];
-            DownloadClient.DownloadFileAsync(new Uri("http://evansofts.com/moo/updatefiles/fireg.dll"), @"C:\sample");
-            this.DownloadBt.Enabled = false;
-            this.DeamonBt.Enabled = false;
-        }
-
-        public static void Show(List<Update> MooUpdates)
-        {
-            UpdateDialog Instance = new UpdateDialog(MooUpdates);
-            Instance.ShowDialog();
-        }
-
-        
-
-       
-
-      
 
     }
 }

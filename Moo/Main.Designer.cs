@@ -128,10 +128,8 @@
             this.MEncodingUtf8 = new System.Windows.Forms.MenuItem();
             this.MToolsMenu = new System.Windows.Forms.MenuItem();
             this.MPlugins = new System.Windows.Forms.MenuItem();
-            this.MPluginManager = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.MCBManager = new System.Windows.Forms.MenuItem();
-            this.MCheckUpdate = new System.Windows.Forms.MenuItem();
+            this.MManageUpdate = new System.Windows.Forms.MenuItem();
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
             this.MTipOfDay = new System.Windows.Forms.MenuItem();
@@ -879,37 +877,24 @@
             this.MToolsMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPlugins,
             this.MCBManager,
-            this.MCheckUpdate});
+            this.MManageUpdate});
             this.MToolsMenu.Text = "Tools";
             // 
             // MPlugins
             // 
             this.MPlugins.Index = 0;
-            this.MPlugins.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MPluginManager,
-            this.menuItem2});
             this.MPlugins.Text = "Plugins";
-            // 
-            // MPluginManager
-            // 
-            this.MPluginManager.Index = 0;
-            this.MPluginManager.Text = "Plugin Manager";
-            // 
-            // menuItem2
-            // 
-            this.menuItem2.Index = 1;
-            this.menuItem2.Text = "-";
             // 
             // MCBManager
             // 
             this.MCBManager.Index = 1;
             this.MCBManager.Text = "Code Brunch Manager";
             // 
-            // MCheckUpdate
+            // MManageUpdate
             // 
-            this.MCheckUpdate.Index = 2;
-            this.MCheckUpdate.Text = "Check for Update";
-            this.MCheckUpdate.Click += new System.EventHandler(this.CheckForUpdate);
+            this.MManageUpdate.Index = 2;
+            this.MManageUpdate.Text = "Update Manager";
+            this.MManageUpdate.Click += new System.EventHandler(this.ManageUpdate);
             // 
             // MHelpMenu
             // 
@@ -1552,7 +1537,7 @@
         private System.Windows.Forms.MenuItem MProjectMenu;
         private System.Windows.Forms.MenuItem MToolsMenu;
         private System.Windows.Forms.MenuItem MPlugins;
-        private System.Windows.Forms.MenuItem MCheckUpdate;
+        private System.Windows.Forms.MenuItem MManageUpdate;
         private System.Windows.Forms.MenuItem MHelpMenu;
         private System.Windows.Forms.MenuItem MHelpContent;
         private System.Windows.Forms.MenuItem MContent;
@@ -1688,8 +1673,6 @@
         private System.Windows.Forms.MenuItem MToLowerCase;
         private System.Windows.Forms.MenuItem MPrintPreview;
         private System.Windows.Forms.MenuItem MPageSetup;
-        private System.Windows.Forms.MenuItem MPluginManager;
-        private System.Windows.Forms.MenuItem menuItem2;
 
 
     }
