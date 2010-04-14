@@ -125,6 +125,10 @@ namespace Moo.Helpers
                 e.ToString();
             }
         }
-   
+        public static void Download(string url)
+        { 
+        
+        }
+
     }
 }
