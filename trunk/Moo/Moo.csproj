@@ -428,6 +428,7 @@
     <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Resources\send_bug.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
