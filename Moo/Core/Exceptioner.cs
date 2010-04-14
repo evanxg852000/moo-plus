@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
-using System.Net;
+using Moo.Helpers;
 
 namespace Moo.Core
 {
     public class Exceptioner
     {
-
         public static void Log(Exception e)
         {
             try
@@ -66,18 +65,24 @@ namespace Moo.Core
             }
             catch {/*nithing */ }
         }
-        public static void SendLog(string usercomment)
+        public static bool SendLog(string usercomment,bool islogattached)
         {
-            string mailcontent = usercomment + Environment.NewLine+Exceptioner.GetLog();
-            
-            //test for now send mail to be completed
-            System.Windows.Forms.Form f = new System.Windows.Forms.Form();
-            System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox();
-            tb.Multiline = true;
-            tb.Dock = System.Windows.Forms.DockStyle.Fill;
-            tb.Text = mailcontent;
-            f.Controls.Add(tb);
-            f.Show();
+            try
+            {
+                string mailcontent = usercomment;
+                if (islogattached)
+                { 
+                    mailcontent += Environment.NewLine + Exceptioner.GetLog();
+                    //clear the log file
+                    Exceptioner.ClearLog();
+                } 
+                MiscHelper.SendMail("Bug Report", mailcontent);
+                return true;
+            }
+            catch
+            {
+            }
+            return false;
         }
 
     }

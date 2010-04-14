@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugRepDialog));
-            this.AttachLogBt = new System.Windows.Forms.CheckBox();
+            this.AttachLogCkbx = new System.Windows.Forms.CheckBox();
             this.ReportBt = new System.Windows.Forms.Button();
             this.BugContentTx = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CancelBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // AttachLogBt
+            // AttachLogCkbx
             // 
-            this.AttachLogBt.AutoSize = true;
-            this.AttachLogBt.Checked = true;
-            this.AttachLogBt.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AttachLogBt.Location = new System.Drawing.Point(5, 9);
-            this.AttachLogBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.AttachLogBt.Name = "AttachLogBt";
-            this.AttachLogBt.Size = new System.Drawing.Size(163, 18);
-            this.AttachLogBt.TabIndex = 0;
-            this.AttachLogBt.Text = "Attach log file content";
-            this.AttachLogBt.UseVisualStyleBackColor = true;
+            this.AttachLogCkbx.AutoSize = true;
+            this.AttachLogCkbx.Checked = true;
+            this.AttachLogCkbx.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AttachLogCkbx.Location = new System.Drawing.Point(5, 9);
+            this.AttachLogCkbx.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AttachLogCkbx.Name = "AttachLogCkbx";
+            this.AttachLogCkbx.Size = new System.Drawing.Size(163, 18);
+            this.AttachLogCkbx.TabIndex = 0;
+            this.AttachLogCkbx.Text = "Attach log file content";
+            this.AttachLogCkbx.UseVisualStyleBackColor = true;
             // 
             // ReportBt
             // 
@@ -58,6 +58,7 @@
             this.ReportBt.TabIndex = 1;
             this.ReportBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ReportBt.UseVisualStyleBackColor = true;
+            this.ReportBt.Click += new System.EventHandler(this.SendReport);
             // 
             // BugContentTx
             // 
@@ -71,16 +72,17 @@
             this.BugContentTx.TabIndex = 3;
             this.BugContentTx.Text = "Your Bug Summary Here ...";
             // 
-            // button1
+            // CancelBt
             // 
-            this.button1.Image = global::Moo.Properties.Resources.stop;
-            this.button1.Location = new System.Drawing.Point(269, 157);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 1;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.CancelBt.Image = global::Moo.Properties.Resources.stop;
+            this.CancelBt.Location = new System.Drawing.Point(269, 157);
+            this.CancelBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CancelBt.Name = "CancelBt";
+            this.CancelBt.Size = new System.Drawing.Size(32, 32);
+            this.CancelBt.TabIndex = 1;
+            this.CancelBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CancelBt.UseVisualStyleBackColor = true;
+            this.CancelBt.Click += new System.EventHandler(this.Cancel);
             // 
             // BugRepDialog
             // 
@@ -88,9 +90,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 195);
             this.Controls.Add(this.BugContentTx);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancelBt);
             this.Controls.Add(this.ReportBt);
-            this.Controls.Add(this.AttachLogBt);
+            this.Controls.Add(this.AttachLogCkbx);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -108,9 +110,9 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox AttachLogBt;
+        private System.Windows.Forms.CheckBox AttachLogCkbx;
         private System.Windows.Forms.Button ReportBt;
         private System.Windows.Forms.TextBox BugContentTx;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CancelBt;
     }
 }

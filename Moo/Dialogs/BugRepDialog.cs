@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Moo.Core;
 
 namespace Moo.Dialogs
 {
@@ -15,14 +16,22 @@ namespace Moo.Dialogs
         {
             InitializeComponent();
         }
-
         public static new void Show()
         {
             BugRepDialog Instance = new BugRepDialog();
             Instance.ShowDialog();
         }
-
-       
+        private void SendReport(object sender, EventArgs e)
+        {
+            if (Exceptioner.SendLog(BugContentTx.Text, AttachLogCkbx.Checked))
+                BugContentTx.Text = "Report Sended Successfully !";
+            else
+                BugContentTx.Text = "Some Errors ocurrs , please try it later ";
+        }
+        private void Cancel(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }
