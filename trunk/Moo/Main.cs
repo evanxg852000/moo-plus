@@ -21,6 +21,7 @@ namespace Moo
     {
         #region Global Shared Members
         private AppSettings MOO_APPLICATION_SETTINGS;
+        private MooOnlineInfo MOO_ONLINE_INFO;
         private StartPage MOO_START_PAGE;
         private FProjectBrowser MOO_PROJECT_BROWSER;
         private FBrunchBrowser MOO_BRUNCH_BROWSER;
@@ -75,7 +76,7 @@ namespace Moo
             MOO_BUILD_OUTPUT = new BuildOutput();
             MOO_BUILD_OUTPUT.Show(MDockArea);
             MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide;    
-        }
+        }        
         private void LoadAppState()
         {
             MOO_APPLICATION_SETTINGS = AppSettings.Load();
@@ -83,6 +84,16 @@ namespace Moo
         private void SaveAppState()
         {
              AppSettings.Save(MOO_APPLICATION_SETTINGS);
+        }
+        private List<CodeEditor> GetCodeEditors()
+        {
+            List<CodeEditor> lce = new List<CodeEditor>();
+            foreach (DockContent Doc in MDockArea.Documents)
+            {
+                if (Doc.GetType().Equals(typeof(CodeEditor)))
+                    lce.Add((CodeEditor)Doc);
+            }
+            return lce;
         }
         private void LoadPlugins()
         {
@@ -143,15 +154,12 @@ namespace Moo
                 }
             }
         }
-        private List<CodeEditor> GetCodeEditors()
+        private void AppStartedInitilization(object sender, EventArgs e)
         {
-            List<CodeEditor> lce = new List<CodeEditor>();
-            foreach (DockContent Doc in MDockArea.Documents)
-            {
-                if (Doc.GetType().Equals(typeof(CodeEditor)))
-                    lce.Add((CodeEditor)Doc);
-            }
-            return lce;
+            //the load event handler of the main window
+            MOO_ONLINE_INFO=MooOnlineInfo.GetOnlineInfo();
+            //show tip of the day
+
         }
        
 
@@ -755,11 +763,12 @@ namespace Moo
             this.MStatusColumnLabel.Text = "Col : " + col.ToString();
         }
         
-        #endregion
+        #endregion      
 
-       
-             
-        
+        private void CheckForUpdate(object sender, EventArgs e)
+        {
+            UpdateDialog.Show(MOO_ONLINE_INFO.Updates);
+        }
        
     }
 }

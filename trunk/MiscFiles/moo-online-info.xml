@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mooplus>
+  <configuration>
+	<modulename>Moo plus</modulename>
+	<codename>Regeneration-X</codename>
+    <version>0.1.9</version>
+	<author>Evance Soumaoro</author>
+	<adminmail>evanxg852000@yahoo.com</adminmail>
+    <helppage>http://evansofts.com/moo/wiki/</helppage>
+    <message>Hello world</message>
+  </configuration>
+  <updates>
+    <update>
+      <name>Help content</name>
+      <link>http://evansofts.com/moo/updatefiles/fireg.dll</link>
+	  <targetlocation>/help/</targetlocation>
+    </update>
+	<update>
+      <name>Intellisence</name>
+      <link>http://evansofts.com/moo/updatefiles/intellisence.dll</link>
+	  <targetlocation>/</targetlocation>
+    </update>
+  </updates>
+  <plugins>
+		<plugin>
+          <name>sample</name>
+          <link>http://evansofts.com/moo/updatefiles/sample.dll</link>
+          <description>simple get started plugin</description>
+		</plugin>
+		<plugin>
+          <name>Video Fliper</name>
+          <link>http://evansofts.com/moo/updatefiles/fliper.dll</link>
+          <description>A video converter</description>
+		</plugin>
+   </plugins>
+</mooplus>

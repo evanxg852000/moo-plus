@@ -129,11 +129,9 @@
             this.MToolsMenu = new System.Windows.Forms.MenuItem();
             this.MPlugins = new System.Windows.Forms.MenuItem();
             this.MPluginManager = new System.Windows.Forms.MenuItem();
-            this.MSeparator16 = new System.Windows.Forms.MenuItem();
-            this.MSvn = new System.Windows.Forms.MenuItem();
-            this.menuItem61 = new System.Windows.Forms.MenuItem();
-            this.menuItem62 = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.MCBManager = new System.Windows.Forms.MenuItem();
+            this.MCheckUpdate = new System.Windows.Forms.MenuItem();
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
             this.MTipOfDay = new System.Windows.Forms.MenuItem();
@@ -880,8 +878,8 @@
             this.MToolsMenu.Index = 6;
             this.MToolsMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPlugins,
-            this.MSvn,
-            this.MCBManager});
+            this.MCBManager,
+            this.MCheckUpdate});
             this.MToolsMenu.Text = "Tools";
             // 
             // MPlugins
@@ -889,7 +887,7 @@
             this.MPlugins.Index = 0;
             this.MPlugins.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPluginManager,
-            this.MSeparator16});
+            this.menuItem2});
             this.MPlugins.Text = "Plugins";
             // 
             // MPluginManager
@@ -897,33 +895,21 @@
             this.MPluginManager.Index = 0;
             this.MPluginManager.Text = "Plugin Manager";
             // 
-            // MSeparator16
+            // menuItem2
             // 
-            this.MSeparator16.Index = 1;
-            this.MSeparator16.Text = "-";
-            // 
-            // MSvn
-            // 
-            this.MSvn.Index = 1;
-            this.MSvn.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem61,
-            this.menuItem62});
-            this.MSvn.Text = "SVN";
-            // 
-            // menuItem61
-            // 
-            this.menuItem61.Index = 0;
-            this.menuItem61.Text = "Checkout";
-            // 
-            // menuItem62
-            // 
-            this.menuItem62.Index = 1;
-            this.menuItem62.Text = "Import";
+            this.menuItem2.Index = 1;
+            this.menuItem2.Text = "-";
             // 
             // MCBManager
             // 
-            this.MCBManager.Index = 2;
+            this.MCBManager.Index = 1;
             this.MCBManager.Text = "Code Brunch Manager";
+            // 
+            // MCheckUpdate
+            // 
+            this.MCheckUpdate.Index = 2;
+            this.MCheckUpdate.Text = "Check for Update";
+            this.MCheckUpdate.Click += new System.EventHandler(this.CheckForUpdate);
             // 
             // MHelpMenu
             // 
@@ -1532,6 +1518,7 @@
             this.MinimumSize = new System.Drawing.Size(1008, 621);
             this.Name = "MMainWindow";
             this.Text = "Moo { + }";
+            this.Load += new System.EventHandler(this.AppStartedInitilization);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppShuttingDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1565,7 +1552,7 @@
         private System.Windows.Forms.MenuItem MProjectMenu;
         private System.Windows.Forms.MenuItem MToolsMenu;
         private System.Windows.Forms.MenuItem MPlugins;
-        private System.Windows.Forms.MenuItem MSvn;
+        private System.Windows.Forms.MenuItem MCheckUpdate;
         private System.Windows.Forms.MenuItem MHelpMenu;
         private System.Windows.Forms.MenuItem MHelpContent;
         private System.Windows.Forms.MenuItem MContent;
@@ -1622,10 +1609,6 @@
         private System.Windows.Forms.MenuItem MSeparator13;
         private System.Windows.Forms.MenuItem MGoto;
         private System.Windows.Forms.MenuItem MSettingsMenu;
-        private System.Windows.Forms.MenuItem MSeparator16;
-        private System.Windows.Forms.MenuItem MPluginManager;
-        private System.Windows.Forms.MenuItem menuItem61;
-        private System.Windows.Forms.MenuItem menuItem62;
         private System.Windows.Forms.MenuItem MTipOfDay;
         private System.Windows.Forms.MenuItem MSeparator17;
         private System.Windows.Forms.MenuItem MReportBug;
@@ -1705,6 +1688,8 @@
         private System.Windows.Forms.MenuItem MToLowerCase;
         private System.Windows.Forms.MenuItem MPrintPreview;
         private System.Windows.Forms.MenuItem MPageSetup;
+        private System.Windows.Forms.MenuItem MPluginManager;
+        private System.Windows.Forms.MenuItem menuItem2;
 
 
     }
