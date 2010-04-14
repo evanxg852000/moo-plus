@@ -555,7 +555,10 @@ namespace Moo
             AboutDialog AbtDlg = new AboutDialog();
             AbtDlg.ShowDialog();
         }
-
+        private void ReportBug(object sender, EventArgs e)
+        {
+            BugRepDialog.Show();
+        }
       
         //Toolbar
         private void ShowEndLine(object sender, EventArgs e)
@@ -770,6 +773,8 @@ namespace Moo
         }
         
         #endregion      
+
+        
 
        
        
