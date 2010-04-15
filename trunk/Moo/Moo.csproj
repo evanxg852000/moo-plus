@@ -12,6 +12,7 @@
     <AssemblyName>Moo</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <StartupObject>Moo.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,11 +37,15 @@
       <HintPath>..\Dlls\Evansofts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -131,7 +136,7 @@
     </Compile>
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\MiscHelper.cs" />
-    <Compile Include="Helpers\MooOnlineInfo.cs" />
+    <Compile Include="Core\OnlineInfo.cs" />
     <Compile Include="LexerInitializer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

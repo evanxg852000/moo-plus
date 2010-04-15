@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Xml;
+using System.ComponentModel;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 
-namespace Moo.Helpers
+namespace Moo.Core
 {
 
     public struct Configuration
@@ -34,8 +35,10 @@ namespace Moo.Helpers
         public string Description;
     }
 
-    public class MooOnlineInfo
+    public class OnlineInfo
     {
+        private static OnlineInfo OnLineInfoIstance;
+        
         private static string hosturl="www.evansofts.com";
         private static string configfileurl="http://evansofts.com/moo/moo-online-info.xml";
         private Configuration config;
@@ -56,8 +59,8 @@ namespace Moo.Helpers
             get { return plugins;}
             set { plugins=value;}
         }
-
-        public MooOnlineInfo()
+       
+        private  OnlineInfo()
         {
             this.updates = new List<Update>();
             this.plugins = new List<Plugin>();
@@ -71,7 +74,7 @@ namespace Moo.Helpers
         {
             try
             {
-                XmlTextReader reader = new XmlTextReader(MooOnlineInfo.configfileurl);
+                XmlTextReader reader = new XmlTextReader(OnlineInfo.configfileurl);
                 while (reader.Read())
                 {
                     switch (reader.Name)
@@ -170,30 +173,53 @@ namespace Moo.Helpers
                 }
             }
             catch { /* do nothing */}
-        }
+        }      
         
-        public static MooOnlineInfo GetOnlineInfo()
+        public static void  CheckOutForUpdate()
         {
-            MooOnlineInfo InfoObject = new MooOnlineInfo();
-            if (IsInternet())
+            if (OnLineInfoIstance==null)
             {
-                InfoObject.ParseInfo();
-            }     
-            return InfoObject;
+                OnLineInfoIstance = new OnlineInfo();
+            }
+            BackgroundWorker BgWorker = new BackgroundWorker();
+            BgWorker.DoWork += new DoWorkEventHandler(LookUpOnline);
+            BgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(LookUpOnlineCompleted);
+            BgWorker.RunWorkerAsync();
         }
         public static bool IsInternet()
-        { 
+        {
             Ping PingObject = new Ping();
             try
             {
-                PingReply result = PingObject.Send(MooOnlineInfo.hosturl,2000);
+                PingReply result = PingObject.Send(OnlineInfo.hosturl, 3000);
                 if (result.Status == IPStatus.Success)
-                   return true;
+                    return true;
             }
             catch (Exception e) { e.ToString(); /*do nothing*/  }
-            return false; 
+            return false;
         }
       
+        private static void LookUpOnline(object sender, DoWorkEventArgs e)
+        {
+            //we can decide to not check for internet connection to get speed
+            if (IsInternet())
+            {
+                //call the parse methode to fill the object of online info
+                OnLineInfoIstance.ParseInfo();
+            }
+        }
+        private static void LookUpOnlineCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                Moo.Dialogs.UpdateDialog.Show(OnLineInfoIstance);
+            }
+            else
+            {
+                //message for erroe
+            }
+        }
+        
 
 
     }
