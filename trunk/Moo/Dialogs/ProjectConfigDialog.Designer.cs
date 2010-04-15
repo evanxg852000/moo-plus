@@ -51,7 +51,7 @@
             // 
             // AssemblyNameTbx
             // 
-            this.AssemblyNameTbx.Location = new System.Drawing.Point(127, 12);
+            this.AssemblyNameTbx.Location = new System.Drawing.Point(124, 7);
             this.AssemblyNameTbx.Name = "AssemblyNameTbx";
             this.AssemblyNameTbx.Size = new System.Drawing.Size(216, 22);
             this.AssemblyNameTbx.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.Path});
             this.RefferencesListView.FullRowSelect = true;
             this.RefferencesListView.GridLines = true;
-            this.RefferencesListView.Location = new System.Drawing.Point(12, 155);
+            this.RefferencesListView.Location = new System.Drawing.Point(7, 150);
             this.RefferencesListView.MultiSelect = false;
             this.RefferencesListView.Name = "RefferencesListView";
             this.RefferencesListView.ShowItemToolTips = true;
@@ -84,7 +84,7 @@
             // 
             // ProjectIconTbx
             // 
-            this.ProjectIconTbx.Location = new System.Drawing.Point(127, 99);
+            this.ProjectIconTbx.Location = new System.Drawing.Point(124, 94);
             this.ProjectIconTbx.Name = "ProjectIconTbx";
             this.ProjectIconTbx.Size = new System.Drawing.Size(185, 22);
             this.ProjectIconTbx.TabIndex = 3;
@@ -93,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(6, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 14);
             this.label1.TabIndex = 6;
@@ -102,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 74);
+            this.label2.Location = new System.Drawing.Point(6, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 14);
             this.label2.TabIndex = 7;
@@ -111,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 102);
+            this.label3.Location = new System.Drawing.Point(6, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 14);
             this.label3.TabIndex = 8;
@@ -119,7 +119,7 @@
             // 
             // BrowseIconBt
             // 
-            this.BrowseIconBt.Location = new System.Drawing.Point(316, 98);
+            this.BrowseIconBt.Location = new System.Drawing.Point(313, 93);
             this.BrowseIconBt.Name = "BrowseIconBt";
             this.BrowseIconBt.Size = new System.Drawing.Size(27, 23);
             this.BrowseIconBt.TabIndex = 10;
@@ -134,7 +134,7 @@
             this.BuildTargetCbx.Items.AddRange(new object[] {
             "Debug",
             "Release"});
-            this.BuildTargetCbx.Location = new System.Drawing.Point(127, 71);
+            this.BuildTargetCbx.Location = new System.Drawing.Point(124, 66);
             this.BuildTargetCbx.Name = "BuildTargetCbx";
             this.BuildTargetCbx.Size = new System.Drawing.Size(216, 22);
             this.BuildTargetCbx.TabIndex = 11;
@@ -142,7 +142,7 @@
             // SaveBt
             // 
             this.SaveBt.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.SaveBt.Location = new System.Drawing.Point(338, 220);
+            this.SaveBt.Location = new System.Drawing.Point(335, 215);
             this.SaveBt.Name = "SaveBt";
             this.SaveBt.Size = new System.Drawing.Size(75, 23);
             this.SaveBt.TabIndex = 13;
@@ -153,7 +153,7 @@
             // Cancel
             // 
             this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(338, 249);
+            this.Cancel.Location = new System.Drawing.Point(335, 244);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 14;
@@ -164,7 +164,7 @@
             // ProjectCreateDateTbx
             // 
             this.ProjectCreateDateTbx.Enabled = false;
-            this.ProjectCreateDateTbx.Location = new System.Drawing.Point(127, 126);
+            this.ProjectCreateDateTbx.Location = new System.Drawing.Point(124, 121);
             this.ProjectCreateDateTbx.Name = "ProjectCreateDateTbx";
             this.ProjectCreateDateTbx.Size = new System.Drawing.Size(216, 22);
             this.ProjectCreateDateTbx.TabIndex = 0;
@@ -172,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 129);
+            this.label4.Location = new System.Drawing.Point(6, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 14);
             this.label4.TabIndex = 6;
@@ -181,7 +181,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 43);
+            this.label5.Location = new System.Drawing.Point(6, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 14);
             this.label5.TabIndex = 6;
@@ -194,7 +194,7 @@
             this.AssemblyTypeCbx.Items.AddRange(new object[] {
             "Executable (.exe)",
             "Dynamic Library (.dll)"});
-            this.AssemblyTypeCbx.Location = new System.Drawing.Point(127, 40);
+            this.AssemblyTypeCbx.Location = new System.Drawing.Point(124, 35);
             this.AssemblyTypeCbx.Name = "AssemblyTypeCbx";
             this.AssemblyTypeCbx.Size = new System.Drawing.Size(216, 22);
             this.AssemblyTypeCbx.TabIndex = 11;
@@ -202,7 +202,7 @@
             // RemoveRefBt
             // 
             this.RemoveRefBt.Image = global::Moo.Properties.Resources.delete;
-            this.RemoveRefBt.Location = new System.Drawing.Point(316, 184);
+            this.RemoveRefBt.Location = new System.Drawing.Point(313, 179);
             this.RemoveRefBt.Name = "RemoveRefBt";
             this.RemoveRefBt.Size = new System.Drawing.Size(27, 23);
             this.RemoveRefBt.TabIndex = 5;
@@ -212,7 +212,7 @@
             // AddRefBt
             // 
             this.AddRefBt.Image = global::Moo.Properties.Resources.add;
-            this.AddRefBt.Location = new System.Drawing.Point(316, 155);
+            this.AddRefBt.Location = new System.Drawing.Point(313, 150);
             this.AddRefBt.Name = "AddRefBt";
             this.AddRefBt.Size = new System.Drawing.Size(27, 23);
             this.AddRefBt.TabIndex = 4;
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel;
-            this.ClientSize = new System.Drawing.Size(425, 279);
+            this.ClientSize = new System.Drawing.Size(413, 279);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.SaveBt);
             this.Controls.Add(this.AssemblyTypeCbx);

@@ -18,7 +18,7 @@ namespace Moo.Dialogs
         private static UpdateDialog Instance;
         private OnlineInfo OnLineInfo;
         private WebClient DownloadClient;
-        public UpdateDialog(OnlineInfo info)
+        private UpdateDialog(OnlineInfo info)
         {
             InitializeComponent();
             this.OnLineInfo = info;
@@ -92,7 +92,7 @@ namespace Moo.Dialogs
             switch (selectedItem.SubItems[0].Text)
             { 
                 case "Plugin":
-                        localfilepath=Path.GetDirectoryName(Application.ExecutablePath)+AppSettings.GetFolder("pluginsfolder")+localfile ;
+                        localfilepath=Path.GetDirectoryName(Application.ExecutablePath)+AppSettings.GetFolder("plugins")+localfile ;
                         DownloadClient.DownloadFileAsync(fileurl,localfilepath);
                     break;
                 case "Update":

@@ -537,7 +537,11 @@ namespace Moo
         }
 
         //Settings menu
-        
+        private void EditPreferences(object sender, EventArgs e)
+        {
+            PreferenceDialog.Show(MOO_APPLICATION_SETTINGS);
+        }
+
 
         //Tools menu
         private void ManageUpdate(object sender, EventArgs e)
@@ -770,6 +774,7 @@ namespace Moo
         
         #endregion      
 
+       
         
 
        

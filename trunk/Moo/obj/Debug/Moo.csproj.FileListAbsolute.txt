@@ -6,14 +6,15 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\E
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.BuildOutput.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.CodeEditor.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.AboutDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.BugRepDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.NewProFileDialog.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.PreferenceDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.UpdateDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.ProjectConfigDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.FBrunchBrowser.resources

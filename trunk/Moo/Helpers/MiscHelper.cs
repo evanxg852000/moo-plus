@@ -26,6 +26,9 @@ namespace Moo.Helpers
                 case "Website":
                     pcat = ProjectCategory.Website;
                     break;
+                case "V Basic":
+                    pcat = ProjectCategory.Vbasic;
+                    break;
                 case "Unmanaged":
                     pcat = ProjectCategory.Unmanaged;
                     break;
@@ -71,6 +74,9 @@ namespace Moo.Helpers
                     break;
                 case ".html":
                     language = "html";
+                    break;
+                case ".vb":
+                    language = "vb";
                     break;
             }
             return language;

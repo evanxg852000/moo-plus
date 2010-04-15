@@ -147,9 +147,14 @@ namespace Moo.Core
         }
         public static string GetFolder(string key)
         {
-            return System.Configuration.ConfigurationManager.AppSettings.Get(key);
+            return System.Configuration.ConfigurationManager.AppSettings.Get(key+"folder");
         }
-   
+        public static string GetSdk(string key)
+        {
+            //key= csharp
+            return System.Configuration.ConfigurationManager.AppSettings.Get(key+"sdk");
+        }
+
     }
 
 }

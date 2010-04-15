@@ -109,6 +109,9 @@ namespace Moo.Core
                 case ProjectCategory.Ilasm:
                     FileHelper.CopyFolder(source + @"ilasm\", destination);
                     break;
+                case ProjectCategory.Vbasic:
+                    FileHelper.CopyFolder(source + @"vbasic\", destination);
+                    break;
                 case ProjectCategory.Website:
                     FileHelper.CopyFolder(source + @"website\", destination);
                     break;
