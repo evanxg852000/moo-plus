@@ -145,8 +145,11 @@ namespace Moo.Core
             catch (Exception e) { Exceptioner.Log(e); }
             return ASObject;    
         }
-       
-
+        public static string GetFolder(string key)
+        {
+            return System.Configuration.ConfigurationManager.AppSettings.Get(key);
+        }
+   
     }
 
 }

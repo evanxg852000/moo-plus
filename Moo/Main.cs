@@ -21,7 +21,6 @@ namespace Moo
     {
         #region Global Shared Members
         private AppSettings MOO_APPLICATION_SETTINGS;
-        private MooOnlineInfo MOO_ONLINE_INFO;
         private StartPage MOO_START_PAGE;
         private FProjectBrowser MOO_PROJECT_BROWSER;
         private FBrunchBrowser MOO_BRUNCH_BROWSER;
@@ -157,9 +156,6 @@ namespace Moo
         private void AppStartedInitilization(object sender, EventArgs e)
         {
             //the load event handler of the main window
-            MOO_ONLINE_INFO=MooOnlineInfo.GetOnlineInfo();
-            //show tip of the day
-
         }
  
         //just for test to be deleted 
@@ -546,7 +542,7 @@ namespace Moo
         //Tools menu
         private void ManageUpdate(object sender, EventArgs e)
         {
-            UpdateDialog.Show(MOO_ONLINE_INFO);
+            OnlineInfo.CheckOutForUpdate();
         }
 
         //Help menu
