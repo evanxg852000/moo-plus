@@ -388,6 +388,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Configuration\Builtin\hydro.xml" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\hy.txt" />
+    <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\vbscript.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\vb.xml" />
     <Content Include="SciLexer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -11,6 +11,7 @@ namespace Moo.Core
         Hydro,
         Ilasm,
         Website,
+        Vbasic,
         Unmanaged
     }
    

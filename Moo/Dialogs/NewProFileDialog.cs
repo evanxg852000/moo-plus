@@ -45,7 +45,7 @@ namespace Moo.Dialogs
                 this.Text += "Project";
                 this.NameTbx.Text = "< Project Name >";
                 this.FolderTbx.Text = "< Project Folder >";
-                this.TypeCbx.Items.AddRange(new string[] { "C Sharp", "Hydro", "Ilasm", "Website", "Unmanaged" });
+                this.TypeCbx.Items.AddRange(new string[] { "C Sharp", "Hydro", "Ilasm", "Website","V Basic" ,"Unmanaged" });
 
             }
            this.TypeCbx.SelectedIndex = 0; 

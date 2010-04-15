@@ -96,6 +96,7 @@
             this.MPascalLanguage = new System.Windows.Forms.MenuItem();
             this.MPhpLanguage = new System.Windows.Forms.MenuItem();
             this.MSqlLanguage = new System.Windows.Forms.MenuItem();
+            this.MVbLanguage = new System.Windows.Forms.MenuItem();
             this.MXmlLanguage = new System.Windows.Forms.MenuItem();
             this.MSeparator11 = new System.Windows.Forms.MenuItem();
             this.MStartPage = new System.Windows.Forms.MenuItem();
@@ -577,6 +578,7 @@
             this.MPascalLanguage,
             this.MPhpLanguage,
             this.MSqlLanguage,
+            this.MVbLanguage,
             this.MXmlLanguage});
             this.MLanguage.Text = "Language";
             // 
@@ -678,9 +680,16 @@
             this.MSqlLanguage.Text = "SQL";
             this.MSqlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
+            // MVbLanguage
+            // 
+            this.MVbLanguage.Index = 14;
+            this.MVbLanguage.Tag = "vb";
+            this.MVbLanguage.Text = "VB";
+            this.MVbLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
+            // 
             // MXmlLanguage
             // 
-            this.MXmlLanguage.Index = 14;
+            this.MXmlLanguage.Index = 15;
             this.MXmlLanguage.Tag = "xml";
             this.MXmlLanguage.Text = "XML";
             this.MXmlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
@@ -860,6 +869,7 @@
             this.MPreferences.Index = 0;
             this.MPreferences.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftP;
             this.MPreferences.Text = "Preferences...";
+            this.MPreferences.Click += new System.EventHandler(this.EditPreferences);
             // 
             // MEncodingAnsi
             // 
@@ -1270,6 +1280,7 @@
             this.MTBPreferences.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBPreferences.Size = new System.Drawing.Size(26, 26);
             this.MTBPreferences.ToolTipText = "Preference";
+            this.MTBPreferences.Click += new System.EventHandler(this.EditPreferences);
             // 
             // MTBPlugin
             // 
@@ -1282,6 +1293,7 @@
             this.MTBPlugin.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBPlugin.Size = new System.Drawing.Size(26, 26);
             this.MTBPlugin.ToolTipText = "Manage Plugin";
+            this.MTBPlugin.Click += new System.EventHandler(this.ManageUpdate);
             // 
             // MBuilToolbar
             // 
@@ -1369,6 +1381,7 @@
             this.MTBConfig.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBConfig.Size = new System.Drawing.Size(26, 26);
             this.MTBConfig.ToolTipText = "Configuration";
+            this.MTBConfig.Click += new System.EventHandler(this.ProjectConfigure);
             // 
             // MFileToolBar
             // 
@@ -1674,6 +1687,7 @@
         private System.Windows.Forms.MenuItem MToLowerCase;
         private System.Windows.Forms.MenuItem MPrintPreview;
         private System.Windows.Forms.MenuItem MPageSetup;
+        private System.Windows.Forms.MenuItem MVbLanguage;
 
 
     }
