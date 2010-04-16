@@ -4,24 +4,33 @@ using System.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using ScintillaNet;
+using System.Drawing;
+
 
 namespace Moo.Core
 {
     [Serializable]
    public  class CodeEditorConfig
     {
-        public string Font="consolas";
-        public int FontSize=11;
-        public FoldMarkerScheme FoldingMarker = FoldMarkerScheme.BoxPlusMinus;
-        public bool IsAutosave=false;
-        public int AutosaveTimer=300000; //5mn-> ms
-        public bool IsMarginLine=true;
-        public bool IsLineHilighting=false;
+        public string Font;
+        public int FontSize;
+        public FoldMarkerScheme FoldingMarker;
+        public FontStyle FontStyle ;
+        public bool IsAutosave;
+        public int AutosaveTimer; 
+        public bool IsMarginLine;
+        public bool IsLineHilighting;
         public CodeEditorConfig()
         {
-            //just default constructor
-        }
-        
+            Font = "Consolas";
+            FontSize = 11;
+            FoldingMarker = FoldMarkerScheme.BoxPlusMinus;
+            FontStyle = FontStyle.Regular;
+            IsAutosave = false;
+            AutosaveTimer = 300000;//5mn-> ms
+            IsMarginLine = true;
+            IsLineHilighting = false;
+        }     
     }
     
     [Serializable]
@@ -115,7 +124,11 @@ namespace Moo.Core
 
         private   AppSettings()
         {
-            //just default constructor
+            this.recentfiles = new List<string>();
+            this.recentprojects = new List<string>();
+            this.activeplugins = new List<string>();
+            this.editorconfig = new CodeEditorConfig();
+            this.lastworkingdir = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
         }
         public static void Save(AppSettings MooAppSettings)
         {
@@ -134,6 +147,7 @@ namespace Moo.Core
         {
             //deserialize the object to load
             AppSettings ASObject = new AppSettings();
+           //Save(ASObject);
             try
             {
                 using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Read))

@@ -34,8 +34,8 @@
             this.BrowserTool = new System.Windows.Forms.ToolStrip();
             this.TNewProject = new System.Windows.Forms.ToolStripButton();
             this.TopenProject = new System.Windows.Forms.ToolStripButton();
-            this.TRefresh = new System.Windows.Forms.ToolStripButton();
             this.NewfileBt = new System.Windows.Forms.ToolStripButton();
+            this.TRefresh = new System.Windows.Forms.ToolStripButton();
             this.BrowserTool.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,16 +89,6 @@
             this.TopenProject.Text = "Open Project";
             this.TopenProject.Click += new System.EventHandler(this.RequestOpenProject);
             // 
-            // TRefresh
-            // 
-            this.TRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TRefresh.Image = global::Moo.Properties.Resources.projet_brow_refresh;
-            this.TRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TRefresh.Name = "TRefresh";
-            this.TRefresh.Size = new System.Drawing.Size(23, 22);
-            this.TRefresh.Text = "Refresh";
-            this.TRefresh.Click += new System.EventHandler(this.TRefresh_Click);
-            // 
             // NewfileBt
             // 
             this.NewfileBt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -108,6 +98,16 @@
             this.NewfileBt.Size = new System.Drawing.Size(23, 22);
             this.NewfileBt.Text = "toolStripButton1";
             this.NewfileBt.Click += new System.EventHandler(this.RequestNewFile);
+            // 
+            // TRefresh
+            // 
+            this.TRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TRefresh.Image = global::Moo.Properties.Resources.projet_brow_refresh;
+            this.TRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TRefresh.Name = "TRefresh";
+            this.TRefresh.Size = new System.Drawing.Size(23, 22);
+            this.TRefresh.Text = "Refresh";
+            this.TRefresh.Click += new System.EventHandler(this.TRefresh_Click);
             // 
             // FProjectBrowser
             // 
@@ -122,6 +122,7 @@
             this.Name = "FProjectBrowser";
             this.TabText = "Project ";
             this.Text = "Project ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.BrowserTool.ResumeLayout(false);
             this.BrowserTool.PerformLayout();
             this.ResumeLayout(false);

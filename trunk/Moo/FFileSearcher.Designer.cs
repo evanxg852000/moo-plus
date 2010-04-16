@@ -118,6 +118,7 @@
             this.Name = "FFileSearcher";
             this.TabText = " Search File";
             this.Text = " Search File";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);

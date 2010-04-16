@@ -51,12 +51,9 @@
             this.MRecentFiles = new System.Windows.Forms.MenuItem();
             this.MClearRecentFiles = new System.Windows.Forms.MenuItem();
             this.MSeparator4 = new System.Windows.Forms.MenuItem();
-            this.menuItem17 = new System.Windows.Forms.MenuItem();
-            this.menuItem16 = new System.Windows.Forms.MenuItem();
             this.MRecentProjects = new System.Windows.Forms.MenuItem();
             this.MClearRecentProjects = new System.Windows.Forms.MenuItem();
             this.MSeparator5 = new System.Windows.Forms.MenuItem();
-            this.menuItem30 = new System.Windows.Forms.MenuItem();
             this.MSeparator6 = new System.Windows.Forms.MenuItem();
             this.MExit = new System.Windows.Forms.MenuItem();
             this.MEditMenu = new System.Windows.Forms.MenuItem();
@@ -330,54 +327,39 @@
             this.MRecentFiles.Index = 14;
             this.MRecentFiles.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MClearRecentFiles,
-            this.MSeparator4,
-            this.menuItem17,
-            this.menuItem16});
+            this.MSeparator4});
             this.MRecentFiles.Text = "Recents Files";
             // 
             // MClearRecentFiles
             // 
             this.MClearRecentFiles.Index = 0;
+            this.MClearRecentFiles.Tag = "Separator";
             this.MClearRecentFiles.Text = "Clear...";
+            this.MClearRecentFiles.Click += new System.EventHandler(this.ClearRecents);
             // 
             // MSeparator4
             // 
             this.MSeparator4.Index = 1;
             this.MSeparator4.Text = "-";
             // 
-            // menuItem17
-            // 
-            this.menuItem17.Index = 2;
-            this.menuItem17.Text = "Main.cpp";
-            // 
-            // menuItem16
-            // 
-            this.menuItem16.Index = 3;
-            this.menuItem16.Text = "Sample.txt";
-            // 
             // MRecentProjects
             // 
             this.MRecentProjects.Index = 15;
             this.MRecentProjects.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MClearRecentProjects,
-            this.MSeparator5,
-            this.menuItem30});
+            this.MSeparator5});
             this.MRecentProjects.Text = "Recents Projects";
             // 
             // MClearRecentProjects
             // 
             this.MClearRecentProjects.Index = 0;
             this.MClearRecentProjects.Text = "Clear...";
+            this.MClearRecentProjects.Click += new System.EventHandler(this.ClearRecents);
             // 
             // MSeparator5
             // 
             this.MSeparator5.Index = 1;
             this.MSeparator5.Text = "-";
-            // 
-            // menuItem30
-            // 
-            this.menuItem30.Index = 2;
-            this.menuItem30.Text = "Mypro.pro";
             // 
             // MSeparator6
             // 
@@ -1517,7 +1499,6 @@
             this.MinimumSize = new System.Drawing.Size(1008, 621);
             this.Name = "MMainWindow";
             this.Text = "Moo { + }";
-            this.Load += new System.EventHandler(this.AppStartedInitilization);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppShuttingDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1567,8 +1548,6 @@
         private System.Windows.Forms.ToolStripButton MTBSaveAll;
         private System.Windows.Forms.ToolStripProgressBar MStatusProBar;
         private System.Windows.Forms.ToolStripStatusLabel MStatusLbl;
-        private System.Windows.Forms.MenuItem menuItem16;
-        private System.Windows.Forms.MenuItem menuItem17;
         private System.Windows.Forms.MenuItem MClearRecentFiles;
         private System.Windows.Forms.MenuItem MSeparator1;
         private System.Windows.Forms.MenuItem MSave;
@@ -1584,7 +1563,6 @@
         private System.Windows.Forms.MenuItem MNewPrject;
         private System.Windows.Forms.MenuItem MSeparator4;
         private System.Windows.Forms.MenuItem MRecentProjects;
-        private System.Windows.Forms.MenuItem menuItem30;
         private System.Windows.Forms.MenuItem MSeparator5;
         private System.Windows.Forms.MenuItem MClearRecentProjects;
         private System.Windows.Forms.MenuItem MSeparator6;

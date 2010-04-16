@@ -94,6 +94,7 @@
             this.Name = "FFileSystBrowser";
             this.TabText = "File System";
             this.Text = "File System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ToolTtrip.ResumeLayout(false);
             this.ToolTtrip.PerformLayout();
             this.ResumeLayout(false);

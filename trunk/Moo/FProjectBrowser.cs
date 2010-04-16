@@ -76,6 +76,12 @@ namespace Moo
                 }
             }
         }
+
+        private void HideInstead(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     
     
     }
