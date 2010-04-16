@@ -208,11 +208,11 @@
             this.Controls.Add(this.ToolStrip);
             this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)(((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft)
                         | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight)));
+            this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FBrunchBrowser";
             this.TabText = "Brunch Browser";
             this.Text = "Brunch Browser";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.BrunchBCtxtMenu.ResumeLayout(false);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
