@@ -17,11 +17,7 @@ namespace Moo
             InitializeComponent();
             FileBrowserTree.BuildNodes();
         }
-        private void HideInstead(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            this.Hide();
-        }
+       
 
     }
 }

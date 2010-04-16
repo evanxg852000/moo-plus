@@ -90,11 +90,11 @@
             this.Controls.Add(this.FileBrowserTree);
             this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)(((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft)
                         | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight)));
+            this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FFileSystBrowser";
             this.TabText = "File System";
             this.Text = "File System";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ToolTtrip.ResumeLayout(false);
             this.ToolTtrip.PerformLayout();
             this.ResumeLayout(false);

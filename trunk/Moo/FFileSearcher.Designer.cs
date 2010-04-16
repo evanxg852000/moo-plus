@@ -114,11 +114,11 @@
             this.Controls.Add(this.FileFounderList);
             this.Controls.Add(this.ToolStrip);
             this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockBottom)));
+            this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FFileSearcher";
             this.TabText = " Search File";
             this.Text = " Search File";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);

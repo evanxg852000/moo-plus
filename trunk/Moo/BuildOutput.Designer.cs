@@ -52,11 +52,11 @@
                         | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight)
                         | WeifenLuo.WinFormsUI.Docking.DockAreas.DockBottom)
                         | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
+            this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuildOutput";
             this.TabText = "Build Output";
             this.Text = "Build Output";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ResumeLayout(false);
             this.PerformLayout();
 
