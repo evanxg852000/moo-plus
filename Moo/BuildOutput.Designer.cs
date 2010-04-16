@@ -56,6 +56,7 @@
             this.Name = "BuildOutput";
             this.TabText = "Build Output";
             this.Text = "Build Output";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.ResumeLayout(false);
             this.PerformLayout();
 

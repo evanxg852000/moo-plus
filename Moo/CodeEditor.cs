@@ -53,7 +53,6 @@ namespace Moo
             this.FilePath = filepath;
             this.Text = filepath;
             this.TabText = this.FileName;
-            
         }
 
         //code edition

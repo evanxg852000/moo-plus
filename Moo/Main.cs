@@ -36,7 +36,10 @@ namespace Moo
             UiInitialisation();
             LoadAppState();
             LoadPlugins();
-            test();
+            ApplyLoadedSettings();
+          
+            // test();
+           
         }
         private void UiInitialisation()
         {
@@ -82,6 +85,19 @@ namespace Moo
         }
         private void SaveAppState()
         {
+            if (MOO_APPLICATION_SETTINGS.IsSaveLayout)
+            {
+                if (MOO_PROJECT_BROWSER.DockState == DockState.DockLeft) { MOO_APPLICATION_SETTINGS.IsProjectBrowser = true; }
+                else { MOO_APPLICATION_SETTINGS.IsProjectBrowser = false; }
+                if (MOO_BRUNCH_BROWSER.DockState == DockState.DockLeft) { MOO_APPLICATION_SETTINGS.IsBrunchBrowser = true; }
+                else {MOO_APPLICATION_SETTINGS.IsBrunchBrowser = false; }
+                if (MOO_FILE_SYSTBROWSER.DockState == DockState.DockRight) { MOO_APPLICATION_SETTINGS.IsFileBrowser = true; }
+                else { MOO_APPLICATION_SETTINGS.IsFileBrowser = false; }
+                if (MOO_BUILD_OUTPUT.DockState == DockState.DockBottom) {  MOO_APPLICATION_SETTINGS.IsBuildOutput = true; }
+                else { MOO_APPLICATION_SETTINGS.IsBuildOutput = false; }
+                if (MOO_FILE_SEARCHER.DockState == DockState.DockBottom) { MOO_APPLICATION_SETTINGS.IsFileSearcher = true; }
+                else { MOO_APPLICATION_SETTINGS.IsFileSearcher = false; }
+            }
              AppSettings.Save(MOO_APPLICATION_SETTINGS);
         }
         private List<CodeEditor> GetCodeEditors()
@@ -153,15 +169,35 @@ namespace Moo
                 }
             }
         }
-        private void AppStartedInitilization(object sender, EventArgs e)
+        private void ApplyLoadedSettings()
         {
-            //the load event handler of the main window
+            if(MOO_APPLICATION_SETTINGS.IsProjectBrowser){ MOO_PROJECT_BROWSER.DockState=DockState.DockLeft;}
+            if(MOO_APPLICATION_SETTINGS.IsBrunchBrowser){ MOO_BRUNCH_BROWSER.DockState = DockState.DockLeft;}
+            if(MOO_APPLICATION_SETTINGS.IsFileBrowser){ MOO_FILE_SYSTBROWSER.DockState = DockState.DockRight;} 
+            if(MOO_APPLICATION_SETTINGS.IsBuildOutput){ MOO_BUILD_OUTPUT.DockState = DockState.DockBottom;}
+            if(MOO_APPLICATION_SETTINGS.IsFileSearcher){MOO_FILE_SEARCHER.DockState = DockState.DockBottom;} 
+            foreach(string file in MOO_APPLICATION_SETTINGS.RecentFiles )
+            {
+                MenuItem mi = new MenuItem(Path.GetFileName(file));
+                mi.Tag = file;
+                mi.Click += new EventHandler(OpenRecentHandler);
+                MRecentFiles.MenuItems.Add(mi);
+            }
+            foreach (string file in  MOO_APPLICATION_SETTINGS.RecentProjects)
+            {
+                MenuItem mi = new MenuItem(Path.GetFileName(file));
+                mi.Tag = file;
+                mi.Click += new EventHandler(OpenRecentHandler);
+                MRecentProjects.MenuItems.Add(mi);
+            }
         }
+
+
+        
  
         //just for test to be deleted 
         public void test()
         {
-
             MOO_BUILD_OUTPUT.SetOutputContent("some log out put");
         }
           
@@ -183,7 +219,9 @@ namespace Moo
                 string fileExtention=Moo.Helpers.MiscHelper.GetFileExtention(newdialog.RType);
                 string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileExtention);
                 string filename = newdialog.RFolder +@"\"+ newdialog.RName + fileExtention;
-                
+                //add to recent
+                if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5) { MOO_APPLICATION_SETTINGS.RecentFiles.Add(filename); }
+
                 CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
                 MCED.SetLanguage(fileLanguage);
                 MCED.Show(MDockArea);
@@ -201,6 +239,9 @@ namespace Moo
                 string projectfolder = newdialog.RFolder;
                 string projectname =newdialog.RName;
                 Project PRJT= Project.Create(projectfolder, projectname, projecttype);
+                //add to recent
+                if (MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5) { MOO_APPLICATION_SETTINGS.RecentProjects.Add(projectfolder + @"\" + projectname + @"\" + projectname + ".mpr"); }
+               
                 MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                 //load the project into the project browser
                 MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
@@ -228,6 +269,11 @@ namespace Moo
                     MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                     //load the project into the project browser
                     MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder,PRJT.ProjectFile,PRJT.ProjectName);
+                    //add to recent
+                    if(MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5)
+                    {
+                        MOO_APPLICATION_SETTINGS.RecentProjects.Add(openfilepath);
+                    }
                 }
                 else 
                 {
@@ -239,9 +285,80 @@ namespace Moo
                     MCED.Show(MDockArea);
                     MCED.DockState = DockState.Document;
                     MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+                    //add to recent
+                    if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5)
+                    {
+                        MOO_APPLICATION_SETTINGS.RecentFiles.Add(openfilepath);
+                    }
                 }
             }
-        }      
+        }
+        private void OpenRecentHandler(object sender, EventArgs e)
+        {
+            MenuItem mi=(MenuItem)sender;
+            string openfilepath=mi.Tag.ToString();
+            if(! new FileInfo(openfilepath).Exists)
+            {
+                MessageBox.Show("this file has been removed");
+                MenuItem Parent =(MenuItem) mi.Parent;
+                Parent.MenuItems.Remove(mi);
+                if(Parent==MRecentFiles)
+                {
+                    MOO_APPLICATION_SETTINGS.RecentFiles.Remove(mi.Tag.ToString());
+                }
+                else
+                {
+                    MOO_APPLICATION_SETTINGS.RecentProjects.Remove(mi.Tag.ToString());
+                }
+                return;
+            }
+
+            string openfilecontent = FileHelper.GetContent(openfilepath);
+            string openfileextesion = Path.GetExtension(openfilepath);
+            if (openfilepath != String.Empty)
+            {
+                if (openfileextesion == ".mpr")
+                {
+                    //deal with project
+                    Project PRJT = Project.Open(openfilepath);
+                    MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
+                    //load the project into the project browser
+                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder, PRJT.ProjectFile, PRJT.ProjectName);
+                }
+                else
+                {
+                    //deal with file
+                    string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
+                    CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
+                    MCED.SetLanguage(fileLanguage);
+                    MCED.SetContent(openfilecontent);
+                    MCED.Show(MDockArea);
+                    MCED.DockState = DockState.Document;
+                    MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+                }
+            }
+        }
+        private void ClearRecents(object sender, EventArgs e)
+        {
+            MenuItem mi = (MenuItem)sender;
+            MenuItem Parent = (MenuItem)mi.Parent;
+            int cpt = Parent.MenuItems.Count;
+            while(Parent.MenuItems.Count>2)
+            {
+                MenuItem item = Parent.MenuItems[cpt-1];               
+                Parent.MenuItems.Remove(item);
+                cpt--;
+            }
+
+            if (Parent == MRecentFiles)
+            {
+                MOO_APPLICATION_SETTINGS.RecentFiles.Clear();
+            }
+            else
+            {
+                MOO_APPLICATION_SETTINGS.RecentProjects.Clear();
+            }
+        }
         private void ReloadCurrentEditor(object sender, EventArgs e)
         {
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
@@ -774,6 +891,9 @@ namespace Moo
         
         #endregion      
 
+        
+
+       
        
         
 

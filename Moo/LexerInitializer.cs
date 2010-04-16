@@ -66,10 +66,10 @@ namespace Moo
             
             //apply user configuration
             scintilla.UseFont = true;
-            Font userFont = new Font("consolas", 9F,FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Font userFont = new Font(codeeditorcong.Font, codeeditorcong.FontSize, codeeditorcong.FontStyle, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             scintilla.Font = userFont;
-            
-
+            scintilla.Folding.MarkerScheme = codeeditorcong.FoldingMarker;
+            scintilla.Caret.HighlightCurrentLine = codeeditorcong.IsLineHilighting;
         }
   #endregion
 

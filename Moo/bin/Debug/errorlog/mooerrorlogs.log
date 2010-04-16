@@ -8,3 +8,11 @@ User DomainName :Evansoft-PC
 User Name :Administrator
 =======================================================
 
+
+=======================NEW EXCEPTION================
+16/04/2010 18:50:28
+------------Source------------
+mscorlib
+------------Message------------
+The process cannot access the file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\config\mooconf.mco' because it is being used by another process.
+------------Data------------

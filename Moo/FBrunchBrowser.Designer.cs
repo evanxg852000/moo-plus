@@ -79,7 +79,7 @@
             this.collapseAllToolStripMenuItem});
             this.BrunchBCtxtMenu.Name = "BrunchBCtxtMenu";
             this.BrunchBCtxtMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.BrunchBCtxtMenu.Size = new System.Drawing.Size(153, 142);
+            this.BrunchBCtxtMenu.Size = new System.Drawing.Size(137, 120);
             // 
             // createFolderToolStripMenuItem
             // 
@@ -88,7 +88,7 @@
             this.deleteToolStripMenuItem});
             this.createFolderToolStripMenuItem.Image = global::Moo.Properties.Resources.folder;
             this.createFolderToolStripMenuItem.Name = "createFolderToolStripMenuItem";
-            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.createFolderToolStripMenuItem.Text = "Folder";
             // 
             // newFolderToolStripMenuItem
@@ -111,51 +111,51 @@
             this.insertSelectedToolStripMenuItem1});
             this.createBrunchToolStripMenuItem.Image = global::Moo.Properties.Resources.file;
             this.createBrunchToolStripMenuItem.Name = "createBrunchToolStripMenuItem";
-            this.createBrunchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createBrunchToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.createBrunchToolStripMenuItem.Text = "Brunch";
             // 
             // newBrunchToolStripMenuItem
             // 
             this.newBrunchToolStripMenuItem.Name = "newBrunchToolStripMenuItem";
-            this.newBrunchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newBrunchToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.newBrunchToolStripMenuItem.Text = "New ";
             // 
             // deleteSelectedToolStripMenuItem
             // 
             this.deleteSelectedToolStripMenuItem.Image = global::Moo.Properties.Resources.brunch_rmv;
             this.deleteSelectedToolStripMenuItem.Name = "deleteSelectedToolStripMenuItem";
-            this.deleteSelectedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteSelectedToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.deleteSelectedToolStripMenuItem.Text = "Delete ";
             // 
             // insertSelectedToolStripMenuItem1
             // 
             this.insertSelectedToolStripMenuItem1.Image = global::Moo.Properties.Resources.brunch_add;
             this.insertSelectedToolStripMenuItem1.Name = "insertSelectedToolStripMenuItem1";
-            this.insertSelectedToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.insertSelectedToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.insertSelectedToolStripMenuItem1.Text = "Insert";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::Moo.Properties.Resources.projet_brow_refresh;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // expandAllToolStripMenuItem
             // 
             this.expandAllToolStripMenuItem.Name = "expandAllToolStripMenuItem";
-            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.expandAllToolStripMenuItem.Text = "Expand All";
             // 
             // collapseAllToolStripMenuItem
             // 
             this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
-            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.collapseAllToolStripMenuItem.Text = "Collapse All";
             // 
             // ToolStrip
@@ -212,6 +212,7 @@
             this.Name = "FBrunchBrowser";
             this.TabText = "Brunch Browser";
             this.Text = "Brunch Browser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideInstead);
             this.BrunchBCtxtMenu.ResumeLayout(false);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();

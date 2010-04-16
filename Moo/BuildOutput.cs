@@ -20,5 +20,11 @@ namespace Moo
         {
             this.Content.Text = content;
         }
+        private void HideInstead(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+    
     }
 }
