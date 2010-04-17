@@ -53,6 +53,7 @@
             this.ProjectBrowserTree.ShowRootLines = false;
             this.ProjectBrowserTree.Size = new System.Drawing.Size(206, 240);
             this.ProjectBrowserTree.TabIndex = 0;
+            this.ProjectBrowserTree.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.RequestOpenSelectedFileNode);
             // 
             // BrowserTool
             // 

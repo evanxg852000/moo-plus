@@ -36,6 +36,7 @@
             // 
             // DeamonSearcher
             // 
+            this.DeamonSearcher.WorkerSupportsCancellation = true;
             this.DeamonSearcher.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DeamonSearcher_DoWork);
             // 
             // FileName

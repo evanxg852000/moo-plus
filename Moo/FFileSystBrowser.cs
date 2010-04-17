@@ -7,17 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
+using Moo.Core;
 
 namespace Moo
 {
     public partial class FFileSystBrowser : DockContent
     {
+        public event OpenFileRequestHandler OpenSelectedFileRequested;
+
         public FFileSystBrowser()
         {
             InitializeComponent();
             FileBrowserTree.BuildNodes();
         }
-       
+        private void RefreshViev(object sender, EventArgs e)
+        {
+            this.FileBrowserTree.Refresh();
+        }
+        private void RequestOpenSelectedFile(string itemTag)
+        {
+            if (OpenSelectedFileRequested != null)
+            {
+                try
+                {
+                    OpenSelectedFileRequested(itemTag);
+                }
+                catch
+                {
+                    //do nothing
+                }
+            }
+        }
+		   
 
     }
 }

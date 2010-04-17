@@ -126,7 +126,7 @@
             this.MEncodingUtf8 = new System.Windows.Forms.MenuItem();
             this.MToolsMenu = new System.Windows.Forms.MenuItem();
             this.MPlugins = new System.Windows.Forms.MenuItem();
-            this.MCBManager = new System.Windows.Forms.MenuItem();
+            this.MCBCreator = new System.Windows.Forms.MenuItem();
             this.MManageUpdate = new System.Windows.Forms.MenuItem();
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
@@ -868,7 +868,7 @@
             this.MToolsMenu.Index = 6;
             this.MToolsMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MPlugins,
-            this.MCBManager,
+            this.MCBCreator,
             this.MManageUpdate});
             this.MToolsMenu.Text = "Tools";
             // 
@@ -877,10 +877,11 @@
             this.MPlugins.Index = 0;
             this.MPlugins.Text = "Plugins";
             // 
-            // MCBManager
+            // MCBCreator
             // 
-            this.MCBManager.Index = 1;
-            this.MCBManager.Text = "Code Brunch Manager";
+            this.MCBCreator.Index = 1;
+            this.MCBCreator.Text = "Brunch Creator";
+            this.MCBCreator.Click += new System.EventHandler(this.CreateBrunch);
             // 
             // MManageUpdate
             // 
@@ -1599,7 +1600,7 @@
         private System.Windows.Forms.MenuItem MStopRunProject;
         private System.Windows.Forms.MenuItem MSeparator15;
         private System.Windows.Forms.MenuItem MConfigProject;
-        private System.Windows.Forms.MenuItem MCBManager;
+        private System.Windows.Forms.MenuItem MCBCreator;
         private System.Windows.Forms.MenuItem MProjectExplorer;
         private System.Windows.Forms.MenuItem MCodeBExplorer;
         private System.Windows.Forms.MenuItem MBuildOutput;

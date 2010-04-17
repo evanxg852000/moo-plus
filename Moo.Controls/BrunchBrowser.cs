@@ -23,6 +23,7 @@ namespace Moo.Controls
         }
         public override void Refresh()
         {
+            this.Nodes.Clear();
             BuildNodes();
             this.CollapseAll();
         }

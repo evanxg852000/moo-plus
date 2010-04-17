@@ -12,6 +12,7 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\R
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.BuildOutput.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.CodeEditor.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.AboutDialog.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.NewBrunchDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.BugRepDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.NewProFileDialog.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.PreferenceDialog.resources

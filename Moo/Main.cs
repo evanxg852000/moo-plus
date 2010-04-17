@@ -57,6 +57,7 @@ namespace Moo
             MOO_PROJECT_BROWSER.NewProjectRequested +=new NewProjectRequestHandler(NewProject);
             MOO_PROJECT_BROWSER.NewFileRequested +=new NewFileRequestHandler(NewFile);
             MOO_PROJECT_BROWSER.OpenProjectRequested += new OpenProjectRequestHandler(OpenPrjectFile);
+            MOO_PROJECT_BROWSER.OpenSelectedFileNodeRequested+=new OpenFileRequestHandler(OpenSelectedFileNode);
 
             //brunch Browser
             MOO_BRUNCH_BROWSER = new FBrunchBrowser();
@@ -66,19 +67,22 @@ namespace Moo
             //file system  Browser
             MOO_FILE_SYSTBROWSER = new FFileSystBrowser();
             MOO_FILE_SYSTBROWSER.Show(MDockArea);
-            MOO_FILE_SYSTBROWSER.DockState = DockState.DockRightAutoHide;  
+            MOO_FILE_SYSTBROWSER.DockState = DockState.DockRightAutoHide;
+            MOO_FILE_SYSTBROWSER.OpenSelectedFileRequested += new OpenFileRequestHandler(OpenSelectedFileNode);
 
              //file Searcher
             MOO_FILE_SEARCHER = new FFileSearcher();
             MOO_FILE_SEARCHER.Show(MDockArea);
-            MOO_FILE_SEARCHER.DockState = DockState.DockBottomAutoHide; 
+            MOO_FILE_SEARCHER.DockState = DockState.DockBottomAutoHide;
+            MOO_FILE_SEARCHER.OpenSelectedFileRequested += new OpenFileRequestHandler(OpenSelectedFileNode);
             
 
             //creating buildoutput window
             MOO_BUILD_OUTPUT = new BuildOutput();
             MOO_BUILD_OUTPUT.Show(MDockArea);
             MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide;    
-        }        
+        }
+      
         private void LoadAppState()
         {
             MOO_APPLICATION_SETTINGS = AppSettings.Load();
@@ -148,27 +152,6 @@ namespace Moo
             }
             //create
         }
-        private void PluginLauncher(object sender, EventArgs e)
-        {
-            //the text of the menu is the class name
-            MenuItem mi = (MenuItem)sender;
-            string classname = mi.Tag.ToString();
-
-            foreach (Type t in MOO_PLUGIN_LIST)
-            {
-                if (t.Name == classname)
-                {
-                    //create an instance of objecttype
-                    object[] pinfos = new object[] { };
-                    object thepluginobject = Activator.CreateInstance(t, pinfos);
-                    object[] arguments = new object[] { "evance" };
-                    //result feedback object 
-                    object result;
-                    MethodInfo method = t.GetMethod("Run");
-                    result = method.Invoke(thepluginobject, arguments);
-                }
-            }
-        }
         private void ApplyLoadedSettings()
         {
             if(MOO_APPLICATION_SETTINGS.IsProjectBrowser){ MOO_PROJECT_BROWSER.DockState=DockState.DockLeft;}
@@ -192,9 +175,6 @@ namespace Moo
             }
         }
 
-
-        
- 
         //just for test to be deleted 
         public void test()
         {
@@ -277,6 +257,11 @@ namespace Moo
                 }
                 else 
                 {
+                    //check if it is already opened
+                    foreach (CodeEditor CE in this.GetCodeEditors())
+                    {
+                        if (CE.FilePath == openfilepath) { CE.Activate(); return;  }
+                    }   
                     //deal with file
                     string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
                     CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
@@ -311,8 +296,7 @@ namespace Moo
                     MOO_APPLICATION_SETTINGS.RecentProjects.Remove(mi.Tag.ToString());
                 }
                 return;
-            }
-
+            } 
             string openfilecontent = FileHelper.GetContent(openfilepath);
             string openfileextesion = Path.GetExtension(openfilepath);
             if (openfilepath != String.Empty)
@@ -327,6 +311,11 @@ namespace Moo
                 }
                 else
                 {
+                    //check if it is already opened
+                    foreach (CodeEditor CE in this.GetCodeEditors())
+                    {
+                        if (CE.FilePath == openfilepath) { CE.Activate(); return; }
+                    } 
                     //deal with file
                     string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
                     CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
@@ -336,6 +325,36 @@ namespace Moo
                     MCED.DockState = DockState.Document;
                     MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
                 }
+            }
+        }
+        private void OpenSelectedFileNode(string file)
+        {
+            //check if it is already opened
+            foreach (CodeEditor CE in this.GetCodeEditors())
+            {
+                if (CE.FilePath == file)
+                {
+                    CE.Activate();
+                    return;
+                }
+            }           
+            string filecontent = FileHelper.GetContent(file);
+            string fileextesion = Path.GetExtension(file);
+            if (fileextesion == ".mpr")
+            {
+                return;
+            }
+            string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileextesion);
+            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, file);
+            MCED.SetLanguage(fileLanguage);
+            MCED.SetContent(filecontent);
+            MCED.Show(MDockArea);
+            MCED.DockState = DockState.Document;
+            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+            //add to recent
+            if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5)
+            {
+                MOO_APPLICATION_SETTINGS.RecentFiles.Add(file);
             }
         }
         private void ClearRecents(object sender, EventArgs e)
@@ -661,6 +680,31 @@ namespace Moo
 
 
         //Tools menu
+        private void PluginLauncher(object sender, EventArgs e)
+        {
+            //the text of the menu is the class name
+            MenuItem mi = (MenuItem)sender;
+            string classname = mi.Tag.ToString();
+
+            foreach (Type t in MOO_PLUGIN_LIST)
+            {
+                if (t.Name == classname)
+                {
+                    //create an instance of objecttype
+                    object[] pinfos = new object[] { };
+                    object thepluginobject = Activator.CreateInstance(t, pinfos);
+                    object[] arguments = new object[] { "evance" };
+                    //result feedback object 
+                    object result;
+                    MethodInfo method = t.GetMethod("Run");
+                    result = method.Invoke(thepluginobject, arguments);
+                }
+            }
+        }
+        private void CreateBrunch(object sender, EventArgs e)
+        {
+            NewBrunchDialog.Show();
+        }
         private void ManageUpdate(object sender, EventArgs e)
         {
             OnlineInfo.CheckOutForUpdate();
@@ -891,6 +935,7 @@ namespace Moo
         
         #endregion      
 
+       
         
 
        

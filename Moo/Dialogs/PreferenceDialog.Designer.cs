@@ -33,27 +33,29 @@
             this.SaveBt = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.IsBuildOutput = new System.Windows.Forms.CheckBox();
             this.IsFileSearcher = new System.Windows.Forms.CheckBox();
             this.IsFileBrowser = new System.Windows.Forms.CheckBox();
             this.IsBrunchBrowser = new System.Windows.Forms.CheckBox();
             this.IsProjectBrowser = new System.Windows.Forms.CheckBox();
             this.IsSaveLayout = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.IsBuildOutput = new System.Windows.Forms.CheckBox();
-            this.CEFont = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CEFontSize = new System.Windows.Forms.NumericUpDown();
-            this.CEIsLineHilighting = new System.Windows.Forms.CheckBox();
-            this.CEFoldingMarker = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CEFontStyle = new System.Windows.Forms.ComboBox();
+            this.CEFoldingMarker = new System.Windows.Forms.ComboBox();
+            this.CEIsLineHilighting = new System.Windows.Forms.CheckBox();
+            this.CEFontSize = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CEFontStyle = new System.Windows.Forms.ComboBox();
+            this.CEFont = new System.Windows.Forms.ComboBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEFontSize)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Cancel
@@ -102,6 +104,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ui Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // IsBuildOutput
+            // 
+            this.IsBuildOutput.AutoSize = true;
+            this.IsBuildOutput.Location = new System.Drawing.Point(15, 189);
+            this.IsBuildOutput.Name = "IsBuildOutput";
+            this.IsBuildOutput.Size = new System.Drawing.Size(234, 18);
+            this.IsBuildOutput.TabIndex = 5;
+            this.IsBuildOutput.Text = "Expand build output on startup ?";
+            this.IsBuildOutput.UseVisualStyleBackColor = true;
             // 
             // IsFileSearcher
             // 
@@ -155,7 +167,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.CEFoldingMarker);
             this.tabPage2.Controls.Add(this.CEIsLineHilighting);
@@ -173,46 +184,37 @@
             this.tabPage2.Text = "Code Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // IsBuildOutput
+            // label3
             // 
-            this.IsBuildOutput.AutoSize = true;
-            this.IsBuildOutput.Location = new System.Drawing.Point(15, 189);
-            this.IsBuildOutput.Name = "IsBuildOutput";
-            this.IsBuildOutput.Size = new System.Drawing.Size(234, 18);
-            this.IsBuildOutput.TabIndex = 5;
-            this.IsBuildOutput.Text = "Expand build output on startup ?";
-            this.IsBuildOutput.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 14);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Folding:";
             // 
-            // CEFont
+            // CEFoldingMarker
             // 
-            this.CEFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CEFont.FormattingEnabled = true;
-            this.CEFont.Location = new System.Drawing.Point(67, 19);
-            this.CEFont.Name = "CEFont";
-            this.CEFont.Size = new System.Drawing.Size(165, 22);
-            this.CEFont.TabIndex = 0;
+            this.CEFoldingMarker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CEFoldingMarker.FormattingEnabled = true;
+            this.CEFoldingMarker.Location = new System.Drawing.Point(67, 152);
+            this.CEFoldingMarker.Name = "CEFoldingMarker";
+            this.CEFoldingMarker.Size = new System.Drawing.Size(165, 22);
+            this.CEFoldingMarker.TabIndex = 5;
             // 
-            // label1
+            // CEIsLineHilighting
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Font:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(247, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 14);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Size:";
+            this.CEIsLineHilighting.AutoSize = true;
+            this.CEIsLineHilighting.Location = new System.Drawing.Point(250, 89);
+            this.CEIsLineHilighting.Name = "CEIsLineHilighting";
+            this.CEIsLineHilighting.Size = new System.Drawing.Size(151, 18);
+            this.CEIsLineHilighting.TabIndex = 4;
+            this.CEIsLineHilighting.Text = "Hilight current line ?";
+            this.CEIsLineHilighting.UseVisualStyleBackColor = true;
             // 
             // CEFontSize
             // 
-            this.CEFontSize.Location = new System.Drawing.Point(323, 19);
+            this.CEFontSize.Location = new System.Drawing.Point(323, 26);
             this.CEFontSize.Maximum = new decimal(new int[] {
             14,
             0,
@@ -222,66 +224,73 @@
             this.CEFontSize.Size = new System.Drawing.Size(86, 22);
             this.CEFontSize.TabIndex = 3;
             // 
-            // CEIsLineHilighting
+            // label2
             // 
-            this.CEIsLineHilighting.AutoSize = true;
-            this.CEIsLineHilighting.Location = new System.Drawing.Point(250, 75);
-            this.CEIsLineHilighting.Name = "CEIsLineHilighting";
-            this.CEIsLineHilighting.Size = new System.Drawing.Size(151, 18);
-            this.CEIsLineHilighting.TabIndex = 4;
-            this.CEIsLineHilighting.Text = "Hilight current line ?";
-            this.CEIsLineHilighting.UseVisualStyleBackColor = true;
-            // 
-            // CEFoldingMarker
-            // 
-            this.CEFoldingMarker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CEFoldingMarker.FormattingEnabled = true;
-            this.CEFoldingMarker.Location = new System.Drawing.Point(67, 134);
-            this.CEFoldingMarker.Name = "CEFoldingMarker";
-            this.CEFoldingMarker.Size = new System.Drawing.Size(165, 22);
-            this.CEFoldingMarker.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 14);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Folding:";
-            // 
-            // CEFontStyle
-            // 
-            this.CEFontStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CEFontStyle.FormattingEnabled = true;
-            this.CEFontStyle.Location = new System.Drawing.Point(67, 73);
-            this.CEFontStyle.Name = "CEFontStyle";
-            this.CEFontStyle.Size = new System.Drawing.Size(165, 22);
-            this.CEFontStyle.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(247, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 14);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Size:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 76);
+            this.label4.Location = new System.Drawing.Point(6, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 14);
             this.label4.TabIndex = 1;
             this.label4.Text = "Style:";
             // 
-            // label5
+            // label1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(296, 14);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Some changes will take effect on next startup";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Font:";
+            // 
+            // CEFontStyle
+            // 
+            this.CEFontStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CEFontStyle.FormattingEnabled = true;
+            this.CEFontStyle.Location = new System.Drawing.Point(67, 87);
+            this.CEFontStyle.Name = "CEFontStyle";
+            this.CEFontStyle.Size = new System.Drawing.Size(165, 22);
+            this.CEFontStyle.TabIndex = 0;
+            // 
+            // CEFont
+            // 
+            this.CEFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CEFont.FormattingEnabled = true;
+            this.CEFont.Location = new System.Drawing.Point(67, 26);
+            this.CEFont.Name = "CEFont";
+            this.CEFont.Size = new System.Drawing.Size(165, 22);
+            this.CEFont.TabIndex = 0;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusMsg});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 252);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(512, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 18;
+            // 
+            // StatusMsg
+            // 
+            this.StatusMsg.Name = "StatusMsg";
+            this.StatusMsg.Size = new System.Drawing.Size(245, 17);
+            this.StatusMsg.Text = "Some changes will take effect on next startup";
             // 
             // PreferenceDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 252);
+            this.ClientSize = new System.Drawing.Size(512, 274);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.SaveBt);
@@ -302,7 +311,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CEFontSize)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -328,6 +340,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CEFontStyle;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusMsg;
     }
 }

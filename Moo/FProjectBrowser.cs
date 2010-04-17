@@ -17,6 +17,7 @@ namespace Moo
         public event NewProjectRequestHandler NewProjectRequested;
         public event OpenProjectRequestHandler OpenProjectRequested;
         public event NewFileRequestHandler NewFileRequested;
+        public event OpenFileRequestHandler OpenSelectedFileNodeRequested;
 
         public FProjectBrowser()
         {
@@ -76,7 +77,23 @@ namespace Moo
                 }
             }
         }
-
+        private void RequestOpenSelectedFileNode(string itemTag)
+        {
+            if (OpenSelectedFileNodeRequested != null)
+            {
+                try
+                {
+                    OpenSelectedFileNodeRequested(itemTag);
+                }
+                catch
+                {
+                    //do nothing
+                }
+            }
+        }
+       
+        
+       
         
     
     }
