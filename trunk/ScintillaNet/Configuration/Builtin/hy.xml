@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScintillaNET>
-  <Language Name="hydro">
+  <Language Name="hy">
     <Styles>
       <Style Name="Default" FontName="Consolas"/>
       <Style Name="Default" FontSize="12"/>

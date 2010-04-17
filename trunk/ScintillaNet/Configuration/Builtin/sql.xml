@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScintillaNET>
-	<Language Name="mssql">
+	<Language Name="sql">
 		<Lexer LineCommentPrefix="--" StreamCommentPrefix="/* " StreamCommentSuffix=" /*" >
 			<Properties>
 				<Property Name="fold.comment" Value="1" />
