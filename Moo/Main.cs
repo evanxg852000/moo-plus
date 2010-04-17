@@ -63,6 +63,7 @@ namespace Moo
             MOO_BRUNCH_BROWSER = new FBrunchBrowser();
             MOO_BRUNCH_BROWSER.Show(MDockArea);
             MOO_BRUNCH_BROWSER.DockState = DockState.DockLeftAutoHide;
+            MOO_BRUNCH_BROWSER.InsertSelectedBrunchNodeRequested += new InsertBrunchRequestHandler(InsertCodeBrunch);
             
             //file system  Browser
             MOO_FILE_SYSTBROWSER = new FFileSystBrowser();
@@ -82,7 +83,6 @@ namespace Moo
             MOO_BUILD_OUTPUT.Show(MDockArea);
             MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide;    
         }
-      
         private void LoadAppState()
         {
             MOO_APPLICATION_SETTINGS = AppSettings.Load();
@@ -258,7 +258,8 @@ namespace Moo
                 else 
                 {
                     //check if it is already opened
-                    foreach (CodeEditor CE in this.GetCodeEditors())
+                    List<CodeEditor> listeditors = this.GetCodeEditors();
+                    foreach (CodeEditor CE in listeditors)
                     {
                         if (CE.FilePath == openfilepath) { CE.Activate(); return;  }
                     }   
@@ -312,7 +313,8 @@ namespace Moo
                 else
                 {
                     //check if it is already opened
-                    foreach (CodeEditor CE in this.GetCodeEditors())
+                    List<CodeEditor> listeditors = this.GetCodeEditors();
+                    foreach (CodeEditor CE in listeditors)
                     {
                         if (CE.FilePath == openfilepath) { CE.Activate(); return; }
                     } 
@@ -330,7 +332,8 @@ namespace Moo
         private void OpenSelectedFileNode(string file)
         {
             //check if it is already opened
-            foreach (CodeEditor CE in this.GetCodeEditors())
+            List<CodeEditor> listeditors = this.GetCodeEditors();
+            foreach (CodeEditor CE in listeditors)
             {
                 if (CE.FilePath == file)
                 {
@@ -517,11 +520,9 @@ namespace Moo
                 ce.InsertCodeSummary();
             }
         }
-        private void InsertCodeBrunch(object sender, EventArgs e)
+        private void InsertCodeBrunch(string file)
         {
-            //show code brunch dialog
-            //get content and 
-            string content = "to be writtent";
+            string content = FileHelper.GetContent(file); 
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
             {
                 CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
@@ -677,7 +678,19 @@ namespace Moo
         {
             PreferenceDialog.Show(MOO_APPLICATION_SETTINGS);
         }
-
+        private void SetEncoding(object sender, EventArgs e)
+        {
+            MenuItem mi=(MenuItem) sender;
+            //clear check and check the current
+            this.MEncodingAnsi.Checked = false;
+            this.MEncodingUtf8.Checked = false;
+            mi.Checked = true;
+            List<CodeEditor> listeditors = this.GetCodeEditors();
+            foreach (CodeEditor ce in listeditors)
+            {
+                ce.SetEncoding(mi.Tag.ToString());
+            } 
+        }
 
         //Tools menu
         private void PluginLauncher(object sender, EventArgs e)
@@ -935,14 +948,7 @@ namespace Moo
         
         #endregion      
 
-       
-        
-
-       
-       
-        
-
-       
+         
        
     }
 }

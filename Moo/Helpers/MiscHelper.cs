@@ -36,49 +36,64 @@ namespace Moo.Helpers
             return pcat;
         }
         public static string GetFileExtention(string type)
-        {
-            string fileextention = ".txt";
+        {                         
+            string fileextention = ".txt"; //default
             switch (type)
             {
+                case "ASP":
+                    fileextention = ".asp";
+                    break;
+                case "Batch":
+                    fileextention = ".bat";
+                    break;
+                case "C++ Source":
+                    fileextention = ".cpp";
+                    break;
+                case "C++ Header":
+                    fileextention = ".h";
+                    break;
                 case "C#":
                     fileextention = ".cs";
                     break;
-                case "C++":
-                    fileextention = ".cpp";
+                case "D":
+                    fileextention = ".d";
+                    break;
+                case "Html":
+                    fileextention = ".html";
+                    break;
+                case "Hydro":
+                    fileextention = ".hy";
+                    break;
+                case "Ilasm":
+                    fileextention = ".il";
+                    break;
+                case "Java":
+                    fileextention = ".java";
+                    break;
+                case "Javascript":
+                    fileextention = ".js";
+                    break;
+                case "Pascal":
+                    fileextention = ".pas";
                     break;
                 case "Php":
                     fileextention = ".php";
                     break;
-                case "Html":
-                    fileextention = ".html";
+                case "SQL":
+                    fileextention = ".sql";
+                    break;
+                case "V Basic":
+                    fileextention = ".vb";
+                    break;
+                case "XML":
+                    fileextention = ".xml";
                     break;
             }
             return fileextention;
         }
         public static string GetLanguage(string FileExtention)
         {
-            string language = "none";
-            switch (FileExtention)
-            {
-                case ".cs":
-                    language = "cs";
-                    break;
-                case ".cpp":
-                    language = "cpp";
-                    break;
-                case ".h":
-                    language = "cpp";
-                    break;
-                case ".php":
-                    language = "php";
-                    break;
-                case ".html":
-                    language = "html";
-                    break;
-                case ".vb":
-                    language = "vb";
-                    break;
-            }
+            string language =FileExtention.Replace(".","");
             return language;
         }
         public static void SendMail(string subject, string content )

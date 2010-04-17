@@ -95,6 +95,11 @@ namespace Moo
         {
             this.EditorView.Snippets.ShowSurroundWithList();
         }
+        public void SetEncoding(string enc)
+        {
+            //juste keep it for now
+            //this.EditorView.Encoding.EncodingName = enc; 
+        }
         
         //edit methods
         public void UndoAction()

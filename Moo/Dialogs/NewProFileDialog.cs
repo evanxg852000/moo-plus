@@ -38,7 +38,8 @@ namespace Moo.Dialogs
                 {
                     this.FolderTbx.Text = currentprojectfolder;
                 }
-                this.TypeCbx.Items.AddRange(new string[]{"C#","C++","Html","Php"});
+                this.TypeCbx.Items.AddRange(new string[]{"ASP","Batch","C++ Source","C++ Header","C#","D","Html", "Hydro",
+                                     "Ilasm","Java","Javascript","Pascal","Php","SQL","V Basic","XML" });
             }
             else 
             {

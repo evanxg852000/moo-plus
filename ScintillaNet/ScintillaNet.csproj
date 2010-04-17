@@ -170,7 +170,7 @@
     <EmbeddedResource Include="Configuration\Builtin\LexerKeywordListNames\hypertext.txt" />
     <EmbeddedResource Include="Configuration\Builtin\LexerKeywordListNames\mssql.txt" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\mssql.txt" />
-    <EmbeddedResource Include="Configuration\Builtin\mssql.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\sql.xml" />
     <EmbeddedResource Include="Configuration\Builtin\default.xml" />
     <EmbeddedResource Include="FindReplace\FindReplaceDialog.resx">
       <SubType>Designer</SubType>
@@ -330,12 +330,7 @@
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\verilog.txt" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\vhdl.txt" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\xml.txt" />
-    <EmbeddedResource Include="Configuration\Builtin\vbscript.xml" />
     <EmbeddedResource Include="Configuration\Builtin\xml.xml" />
-    <EmbeddedResource Include="Configuration\Builtin\python.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Configuration\Builtin\pgsql.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Configuration\Builtin\js.xml" />
@@ -386,10 +381,17 @@
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\scriptol.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Configuration\Builtin\hydro.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\hy.xml" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\hy.txt" />
     <EmbeddedResource Include="Configuration\Builtin\LexerStyleNames\vbscript.xml" />
     <EmbeddedResource Include="Configuration\Builtin\vb.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\java.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\asp.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\bat.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\cpp.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\pas.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\php.xml" />
+    <EmbeddedResource Include="Configuration\Builtin\h.xml" />
     <Content Include="SciLexer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
