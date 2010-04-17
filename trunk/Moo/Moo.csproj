@@ -86,6 +86,12 @@
     <Compile Include="Dialogs\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\NewBrunchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewBrunchDialog.Designer.cs">
+      <DependentUpon>NewBrunchDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\BugRepDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewBrunchDialog.resx">
+      <DependentUpon>NewBrunchDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\BugRepDialog.resx">

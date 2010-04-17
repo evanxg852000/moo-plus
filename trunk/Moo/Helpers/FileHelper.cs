@@ -76,6 +76,22 @@ namespace Moo.Helpers
                return false;
            }
         }
+        public static bool IsFile(string path)
+        {
+            return Path.HasExtension(path);
+        }
+        public static void DeleteFile(string path)
+        {
+            try 
+            {
+                 File.Delete(path);
+            }
+            catch(IOException e)
+            {
+                e.ToString();//exceptionner
+            }
+            
+        }
 
         public static List<string> GetFolderFileList(string folder,string filter,SearchOption so)
         {

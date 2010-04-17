@@ -58,7 +58,7 @@ namespace Moo.Controls
             this.Items.Clear();
             this.li.Clear();
             DeamonSearcher.RunWorkerAsync();
-        }
+        }      
         private void FileFounder_DoubleClick(object sender, EventArgs e)
         {
             if (this.SelectedItems.Count != 0)
@@ -76,7 +76,7 @@ namespace Moo.Controls
                 }
             }
         }
-        private void  DeamonSearcher_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void DeamonSearcher_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             foreach (ListViewItem item in this.li)
             {
@@ -118,19 +118,17 @@ namespace Moo.Controls
 
             try { 
                 DirectoryInfo di = new DirectoryInfo(this.SearchFolder);
-                FileInfo[] files = di.GetFiles(this.searchterm, SearchOption.TopDirectoryOnly); ;
+                FileInfo[] files = di.GetFiles(this.searchterm, SearchOption.TopDirectoryOnly); 
                 if(this.IsRecurssive)
                 {
                      files= di.GetFiles(this.searchterm, SearchOption.AllDirectories);
                 }
-      
                 foreach (FileInfo file in files)
                 { 
                    
                     ListViewItem item = new ListViewItem(new string[] { file.Name, file.FullName, file.LastAccessTime.Date.ToString() });
                     item.Tag = file.FullName;
                     this.li.Add(item);
-
                 }
             }
             catch
@@ -138,5 +136,7 @@ namespace Moo.Controls
                 //keep quiet if something wrong happened
             }
         }
+        
+    
     }
 }
