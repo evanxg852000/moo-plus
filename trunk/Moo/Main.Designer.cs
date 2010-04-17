@@ -67,8 +67,6 @@
             this.MSeparator8 = new System.Windows.Forms.MenuItem();
             this.MSelectAll = new System.Windows.Forms.MenuItem();
             this.MSeparator9 = new System.Windows.Forms.MenuItem();
-            this.MInsert = new System.Windows.Forms.MenuItem();
-            this.MICodeBrunch = new System.Windows.Forms.MenuItem();
             this.MICodeSumarry = new System.Windows.Forms.MenuItem();
             this.MComment = new System.Windows.Forms.MenuItem();
             this.MUncomment = new System.Windows.Forms.MenuItem();
@@ -130,7 +128,6 @@
             this.MManageUpdate = new System.Windows.Forms.MenuItem();
             this.MHelpMenu = new System.Windows.Forms.MenuItem();
             this.MHelpContent = new System.Windows.Forms.MenuItem();
-            this.MTipOfDay = new System.Windows.Forms.MenuItem();
             this.MSeparator17 = new System.Windows.Forms.MenuItem();
             this.MReportBug = new System.Windows.Forms.MenuItem();
             this.MContent = new System.Windows.Forms.MenuItem();
@@ -386,7 +383,7 @@
             this.MSeparator8,
             this.MSelectAll,
             this.MSeparator9,
-            this.MInsert,
+            this.MICodeSumarry,
             this.MComment,
             this.MUncomment,
             this.MToUpperCase,
@@ -460,26 +457,11 @@
             this.MSeparator9.Index = 9;
             this.MSeparator9.Text = "-";
             // 
-            // MInsert
-            // 
-            this.MInsert.Index = 10;
-            this.MInsert.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MICodeBrunch,
-            this.MICodeSumarry});
-            this.MInsert.Text = "Insert";
-            // 
-            // MICodeBrunch
-            // 
-            this.MICodeBrunch.Index = 0;
-            this.MICodeBrunch.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftB;
-            this.MICodeBrunch.Text = "Code Brunch";
-            this.MICodeBrunch.Click += new System.EventHandler(this.InsertCodeBrunch);
-            // 
             // MICodeSumarry
             // 
-            this.MICodeSumarry.Index = 1;
+            this.MICodeSumarry.Index = 10;
             this.MICodeSumarry.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftS;
-            this.MICodeSumarry.Text = "Code Summary";
+            this.MICodeSumarry.Text = "Insert Code Summary";
             this.MICodeSumarry.Click += new System.EventHandler(this.InsertCodeSumarry);
             // 
             // MComment
@@ -856,12 +838,16 @@
             // MEncodingAnsi
             // 
             this.MEncodingAnsi.Index = 1;
+            this.MEncodingAnsi.Tag = "ANSI";
             this.MEncodingAnsi.Text = "Encoding in ANSI";
+            this.MEncodingAnsi.Click += new System.EventHandler(this.SetEncoding);
             // 
             // MEncodingUtf8
             // 
             this.MEncodingUtf8.Index = 2;
+            this.MEncodingUtf8.Tag = "UTF-8";
             this.MEncodingUtf8.Text = "Encoding in UTF-8";
+            this.MEncodingUtf8.Click += new System.EventHandler(this.SetEncoding);
             // 
             // MToolsMenu
             // 
@@ -894,7 +880,6 @@
             this.MHelpMenu.Index = 7;
             this.MHelpMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.MHelpContent,
-            this.MTipOfDay,
             this.MSeparator17,
             this.MReportBug,
             this.MContent});
@@ -906,25 +891,20 @@
             this.MHelpContent.Shortcut = System.Windows.Forms.Shortcut.ShiftF1;
             this.MHelpContent.Text = "Help Content";
             // 
-            // MTipOfDay
-            // 
-            this.MTipOfDay.Index = 1;
-            this.MTipOfDay.Text = "Tip of the Day";
-            // 
             // MSeparator17
             // 
-            this.MSeparator17.Index = 2;
+            this.MSeparator17.Index = 1;
             this.MSeparator17.Text = "-";
             // 
             // MReportBug
             // 
-            this.MReportBug.Index = 3;
+            this.MReportBug.Index = 2;
             this.MReportBug.Text = "Report Bug";
             this.MReportBug.Click += new System.EventHandler(this.ReportBug);
             // 
             // MContent
             // 
-            this.MContent.Index = 4;
+            this.MContent.Index = 3;
             this.MContent.Shortcut = System.Windows.Forms.Shortcut.F1;
             this.MContent.Text = "&About";
             this.MContent.Click += new System.EventHandler(this.ShowAboutMoo);
@@ -1574,8 +1554,6 @@
         private System.Windows.Forms.MenuItem MSeparator8;
         private System.Windows.Forms.MenuItem MSelectAll;
         private System.Windows.Forms.MenuItem MSeparator9;
-        private System.Windows.Forms.MenuItem MInsert;
-        private System.Windows.Forms.MenuItem MICodeBrunch;
         private System.Windows.Forms.MenuItem MICodeSumarry;
         private System.Windows.Forms.MenuItem MSeparator10;
         private System.Windows.Forms.MenuItem MFoldAll;
@@ -1587,7 +1565,6 @@
         private System.Windows.Forms.MenuItem MSeparator13;
         private System.Windows.Forms.MenuItem MGoto;
         private System.Windows.Forms.MenuItem MSettingsMenu;
-        private System.Windows.Forms.MenuItem MTipOfDay;
         private System.Windows.Forms.MenuItem MSeparator17;
         private System.Windows.Forms.MenuItem MReportBug;
         private System.Windows.Forms.MenuItem MPreferences;
