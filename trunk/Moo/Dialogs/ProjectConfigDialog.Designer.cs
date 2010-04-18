@@ -47,6 +47,8 @@
             this.AssemblyTypeCbx = new System.Windows.Forms.ComboBox();
             this.RemoveRefBt = new System.Windows.Forms.Button();
             this.AddRefBt = new System.Windows.Forms.Button();
+            this.RefType = new System.Windows.Forms.ColumnHeader();
+            this.StatusMsg = new System.Windows.Forms.StatusStrip();
             this.SuspendLayout();
             // 
             // AssemblyNameTbx
@@ -58,16 +60,18 @@
             // 
             // RefferencesListView
             // 
+            this.RefferencesListView.CheckBoxes = true;
             this.RefferencesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.RefName,
+            this.RefType,
             this.Path});
             this.RefferencesListView.FullRowSelect = true;
             this.RefferencesListView.GridLines = true;
-            this.RefferencesListView.Location = new System.Drawing.Point(7, 150);
+            this.RefferencesListView.Location = new System.Drawing.Point(9, 105);
             this.RefferencesListView.MultiSelect = false;
             this.RefferencesListView.Name = "RefferencesListView";
             this.RefferencesListView.ShowItemToolTips = true;
-            this.RefferencesListView.Size = new System.Drawing.Size(300, 117);
+            this.RefferencesListView.Size = new System.Drawing.Size(538, 135);
             this.RefferencesListView.TabIndex = 2;
             this.RefferencesListView.UseCompatibleStateImageBehavior = false;
             this.RefferencesListView.View = System.Windows.Forms.View.Details;
@@ -75,18 +79,18 @@
             // RefName
             // 
             this.RefName.Text = "Refferences";
-            this.RefName.Width = 106;
+            this.RefName.Width = 105;
             // 
             // Path
             // 
             this.Path.Text = "Path";
-            this.Path.Width = 190;
+            this.Path.Width = 342;
             // 
             // ProjectIconTbx
             // 
-            this.ProjectIconTbx.Location = new System.Drawing.Point(124, 94);
+            this.ProjectIconTbx.Location = new System.Drawing.Point(465, 7);
             this.ProjectIconTbx.Name = "ProjectIconTbx";
-            this.ProjectIconTbx.Size = new System.Drawing.Size(185, 22);
+            this.ProjectIconTbx.Size = new System.Drawing.Size(132, 22);
             this.ProjectIconTbx.TabIndex = 3;
             this.ProjectIconTbx.Text = "moo.ico";
             // 
@@ -111,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 97);
+            this.label3.Location = new System.Drawing.Point(347, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 14);
             this.label3.TabIndex = 8;
@@ -119,9 +123,9 @@
             // 
             // BrowseIconBt
             // 
-            this.BrowseIconBt.Location = new System.Drawing.Point(313, 93);
+            this.BrowseIconBt.Location = new System.Drawing.Point(599, 6);
             this.BrowseIconBt.Name = "BrowseIconBt";
-            this.BrowseIconBt.Size = new System.Drawing.Size(27, 23);
+            this.BrowseIconBt.Size = new System.Drawing.Size(29, 23);
             this.BrowseIconBt.TabIndex = 10;
             this.BrowseIconBt.Text = "...";
             this.BrowseIconBt.UseVisualStyleBackColor = true;
@@ -142,7 +146,7 @@
             // SaveBt
             // 
             this.SaveBt.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.SaveBt.Location = new System.Drawing.Point(335, 215);
+            this.SaveBt.Location = new System.Drawing.Point(553, 188);
             this.SaveBt.Name = "SaveBt";
             this.SaveBt.Size = new System.Drawing.Size(75, 23);
             this.SaveBt.TabIndex = 13;
@@ -153,7 +157,7 @@
             // Cancel
             // 
             this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(335, 244);
+            this.Cancel.Location = new System.Drawing.Point(553, 217);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 14;
@@ -164,15 +168,15 @@
             // ProjectCreateDateTbx
             // 
             this.ProjectCreateDateTbx.Enabled = false;
-            this.ProjectCreateDateTbx.Location = new System.Drawing.Point(124, 121);
+            this.ProjectCreateDateTbx.Location = new System.Drawing.Point(465, 34);
             this.ProjectCreateDateTbx.Name = "ProjectCreateDateTbx";
-            this.ProjectCreateDateTbx.Size = new System.Drawing.Size(216, 22);
+            this.ProjectCreateDateTbx.Size = new System.Drawing.Size(132, 22);
             this.ProjectCreateDateTbx.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 124);
+            this.label4.Location = new System.Drawing.Point(347, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 14);
             this.label4.TabIndex = 6;
@@ -202,9 +206,9 @@
             // RemoveRefBt
             // 
             this.RemoveRefBt.Image = global::Moo.Properties.Resources.delete;
-            this.RemoveRefBt.Location = new System.Drawing.Point(313, 179);
+            this.RemoveRefBt.Location = new System.Drawing.Point(554, 138);
             this.RemoveRefBt.Name = "RemoveRefBt";
-            this.RemoveRefBt.Size = new System.Drawing.Size(27, 23);
+            this.RemoveRefBt.Size = new System.Drawing.Size(27, 28);
             this.RemoveRefBt.TabIndex = 5;
             this.RemoveRefBt.UseVisualStyleBackColor = true;
             this.RemoveRefBt.Click += new System.EventHandler(this.RemoveRefference);
@@ -212,12 +216,26 @@
             // AddRefBt
             // 
             this.AddRefBt.Image = global::Moo.Properties.Resources.add;
-            this.AddRefBt.Location = new System.Drawing.Point(313, 150);
+            this.AddRefBt.Location = new System.Drawing.Point(553, 105);
             this.AddRefBt.Name = "AddRefBt";
-            this.AddRefBt.Size = new System.Drawing.Size(27, 23);
+            this.AddRefBt.Size = new System.Drawing.Size(27, 28);
             this.AddRefBt.TabIndex = 4;
             this.AddRefBt.UseVisualStyleBackColor = true;
             this.AddRefBt.Click += new System.EventHandler(this.AddRefference);
+            // 
+            // RefType
+            // 
+            this.RefType.Text = "Type";
+            this.RefType.Width = 87;
+            // 
+            // StatusMsg
+            // 
+            this.StatusMsg.Location = new System.Drawing.Point(0, 243);
+            this.StatusMsg.Name = "StatusMsg";
+            this.StatusMsg.Size = new System.Drawing.Size(634, 22);
+            this.StatusMsg.SizingGrip = false;
+            this.StatusMsg.TabIndex = 15;
+            this.StatusMsg.Text = "statusStrip1";
             // 
             // ProjectConfigDialog
             // 
@@ -225,7 +243,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel;
-            this.ClientSize = new System.Drawing.Size(413, 279);
+            this.ClientSize = new System.Drawing.Size(634, 265);
+            this.Controls.Add(this.StatusMsg);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.SaveBt);
             this.Controls.Add(this.AssemblyTypeCbx);
@@ -277,5 +296,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox AssemblyTypeCbx;
+        private System.Windows.Forms.ColumnHeader RefType;
+        private System.Windows.Forms.StatusStrip StatusMsg;
     }
 }
