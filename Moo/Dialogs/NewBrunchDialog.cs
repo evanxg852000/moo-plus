@@ -40,7 +40,7 @@ namespace Moo.Dialogs
             string bname=this.NameTxt.Text;
             string btype = this.BruchTypeCbx.SelectedItem.ToString();
             string bcontent=this.BrunchTxt.Text;
-            
+
             if (( bname== "Brunch name..."))
             {
                 this.StatusMsg.Text = "Brunch name is required";

@@ -668,8 +668,7 @@ namespace Moo
         {
             if (MOO_APPLICATION_SETTINGS.CurrentProject != null)
             {
-                ProjectConfigDialog pcd = new ProjectConfigDialog(MOO_APPLICATION_SETTINGS.CurrentProject);
-                pcd.ShowDialog();
+                ProjectConfigDialog.Show(MOO_APPLICATION_SETTINGS.CurrentProject);  
             }
         }
 

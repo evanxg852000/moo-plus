@@ -9,6 +9,18 @@ namespace Moo.Helpers
 {
     class FileHelper
     {
+        public static string SelectFile(string filter)
+        {
+            string filepath = "";
+            OpenFileDialog openfiledialog = new OpenFileDialog();
+            openfiledialog.Title = "Open ...";
+            openfiledialog.Filter = filter;
+            if (openfiledialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = openfiledialog.FileName;
+            }
+            return filepath;
+        }
         public static string GetContent(string filepath)
         {
             try 
@@ -141,6 +153,7 @@ namespace Moo.Helpers
                 e.ToString();
             }
         }
-        
+       
+   
     }
 }
