@@ -1,0 +1,7 @@
+CSC.exe    /target:[exe, winexe, library] /out:[appnaem.exe,appname.dll] file1.cs[file2.cs,file3.cs]  /reference:[list dlls]  /win32icon:[iconfile]
+
+CBC.exe    /target:[exe, winexe, library] /out:[appnaem.exe,appname.dll] file1.vb[file2.vb,file3.vb]  /reference:[list dlls]  /win32icon:[iconfile]
+
+ilasm.exe  /[dll,exe]                     /output:file.ext               file1.il [file2.il,file3.il]          N/A            N/A
+
+buildtool  /assemblytype                  /output                         filelist                     /references             /icon

@@ -163,8 +163,8 @@
             this.MTBPlugin = new System.Windows.Forms.ToolStripButton();
             this.MBuilToolbar = new System.Windows.Forms.ToolStrip();
             this.MTBBuild = new System.Windows.Forms.ToolStripButton();
-            this.MTBBuildRun = new System.Windows.Forms.ToolStripButton();
             this.MTBRun = new System.Windows.Forms.ToolStripButton();
+            this.MTBBuildRun = new System.Windows.Forms.ToolStripButton();
             this.MTBStop = new System.Windows.Forms.ToolStripButton();
             this.MTBClean = new System.Windows.Forms.ToolStripButton();
             this.MTBConfig = new System.Windows.Forms.ToolStripButton();
@@ -1288,15 +1288,6 @@
             this.MTBBuild.Size = new System.Drawing.Size(26, 26);
             this.MTBBuild.ToolTipText = "Build ";
             // 
-            // MTBBuildRun
-            // 
-            this.MTBBuildRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBBuildRun.Image = global::Moo.Properties.Resources.buil_run;
-            this.MTBBuildRun.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBBuildRun.Name = "MTBBuildRun";
-            this.MTBBuildRun.Size = new System.Drawing.Size(23, 25);
-            this.MTBBuildRun.ToolTipText = "Build And Run";
-            // 
             // MTBRun
             // 
             this.MTBRun.AutoSize = false;
@@ -1308,6 +1299,15 @@
             this.MTBRun.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBRun.Size = new System.Drawing.Size(26, 26);
             this.MTBRun.ToolTipText = "Run ";
+            // 
+            // MTBBuildRun
+            // 
+            this.MTBBuildRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBBuildRun.Image = global::Moo.Properties.Resources.buil_run;
+            this.MTBBuildRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBBuildRun.Name = "MTBBuildRun";
+            this.MTBBuildRun.Size = new System.Drawing.Size(23, 25);
+            this.MTBBuildRun.ToolTipText = "Build And Run";
             // 
             // MTBStop
             // 

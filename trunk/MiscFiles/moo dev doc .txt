@@ -1,0 +1,4 @@
+c# compiling
+http://www.charlespetzold.com/key/CommandLine.html
+http://msdn.microsoft.com/en-us/library/78f4aasd.aspx
+http://msdn.microsoft.com/en-us/library/496e4ekx(VS.80).aspx

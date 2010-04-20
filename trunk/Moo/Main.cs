@@ -175,40 +175,7 @@ namespace Moo
             }
         }
         
-        private void UIUpdate()
-        { //update the ui when the project change
-            //we desactivate so build button according to the curren project
-            switch (MOO_APPLICATION_SETTINGS.CurrentProject.ProjectType)
-            {
-                case ProjectCategory.Unmanaged:
-                    MBuildProject.Enabled = false;
-                    MRunProject.Enabled = false;
-                    MStopRunProject.Enabled = false;
-                    
-                    MTBBuild.Enabled = false;
-                    MTBBuildRun.Enabled = false;
-                    MTBRun.Enabled = false;
-                    MTBStop.Enabled = false;
-                    break;
-                case ProjectCategory.Website:
-                    MBuildProject.Enabled = false;
-                    MTBBuild.Enabled = false;
-                    MTBBuildRun.Enabled = false;
-                    MRunProject.Enabled = true;
-                    MTBRun.Enabled = true;
-                    MTBStop.Enabled = true;
-                    break;
-                default:
-                    MBuildProject.Enabled = true;
-                    MRunProject.Enabled = true;
-                    MStopRunProject.Enabled = true;
-                    MTBBuild.Enabled = true;
-                    MTBBuildRun.Enabled = true;
-                    MTBRun.Enabled = true;
-                    MTBStop.Enabled = true;
-                    break;
-            }
-        }
+        
         //just for test to be deleted 
         public void test()
         {
@@ -755,7 +722,8 @@ namespace Moo
         }
         private void ManageUpdate(object sender, EventArgs e)
         {
-            OnlineInfo.CheckOutForUpdate();
+            
+            UpdateDialog.Show();
         }
 
         //Help menu
@@ -979,6 +947,40 @@ namespace Moo
         {
             this.MStatusLineLabel.Text = "Ln : " + line.ToString();
             this.MStatusColumnLabel.Text = "Col : " + col.ToString();
+        }
+        private void UIUpdate()
+        { //update the ui when the project change
+            //we desactivate so build button according to the curren project
+            switch (MOO_APPLICATION_SETTINGS.CurrentProject.ProjectType)
+            {
+                case ProjectCategory.Unmanaged:
+                    MBuildProject.Enabled = false;
+                    MRunProject.Enabled = false;
+                    MStopRunProject.Enabled = false;
+
+                    MTBBuild.Enabled = false;
+                    MTBBuildRun.Enabled = false;
+                    MTBRun.Enabled = false;
+                    MTBStop.Enabled = false;
+                    break;
+                case ProjectCategory.Website:
+                    MBuildProject.Enabled = false;
+                    MTBBuild.Enabled = false;
+                    MTBBuildRun.Enabled = false;
+                    MRunProject.Enabled = true;
+                    MTBRun.Enabled = true;
+                    MTBStop.Enabled = true;
+                    break;
+                default:
+                    MBuildProject.Enabled = true;
+                    MRunProject.Enabled = true;
+                    MStopRunProject.Enabled = true;
+                    MTBBuild.Enabled = true;
+                    MTBBuildRun.Enabled = true;
+                    MTBRun.Enabled = true;
+                    MTBStop.Enabled = true;
+                    break;
+            }
         }
         
         #endregion      

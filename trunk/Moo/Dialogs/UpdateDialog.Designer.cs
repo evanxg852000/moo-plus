@@ -37,6 +37,7 @@
             this.AddPlugin = new System.Windows.Forms.Button();
             this.DownloadProgress = new System.Windows.Forms.ProgressBar();
             this.CancelBt = new System.Windows.Forms.Button();
+            this.UpdateRetriever = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // PluginListView
@@ -113,6 +114,11 @@
             this.CancelBt.UseVisualStyleBackColor = true;
             this.CancelBt.Click += new System.EventHandler(this.CancelHandler);
             // 
+            // UpdateRetriever
+            // 
+            this.UpdateRetriever.DoWork += new System.ComponentModel.DoWorkEventHandler(this.URGetOnlineInfo);
+            this.UpdateRetriever.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.URGetOnlineInfoCompleted);
+            // 
             // UpdateDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -148,5 +154,6 @@
         private System.Windows.Forms.ProgressBar DownloadProgress;
         private System.Windows.Forms.Button CancelBt;
         private System.Windows.Forms.ColumnHeader Type;
+        private System.ComponentModel.BackgroundWorker UpdateRetriever;
     }
 }
