@@ -174,7 +174,41 @@ namespace Moo
                 MRecentProjects.MenuItems.Add(mi);
             }
         }
-
+        
+        private void UIUpdate()
+        { //update the ui when the project change
+            //we desactivate so build button according to the curren project
+            switch (MOO_APPLICATION_SETTINGS.CurrentProject.ProjectType)
+            {
+                case ProjectCategory.Unmanaged:
+                    MBuildProject.Enabled = false;
+                    MRunProject.Enabled = false;
+                    MStopRunProject.Enabled = false;
+                    
+                    MTBBuild.Enabled = false;
+                    MTBBuildRun.Enabled = false;
+                    MTBRun.Enabled = false;
+                    MTBStop.Enabled = false;
+                    break;
+                case ProjectCategory.Website:
+                    MBuildProject.Enabled = false;
+                    MTBBuild.Enabled = false;
+                    MTBBuildRun.Enabled = false;
+                    MRunProject.Enabled = true;
+                    MTBRun.Enabled = true;
+                    MTBStop.Enabled = true;
+                    break;
+                default:
+                    MBuildProject.Enabled = true;
+                    MRunProject.Enabled = true;
+                    MStopRunProject.Enabled = true;
+                    MTBBuild.Enabled = true;
+                    MTBBuildRun.Enabled = true;
+                    MTBRun.Enabled = true;
+                    MTBStop.Enabled = true;
+                    break;
+            }
+        }
         //just for test to be deleted 
         public void test()
         {
@@ -225,6 +259,7 @@ namespace Moo
                 MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                 //load the project into the project browser
                 MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
+                this.UIUpdate();
             }  
         }
         private void OpenPrjectFile(object sender, EventArgs e)
@@ -250,10 +285,11 @@ namespace Moo
                     //load the project into the project browser
                     MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder,PRJT.ProjectFile,PRJT.ProjectName);
                     //add to recent
-                    if(MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5)
+                    if (MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5)
                     {
                         MOO_APPLICATION_SETTINGS.RecentProjects.Add(openfilepath);
                     }
+                    this.UIUpdate();
                 }
                 else 
                 {

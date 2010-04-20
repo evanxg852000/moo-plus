@@ -208,7 +208,8 @@
             this.AssemblyTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AssemblyTypeCbx.FormattingEnabled = true;
             this.AssemblyTypeCbx.Items.AddRange(new object[] {
-            "Executable (.exe)",
+            "Console Executable (.exe)",
+            "Windows Executable (.exe)",
             "Dynamic Library (.dll)"});
             this.AssemblyTypeCbx.Location = new System.Drawing.Point(124, 47);
             this.AssemblyTypeCbx.Name = "AssemblyTypeCbx";

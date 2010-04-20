@@ -94,6 +94,7 @@
             this.BruchTypeCbx.Name = "BruchTypeCbx";
             this.BruchTypeCbx.Size = new System.Drawing.Size(135, 25);
             this.BruchTypeCbx.ToolTipText = "Select The brunch Type";
+            this.BruchTypeCbx.SelectedIndexChanged += new System.EventHandler(this.BruchTypeCbx_SelectedIndexChanged);
             // 
             // SaveBrunch
             // 
