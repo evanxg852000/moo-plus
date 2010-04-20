@@ -38,7 +38,6 @@ namespace Moo.Core
     public class OnlineInfo
     {
         private static OnlineInfo OnLineInfoIstance;
-        
         private static string hosturl="www.evansofts.com";
         private static string configfileurl="http://evansofts.com/moo/moo-online-info.xml";
         private Configuration config;
@@ -173,18 +172,20 @@ namespace Moo.Core
                 }
             }
             catch { /* do nothing */}
-        }      
-        
-        public static void  CheckOutForUpdate()
+        }
+
+        public static void CheckOutForUpdate()
         {
             if (OnLineInfoIstance==null)
             {
                 OnLineInfoIstance = new OnlineInfo();
             }
-            BackgroundWorker BgWorker = new BackgroundWorker();
-            BgWorker.DoWork += new DoWorkEventHandler(LookUpOnline);
-            BgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(LookUpOnlineCompleted);
-            BgWorker.RunWorkerAsync();
+            //call the parse methode to fill the object of online info
+            OnLineInfoIstance.ParseInfo(); 
+        }
+        public static OnlineInfo GetInstance()
+        {
+            return OnlineInfo.OnLineInfoIstance;
         }
         public static bool IsInternet()
         {
@@ -199,27 +200,7 @@ namespace Moo.Core
             return false;
         }
       
-        private static void LookUpOnline(object sender, DoWorkEventArgs e)
-        {
-            //we can decide to not check for internet connection to get speed
-            if (IsInternet())
-            {
-                //call the parse methode to fill the object of online info
-                OnLineInfoIstance.ParseInfo();
-            }
-        }
-        private static void LookUpOnlineCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (e.Error == null)
-            {
-                Moo.Dialogs.UpdateDialog.Show(OnLineInfoIstance);
-            }
-            else
-            {
-                //message for erroe
-            }
-        }
-        
+       
 
 
     }
