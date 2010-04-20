@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.AccessControl;
 using System.IO;
@@ -18,10 +19,11 @@ namespace Moo.Core
         private ProjectCategory projecttype;
         private DateTime creationdate;
         private string projecticon = "";
-        //only for C# and Ilasm project
+        //only for C#,Vb and Ilasm project
         private string assemblyname;
-        private string assemblytype ; //or dll
+        private string assemblytype ; //exe ,winexe or dll
         private string buildtarget;
+        private string builtassembly;
         private List<string> refferences;
         
 
@@ -65,6 +67,10 @@ namespace Moo.Core
             get { return buildtarget; }
             set { buildtarget = value; }
         }
+        public string BuiltAssembly
+        {
+            get { return builtassembly; }
+        }
         public List<string> Refferences
         {
             get { return refferences; }
@@ -82,17 +88,11 @@ namespace Moo.Core
             this.projectname = Path.GetFileNameWithoutExtension(projectfilepath);
             this.projecttype = ptype;
             this.creationdate = DateTime.Now.Date;
-            this.projecticon = "moo.ico";
+            this.projecticon =  this.projectfolder+@"\moobuild.ico";
             this.assemblyname=this.projectname;
-            this.assemblytype = "Executable (.exe)";//Dll
+            this.assemblytype = "Console Executable (.exe)";//Dll
             this.buildtarget = "Debug";//Release
             this.refferences = new List<string>();
-        }
-        public List<string> GetProjectFiles(string filter) 
-        {
-            //to get the project folder content for compilation
-            //searchterm=*.cs, *.il, *.php
-            return Moo.Helpers.FileHelper.GetFolderFileList(this.projectfolder,filter,SearchOption.AllDirectories);
         }
         private void CopyTemplate()
         {
@@ -117,8 +117,23 @@ namespace Moo.Core
                     break;
             }
         }
-        
-       
+        public void Save()
+        {
+            try
+            {
+               // Serialise and save
+                using (FileStream fs = new FileStream(this.projectfile, FileMode.Create, FileAccess.Write))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(fs, this);
+                }
+            }
+            catch (Exception e)
+            {
+                //use ecexptioner
+                e.ToString();
+            }
+        }
         public static Project Create(string pfolder, string pname, ProjectCategory ptype)
         {
             //pfolder= c:\\projects\
@@ -161,22 +176,175 @@ namespace Moo.Core
             
             return projectObject;
         }
-        public void Save()
-        {
-            try
+        public List<string> GetProjectFiles()
+        {   //to get the project folder content for compilation
+            string filter = "";
+            switch (this.projecttype)
             {
-               // Serialise and save
-                using (FileStream fs = new FileStream(this.projectfile, FileMode.Create, FileAccess.Write))
+                case ProjectCategory.Csharp:
+                    filter = "*.cs";
+                    break;
+                case ProjectCategory.Hydro:
+                    filter = "*.hy";
+                    break;
+                case ProjectCategory.Ilasm:
+                    filter = "*.il";
+                    break;
+                case ProjectCategory.Unmanaged:
+                    filter = "";
+                    break;
+                case ProjectCategory.Vbasic:
+                    filter = "*.vb";
+                    break;
+                case ProjectCategory.Website:
+                    filter = "*.php";
+                    break;
+            }
+            return Moo.Helpers.FileHelper.GetFolderFileList(this.projectfolder, filter, SearchOption.AllDirectories);
+        }
+
+        //for build process  
+        private string GetBuildTool()
+        {
+            string buildtool = Path.GetDirectoryName(Application.ExecutablePath);
+            switch (this.projecttype)
+            {
+                case ProjectCategory.Csharp:
+                    buildtool += AppSettings.GetSdk("csharp");
+                    break;
+                case ProjectCategory.Hydro:
+                    buildtool += AppSettings.GetSdk("hydro");
+                    break;
+                case ProjectCategory.Ilasm:
+                    buildtool += AppSettings.GetSdk("ilasm");
+                    break;
+                case ProjectCategory.Unmanaged:
+                    buildtool += AppSettings.GetSdk("unmanaged");
+                    break;
+                case ProjectCategory.Vbasic:
+                    buildtool += AppSettings.GetSdk("vbasic");
+                    break;
+                case ProjectCategory.Website:
+                    buildtool += AppSettings.GetSdk("web");
+                    break;
+            }
+            return buildtool;
+        }
+        private string GetAssemblyType()
+        {
+            string targetparam = "";
+            if (this.projecttype == ProjectCategory.Ilasm)
+            {
+                switch (this.assemblytype)
                 {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(fs, this);
+                    case "Console Executable (.exe)":
+                        targetparam = "/exe ";
+                        break;
+                    case "Windows Executable (.exe)":
+                        targetparam = "/exe ";
+                        break;
+                    case "Dynamic Library (.dll)":
+                        targetparam = "/dll ";
+                        break;
                 }
             }
-            catch (Exception e)
+            else
             {
-                //use ecexptioner
-                e.ToString();
+                switch (this.assemblytype)
+                {
+                    case "Console Executable (.exe)":
+                        targetparam = "/target:exe ";
+                        break;
+                    case "Windows Executable (.exe)":
+                        targetparam = "/target:winexe ";
+                        break;
+                    case "Dynamic Library (.dll)":
+                        targetparam = "/target:library ";
+                        break;
+                }
             }
+            return targetparam;
         }
+        private string GetOutput()
+        {
+            if (this.projecttype == ProjectCategory.Website)
+            {
+                this.builtassembly = "http://localhost/" + this.projectfolder;
+               return "http://localhost/"+this.projectfolder;
+            }
+            string prefixe = "/out:";
+            if(this.projecttype ==ProjectCategory.Ilasm)
+            {
+                prefixe="/output:";
+            }
+            switch (this.assemblytype)
+            {
+                case "Console Executable (.exe)": 
+                    this.builtassembly = this.assemblyname + ".exe ";
+                    break;
+                case "Windows Executable (.exe)":
+                    this.builtassembly = this.assemblyname + ".exe ";
+                    break;
+                case "Dynamic Library (.dll)":
+                    this.builtassembly = this.assemblyname + ".dll";
+                    break;
+            }
+            return prefixe + this.builtassembly;
+        }
+        private string GetSourceFiles()
+        {
+            string sourcefiles = "";
+            foreach (string s in this.GetProjectFiles())
+            {
+                sourcefiles += s + " "; 
+            }
+            return sourcefiles;
+        }
+        private string GetReferences()
+        {
+            string references = "";
+            foreach (string s in this.refferences)
+            {
+                references += s + " ";
+            }
+            return references;
+        }
+        private string GetIcon()
+        {
+            return "/win32icon:"+this.projecticon;
+        }  
+      
+        public string GetBuiltAssembly()
+        {
+            return this.builtassembly;
+        }     
+        public string GetBuildCommand()
+        {
+            string command ="";
+            switch (this.projecttype)
+            {
+                case ProjectCategory.Csharp:
+                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    break;
+                case ProjectCategory.Hydro:
+                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    break;
+                case ProjectCategory.Ilasm:
+                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() ;
+                    break;
+                case ProjectCategory.Unmanaged:
+                    command = "";
+                    break;
+                case ProjectCategory.Vbasic:
+                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    break;
+                case ProjectCategory.Website:
+                    command = this.GetBuildTool() + GetBuiltAssembly();
+                    break;
+            }
+            return command;
+        }
+        
+
     }
 }

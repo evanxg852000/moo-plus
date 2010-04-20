@@ -42,13 +42,17 @@ namespace Moo.Dialogs
         {
             this.Text += " [ " + CurrentProject.ProjectName + " ]";
             this.AssemblyNameTbx.Text = CurrentProject.AssemblyName;
-            if (CurrentProject.AssemblyType == "Executable (.exe)")
+            if (CurrentProject.AssemblyType == "Console Executable (.exe)")
             {
                 this.AssemblyTypeCbx.SelectedIndex = 0;
             }
-            else
+            else if (CurrentProject.AssemblyType == "Windows Executable (.exe)")
             {
                 this.AssemblyTypeCbx.SelectedIndex = 1;
+            }
+            else
+            {
+                this.AssemblyTypeCbx.SelectedIndex = 2;
             }
 
             if (CurrentProject.BuildTarget == "Debug")
@@ -68,6 +72,7 @@ namespace Moo.Dialogs
                 this.RefferencesListView.Enabled = false;
                 this.AddRefBt.Enabled = false;
                 this.RemoveRefBt.Enabled = false;
+                return;
             }
             //retrieve installed assemblies
             StatusMsg.Text = "Retrieving Assemblies ...";

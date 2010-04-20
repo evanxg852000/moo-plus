@@ -1264,8 +1264,8 @@
             this.MBuilToolbar.Dock = System.Windows.Forms.DockStyle.None;
             this.MBuilToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MTBBuild,
-            this.MTBBuildRun,
             this.MTBRun,
+            this.MTBBuildRun,
             this.MTBStop,
             this.MTBClean,
             this.MTBConfig});
