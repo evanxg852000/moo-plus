@@ -20,6 +20,11 @@ namespace Moo
         {
             this.Content.Text = content;
         }
+        public  void AppendContent(string content)
+        {
+            this.Content.Text += content;
+        }
+        
         
     
     }

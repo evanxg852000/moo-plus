@@ -204,32 +204,7 @@ namespace Moo.Core
         }
 
         //for build process  
-        private string GetBuildTool()
-        {
-            string buildtool = Path.GetDirectoryName(Application.ExecutablePath);
-            switch (this.projecttype)
-            {
-                case ProjectCategory.Csharp:
-                    buildtool += AppSettings.GetSdk("csharp");
-                    break;
-                case ProjectCategory.Hydro:
-                    buildtool += AppSettings.GetSdk("hydro");
-                    break;
-                case ProjectCategory.Ilasm:
-                    buildtool += AppSettings.GetSdk("ilasm");
-                    break;
-                case ProjectCategory.Unmanaged:
-                    buildtool += AppSettings.GetSdk("unmanaged");
-                    break;
-                case ProjectCategory.Vbasic:
-                    buildtool += AppSettings.GetSdk("vbasic");
-                    break;
-                case ProjectCategory.Website:
-                    buildtool += AppSettings.GetSdk("web");
-                    break;
-            }
-            return buildtool;
-        }
+       
         private string GetAssemblyType()
         {
             string targetparam = "";
@@ -280,13 +255,13 @@ namespace Moo.Core
             switch (this.assemblytype)
             {
                 case "Console Executable (.exe)": 
-                    this.builtassembly = this.assemblyname + ".exe ";
+                    this.builtassembly =this.projectfolder+@"\bin\"+ this.assemblyname + ".exe ";
                     break;
                 case "Windows Executable (.exe)":
-                    this.builtassembly = this.assemblyname + ".exe ";
+                    this.builtassembly = this.projectfolder + @"\bin\" + this.assemblyname + ".exe ";
                     break;
                 case "Dynamic Library (.dll)":
-                    this.builtassembly = this.assemblyname + ".dll";
+                    this.builtassembly = this.projectfolder + @"\bin\" + this.assemblyname + ".dll";
                     break;
             }
             return prefixe + this.builtassembly;
@@ -312,37 +287,63 @@ namespace Moo.Core
         private string GetIcon()
         {
             return "/win32icon:"+this.projecticon;
-        }  
-      
+        }
+
+        public string GetBuildTool()
+        {
+            string buildtool = Path.GetDirectoryName(Application.ExecutablePath);
+            switch (this.projecttype)
+            {
+                case ProjectCategory.Csharp:
+                    buildtool += AppSettings.GetSdk("csharp");
+                    break;
+                case ProjectCategory.Hydro:
+                    buildtool += AppSettings.GetSdk("hydro");
+                    break;
+                case ProjectCategory.Ilasm:
+                    buildtool += AppSettings.GetSdk("ilasm");
+                    break;
+                case ProjectCategory.Unmanaged:
+                    buildtool += AppSettings.GetSdk("unmanaged");
+                    break;
+                case ProjectCategory.Vbasic:
+                    buildtool += AppSettings.GetSdk("vbasic");
+                    break;
+                case ProjectCategory.Website:
+                    buildtool += AppSettings.GetSdk("web");
+                    break;
+            }
+            return buildtool;
+        }
         public string GetBuiltAssembly()
         {
             return this.builtassembly;
         }     
-        public string GetBuildCommand()
+        public string GetBuildCommandLineArguments()
         {
-            string command ="";
+            string commandargs ="";
             switch (this.projecttype)
             {
                 case ProjectCategory.Csharp:
-                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    commandargs =  this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
                     break;
                 case ProjectCategory.Hydro:
-                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    commandargs = this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
                     break;
                 case ProjectCategory.Ilasm:
-                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() ;
+                    commandargs = this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() ;
                     break;
                 case ProjectCategory.Unmanaged:
-                    command = "";
+                    commandargs = "";
                     break;
                 case ProjectCategory.Vbasic:
-                    command = this.GetBuildTool() + this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
+                    commandargs =  this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
                     break;
                 case ProjectCategory.Website:
-                    command = this.GetBuildTool() + GetBuiltAssembly();
+                    commandargs = GetBuiltAssembly();
                     break;
             }
-            return command;
+            return commandargs;
         }
         
 
