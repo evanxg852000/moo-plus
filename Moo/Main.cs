@@ -931,7 +931,7 @@ namespace Moo
                 }
             }
         }
-        
+                
         //exitting event
         private void AppShuttingDown(object sender, FormClosingEventArgs e)
         {
@@ -984,6 +984,24 @@ namespace Moo
         }
         
         #endregion      
+
+        private void BuildProject(object sender, EventArgs e)
+        {
+            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
+            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            MOO_BUILDER.Build();
+        }
+        private void RunProject(object sender, EventArgs e)
+        {
+            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            MOO_BUILDER.Run();
+        }
+        private void BuildAndRunProject(object sender, EventArgs e)
+        {
+            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
+            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            MOO_BUILDER.Build();
+        }
 
          
        

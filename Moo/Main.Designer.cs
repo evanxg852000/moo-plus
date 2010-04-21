@@ -115,6 +115,7 @@
             this.MCleanProject = new System.Windows.Forms.MenuItem();
             this.MSeparator14 = new System.Windows.Forms.MenuItem();
             this.MRunProject = new System.Windows.Forms.MenuItem();
+            this.MBuildRunProject = new System.Windows.Forms.MenuItem();
             this.MStopRunProject = new System.Windows.Forms.MenuItem();
             this.MSeparator15 = new System.Windows.Forms.MenuItem();
             this.MConfigProject = new System.Windows.Forms.MenuItem();
@@ -776,6 +777,7 @@
             this.MCleanProject,
             this.MSeparator14,
             this.MRunProject,
+            this.MBuildRunProject,
             this.MStopRunProject,
             this.MSeparator15,
             this.MConfigProject});
@@ -786,6 +788,7 @@
             this.MBuildProject.Index = 0;
             this.MBuildProject.Shortcut = System.Windows.Forms.Shortcut.F6;
             this.MBuildProject.Text = "Build";
+            this.MBuildProject.Click += new System.EventHandler(this.BuildProject);
             // 
             // MCleanProject
             // 
@@ -803,19 +806,24 @@
             this.MRunProject.Shortcut = System.Windows.Forms.Shortcut.F5;
             this.MRunProject.Text = "Run";
             // 
+            // MBuildRunProject
+            // 
+            this.MBuildRunProject.Index = 4;
+            this.MBuildRunProject.Text = "Build && Run";
+            // 
             // MStopRunProject
             // 
-            this.MStopRunProject.Index = 4;
+            this.MStopRunProject.Index = 5;
             this.MStopRunProject.Text = "Stop";
             // 
             // MSeparator15
             // 
-            this.MSeparator15.Index = 5;
+            this.MSeparator15.Index = 6;
             this.MSeparator15.Text = "-";
             // 
             // MConfigProject
             // 
-            this.MConfigProject.Index = 6;
+            this.MConfigProject.Index = 7;
             this.MConfigProject.Text = "Configuration";
             this.MConfigProject.Click += new System.EventHandler(this.ProjectConfigure);
             // 
@@ -1272,7 +1280,7 @@
             this.MBuilToolbar.Location = new System.Drawing.Point(520, 0);
             this.MBuilToolbar.Name = "MBuilToolbar";
             this.MBuilToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MBuilToolbar.Size = new System.Drawing.Size(185, 28);
+            this.MBuilToolbar.Size = new System.Drawing.Size(216, 28);
             this.MBuilToolbar.TabIndex = 5;
             this.MBuilToolbar.Text = "mainToolstrip";
             // 
@@ -1287,6 +1295,7 @@
             this.MTBBuild.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBBuild.Size = new System.Drawing.Size(26, 26);
             this.MTBBuild.ToolTipText = "Build ";
+            this.MTBBuild.Click += new System.EventHandler(this.BuildProject);
             // 
             // MTBRun
             // 
@@ -1299,6 +1308,7 @@
             this.MTBRun.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBRun.Size = new System.Drawing.Size(26, 26);
             this.MTBRun.ToolTipText = "Run ";
+            this.MTBRun.Click += new System.EventHandler(this.RunProject);
             // 
             // MTBBuildRun
             // 
@@ -1308,6 +1318,7 @@
             this.MTBBuildRun.Name = "MTBBuildRun";
             this.MTBBuildRun.Size = new System.Drawing.Size(23, 25);
             this.MTBBuildRun.ToolTipText = "Build And Run";
+            this.MTBBuildRun.Click += new System.EventHandler(this.BuildAndRunProject);
             // 
             // MTBStop
             // 
@@ -1644,6 +1655,7 @@
         private System.Windows.Forms.MenuItem MPrintPreview;
         private System.Windows.Forms.MenuItem MPageSetup;
         private System.Windows.Forms.MenuItem MVbLanguage;
+        private System.Windows.Forms.MenuItem MBuildRunProject;
 
 
     }
