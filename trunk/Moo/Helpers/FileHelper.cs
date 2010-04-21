@@ -153,7 +153,17 @@ namespace Moo.Helpers
                 e.ToString();
             }
         }
-       
+        public static void EmptyFolder(string folder)
+        { 
+           try { 
+                DirectoryInfo di=new DirectoryInfo(folder);
+                foreach (FileInfo fi in di.GetFiles())
+                {
+                    fi.Delete(); 
+                    
+                }
+           }catch{}
+        }
    
     }
 }

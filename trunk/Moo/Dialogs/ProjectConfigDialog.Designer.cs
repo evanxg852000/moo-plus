@@ -79,6 +79,7 @@
             this.RefferencesListView.Name = "RefferencesListView";
             this.RefferencesListView.ShowItemToolTips = true;
             this.RefferencesListView.Size = new System.Drawing.Size(538, 135);
+            this.RefferencesListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.RefferencesListView.TabIndex = 2;
             this.RefferencesListView.UseCompatibleStateImageBehavior = false;
             this.RefferencesListView.View = System.Windows.Forms.View.Details;

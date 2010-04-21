@@ -28,6 +28,11 @@ namespace Moo.Core
         }
         public void Build()
         {
+            if ((this.ProjectToBuild.ProjectType == ProjectCategory.Unmanaged) ||(this.ProjectToBuild.ProjectType == ProjectCategory.Website))
+            {
+                this.ConsoleBuildOutput.AppendContent("Sorry You can't build this kind of project .... \n");
+                return ;
+            }
             //run external exe assyc
             this.ConsoleBuildOutput.AppendContent("Build started .... \n");
             try
@@ -40,77 +45,57 @@ namespace Moo.Core
                     BuildProcess.StartInfo.UseShellExecute = false;
                     BuildProcess.StartInfo.RedirectStandardOutput = true;
                     BuildProcess.EnableRaisingEvents = true;
-
                     BuildProcess.Start();
                     BuildProcess.WaitForExit();
-                    if(BuildProcess.HasExited)
-                    {
-                        this.ProcessOutputMessage = BuildProcess.StandardOutput.ReadToEnd();
-                        //set the output content
-                        this.ConsoleBuildOutput.AppendContent("\n"+this.ProcessOutputMessage);
-                        this.ConsoleBuildOutput.AppendContent("\n\nBuild finished ...."); 
-                    }
-                    
+                    this.ProcessOutputMessage = BuildProcess.StandardOutput.ReadToEnd();
+                    //set the output content
+                    this.ConsoleBuildOutput.AppendContent("\n"+this.ProcessOutputMessage);
+                    this.ConsoleBuildOutput.AppendContent("\n\nBuild finished ....");    
                 }
             }
             catch (Exception ex)
             {
                 this.ConsoleBuildOutput.AppendContent("\n Unable to compile the project \n Error : \n "+ex.Message); 
             }
-        }
-        public Process Run()
+        }       
+        public void Run()
         {
-            Process RunProcess = new Process();
-            RunProcess.StartInfo.CreateNoWindow = false;
-            RunProcess.StartInfo.UseShellExecute = true;
-
-            if (!File.Exists(this.BuiltAssembly))
+            if (this.ProjectToBuild.ProjectType == ProjectCategory.Unmanaged)
+            {
+                this.ConsoleBuildOutput.AppendContent("An Unmanaged project can't be built neither ran");
+                return;
+            }     
+            if ((!File.Exists(this.BuiltAssembly)) && (this.ProjectToBuild.ProjectType != ProjectCategory.Website))
             {
                 this.ConsoleBuildOutput.AppendContent("The Executable can not be found !\n Make sure you build before running");
-                return RunProcess;
+                return;
             }
-
             if(this.ProjectToBuild.ProjectType==ProjectCategory.Unmanaged)
             {
-                return RunProcess;
+                return ;
             }
-            else if (this.ProjectToBuild.ProjectType == ProjectCategory.Website)
-            {
-                //luch for website
-                return RunProcess;
+            if (this.ProjectToBuild.ProjectType == ProjectCategory.Website)
+            { 
+                Process.Start(this.BuiltAssembly); //lunch the user web browser 
+                return;
             }
-            else
+            try
+            { 
+                using (Process RunProcess = new Process())
+                {
+                  RunProcess.StartInfo.CreateNoWindow = false;
+                  RunProcess.StartInfo.UseShellExecute = true;
+                  RunProcess.StartInfo.FileName = "moorunner.exe";
+                  RunProcess.StartInfo.Arguments = this.BuiltAssembly;
+                  RunProcess.Start();
+                  RunProcess.WaitForExit();
+                }
+            }
+            catch (Exception ex)
             {
-                switch (this.ProjectToBuild.AssemblyType)
-                {
-                    case "Console Executable (.exe)":
-                        try {
-                            string runnercontent = String.Format("ECHO OFF \n{0} \nPAUSE \nEXIT ", this.BuiltAssembly);
-                            FileHelper.Save(Path.GetDirectoryName(Application.ExecutablePath) + @"\moorunner.bat", runnercontent);
-                            RunProcess.StartInfo.FileName = "moorunner.bat";
-                        } catch { }
-                        break;
-                    case "Windows Executable (.exe)":
-                          RunProcess.StartInfo.FileName = this.BuiltAssembly; 
-                        break;
-                    case "Dynamic Library (.dll)":
-                        MessageBox.Show("A dinamic library Application can not be run directly !");
-                        break;
-                }
-                try
-                {
-                    RunProcess.Start();
-                }
-                catch (Exception ex)
-                {
-                    this.ConsoleBuildOutput.AppendContent("\n  Unable to start the application .... \n Error : \n" + ex.Message);
-                }
-                return RunProcess;
-            }    
+               this.ConsoleBuildOutput.AppendContent("\n  Unable to start the application .... \n Error : \n" + ex.Message);
+            }   
         }
-
-
-
-
+        
     }
 }

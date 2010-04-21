@@ -28,6 +28,7 @@ namespace Moo
         private FFileSearcher MOO_FILE_SEARCHER;
         private BuildOutput MOO_BUILD_OUTPUT;
         private List<Type> MOO_PLUGIN_LIST;
+        private Builder MOO_BUILDER;
         #endregion
        
         public MMainWindow()
@@ -226,7 +227,6 @@ namespace Moo
                 MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                 //load the project into the project browser
                 MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
-                this.UIUpdate();
             }  
         }
         private void OpenPrjectFile(object sender, EventArgs e)
@@ -256,7 +256,6 @@ namespace Moo
                     {
                         MOO_APPLICATION_SETTINGS.RecentProjects.Add(openfilepath);
                     }
-                    this.UIUpdate();
                 }
                 else 
                 {
@@ -931,7 +930,59 @@ namespace Moo
                 }
             }
         }
-                
+        
+//BUILD ToolBar handlers
+        private void BuildProject(object sender, EventArgs e)
+        {
+            desactivateBuildtoolbts();
+            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
+            this.MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            this.MOO_BUILDER.Build();
+            activateBuildtoolbts();
+        }
+        private void RunProject(object sender, EventArgs e)
+        {
+            desactivateBuildtoolbts();
+            this.MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            this.MOO_BUILDER.Run();
+            activateBuildtoolbts();
+        }
+        private void BuildAndRunProject(object sender, EventArgs e)
+        {
+            desactivateBuildtoolbts();
+            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
+            this.MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
+            this.MOO_BUILDER.Build();
+            this.MOO_BUILDER.Run();
+            activateBuildtoolbts();
+        }
+        private void activateBuildtoolbts()
+        {
+            MBuildProject.Enabled = true;
+            MRunProject.Enabled = true;
+            MBuildRunProject.Enabled = true;
+            MStopRunProject.Enabled = false;
+            MTBBuild.Enabled = true;
+            MTBRun.Enabled = true;
+            MTBBuildRun.Enabled = true;
+            MTBStop.Enabled = false;
+        }
+        private void desactivateBuildtoolbts()
+        {
+            MBuildProject.Enabled = false;
+            MRunProject.Enabled = false;
+            MBuildRunProject.Enabled = false;
+            MStopRunProject.Enabled = true;
+            MTBBuild.Enabled = false;
+            MTBRun.Enabled = false;
+            MTBBuildRun.Enabled = false;
+            MTBStop.Enabled = true;
+        }
+        private void CleanProject(object sender, EventArgs e)
+        {
+            FileHelper.EmptyFolder(this.MOO_APPLICATION_SETTINGS.CurrentProject.ProjectFolder + @"\bin\");
+        }
+
         //exitting event
         private void AppShuttingDown(object sender, FormClosingEventArgs e)
         {
@@ -985,24 +1036,9 @@ namespace Moo
         
         #endregion      
 
-        private void BuildProject(object sender, EventArgs e)
-        {
-            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
-            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
-            MOO_BUILDER.Build();
-        }
-        private void RunProject(object sender, EventArgs e)
-        {
-            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
-            MOO_BUILDER.Run();
-        }
-        private void BuildAndRunProject(object sender, EventArgs e)
-        {
-            MOO_BUILD_OUTPUT.SetOutputContent(String.Empty);
-            Builder MOO_BUILDER = new Builder(MOO_APPLICATION_SETTINGS.CurrentProject, MOO_BUILD_OUTPUT);
-            MOO_BUILDER.Build();
-        }
+        
 
+            
          
        
     }
