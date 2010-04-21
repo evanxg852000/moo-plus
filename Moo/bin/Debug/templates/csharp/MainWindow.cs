@@ -9,7 +9,7 @@ using System.IO;
 
 namespace {projectname}
 {
-    public partial class MainWindow : Form
+    public  class MainWindow : Form
     {
 		
 		

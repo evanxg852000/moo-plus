@@ -24,8 +24,7 @@ namespace Moo
         {
             this.Content.Text += content;
         }
-        
-        
+               
     
     }
 }

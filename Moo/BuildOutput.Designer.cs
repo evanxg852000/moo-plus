@@ -39,6 +39,7 @@
             this.Content.Location = new System.Drawing.Point(0, 0);
             this.Content.Multiline = true;
             this.Content.Name = "Content";
+            this.Content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Content.Size = new System.Drawing.Size(284, 156);
             this.Content.TabIndex = 0;
             // 

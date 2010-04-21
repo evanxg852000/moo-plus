@@ -244,8 +244,8 @@ namespace Moo.Core
         {
             if (this.projecttype == ProjectCategory.Website)
             {
-                this.builtassembly = "http://localhost/" + this.projectfolder;
-               return "http://localhost/"+this.projectfolder;
+                this.builtassembly = "http://localhost/" +Path.GetFileNameWithoutExtension(this.projectfolder);
+                return this.builtassembly;
             }
             string prefixe = "/out:";
             if(this.projecttype ==ProjectCategory.Ilasm)
@@ -280,7 +280,7 @@ namespace Moo.Core
             string references = "";
             foreach (string s in this.refferences)
             {
-                references += s + " ";
+                references += " /reference:"+s+" " ;
             }
             return references;
         }
@@ -340,6 +340,7 @@ namespace Moo.Core
                     commandargs =  this.GetAssemblyType() + this.GetOutput() + this.GetSourceFiles() + this.GetReferences() + this.GetIcon();
                     break;
                 case ProjectCategory.Website:
+                    this.GetOutput(); //because it sets the build assembly variable
                     commandargs = GetBuiltAssembly();
                     break;
             }

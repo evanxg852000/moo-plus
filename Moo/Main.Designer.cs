@@ -1343,6 +1343,7 @@
             this.MTBClean.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MTBClean.Size = new System.Drawing.Size(26, 26);
             this.MTBClean.ToolTipText = "Clean";
+            this.MTBClean.Click += new System.EventHandler(this.CleanProject);
             // 
             // MTBConfig
             // 
