@@ -69,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_36371B3A4307E1029A49131953EC2EC1"
+        "OwnerKey" = "8:_D0313524BC8C47C3A1E7B14B563CB3E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_37568F752AA64C4DA61884F0034E923F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_3BBBDA936B184DB2890274DF193FC11C"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3BCB9903DA356445720F28054CA6B31E"
-        "OwnerKey" = "8:_D0313524BC8C47C3A1E7B14B563CB3E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -225,12 +225,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BA44A09218F7C0E7DE9B59653A8ED9A8"
-        "OwnerKey" = "8:_D0313524BC8C47C3A1E7B14B563CB3E6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C0FAC4DB627E42EDA094CA5AF3C335FD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -261,6 +255,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DE794CE1EE16E50B184A416DBA16FB4A"
+        "OwnerKey" = "8:_D0313524BC8C47C3A1E7B14B563CB3E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F6850DAC74BF4BE7A0B8690CDBC80ECA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -280,19 +280,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DE794CE1EE16E50B184A416DBA16FB4A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_36371B3A4307E1029A49131953EC2EC1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4CBACFAA1F114E509BAEFE40C327AA43"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BA44A09218F7C0E7DE9B59653A8ED9A8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3BCB9903DA356445720F28054CA6B31E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -352,7 +352,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Setup1.msi"
+        "OutputFilename" = "8:Release\\MooPlusSetup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -369,6 +369,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    {
+                    "Name" = "8:.NET Framework 3.5"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -579,6 +592,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_36371B3A4307E1029A49131953EC2EC1"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Moo.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_36371B3A4307E1029A49131953EC2EC1"
+                    {
+                    "Name" = "8:Moo.Controls.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Moo.Controls.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ABC41CAE35B94147B50873DC76F81ACA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37568F752AA64C4DA61884F0034E923F"
             {
             "SourcePath" = "8:..\\AdditionalOutput\\sdks\\ilasm\\ilasm.exe"
@@ -617,37 +661,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BCB9903DA356445720F28054CA6B31E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Moo.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3BCB9903DA356445720F28054CA6B31E"
-                    {
-                    "Name" = "8:Moo.Controls.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Moo.Controls.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_ABC41CAE35B94147B50873DC76F81ACA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3BCBDD890ADC4487B2D80B25E91E70F0"
@@ -1123,37 +1136,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BA44A09218F7C0E7DE9B59653A8ED9A8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ScintillaNet, Version=2.2.3764.34987, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_BA44A09218F7C0E7DE9B59653A8ED9A8"
-                    {
-                    "Name" = "8:ScintillaNet.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ScintillaNet.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_ABC41CAE35B94147B50873DC76F81ACA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C0FAC4DB627E42EDA094CA5AF3C335FD"
             {
             "SourcePath" = "8:..\\MiscFiles\\install rsc\\installbanner.bmp"
@@ -1232,6 +1214,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE794CE1EE16E50B184A416DBA16FB4A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ScintillaNet, Version=2.2.3764.36870, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DE794CE1EE16E50B184A416DBA16FB4A"
+                    {
+                    "Name" = "8:ScintillaNet.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ScintillaNet.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_ABC41CAE35B94147B50873DC76F81ACA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F6850DAC74BF4BE7A0B8690CDBC80ECA"
@@ -1784,7 +1797,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Moo Plus"
         "ProductCode" = "8:{3F92ABCB-D584-482D-A72C-56A282ED3255}"
-        "PackageCode" = "8:{9E831897-EAE0-47B8-9AD8-D15FA40D32DA}"
+        "PackageCode" = "8:{C018A26B-CBCF-4A5B-A9EB-31C4FAB05592}"
         "UpgradeCode" = "8:{1E7B4678-6808-4162-9C35-47D00C87ABC5}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -2452,7 +2465,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D0313524BC8C47C3A1E7B14B563CB3E6"
             {
-            "SourcePath" = "8:..\\Moo\\obj\\Debug\\Moo.exe"
+            "SourcePath" = "8:..\\Moo\\obj\\Release\\Moo.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ABC41CAE35B94147B50873DC76F81ACA"
