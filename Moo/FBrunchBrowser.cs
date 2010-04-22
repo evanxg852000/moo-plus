@@ -52,9 +52,9 @@ namespace Moo
                 {
                     InsertSelectedBrunchNodeRequested(itemTag);
                 }
-                catch
+                catch(Exception e)
                 {
-                    //do nothing
+                    Exceptioner.Log(e);
                 }
             }
         }

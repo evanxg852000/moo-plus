@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using Moo.Core;
 
 namespace Moo.Helpers
 {
@@ -29,8 +30,7 @@ namespace Moo.Helpers
             }
             catch(Exception e)
             {
-                //Log exception MooExceptioner.Log(e, dateTime)
-                e.ToString();
+                Exceptioner.Log(e);
             }
             return string.Empty;   
         }
@@ -65,8 +65,7 @@ namespace Moo.Helpers
             }
             catch (Exception e)
             {
-                //Log exception MooExceptioner.Log(e, dateTime)
-                e.ToString();
+                Exceptioner.Log(e);
             }
             return false;
         }
@@ -98,9 +97,9 @@ namespace Moo.Helpers
             {
                  File.Delete(path);
             }
-            catch(IOException e)
+            catch(Exception e)
             {
-                e.ToString();//exceptionner
+                Exceptioner.Log(e);
             }
             
         }
@@ -119,8 +118,7 @@ namespace Moo.Helpers
             }
             catch (Exception e)
             {
-                //Log exception MooExceptioner.Log(e, dateTime)
-                e.ToString();
+                Exceptioner.Log(e);
             }
             return FileList;
         }
@@ -149,8 +147,7 @@ namespace Moo.Helpers
             }
             catch (Exception e)
             {
-                //Log exception MooExceptioner.Log(e, dateTime)
-                e.ToString();
+                Exceptioner.Log(e);
             }
         }
         public static void EmptyFolder(string folder)
@@ -162,7 +159,11 @@ namespace Moo.Helpers
                     fi.Delete(); 
                     
                 }
-           }catch{}
+           }
+           catch(Exception e)
+           {
+               Exceptioner.Log(e);
+           }
         }
    
     }

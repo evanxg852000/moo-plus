@@ -354,9 +354,9 @@ namespace Moo
                 {
                     CaretPositionChanged(this.EditorView.Caret.LineNumber, this.EditorView.Caret.Position);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
         }

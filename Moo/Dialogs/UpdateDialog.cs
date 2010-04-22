@@ -117,7 +117,7 @@ namespace Moo.Dialogs
                         localfilepath = Path.GetDirectoryName(Application.ExecutablePath) + AppSettings.GetFolder("plugins") + localfile;
                         DownloadClient.DownloadFileAsync(fileurl, localfilepath);
                     }
-                    catch {}                                             
+                    catch (Exception ex) { Exceptioner.Log(ex); }                                             
                     break;
                 case "Update":
                         localfilepath = Path.GetDirectoryName(Application.ExecutablePath) + localfile;

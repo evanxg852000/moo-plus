@@ -118,12 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>This is the achievement of two years of hard learning 
-I thanks every body who helped me out through 
-Espcially my parents Who support 
-My friends , also thanks many website through which 
-I have learn so many things: 
- </value>
+    <value>Author: Evance Soumaoro
+
+This is the achievement of many years of hard learning. Thanks to everyone who helped me out through, especially my parents and my friends for their support. Also thanks to many websites through which I have learned so many things.
+The purpose of this software is to be used as an educational development tool, but if you find it useful for your commercial development, nothing stops you to use it and/or improve it; as long as you respect the licence term.
+Credits: 
+Scintilla.Net Project, Weifen Luo Docking Cpnt, http://www.siteduzero.com , Code Project Website, Google Project Hosting,
+Contact:   evansofts@evansoft.com
+NB:  If you improve this or modify please append your name in the author list but please do not remove any other name.  </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

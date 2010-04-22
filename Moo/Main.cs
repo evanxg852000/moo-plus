@@ -38,9 +38,6 @@ namespace Moo
             LoadAppState();
             LoadPlugins();
             ApplyLoadedSettings();
-          
-            // test();
-           
         }
         private void UiInitialisation()
         {
@@ -175,14 +172,7 @@ namespace Moo
                 MRecentProjects.MenuItems.Add(mi);
             }
         }
-        
-        
-        //just for test to be deleted 
-        public void test()
-        {
-            MOO_BUILD_OUTPUT.SetOutputContent("some log out put");
-        }
-          
+                   
 
         #region Menu Event Handlers
         //file menu handlers
@@ -686,6 +676,7 @@ namespace Moo
             this.MEncodingAnsi.Checked = false;
             this.MEncodingUtf8.Checked = false;
             mi.Checked = true;
+            MStatusEncodingLabel.Text = mi.Tag.ToString();
             List<CodeEditor> listeditors = this.GetCodeEditors();
             foreach (CodeEditor ce in listeditors)
             {
@@ -726,6 +717,10 @@ namespace Moo
         }
 
         //Help menu
+        private void GetHelpContent(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://mooplus.evansofts.com/");
+        }
         private void ShowAboutMoo(object sender, EventArgs e)
         {
             AboutDialog AbtDlg = new AboutDialog();
@@ -931,7 +926,7 @@ namespace Moo
             }
         }
         
-//BUILD ToolBar handlers
+        //BUILD ToolBar handlers
         private void BuildProject(object sender, EventArgs e)
         {
             if (this.MOO_APPLICATION_SETTINGS.CurrentProject != null)
@@ -982,6 +977,8 @@ namespace Moo
             MTBRun.Enabled = true;
             MTBBuildRun.Enabled = true;
             MTBStop.Enabled = false;
+            MStatusLbl.Text = "Ready";
+            MStatusProBar.Style = ProgressBarStyle.Blocks;
         }
         private void desactivateBuildtoolbts()
         {
@@ -993,6 +990,8 @@ namespace Moo
             MTBRun.Enabled = false;
             MTBBuildRun.Enabled = false;
             MTBStop.Enabled = true;
+            MStatusLbl.Text = "Working...";
+            MStatusProBar.Style = ProgressBarStyle.Marquee;
         }
        
 
@@ -1049,10 +1048,8 @@ namespace Moo
         
         #endregion      
 
-        
-
-            
-         
        
+
+   
     }
 }

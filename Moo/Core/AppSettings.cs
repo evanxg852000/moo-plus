@@ -147,7 +147,6 @@ namespace Moo.Core
         {
             //deserialize the object to load
             AppSettings ASObject = new AppSettings();
-           //Save(ASObject);
             try
             {
                 using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Read))
