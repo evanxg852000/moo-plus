@@ -43,9 +43,9 @@ namespace Moo
                 {
                     NewProjectRequested(this,e);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
         }
@@ -57,9 +57,9 @@ namespace Moo
                 {
                     OpenProjectRequested(this, e);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
         }
@@ -71,9 +71,9 @@ namespace Moo
                 {
                     NewFileRequested(this, e);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
         }
@@ -85,9 +85,9 @@ namespace Moo
                 {
                     OpenSelectedFileNodeRequested(itemTag);
                 }
-                catch
+                catch (Exception e)
                 {
-                    //do nothing
+                    Exceptioner.Log(e);
                 }
             }
         }

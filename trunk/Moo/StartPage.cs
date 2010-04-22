@@ -20,7 +20,6 @@ namespace Moo
         {
             InitializeComponent();
         }
-
         private void RequestNewProject(object sender, EventArgs e)
         {
             if (NewProjectRequested != null)
@@ -29,9 +28,9 @@ namespace Moo
                 {
                     NewProjectRequested(this,e);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
         }
@@ -43,11 +42,19 @@ namespace Moo
                 {
                     OpenProjectRequested(this,e);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    //do nothing
+                    Exceptioner.Log(ex);
                 }
             }
+        }
+        private void GetHelpContent(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://mooplus.evansofts.com/");
+        }        
+        private void GotoEvansoft(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://evansofts.com/");
         }
 
 

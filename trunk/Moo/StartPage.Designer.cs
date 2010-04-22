@@ -48,6 +48,7 @@
             this.SGotoWebsite.TabIndex = 4;
             this.SGotoWebsite.Text = "Goto Evansofts";
             this.SGotoWebsite.UseVisualStyleBackColor = true;
+            this.SGotoWebsite.Click += new System.EventHandler(this.GotoEvansoft);
             // 
             // SHelp
             // 
@@ -60,6 +61,7 @@
             this.SHelp.TabIndex = 3;
             this.SHelp.Text = "Help";
             this.SHelp.UseVisualStyleBackColor = true;
+            this.SHelp.Click += new System.EventHandler(this.GetHelpContent);
             // 
             // SOpenProject
             // 

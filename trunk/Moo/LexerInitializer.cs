@@ -11,6 +11,7 @@ namespace Moo
 {
     class LexerInitializer
     {
+
   #region Config Style
         private const int EOL = -1;
         //Margings Indexes

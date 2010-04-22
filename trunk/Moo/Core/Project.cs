@@ -130,8 +130,7 @@ namespace Moo.Core
             }
             catch (Exception e)
             {
-                //use ecexptioner
-                e.ToString();
+                Exceptioner.Log(e);
             }
         }
         public static Project Create(string pfolder, string pname, ProjectCategory ptype)
@@ -152,8 +151,7 @@ namespace Moo.Core
             }
             catch (Exception e)
             {
-                //use ecexptioner
-                e.ToString();
+                Exceptioner.Log(e);
             }
             return projectObject;
         }
@@ -170,8 +168,7 @@ namespace Moo.Core
             }
             catch (Exception e)
             {
-                //Log exception MooExceptioner.Log(e, dateTime) 
-                e.ToString();
+                Exceptioner.Log(e);
             }
             
             return projectObject;

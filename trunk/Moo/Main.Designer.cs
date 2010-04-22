@@ -845,6 +845,7 @@
             // 
             // MEncodingAnsi
             // 
+            this.MEncodingAnsi.Checked = true;
             this.MEncodingAnsi.Index = 1;
             this.MEncodingAnsi.Tag = "ANSI";
             this.MEncodingAnsi.Text = "Encoding in ANSI";
@@ -898,6 +899,7 @@
             this.MHelpContent.Index = 0;
             this.MHelpContent.Shortcut = System.Windows.Forms.Shortcut.ShiftF1;
             this.MHelpContent.Text = "Help Content";
+            this.MHelpContent.Click += new System.EventHandler(this.GetHelpContent);
             // 
             // MSeparator17
             // 
@@ -935,14 +937,13 @@
             // 
             this.MStatusProBar.Name = "MStatusProBar";
             this.MStatusProBar.Size = new System.Drawing.Size(100, 16);
-            this.MStatusProBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
             // MStatusLbl
             // 
             this.MStatusLbl.Name = "MStatusLbl";
             this.MStatusLbl.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.MStatusLbl.Size = new System.Drawing.Size(104, 17);
-            this.MStatusLbl.Text = "Build Succed...";
+            this.MStatusLbl.Size = new System.Drawing.Size(59, 17);
+            this.MStatusLbl.Text = "Ready";
             // 
             // MStatusLineLabel
             // 
@@ -1280,7 +1281,7 @@
             this.MBuilToolbar.Location = new System.Drawing.Point(520, 0);
             this.MBuilToolbar.Name = "MBuilToolbar";
             this.MBuilToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MBuilToolbar.Size = new System.Drawing.Size(216, 28);
+            this.MBuilToolbar.Size = new System.Drawing.Size(185, 28);
             this.MBuilToolbar.TabIndex = 5;
             this.MBuilToolbar.Text = "mainToolstrip";
             // 

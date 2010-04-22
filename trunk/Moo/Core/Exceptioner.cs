@@ -79,9 +79,7 @@ namespace Moo.Core
                 MiscHelper.SendMail("Bug Report", mailcontent);
                 return true;
             }
-            catch
-            {
-            }
+            catch {    }
             return false;
         }
 

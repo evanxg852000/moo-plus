@@ -138,7 +138,11 @@ namespace Moo.Dialogs
                 try {
                     AssemblyName testAssembly = AssemblyName.GetAssemblyName(path);
                     return true;
-                }catch { }
+                }
+                catch(Exception e)
+                {
+                    Exceptioner.Log(e); 
+                }
                 return false;
             }
         private static void GetAssemblies(string folder, ref List<string> ListAssembly)
@@ -155,7 +159,10 @@ namespace Moo.Dialogs
                         }
                     }
                 }
-                catch { }
+                catch(Exception e)
+                {
+                    Exceptioner.Log(e); 
+                }
             }
         private void SearchAssemblies(object sender, DoWorkEventArgs e)
         {

@@ -171,7 +171,10 @@ namespace Moo.Core
                     }
                 }
             }
-            catch { /* do nothing */}
+            catch (Exception e) 
+            {
+                Exceptioner.Log(e);
+            }
         }
 
         public static void CheckOutForUpdate()
@@ -196,7 +199,10 @@ namespace Moo.Core
                 if (result.Status == IPStatus.Success)
                     return true;
             }
-            catch (Exception e) { e.ToString(); /*do nothing*/  }
+            catch (Exception e) 
+            {
+                Exceptioner.Log(e); 
+            }
             return false;
         }
       

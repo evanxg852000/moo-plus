@@ -61,16 +61,11 @@ namespace Moo.Dialogs
             FileHelper.Save(filepath, bcontent);
             this.Close();
         }
-
         private void BruchTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             BrunchTxt.ConfigurationManager.Language = BruchTypeCbx.SelectedItem.ToString();
         }
-
-       
-
-       
-      
+ 
        
         
     }

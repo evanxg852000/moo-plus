@@ -53,9 +53,10 @@ namespace Moo.Core
                     this.ConsoleBuildOutput.AppendContent("\n\nBuild finished ....");    
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                this.ConsoleBuildOutput.AppendContent("\n Unable to compile the project \n Error : \n "+ex.Message); 
+                this.ConsoleBuildOutput.AppendContent("\n Unable to compile the project \n Error : \n "+e.Message);
+                Exceptioner.Log(e);
             }
         }       
         public void Run()
@@ -91,9 +92,10 @@ namespace Moo.Core
                   RunProcess.WaitForExit();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-               this.ConsoleBuildOutput.AppendContent("\n  Unable to start the application .... \n Error : \n" + ex.Message);
+               this.ConsoleBuildOutput.AppendContent("\n  Unable to start the application .... \n Error : \n" + e.Message);
+               Exceptioner.Log(e);
             }   
         }
         
