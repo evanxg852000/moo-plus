@@ -329,8 +329,8 @@ namespace Moo
             if(this.EditorView.Modified)
             {
                 // Prompt if not saved
-                string message =String.Format( "The text in the {0} has changed.{1} Do you want to save the changes?",this.FileName,Environment.NewLine);
-                DialogResult dr = MessageBox.Show(this, message,"Moo { + }", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+                string message =String.Format( "The text in {0} has changed.{1} Do you want to save the changes?",this.FileName,Environment.NewLine);
+                DialogResult dr = MessageBox.Show(this, message,"Moo { + }", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.Cancel)
                 {
                     // Stop closing
