@@ -258,7 +258,7 @@ namespace Moo.Core
                     this.builtassembly = this.projectfolder + @"\bin\" + this.assemblyname + ".exe ";
                     break;
                 case "Dynamic Library (.dll)":
-                    this.builtassembly = this.projectfolder + @"\bin\" + this.assemblyname + ".dll";
+                    this.builtassembly = this.projectfolder + @"\bin\" + this.assemblyname + ".dll ";
                     break;
             }
             return prefixe + this.builtassembly;
