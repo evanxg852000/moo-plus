@@ -277,7 +277,7 @@ namespace Moo
             string openfilepath=mi.Tag.ToString();
             if(! new FileInfo(openfilepath).Exists)
             {
-                MessageBox.Show("this file has been removed");
+                MessageBox.Show(this, "This file has been removed", "Moo { + }", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MenuItem Parent =(MenuItem) mi.Parent;
                 Parent.MenuItems.Remove(mi);
                 if(Parent==MRecentFiles)
