@@ -33,11 +33,11 @@ namespace Moo
        
         public MMainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();   
             UiInitialisation();
             LoadAppState();
             LoadPlugins();
-            ApplyLoadedSettings();
+            ApplyLoadedSettings();  
         }
         private void UiInitialisation()
         {
@@ -172,7 +172,7 @@ namespace Moo
                 MRecentProjects.MenuItems.Add(mi);
             }
         }
-                   
+        
 
         #region Menu Event Handlers
         //file menu handlers
@@ -227,13 +227,15 @@ namespace Moo
             if ((sender.GetType() == typeof(StartPage)) || (sender.GetType() == typeof(FProjectBrowser)))
             {
                 filter ="Moo Project (*.mpr)|*.mpr";
-            } 
+            }
             string openfilepath;
             string openfilename;
             string openfilecontent = FileHelper.GetContent(filter, out openfilepath, out openfilename);
             string openfileextesion = Path.GetExtension(openfilepath);
+
             if (openfilepath != String.Empty)
             {
+                
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
@@ -289,11 +291,12 @@ namespace Moo
                     MOO_APPLICATION_SETTINGS.RecentProjects.Remove(mi.Tag.ToString());
                 }
                 return;
-            } 
+            }
+           
             string openfilecontent = FileHelper.GetContent(openfilepath);
             string openfileextesion = Path.GetExtension(openfilepath);
             if (openfilepath != String.Empty)
-            {
+            { 
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
