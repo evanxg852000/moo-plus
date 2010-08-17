@@ -17,6 +17,7 @@ namespace Moo.Controls
             get { return rootfolder; }
             set { rootfolder = value; }
         }
+       
         public BrunchBrowser()
         {
             InitializeComponent();
@@ -47,8 +48,8 @@ namespace Moo.Controls
                 {
                     TreeNode BrunchFolder = new TreeNode(item.Name);
                     BrunchFolder.Name = item.Name;
-                    BrunchFolder.ImageIndex = (int)Images.folder;
-                    BrunchFolder.SelectedImageIndex = (int)Images.ofolder;
+                    BrunchFolder.ImageIndex = (int)Images.cnode;
+                    BrunchFolder.SelectedImageIndex = (int)Images.onode;
                     BrunchFolder.Tag = item.FullName;
 
                     DirectoryInfo dibis = new DirectoryInfo(item.FullName);

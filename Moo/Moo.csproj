@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\AutoCompleteImages.cs" />
     <Compile Include="BuildOutput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +476,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\keyword-icon.png" />
+    <None Include="Resources\var-icon.png" />
+    <None Include="Resources\structure-icon.png" />
+    <None Include="Resources\namespace-icon.png" />
+    <None Include="Resources\method-icon.png" />
+    <None Include="Resources\function-icon.png" />
+    <None Include="Resources\event-icon.png" />
+    <None Include="Resources\enum-icon.png" />
+    <None Include="Resources\constant-icon.png" />
+    <None Include="Resources\class-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

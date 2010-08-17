@@ -43,7 +43,7 @@
             this.EditorView.Location = new System.Drawing.Point(0, 0);
             this.EditorView.Margins.Margin0.Width = 20;
             this.EditorView.Margins.Margin1.IsClickable = true;
-            this.EditorView.Margins.Margin1.Width = 20;
+            this.EditorView.Margins.Margin1.Width = 10;
             this.EditorView.Margins.Margin2.Width = 16;
             this.EditorView.Name = "EditorView";
             this.EditorView.Size = new System.Drawing.Size(475, 239);

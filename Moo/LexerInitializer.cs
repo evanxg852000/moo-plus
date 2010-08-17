@@ -58,17 +58,18 @@ namespace Moo
         }     
         public static void ApplyUserStyle(Scintilla scintilla,CodeEditorConfig codeeditorcong )//apply custom style
         {
+            Font userFont = new Font(codeeditorcong.Font, codeeditorcong.FontSize, codeeditorcong.FontStyle, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             //config-style line marging
             scintilla.Margins[LINENUMBER_MARGIN].Width = 20; 
             scintilla.Styles[STYLE_LINENUMBER].BackColor = Color.White;
             scintilla.Styles[STYLE_LINENUMBER].ForeColor = Color.DarkTurquoise;
             scintilla.Styles[STYLE_LINENUMBER].Bold = true;
-            scintilla.Styles[STYLE_LINENUMBER].Size = 9f;
-            
+           
             //apply user configuration
             scintilla.UseFont = true;
-            Font userFont = new Font(codeeditorcong.Font, codeeditorcong.FontSize, codeeditorcong.FontStyle, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             scintilla.Font = userFont;
+            scintilla.Styles[STYLE_LINENUMBER].Size =(float)codeeditorcong.FontSize;
             scintilla.Folding.MarkerScheme = codeeditorcong.FoldingMarker;
             scintilla.Caret.HighlightCurrentLine = codeeditorcong.IsLineHilighting;
         }
