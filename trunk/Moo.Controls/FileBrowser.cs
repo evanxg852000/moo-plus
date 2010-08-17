@@ -73,8 +73,8 @@ namespace Moo.Controls
                    
                         TreeNode sbn = new TreeNode(folder.Name);
                         sbn.Name = folder.Name;
-                        sbn.ImageIndex = (int)Images.folder;
-                        sbn.SelectedImageIndex = (int)Images.ofolder;
+                        sbn.ImageIndex = (int)Images.cnode;
+                        sbn.SelectedImageIndex = (int)Images.onode;
                         sbn.Tag = folder.FullName;
                         sbn.ToolTipText = folder.FullName;    
                         //add to tn

@@ -99,8 +99,6 @@
             this.brunchBrowser1.Name = "brunchBrowser1";
             this.brunchBrowser1.RootFolder = "brunchs";
             this.brunchBrowser1.SelectedImageIndex = 0;
-            this.brunchBrowser1.ShowPlusMinus = false;
-            this.brunchBrowser1.ShowRootLines = false;
             this.brunchBrowser1.Size = new System.Drawing.Size(210, 159);
             this.brunchBrowser1.TabIndex = 2;
             // 

@@ -1011,7 +1011,7 @@
             this.MEditToolbar.Location = new System.Drawing.Point(192, 0);
             this.MEditToolbar.Name = "MEditToolbar";
             this.MEditToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MEditToolbar.Size = new System.Drawing.Size(330, 28);
+            this.MEditToolbar.Size = new System.Drawing.Size(361, 28);
             this.MEditToolbar.TabIndex = 4;
             this.MEditToolbar.Text = "mainToolstrip";
             // 

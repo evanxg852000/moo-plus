@@ -18,6 +18,7 @@ namespace Moo.Controls
         public ProjectBrowser()
         {
             InitializeComponent();
+            this.ShowPlusMinus = true;
         }
         public override void Refresh()
         {
@@ -73,8 +74,8 @@ namespace Moo.Controls
                 {
                     TreeNode sbn = new TreeNode(folder.Name);
                     sbn.Name = folder.Name;
-                    sbn.ImageIndex = (int)Images.folder;
-                    sbn.SelectedImageIndex = (int)Images.ofolder;
+                    sbn.ImageIndex = (int)Images.cnode;
+                    sbn.SelectedImageIndex = (int)Images.onode;
                     sbn.Tag = folder.FullName;
                     //add to tn
                     parent.Nodes.Add(sbn);

@@ -25,7 +25,8 @@ namespace Moo
         private string filepath;
         private string filename;
         private bool iscustomelexerinit;       // Indicates that calls to the StyleNeeded event should use the custom INI lexer
-        private CodeEditorConfig Userconfig; 
+        private CodeEditorConfig Userconfig;
+        private ImageList CompletionImages;
 
         public string FilePath
         {
@@ -49,6 +50,20 @@ namespace Moo
         public CodeEditor(CodeEditorConfig codeeditorconfg,string filepath)
         {
             InitializeComponent();
+            CompletionImages = new ImageList();
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.keyword_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.namespace_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.class_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.structure_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.method_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.event_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.function_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.constant_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.enum_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.var_icon);
+            this.EditorView.AutoComplete.RegisterImages(CompletionImages,Color.Black);
+            //this.EditorView.AutoComplete.
+
             Userconfig = codeeditorconfg;
             this.FilePath = filepath;
             this.Text = filepath;
@@ -307,9 +322,12 @@ namespace Moo
         {
             //update line marging to suit the content
             const int LINENUMBER_MARGIN=0;
-            if (LineMarginWidth < 10*this.EditorView.Lines.Count.ToString().Length)
+            const int STYLE_LINENUMBER = 33;
+            int Ratio = (int)this.EditorView.Styles[STYLE_LINENUMBER].Size;
+
+            if (LineMarginWidth < Ratio * this.EditorView.Lines.Count.ToString().Length)
             {
-                this.LineMarginWidth = 10*this.EditorView.Lines.Count.ToString().Length;
+                this.LineMarginWidth = Ratio * this.EditorView.Lines.Count.ToString().Length;
                 this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth;    
             }
             //update the title to notify that the doc has changed
@@ -362,13 +380,6 @@ namespace Moo
         }
     #endregion
 
-   
-        
-
-       
-        
-
-
-
+    
     }
 }

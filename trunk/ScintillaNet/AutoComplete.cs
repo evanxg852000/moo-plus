@@ -15,11 +15,12 @@ namespace ScintillaNet
 	/// of identifier or keyword based on a partial name. 
 	/// </remarks>
 	[TypeConverterAttribute(typeof(System.ComponentModel.ExpandableObjectConverter))]
-	public class AutoComplete : TopLevelHelper
+	public class AutoComplete : TopLevelHelper 
 	{
+       
 		internal AutoComplete(Scintilla scintilla) : base(scintilla)
 		{
-			
+            
 		}
 
 		internal bool ShouldSerialize()
@@ -89,7 +90,7 @@ namespace ScintillaNet
 			if (list == string.Empty)
 				_list = new List<string>();
 			else
-				_list = new List<string>(list.Split(ListSeparator));
+				_list = new List<string>(list.Split(ListSeparator)); 
 			Show(lengthEntered, list, true);
 		}
 
@@ -100,16 +101,19 @@ namespace ScintillaNet
 			int le = lengthEntered;
 			if (le < 0)
 				le = getLengthEntered();
-
-			NativeScintilla.AutoCShow(le, list);
+            NativeScintilla.AutoCShow(le, list);
+            
 
 			//	Now it may have been that the auto-detect lengthEntered
 			//	caused to AutoCShow call to fail becuase no words matched
 			//	the letters we autodetected. In this case just show the
 			//	list with a 0 lengthEntered to make sure it will show
+            
 			if (!IsActive && lengthEntered < 0)
 				NativeScintilla.AutoCShow(0, list);
 		}
+
+       
 
 		/// <summary>
 		/// Shows the autocomplete window.
@@ -218,6 +222,7 @@ namespace ScintillaNet
 		public void Cancel()
 		{
 			NativeScintilla.AutoCCancel();
+           
 		}
 
 		/// <summary>
@@ -747,7 +752,9 @@ namespace ScintillaNet
 
 			return listString.ToString().Trim();
 		}
-	}
+
+
+        }
 }
 
 
