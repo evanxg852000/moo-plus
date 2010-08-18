@@ -308,9 +308,6 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\page_add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -369,9 +366,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\project.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\replace.png" />
@@ -476,6 +470,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Project.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\open.png" />
     <None Include="Resources\keyword-icon.png" />
     <None Include="Resources\var-icon.png" />
     <None Include="Resources\structure-icon.png" />

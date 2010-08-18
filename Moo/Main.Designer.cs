@@ -927,9 +927,9 @@
             this.MStatusLineLabel,
             this.MStatusColumnLabel,
             this.MStatusEncodingLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 563);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 591);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(992, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1084, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -986,9 +986,9 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.MDockArea.DefaultFloatWindowSize = new System.Drawing.Size(240, 300);
-            this.MDockArea.Location = new System.Drawing.Point(0, 28);
+            this.MDockArea.Location = new System.Drawing.Point(0, 30);
             this.MDockArea.Name = "MDockArea";
-            this.MDockArea.Size = new System.Drawing.Size(992, 536);
+            this.MDockArea.Size = new System.Drawing.Size(1084, 583);
             this.MDockArea.TabIndex = 8;
             // 
             // MEditToolbar
@@ -1011,7 +1011,7 @@
             this.MEditToolbar.Location = new System.Drawing.Point(192, 0);
             this.MEditToolbar.Name = "MEditToolbar";
             this.MEditToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MEditToolbar.Size = new System.Drawing.Size(361, 28);
+            this.MEditToolbar.Size = new System.Drawing.Size(330, 28);
             this.MEditToolbar.TabIndex = 4;
             this.MEditToolbar.Text = "mainToolstrip";
             // 
@@ -1195,7 +1195,7 @@
             // 
             this.MTBShowProject.CheckOnClick = true;
             this.MTBShowProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowProject.Image = global::Moo.Properties.Resources.s_createproject;
+            this.MTBShowProject.Image = global::Moo.Properties.Resources.project;
             this.MTBShowProject.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBShowProject.Name = "MTBShowProject";
             this.MTBShowProject.Size = new System.Drawing.Size(23, 25);
@@ -1480,7 +1480,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(992, 585);
+            this.ClientSize = new System.Drawing.Size(1084, 613);
             this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
@@ -1490,7 +1490,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Menu = this.MMainMenu;
-            this.MinimumSize = new System.Drawing.Size(1008, 621);
+            this.MinimumSize = new System.Drawing.Size(1100, 670);
             this.Name = "MMainWindow";
             this.Text = "Moo { + }";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppShuttingDown);

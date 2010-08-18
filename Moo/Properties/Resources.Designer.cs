@@ -165,6 +165,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap database {
+            get {
+                object obj = ResourceManager.GetObject("database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -273,6 +280,13 @@ namespace Moo.Properties {
         internal static System.Drawing.Bitmap namespace_icon {
             get {
                 object obj = ResourceManager.GetObject("namespace_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap open {
+            get {
+                object obj = ResourceManager.GetObject("open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -389,37 +403,9 @@ namespace Moo.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap s_createproject {
-            get {
-                object obj = ResourceManager.GetObject("s_createproject", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap s_createproject1 {
-            get {
-                object obj = ResourceManager.GetObject("s_createproject1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap s_gotoweb {
-            get {
-                object obj = ResourceManager.GetObject("s_gotoweb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap s_help {
             get {
                 object obj = ResourceManager.GetObject("s_help", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap s_openproject {
-            get {
-                object obj = ResourceManager.GetObject("s_openproject", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
