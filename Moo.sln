@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScintillaNet", "ScintillaNe
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MooInstaller", "Setup1\Setup1.vdproj", "{CA9BDF84-89F2-46B3-8B05-D892D9234BEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yalamo", "Yalamo\Yalamo.csproj", "{0B07C08D-01DF-44BA-8729-492853AC6796}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{CA9BDF84-89F2-46B3-8B05-D892D9234BEF}.Debug|Any CPU.ActiveCfg = Debug
 		{CA9BDF84-89F2-46B3-8B05-D892D9234BEF}.Release|Any CPU.ActiveCfg = Release
 		{CA9BDF84-89F2-46B3-8B05-D892D9234BEF}.Release|Any CPU.Build.0 = Release
+		{0B07C08D-01DF-44BA-8729-492853AC6796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B07C08D-01DF-44BA-8729-492853AC6796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B07C08D-01DF-44BA-8729-492853AC6796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B07C08D-01DF-44BA-8729-492853AC6796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
