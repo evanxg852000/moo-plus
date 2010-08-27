@@ -127,7 +127,7 @@
             this.Controls.Add(this.SOpenProject);
             this.Controls.Add(this.SNewProject);
             this.Controls.Add(this.pictureBox1);
-            this.DockAreas = WeifenLuo.WinFormsUI.Docking.DockAreas.Document;
+            this.DockAreas = Yalamo.Gui.Dock.DockAreas.Document;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartPage";
             this.TabText = "Moo {+} Start Page";

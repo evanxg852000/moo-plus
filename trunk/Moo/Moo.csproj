@@ -74,10 +74,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.2.2864.18696, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dlls\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AutoCompleteImages.cs" />
@@ -423,6 +419,10 @@
     <ProjectReference Include="..\ScintillaNet\ScintillaNet.csproj">
       <Project>{F9B6DABD-BBC1-4638-8CE6-A5C9506BFDCB}</Project>
       <Name>ScintillaNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yalamo\Yalamo.csproj">
+      <Project>{0B07C08D-01DF-44BA-8729-492853AC6796}</Project>
+      <Name>Yalamo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

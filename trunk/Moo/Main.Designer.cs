@@ -29,6 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Yalamo.Gui.Dock.DockPanelSkin dockPanelSkin1 = new Yalamo.Gui.Dock.DockPanelSkin();
+            Yalamo.Gui.Dock.AutoHideStripSkin autoHideStripSkin1 = new Yalamo.Gui.Dock.AutoHideStripSkin();
+            Yalamo.Gui.Dock.DockPanelGradient dockPanelGradient1 = new Yalamo.Gui.Dock.DockPanelGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient1 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.DockPaneStripSkin dockPaneStripSkin1 = new Yalamo.Gui.Dock.DockPaneStripSkin();
+            Yalamo.Gui.Dock.DockPaneStripGradient dockPaneStripGradient1 = new Yalamo.Gui.Dock.DockPaneStripGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient2 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.DockPanelGradient dockPanelGradient2 = new Yalamo.Gui.Dock.DockPanelGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient3 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new Yalamo.Gui.Dock.DockPaneStripToolWindowGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient4 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient5 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.DockPanelGradient dockPanelGradient3 = new Yalamo.Gui.Dock.DockPanelGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient6 = new Yalamo.Gui.Dock.TabGradient();
+            Yalamo.Gui.Dock.TabGradient tabGradient7 = new Yalamo.Gui.Dock.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MMainWindow));
             this.MMainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.MFileMenu = new System.Windows.Forms.MenuItem();
@@ -140,7 +155,7 @@
             this.MStatusEncodingLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.busyPBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusInfo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MDockArea = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.MDockArea = new Yalamo.Gui.Dock.DockPanel();
             this.MEditToolbar = new System.Windows.Forms.ToolStrip();
             this.MTUndo = new System.Windows.Forms.ToolStripButton();
             this.MTBRedo = new System.Windows.Forms.ToolStripButton();
@@ -927,7 +942,7 @@
             this.MStatusLineLabel,
             this.MStatusColumnLabel,
             this.MStatusEncodingLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 591);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 612);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1084, 22);
             this.statusStrip1.TabIndex = 2;
@@ -985,10 +1000,56 @@
             this.MDockArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.MDockArea.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MDockArea.DefaultFloatWindowSize = new System.Drawing.Size(240, 300);
-            this.MDockArea.Location = new System.Drawing.Point(0, 30);
+            this.MDockArea.DockBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.MDockArea.Location = new System.Drawing.Point(0, 29);
             this.MDockArea.Name = "MDockArea";
-            this.MDockArea.Size = new System.Drawing.Size(1084, 583);
+            this.MDockArea.Size = new System.Drawing.Size(1084, 585);
+            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
+            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin1.TabGradient = tabGradient1;
+            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
+            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
+            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
+            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
+            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
+            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
+            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
+            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
+            tabGradient6.EndColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient6.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
+            tabGradient7.EndColor = System.Drawing.Color.Transparent;
+            tabGradient7.StartColor = System.Drawing.Color.Transparent;
+            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
+            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
+            this.MDockArea.Skin = dockPanelSkin1;
             this.MDockArea.TabIndex = 8;
             // 
             // MEditToolbar
@@ -1480,7 +1541,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1084, 613);
+            this.ClientSize = new System.Drawing.Size(1084, 634);
             this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
@@ -1623,7 +1684,7 @@
         private System.Windows.Forms.ToolStripStatusLabel MStatusColumnLabel;
         private System.Windows.Forms.ToolStripStatusLabel MStatusEncodingLabel;
         private System.Windows.Forms.MenuItem MFileExplorer;
-        private WeifenLuo.WinFormsUI.Docking.DockPanel MDockArea;
+        private Yalamo.Gui.Dock.DockPanel MDockArea;
         private System.Windows.Forms.MenuItem MLanguage;
         private System.Windows.Forms.MenuItem MASPLanguage;
         private System.Windows.Forms.MenuItem MBatchLanguage;

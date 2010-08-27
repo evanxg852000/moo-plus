@@ -49,10 +49,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 156);
             this.Controls.Add(this.Content);
-            this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)(((((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft)
-                        | WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight)
-                        | WeifenLuo.WinFormsUI.Docking.DockAreas.DockBottom)
-                        | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
+            this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)(((((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockLeft)
+                        | Yalamo.Gui.Dock.DockAreas.DockRight)
+                        | Yalamo.Gui.Dock.DockAreas.DockBottom)
+                        | Yalamo.Gui.Dock.DockAreas.Document)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuildOutput";
