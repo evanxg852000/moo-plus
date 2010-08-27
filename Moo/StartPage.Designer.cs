@@ -34,7 +34,6 @@
             this.SOpenProject = new System.Windows.Forms.Button();
             this.SNewProject = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,34 +99,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
-            "France",
-            "Guinee",
-            "Italy",
-            "Espagne"});
-            this.listBox1.Location = new System.Drawing.Point(240, 204);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(438, 274);
-            this.listBox1.TabIndex = 5;
-            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 558);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.SGotoWebsite);
             this.Controls.Add(this.SHelp);
             this.Controls.Add(this.SOpenProject);
             this.Controls.Add(this.SNewProject);
             this.Controls.Add(this.pictureBox1);
             this.DockAreas = Yalamo.Gui.Dock.DockAreas.Document;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartPage";
             this.TabText = "Moo {+} Start Page";
@@ -144,6 +127,5 @@
         private System.Windows.Forms.Button SOpenProject;
         private System.Windows.Forms.Button SHelp;
         private System.Windows.Forms.Button SGotoWebsite;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

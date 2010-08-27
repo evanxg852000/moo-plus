@@ -5,7 +5,9 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\M
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Evansofts.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Yalamo.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\ScintillaNet.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Yalamo.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.BuildOutput.resources
@@ -27,5 +29,3 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\M
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.exe
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.pdb
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Yalamo.dll
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Yalamo.pdb
