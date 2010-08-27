@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Moo.Core;
-using WeifenLuo.WinFormsUI.Docking;
+using Yalamo.Gui.Dock;
 
 namespace Moo
 {

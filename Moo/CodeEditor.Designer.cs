@@ -79,7 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 239);
             this.Controls.Add(this.EditorView);
-            this.DockAreas = WeifenLuo.WinFormsUI.Docking.DockAreas.Document;
+            this.DockAreas = Yalamo.Gui.Dock.DockAreas.Document;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeEditor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseSafely);

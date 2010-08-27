@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using Moo.Core;
 using Moo.Helpers;
-using WeifenLuo.WinFormsUI.Docking;
+using Yalamo.Gui.Dock;
 using ScintillaNet;
 
 namespace Moo

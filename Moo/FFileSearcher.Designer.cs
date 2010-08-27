@@ -128,7 +128,7 @@
             this.ClientSize = new System.Drawing.Size(804, 175);
             this.Controls.Add(this.FileFounderList);
             this.Controls.Add(this.ToolStrip);
-            this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockBottom)));
+            this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockBottom)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FFileSearcher";

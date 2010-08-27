@@ -153,8 +153,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Gui\Dock\Resources.resx" />
-    <EmbeddedResource Include="Gui\Dock\Strings.resx" />
+    <EmbeddedResource Include="Gui\Dock\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Dock\Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\DockIndicator_PaneDiamond.bmp" />

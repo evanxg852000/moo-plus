@@ -11,8 +11,7 @@ using System.Reflection;
 using Moo.Core;
 using Moo.Dialogs;
 using Moo.Helpers;
-using WeifenLuo.WinFormsUI;
-using WeifenLuo.WinFormsUI.Docking;
+using Yalamo.Gui.Dock;
 using Evansofts.Extension;
 
 namespace Moo

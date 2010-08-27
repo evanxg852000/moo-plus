@@ -8,3 +8,5 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Te
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Debug\Moo.Controls.Test.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Debug\Moo.Controls.Test.exe
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Debug\Moo.Controls.Test.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Debug\Yalamo.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Debug\Yalamo.pdb
