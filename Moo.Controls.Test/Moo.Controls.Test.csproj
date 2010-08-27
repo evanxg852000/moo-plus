@@ -84,6 +84,10 @@
       <Project>{079D30F4-5015-47D8-AC97-25CF47F90479}</Project>
       <Name>Moo.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Yalamo\Yalamo.csproj">
+      <Project>{0B07C08D-01DF-44BA-8729-492853AC6796}</Project>
+      <Name>Yalamo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
