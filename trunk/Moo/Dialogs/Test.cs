@@ -5,26 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using Yalamo.Gui;
 
 namespace Moo.Dialogs
 {
-
-
-    public partial class AboutDialog : Form
+    public partial class Test : YForm
     {
-        public AboutDialog()
+        public Test()
         {
             InitializeComponent();
+            this.SetupMargin();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        
-   
     }
 }

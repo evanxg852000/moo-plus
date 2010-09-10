@@ -146,10 +146,16 @@
     </Compile>
     <Compile Include="Gui\Dock\Win32\Enums.cs" />
     <Compile Include="Gui\Dock\Win32\NativeMethods.cs" />
+    <Compile Include="Gui\YForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\XMail.cs" />
+    <Compile Include="Helpers\YCompressor.cs" />
     <Compile Include="Helpers\YDatabase.cs" />
     <Compile Include="Helpers\YFile.cs" />
     <Compile Include="Helpers\YPath.cs" />
     <Compile Include="Helpers\YXml.cs" />
+    <Compile Include="Core\Exceptioner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,9 +190,7 @@
     <Content Include="Resources\DockPane_Dock.bmp" />
     <Content Include="Resources\DockPane_Option.bmp" />
     <Content Include="Resources\DockPane_OptionOverflow.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OS\" />
+    <Content Include="Resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

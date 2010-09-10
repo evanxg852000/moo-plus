@@ -7,3 +7,11 @@ Nb Processors :1
 User DomainName :Evansoft-PC
 User Name :Administrator
 =======================================================
+
+=======================NEW EXCEPTION================
+01/09/2010 15:29:01
+------------Source------------
+Moo
+------------Message------------
+Object reference not set to an instance of an object.
+------------Data------------
