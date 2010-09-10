@@ -42,7 +42,8 @@
             // 
             // Logo
             // 
-            this.Logo.Size = new System.Drawing.Size(600, 50);
+            this.Logo.Location = new System.Drawing.Point(0, 49);
+            this.Logo.Size = new System.Drawing.Size(600, 1);
             // 
             // ImgList
             // 
@@ -87,7 +88,7 @@
             this.TypeCbx.FormattingEnabled = true;
             this.TypeCbx.Items.AddRange(new object[] {
             "Select type"});
-            this.TypeCbx.Location = new System.Drawing.Point(132, 66);
+            this.TypeCbx.Location = new System.Drawing.Point(131, 59);
             this.TypeCbx.Name = "TypeCbx";
             this.TypeCbx.Size = new System.Drawing.Size(253, 22);
             this.TypeCbx.TabIndex = 1;
