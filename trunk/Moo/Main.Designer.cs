@@ -48,8 +48,6 @@
             this.MMainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.MFileMenu = new System.Windows.Forms.MenuItem();
             this.MNew = new System.Windows.Forms.MenuItem();
-            this.MNewFile = new System.Windows.Forms.MenuItem();
-            this.MNewPrject = new System.Windows.Forms.MenuItem();
             this.MOpen = new System.Windows.Forms.MenuItem();
             this.MReload = new System.Windows.Forms.MenuItem();
             this.MSeparator1 = new System.Windows.Forms.MenuItem();
@@ -156,6 +154,22 @@
             this.busyPBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.MDockArea = new Yalamo.Gui.Dock.DockPanel();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.MMiscToolbar = new System.Windows.Forms.ToolStrip();
+            this.MTBShowStart = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowProject = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowBrunchBrowser = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowConsole = new System.Windows.Forms.ToolStripButton();
+            this.MTBShowDrive = new System.Windows.Forms.ToolStripButton();
+            this.MTBPreferences = new System.Windows.Forms.ToolStripButton();
+            this.MTBPlugin = new System.Windows.Forms.ToolStripButton();
+            this.MBuilToolbar = new System.Windows.Forms.ToolStrip();
+            this.MTBBuild = new System.Windows.Forms.ToolStripButton();
+            this.MTBRun = new System.Windows.Forms.ToolStripButton();
+            this.MTBStop = new System.Windows.Forms.ToolStripButton();
+            this.MTBClean = new System.Windows.Forms.ToolStripButton();
+            this.MTBConfig = new System.Windows.Forms.ToolStripButton();
             this.MEditToolbar = new System.Windows.Forms.ToolStrip();
             this.MTUndo = new System.Windows.Forms.ToolStripButton();
             this.MTBRedo = new System.Windows.Forms.ToolStripButton();
@@ -169,34 +183,17 @@
             this.MTBZoomIn = new System.Windows.Forms.ToolStripButton();
             this.MTBZoomOut = new System.Windows.Forms.ToolStripButton();
             this.MTBPrint = new System.Windows.Forms.ToolStripButton();
-            this.MMiscToolbar = new System.Windows.Forms.ToolStrip();
-            this.MTBShowStart = new System.Windows.Forms.ToolStripButton();
-            this.MTBShowProject = new System.Windows.Forms.ToolStripButton();
-            this.MTBShowBrunchBrowser = new System.Windows.Forms.ToolStripButton();
-            this.MTBShowConsole = new System.Windows.Forms.ToolStripButton();
-            this.MTBShowDrive = new System.Windows.Forms.ToolStripButton();
-            this.MTBPreferences = new System.Windows.Forms.ToolStripButton();
-            this.MTBPlugin = new System.Windows.Forms.ToolStripButton();
-            this.MBuilToolbar = new System.Windows.Forms.ToolStrip();
-            this.MTBBuild = new System.Windows.Forms.ToolStripButton();
-            this.MTBRun = new System.Windows.Forms.ToolStripButton();
-            this.MTBBuildRun = new System.Windows.Forms.ToolStripButton();
-            this.MTBStop = new System.Windows.Forms.ToolStripButton();
-            this.MTBClean = new System.Windows.Forms.ToolStripButton();
-            this.MTBConfig = new System.Windows.Forms.ToolStripButton();
             this.MFileToolBar = new System.Windows.Forms.ToolStrip();
-            this.MTBNewProject = new System.Windows.Forms.ToolStripButton();
-            this.MTBNewFile = new System.Windows.Forms.ToolStripButton();
+            this.MTBNew = new System.Windows.Forms.ToolStripButton();
+            this.MTBQFile = new System.Windows.Forms.ToolStripButton();
             this.MTBOpen = new System.Windows.Forms.ToolStripButton();
             this.MTBSave = new System.Windows.Forms.ToolStripButton();
             this.MTBSaveAll = new System.Windows.Forms.ToolStripButton();
             this.MTBCloseCurentFile = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
-            this.MEditToolbar.SuspendLayout();
             this.MMiscToolbar.SuspendLayout();
             this.MBuilToolbar.SuspendLayout();
+            this.MEditToolbar.SuspendLayout();
             this.MFileToolBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,24 +236,8 @@
             // MNew
             // 
             this.MNew.Index = 0;
-            this.MNew.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MNewFile,
-            this.MNewPrject});
             this.MNew.Text = "&New";
-            // 
-            // MNewFile
-            // 
-            this.MNewFile.Index = 0;
-            this.MNewFile.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
-            this.MNewFile.Text = "File";
-            this.MNewFile.Click += new System.EventHandler(this.NewFile);
-            // 
-            // MNewPrject
-            // 
-            this.MNewPrject.Index = 1;
-            this.MNewPrject.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
-            this.MNewPrject.Text = "Project";
-            this.MNewPrject.Click += new System.EventHandler(this.NewProject);
+            this.MNew.Click += new System.EventHandler(this.NewPrjectFile);
             // 
             // MOpen
             // 
@@ -1003,7 +984,7 @@
             this.MDockArea.BackColor = System.Drawing.SystemColors.Control;
             this.MDockArea.DefaultFloatWindowSize = new System.Drawing.Size(240, 300);
             this.MDockArea.DockBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.MDockArea.Location = new System.Drawing.Point(0, 29);
+            this.MDockArea.Location = new System.Drawing.Point(0, 28);
             this.MDockArea.Name = "MDockArea";
             this.MDockArea.Size = new System.Drawing.Size(1084, 585);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ButtonFace;
@@ -1057,9 +1038,220 @@
             this.MDockArea.Skin = dockPanelSkin1;
             this.MDockArea.TabIndex = 8;
             // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.AutoSize = false;
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(26, 26);
+            this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // MMiscToolbar
+            // 
+            this.MMiscToolbar.AutoSize = false;
+            this.MMiscToolbar.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
+            this.MMiscToolbar.Dock = System.Windows.Forms.DockStyle.None;
+            this.MMiscToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MTBShowStart,
+            this.MTBShowProject,
+            this.MTBShowBrunchBrowser,
+            this.MTBShowConsole,
+            this.MTBShowDrive,
+            this.MTBPreferences,
+            this.MTBPlugin});
+            this.MMiscToolbar.Location = new System.Drawing.Point(680, 0);
+            this.MMiscToolbar.Name = "MMiscToolbar";
+            this.MMiscToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.MMiscToolbar.Size = new System.Drawing.Size(1000, 28);
+            this.MMiscToolbar.TabIndex = 6;
+            this.MMiscToolbar.Text = "mainToolstrip";
+            // 
+            // MTBShowStart
+            // 
+            this.MTBShowStart.AutoSize = false;
+            this.MTBShowStart.Checked = true;
+            this.MTBShowStart.CheckOnClick = true;
+            this.MTBShowStart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MTBShowStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowStart.Image = global::Moo.Properties.Resources.Wstartpage;
+            this.MTBShowStart.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowStart.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBShowStart.Name = "MTBShowStart";
+            this.MTBShowStart.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBShowStart.Size = new System.Drawing.Size(26, 26);
+            this.MTBShowStart.ToolTipText = "Show Start Page";
+            this.MTBShowStart.Click += new System.EventHandler(this.ToggleStartPage);
+            // 
+            // MTBShowProject
+            // 
+            this.MTBShowProject.CheckOnClick = true;
+            this.MTBShowProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowProject.Image = global::Moo.Properties.Resources.Ppanel;
+            this.MTBShowProject.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowProject.Name = "MTBShowProject";
+            this.MTBShowProject.Size = new System.Drawing.Size(23, 25);
+            this.MTBShowProject.ToolTipText = "Show Project Browser";
+            this.MTBShowProject.Click += new System.EventHandler(this.ToggleProjectExplorer);
+            // 
+            // MTBShowBrunchBrowser
+            // 
+            this.MTBShowBrunchBrowser.CheckOnClick = true;
+            this.MTBShowBrunchBrowser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowBrunchBrowser.Image = global::Moo.Properties.Resources.Bundle;
+            this.MTBShowBrunchBrowser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowBrunchBrowser.Name = "MTBShowBrunchBrowser";
+            this.MTBShowBrunchBrowser.Size = new System.Drawing.Size(23, 25);
+            this.MTBShowBrunchBrowser.ToolTipText = "Show Brunch Browser";
+            this.MTBShowBrunchBrowser.Click += new System.EventHandler(this.ToggleCodeBrucnhExplorer);
+            // 
+            // MTBShowConsole
+            // 
+            this.MTBShowConsole.AutoSize = false;
+            this.MTBShowConsole.CheckOnClick = true;
+            this.MTBShowConsole.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowConsole.Image = global::Moo.Properties.Resources.Console;
+            this.MTBShowConsole.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowConsole.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBShowConsole.Name = "MTBShowConsole";
+            this.MTBShowConsole.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBShowConsole.Size = new System.Drawing.Size(26, 26);
+            this.MTBShowConsole.ToolTipText = "Output";
+            this.MTBShowConsole.Click += new System.EventHandler(this.ToggleConsoleOutput);
+            // 
+            // MTBShowDrive
+            // 
+            this.MTBShowDrive.AutoSize = false;
+            this.MTBShowDrive.CheckOnClick = true;
+            this.MTBShowDrive.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBShowDrive.Image = global::Moo.Properties.Resources.Drive;
+            this.MTBShowDrive.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBShowDrive.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBShowDrive.Name = "MTBShowDrive";
+            this.MTBShowDrive.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBShowDrive.Size = new System.Drawing.Size(26, 26);
+            this.MTBShowDrive.ToolTipText = "File Explorer";
+            this.MTBShowDrive.Click += new System.EventHandler(this.ToggleFileBrowser);
+            // 
+            // MTBPreferences
+            // 
+            this.MTBPreferences.AutoSize = false;
+            this.MTBPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBPreferences.Image = global::Moo.Properties.Resources.Preference;
+            this.MTBPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBPreferences.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBPreferences.Name = "MTBPreferences";
+            this.MTBPreferences.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBPreferences.Size = new System.Drawing.Size(26, 26);
+            this.MTBPreferences.ToolTipText = "Preference";
+            this.MTBPreferences.Click += new System.EventHandler(this.EditPreferences);
+            // 
+            // MTBPlugin
+            // 
+            this.MTBPlugin.AutoSize = false;
+            this.MTBPlugin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBPlugin.Image = global::Moo.Properties.Resources.Plugin;
+            this.MTBPlugin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBPlugin.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBPlugin.Name = "MTBPlugin";
+            this.MTBPlugin.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBPlugin.Size = new System.Drawing.Size(26, 26);
+            this.MTBPlugin.ToolTipText = "Manage Plugin";
+            this.MTBPlugin.Click += new System.EventHandler(this.ManageUpdate);
+            // 
+            // MBuilToolbar
+            // 
+            this.MBuilToolbar.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
+            this.MBuilToolbar.Dock = System.Windows.Forms.DockStyle.None;
+            this.MBuilToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MTBBuild,
+            this.MTBRun,
+            this.MTBStop,
+            this.MTBClean,
+            this.MTBConfig});
+            this.MBuilToolbar.Location = new System.Drawing.Point(519, 0);
+            this.MBuilToolbar.Name = "MBuilToolbar";
+            this.MBuilToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.MBuilToolbar.Size = new System.Drawing.Size(162, 28);
+            this.MBuilToolbar.TabIndex = 5;
+            this.MBuilToolbar.Text = "mainToolstrip";
+            // 
+            // MTBBuild
+            // 
+            this.MTBBuild.AutoSize = false;
+            this.MTBBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBBuild.Image = global::Moo.Properties.Resources.Pbuild;
+            this.MTBBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBBuild.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBBuild.Name = "MTBBuild";
+            this.MTBBuild.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBBuild.Size = new System.Drawing.Size(26, 26);
+            this.MTBBuild.ToolTipText = "Build ";
+            this.MTBBuild.Click += new System.EventHandler(this.BuildProject);
+            // 
+            // MTBRun
+            // 
+            this.MTBRun.AutoSize = false;
+            this.MTBRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBRun.Image = global::Moo.Properties.Resources.Run;
+            this.MTBRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBRun.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBRun.Name = "MTBRun";
+            this.MTBRun.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBRun.Size = new System.Drawing.Size(26, 26);
+            this.MTBRun.ToolTipText = "Run ";
+            this.MTBRun.Click += new System.EventHandler(this.RunProject);
+            // 
+            // MTBStop
+            // 
+            this.MTBStop.AutoSize = false;
+            this.MTBStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBStop.Image = global::Moo.Properties.Resources.Stop;
+            this.MTBStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBStop.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBStop.Name = "MTBStop";
+            this.MTBStop.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBStop.Size = new System.Drawing.Size(26, 26);
+            this.MTBStop.ToolTipText = "Stop";
+            // 
+            // MTBClean
+            // 
+            this.MTBClean.AutoSize = false;
+            this.MTBClean.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBClean.Image = global::Moo.Properties.Resources.Clean;
+            this.MTBClean.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBClean.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBClean.Name = "MTBClean";
+            this.MTBClean.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBClean.Size = new System.Drawing.Size(26, 26);
+            this.MTBClean.ToolTipText = "Clean";
+            this.MTBClean.Click += new System.EventHandler(this.CleanProject);
+            // 
+            // MTBConfig
+            // 
+            this.MTBConfig.AutoSize = false;
+            this.MTBConfig.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBConfig.Image = global::Moo.Properties.Resources.Settings;
+            this.MTBConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBConfig.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBConfig.Name = "MTBConfig";
+            this.MTBConfig.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBConfig.Size = new System.Drawing.Size(26, 26);
+            this.MTBConfig.ToolTipText = "Configuration";
+            this.MTBConfig.Click += new System.EventHandler(this.ProjectConfigure);
+            // 
             // MEditToolbar
             // 
-            this.MEditToolbar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.MEditToolbar.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.MEditToolbar.Dock = System.Windows.Forms.DockStyle.None;
             this.MEditToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MTUndo,
@@ -1074,7 +1266,7 @@
             this.MTBZoomIn,
             this.MTBZoomOut,
             this.MTBPrint});
-            this.MEditToolbar.Location = new System.Drawing.Point(192, 0);
+            this.MEditToolbar.Location = new System.Drawing.Point(189, 0);
             this.MEditToolbar.Name = "MEditToolbar";
             this.MEditToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.MEditToolbar.Size = new System.Drawing.Size(330, 28);
@@ -1085,7 +1277,7 @@
             // 
             this.MTUndo.AutoSize = false;
             this.MTUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTUndo.Image = global::Moo.Properties.Resources.undo;
+            this.MTUndo.Image = global::Moo.Properties.Resources.Undo;
             this.MTUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTUndo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTUndo.Name = "MTUndo";
@@ -1098,7 +1290,7 @@
             // 
             this.MTBRedo.AutoSize = false;
             this.MTBRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBRedo.Image = global::Moo.Properties.Resources.redo;
+            this.MTBRedo.Image = global::Moo.Properties.Resources.Redo;
             this.MTBRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBRedo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBRedo.Name = "MTBRedo";
@@ -1111,7 +1303,7 @@
             // 
             this.MTBCut.AutoSize = false;
             this.MTBCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBCut.Image = global::Moo.Properties.Resources.cut;
+            this.MTBCut.Image = global::Moo.Properties.Resources.Cut;
             this.MTBCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBCut.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBCut.Name = "MTBCut";
@@ -1124,7 +1316,7 @@
             // 
             this.MTBCopy.AutoSize = false;
             this.MTBCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBCopy.Image = global::Moo.Properties.Resources.copy;
+            this.MTBCopy.Image = global::Moo.Properties.Resources.Copy;
             this.MTBCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBCopy.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBCopy.Name = "MTBCopy";
@@ -1137,7 +1329,7 @@
             // 
             this.MTBPaste.AutoSize = false;
             this.MTBPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPaste.Image = global::Moo.Properties.Resources.paste;
+            this.MTBPaste.Image = global::Moo.Properties.Resources.Paste;
             this.MTBPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBPaste.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBPaste.Name = "MTBPaste";
@@ -1150,7 +1342,7 @@
             // 
             this.MTBEndline.CheckOnClick = true;
             this.MTBEndline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBEndline.Image = global::Moo.Properties.Resources.endline;
+            this.MTBEndline.Image = global::Moo.Properties.Resources.Endline;
             this.MTBEndline.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBEndline.Name = "MTBEndline";
             this.MTBEndline.Size = new System.Drawing.Size(23, 25);
@@ -1161,7 +1353,7 @@
             // 
             this.MTBWhiteSapce.CheckOnClick = true;
             this.MTBWhiteSapce.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBWhiteSapce.Image = global::Moo.Properties.Resources.whitespace;
+            this.MTBWhiteSapce.Image = global::Moo.Properties.Resources.Whitespace;
             this.MTBWhiteSapce.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBWhiteSapce.Name = "MTBWhiteSapce";
             this.MTBWhiteSapce.Size = new System.Drawing.Size(23, 25);
@@ -1172,7 +1364,7 @@
             // 
             this.MTBFind.AutoSize = false;
             this.MTBFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBFind.Image = global::Moo.Properties.Resources.zoom;
+            this.MTBFind.Image = global::Moo.Properties.Resources.Search;
             this.MTBFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBFind.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBFind.Name = "MTBFind";
@@ -1184,7 +1376,7 @@
             // MTBReplace
             // 
             this.MTBReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBReplace.Image = global::Moo.Properties.Resources.replace;
+            this.MTBReplace.Image = global::Moo.Properties.Resources.Findreplace;
             this.MTBReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBReplace.Name = "MTBReplace";
             this.MTBReplace.Size = new System.Drawing.Size(23, 25);
@@ -1194,7 +1386,7 @@
             // MTBZoomIn
             // 
             this.MTBZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBZoomIn.Image = global::Moo.Properties.Resources.zoom_in;
+            this.MTBZoomIn.Image = global::Moo.Properties.Resources.Zoomin;
             this.MTBZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBZoomIn.Name = "MTBZoomIn";
             this.MTBZoomIn.Size = new System.Drawing.Size(23, 25);
@@ -1204,7 +1396,7 @@
             // MTBZoomOut
             // 
             this.MTBZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBZoomOut.Image = global::Moo.Properties.Resources.zoom_out;
+            this.MTBZoomOut.Image = global::Moo.Properties.Resources.Zoomout;
             this.MTBZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBZoomOut.Name = "MTBZoomOut";
             this.MTBZoomOut.Size = new System.Drawing.Size(23, 25);
@@ -1214,224 +1406,20 @@
             // MTBPrint
             // 
             this.MTBPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPrint.Image = global::Moo.Properties.Resources.print;
+            this.MTBPrint.Image = global::Moo.Properties.Resources.Print;
             this.MTBPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBPrint.Name = "MTBPrint";
             this.MTBPrint.Size = new System.Drawing.Size(23, 25);
             this.MTBPrint.ToolTipText = "Print";
             this.MTBPrint.Click += new System.EventHandler(this.PrintCode);
             // 
-            // MMiscToolbar
-            // 
-            this.MMiscToolbar.AutoSize = false;
-            this.MMiscToolbar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
-            this.MMiscToolbar.Dock = System.Windows.Forms.DockStyle.None;
-            this.MMiscToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MTBShowStart,
-            this.MTBShowProject,
-            this.MTBShowBrunchBrowser,
-            this.MTBShowConsole,
-            this.MTBShowDrive,
-            this.MTBPreferences,
-            this.MTBPlugin});
-            this.MMiscToolbar.Location = new System.Drawing.Point(703, 0);
-            this.MMiscToolbar.Name = "MMiscToolbar";
-            this.MMiscToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MMiscToolbar.Size = new System.Drawing.Size(1000, 28);
-            this.MMiscToolbar.TabIndex = 6;
-            this.MMiscToolbar.Text = "mainToolstrip";
-            // 
-            // MTBShowStart
-            // 
-            this.MTBShowStart.AutoSize = false;
-            this.MTBShowStart.Checked = true;
-            this.MTBShowStart.CheckOnClick = true;
-            this.MTBShowStart.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.MTBShowStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowStart.Image = global::Moo.Properties.Resources.show_startpage;
-            this.MTBShowStart.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBShowStart.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBShowStart.Name = "MTBShowStart";
-            this.MTBShowStart.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBShowStart.Size = new System.Drawing.Size(26, 26);
-            this.MTBShowStart.ToolTipText = "Show Start Page";
-            this.MTBShowStart.Click += new System.EventHandler(this.ToggleStartPage);
-            // 
-            // MTBShowProject
-            // 
-            this.MTBShowProject.CheckOnClick = true;
-            this.MTBShowProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowProject.Image = global::Moo.Properties.Resources.project;
-            this.MTBShowProject.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBShowProject.Name = "MTBShowProject";
-            this.MTBShowProject.Size = new System.Drawing.Size(23, 25);
-            this.MTBShowProject.ToolTipText = "Show Project Browser";
-            this.MTBShowProject.Click += new System.EventHandler(this.ToggleProjectExplorer);
-            // 
-            // MTBShowBrunchBrowser
-            // 
-            this.MTBShowBrunchBrowser.CheckOnClick = true;
-            this.MTBShowBrunchBrowser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowBrunchBrowser.Image = global::Moo.Properties.Resources.tbrunchicon;
-            this.MTBShowBrunchBrowser.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBShowBrunchBrowser.Name = "MTBShowBrunchBrowser";
-            this.MTBShowBrunchBrowser.Size = new System.Drawing.Size(23, 25);
-            this.MTBShowBrunchBrowser.ToolTipText = "Show Brunch Browser";
-            this.MTBShowBrunchBrowser.Click += new System.EventHandler(this.ToggleCodeBrucnhExplorer);
-            // 
-            // MTBShowConsole
-            // 
-            this.MTBShowConsole.AutoSize = false;
-            this.MTBShowConsole.CheckOnClick = true;
-            this.MTBShowConsole.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowConsole.Image = global::Moo.Properties.Resources.show_console;
-            this.MTBShowConsole.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBShowConsole.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBShowConsole.Name = "MTBShowConsole";
-            this.MTBShowConsole.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBShowConsole.Size = new System.Drawing.Size(26, 26);
-            this.MTBShowConsole.ToolTipText = "Output";
-            this.MTBShowConsole.Click += new System.EventHandler(this.ToggleConsoleOutput);
-            // 
-            // MTBShowDrive
-            // 
-            this.MTBShowDrive.AutoSize = false;
-            this.MTBShowDrive.CheckOnClick = true;
-            this.MTBShowDrive.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBShowDrive.Image = global::Moo.Properties.Resources.drive;
-            this.MTBShowDrive.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBShowDrive.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBShowDrive.Name = "MTBShowDrive";
-            this.MTBShowDrive.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBShowDrive.Size = new System.Drawing.Size(26, 26);
-            this.MTBShowDrive.ToolTipText = "File Explorer";
-            this.MTBShowDrive.Click += new System.EventHandler(this.ToggleFileBrowser);
-            // 
-            // MTBPreferences
-            // 
-            this.MTBPreferences.AutoSize = false;
-            this.MTBPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPreferences.Image = global::Moo.Properties.Resources.preference;
-            this.MTBPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBPreferences.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBPreferences.Name = "MTBPreferences";
-            this.MTBPreferences.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBPreferences.Size = new System.Drawing.Size(26, 26);
-            this.MTBPreferences.ToolTipText = "Preference";
-            this.MTBPreferences.Click += new System.EventHandler(this.EditPreferences);
-            // 
-            // MTBPlugin
-            // 
-            this.MTBPlugin.AutoSize = false;
-            this.MTBPlugin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBPlugin.Image = global::Moo.Properties.Resources.plugin;
-            this.MTBPlugin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBPlugin.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBPlugin.Name = "MTBPlugin";
-            this.MTBPlugin.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBPlugin.Size = new System.Drawing.Size(26, 26);
-            this.MTBPlugin.ToolTipText = "Manage Plugin";
-            this.MTBPlugin.Click += new System.EventHandler(this.ManageUpdate);
-            // 
-            // MBuilToolbar
-            // 
-            this.MBuilToolbar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
-            this.MBuilToolbar.Dock = System.Windows.Forms.DockStyle.None;
-            this.MBuilToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MTBBuild,
-            this.MTBRun,
-            this.MTBBuildRun,
-            this.MTBStop,
-            this.MTBClean,
-            this.MTBConfig});
-            this.MBuilToolbar.Location = new System.Drawing.Point(520, 0);
-            this.MBuilToolbar.Name = "MBuilToolbar";
-            this.MBuilToolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MBuilToolbar.Size = new System.Drawing.Size(185, 28);
-            this.MBuilToolbar.TabIndex = 5;
-            this.MBuilToolbar.Text = "mainToolstrip";
-            // 
-            // MTBBuild
-            // 
-            this.MTBBuild.AutoSize = false;
-            this.MTBBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBBuild.Image = global::Moo.Properties.Resources.build;
-            this.MTBBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBBuild.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBBuild.Name = "MTBBuild";
-            this.MTBBuild.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBBuild.Size = new System.Drawing.Size(26, 26);
-            this.MTBBuild.ToolTipText = "Build ";
-            this.MTBBuild.Click += new System.EventHandler(this.BuildProject);
-            // 
-            // MTBRun
-            // 
-            this.MTBRun.AutoSize = false;
-            this.MTBRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBRun.Image = global::Moo.Properties.Resources.run;
-            this.MTBRun.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBRun.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBRun.Name = "MTBRun";
-            this.MTBRun.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBRun.Size = new System.Drawing.Size(26, 26);
-            this.MTBRun.ToolTipText = "Run ";
-            this.MTBRun.Click += new System.EventHandler(this.RunProject);
-            // 
-            // MTBBuildRun
-            // 
-            this.MTBBuildRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBBuildRun.Image = global::Moo.Properties.Resources.buil_run;
-            this.MTBBuildRun.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBBuildRun.Name = "MTBBuildRun";
-            this.MTBBuildRun.Size = new System.Drawing.Size(23, 25);
-            this.MTBBuildRun.ToolTipText = "Build And Run";
-            this.MTBBuildRun.Click += new System.EventHandler(this.BuildAndRunProject);
-            // 
-            // MTBStop
-            // 
-            this.MTBStop.AutoSize = false;
-            this.MTBStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBStop.Image = global::Moo.Properties.Resources.stop;
-            this.MTBStop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBStop.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBStop.Name = "MTBStop";
-            this.MTBStop.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBStop.Size = new System.Drawing.Size(26, 26);
-            this.MTBStop.ToolTipText = "Stop";
-            // 
-            // MTBClean
-            // 
-            this.MTBClean.AutoSize = false;
-            this.MTBClean.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBClean.Image = global::Moo.Properties.Resources.wizard;
-            this.MTBClean.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBClean.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBClean.Name = "MTBClean";
-            this.MTBClean.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBClean.Size = new System.Drawing.Size(26, 26);
-            this.MTBClean.ToolTipText = "Clean";
-            this.MTBClean.Click += new System.EventHandler(this.CleanProject);
-            // 
-            // MTBConfig
-            // 
-            this.MTBConfig.AutoSize = false;
-            this.MTBConfig.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBConfig.Image = global::Moo.Properties.Resources.settings;
-            this.MTBConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBConfig.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBConfig.Name = "MTBConfig";
-            this.MTBConfig.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBConfig.Size = new System.Drawing.Size(26, 26);
-            this.MTBConfig.ToolTipText = "Configuration";
-            this.MTBConfig.Click += new System.EventHandler(this.ProjectConfigure);
-            // 
             // MFileToolBar
             // 
-            this.MFileToolBar.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.MFileToolBar.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.MFileToolBar.Dock = System.Windows.Forms.DockStyle.None;
             this.MFileToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MTBNewProject,
-            this.MTBNewFile,
+            this.MTBNew,
+            this.MTBQFile,
             this.MTBOpen,
             this.MTBSave,
             this.MTBSaveAll,
@@ -1439,41 +1427,41 @@
             this.MFileToolBar.Location = new System.Drawing.Point(0, 0);
             this.MFileToolBar.Name = "MFileToolBar";
             this.MFileToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MFileToolBar.Size = new System.Drawing.Size(192, 28);
+            this.MFileToolBar.Size = new System.Drawing.Size(223, 28);
             this.MFileToolBar.TabIndex = 0;
             this.MFileToolBar.Text = "mainToolstrip";
             // 
-            // MTBNewProject
+            // MTBNew
             // 
-            this.MTBNewProject.AutoSize = false;
-            this.MTBNewProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBNewProject.Image = global::Moo.Properties.Resources.project;
-            this.MTBNewProject.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBNewProject.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBNewProject.Name = "MTBNewProject";
-            this.MTBNewProject.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBNewProject.Size = new System.Drawing.Size(26, 26);
-            this.MTBNewProject.ToolTipText = "Create New Project";
-            this.MTBNewProject.Click += new System.EventHandler(this.NewProject);
+            this.MTBNew.AutoSize = false;
+            this.MTBNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBNew.Image = global::Moo.Properties.Resources.Pnew;
+            this.MTBNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBNew.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBNew.Name = "MTBNew";
+            this.MTBNew.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBNew.Size = new System.Drawing.Size(26, 26);
+            this.MTBNew.ToolTipText = "Create New Project";
+            this.MTBNew.Click += new System.EventHandler(this.NewPrjectFile);
             // 
-            // MTBNewFile
+            // MTBQFile
             // 
-            this.MTBNewFile.AutoSize = false;
-            this.MTBNewFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBNewFile.Image = global::Moo.Properties.Resources.brunch_add;
-            this.MTBNewFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MTBNewFile.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MTBNewFile.Name = "MTBNewFile";
-            this.MTBNewFile.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MTBNewFile.Size = new System.Drawing.Size(26, 26);
-            this.MTBNewFile.ToolTipText = "Create New File";
-            this.MTBNewFile.Click += new System.EventHandler(this.NewFile);
+            this.MTBQFile.AutoSize = false;
+            this.MTBQFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.MTBQFile.Image = global::Moo.Properties.Resources.QFile;
+            this.MTBQFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MTBQFile.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MTBQFile.Name = "MTBQFile";
+            this.MTBQFile.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MTBQFile.Size = new System.Drawing.Size(26, 26);
+            this.MTBQFile.ToolTipText = "Create New File";
+            this.MTBQFile.Click += new System.EventHandler(this.QuickFile);
             // 
             // MTBOpen
             // 
             this.MTBOpen.AutoSize = false;
             this.MTBOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBOpen.Image = global::Moo.Properties.Resources.folder;
+            this.MTBOpen.Image = global::Moo.Properties.Resources.Popen;
             this.MTBOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBOpen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBOpen.Name = "MTBOpen";
@@ -1486,7 +1474,7 @@
             // 
             this.MTBSave.AutoSize = false;
             this.MTBSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBSave.Image = global::Moo.Properties.Resources.save;
+            this.MTBSave.Image = global::Moo.Properties.Resources.Fsave;
             this.MTBSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBSave.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBSave.Name = "MTBSave";
@@ -1499,7 +1487,7 @@
             // 
             this.MTBSaveAll.AutoSize = false;
             this.MTBSaveAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBSaveAll.Image = global::Moo.Properties.Resources.save_all;
+            this.MTBSaveAll.Image = global::Moo.Properties.Resources.Fsaveall;
             this.MTBSaveAll.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBSaveAll.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBSaveAll.Name = "MTBSaveAll";
@@ -1512,7 +1500,7 @@
             // 
             this.MTBCloseCurentFile.AutoSize = false;
             this.MTBCloseCurentFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.MTBCloseCurentFile.Image = global::Moo.Properties.Resources.brunch_rmv;
+            this.MTBCloseCurentFile.Image = global::Moo.Properties.Resources.Remove;
             this.MTBCloseCurentFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MTBCloseCurentFile.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MTBCloseCurentFile.Name = "MTBCloseCurentFile";
@@ -1521,38 +1509,18 @@
             this.MTBCloseCurentFile.ToolTipText = "Close Current File";
             this.MTBCloseCurentFile.Click += new System.EventHandler(this.CloseCurrentEditor);
             // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.AutoSize = false;
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = global::Moo.Properties.Resources.folder;
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(26, 26);
-            this.openToolStripButton.Text = "&Open";
-            this.openToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Moo.Properties.Resources.folder;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
             // MMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1084, 634);
-            this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.MMiscToolbar);
             this.Controls.Add(this.MBuilToolbar);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.MDockArea);
+            this.Controls.Add(this.MEditToolbar);
             this.Controls.Add(this.MFileToolBar);
+            this.Controls.Add(this.MDockArea);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Menu = this.MMainMenu;
@@ -1562,12 +1530,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppShuttingDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.MEditToolbar.ResumeLayout(false);
-            this.MEditToolbar.PerformLayout();
             this.MMiscToolbar.ResumeLayout(false);
             this.MMiscToolbar.PerformLayout();
             this.MBuilToolbar.ResumeLayout(false);
             this.MBuilToolbar.PerformLayout();
+            this.MEditToolbar.ResumeLayout(false);
+            this.MEditToolbar.PerformLayout();
             this.MFileToolBar.ResumeLayout(false);
             this.MFileToolBar.PerformLayout();
             this.ResumeLayout(false);
@@ -1601,8 +1569,8 @@
         private System.Windows.Forms.ToolStripStatusLabel statusInfo;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton MTBCloseCurentFile;
-        private System.Windows.Forms.ToolStripButton MTBNewProject;
-        private System.Windows.Forms.ToolStripButton MTBNewFile;
+        private System.Windows.Forms.ToolStripButton MTBNew;
+        private System.Windows.Forms.ToolStripButton MTBQFile;
         private System.Windows.Forms.ToolStripButton MTBOpen;
         private System.Windows.Forms.ToolStripButton MTBSave;
         private System.Windows.Forms.ToolStripButton MTBSaveAll;
@@ -1619,8 +1587,6 @@
         private System.Windows.Forms.MenuItem MPrint;
         private System.Windows.Forms.MenuItem MSeparator3;
         private System.Windows.Forms.MenuItem MExit;
-        private System.Windows.Forms.MenuItem MNewFile;
-        private System.Windows.Forms.MenuItem MNewPrject;
         private System.Windows.Forms.MenuItem MSeparator4;
         private System.Windows.Forms.MenuItem MRecentProjects;
         private System.Windows.Forms.MenuItem MSeparator5;
@@ -1684,7 +1650,6 @@
         private System.Windows.Forms.ToolStripButton MTBZoomOut;
         private System.Windows.Forms.ToolStripButton MTBPrint;
         private System.Windows.Forms.ToolStripButton MTBEndline;
-        private System.Windows.Forms.ToolStripButton MTBBuildRun;
         private System.Windows.Forms.ToolStripStatusLabel MStatusLineLabel;
         private System.Windows.Forms.ToolStripStatusLabel MStatusColumnLabel;
         private System.Windows.Forms.ToolStripStatusLabel MStatusEncodingLabel;

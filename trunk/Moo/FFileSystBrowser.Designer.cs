@@ -52,7 +52,7 @@
             // 
             // ToolTtrip
             // 
-            this.ToolTtrip.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.ToolTtrip.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.ToolTtrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TRefresh});
             this.ToolTtrip.Location = new System.Drawing.Point(0, 0);
@@ -65,7 +65,7 @@
             // TRefresh
             // 
             this.TRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TRefresh.Image = global::Moo.Properties.Resources.projet_brow_refresh;
+            this.TRefresh.Image = global::Moo.Properties.Resources.Refresh;
             this.TRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TRefresh.Name = "TRefresh";
             this.TRefresh.Size = new System.Drawing.Size(23, 22);
@@ -81,6 +81,7 @@
             this.Controls.Add(this.FileBrowserTree);
             this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)(((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockLeft)
                         | Yalamo.Gui.Dock.DockAreas.DockRight)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FFileSystBrowser";

@@ -30,6 +30,10 @@ namespace Moo
         private Builder MOO_BUILDER;
         #endregion
        
+        #region Utility Fields
+        private int QuickFileCounter = 0;
+        #endregion
+
         public MMainWindow()
         {
             InitializeComponent();   
@@ -44,15 +48,15 @@ namespace Moo
             MOO_START_PAGE = new StartPage();
             MOO_START_PAGE.Show(MDockArea);
             MOO_START_PAGE.DockState = DockState.Document;
-            MOO_START_PAGE.NewProjectRequested += new NewProjectRequestHandler(NewProject);
+            MOO_START_PAGE.NewProjectRequested += new NewProjectRequestHandler(NewPrjectFile);
             MOO_START_PAGE.OpenProjectRequested += new OpenProjectRequestHandler(OpenPrjectFile);
 
             //project Browser
             MOO_PROJECT_BROWSER = new FProjectBrowser();
             MOO_PROJECT_BROWSER.Show(MDockArea);
             MOO_PROJECT_BROWSER.DockState = DockState.DockLeftAutoHide;
-            MOO_PROJECT_BROWSER.NewProjectRequested +=new NewProjectRequestHandler(NewProject);
-            MOO_PROJECT_BROWSER.NewFileRequested +=new NewFileRequestHandler(NewFile);
+            MOO_PROJECT_BROWSER.NewProjectRequested +=new NewProjectRequestHandler(NewPrjectFile);
+            MOO_PROJECT_BROWSER.NewFileRequested +=new NewFileRequestHandler(NewPrjectFile);
             MOO_PROJECT_BROWSER.OpenProjectRequested += new OpenProjectRequestHandler(OpenPrjectFile);
             MOO_PROJECT_BROWSER.OpenSelectedFileNodeRequested+=new OpenFileRequestHandler(OpenSelectedFileNode);
 
@@ -175,49 +179,26 @@ namespace Moo
 
         #region Menu Event Handlers
         //file menu handlers
-        private void NewFile(object sender, EventArgs e)
+        private void NewPrjectFile(object sender, EventArgs e)
         {
-            //get the current project folder to passed in for quick adding to the current project
-            string currentprojectfolder="";
-            if(MOO_APPLICATION_SETTINGS.CurrentProject !=null)
-            {
-                currentprojectfolder=MOO_APPLICATION_SETTINGS.CurrentProject.ProjectFolder ;
-            }
-            //open the new dialog
-            NewProFileDialog newdialog = new NewProFileDialog("FILE",currentprojectfolder);
+            NewProFileDialog newdialog = new NewProFileDialog("FILE", @"C:\");
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
-                string fileExtention=Moo.Helpers.MiscHelper.GetFileExtention(newdialog.RType);
-                string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileExtention);
-                string filename = newdialog.RFolder +@"\"+ newdialog.RName + fileExtention;
-                //add to recent
-                if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5) { MOO_APPLICATION_SETTINGS.RecentFiles.Add(filename); }
-
-                CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
-                MCED.SetLanguage(fileLanguage);
-                MCED.Show(MDockArea);
-                MCED.DockState = DockState.Document;
-                MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);   
-            }  
-        }
-        private void NewProject(object sender, EventArgs e)
+                MessageBox.Show("cool");
+            } 
+        }        
+        private void QuickFile(object sender, EventArgs e)
         {
-            //open the new dialog
-            NewProFileDialog newdialog = new NewProFileDialog("Project","");
-            if (newdialog.ShowDialog() == DialogResult.OK)
-            {
-                ProjectCategory projecttype = Moo.Helpers.MiscHelper.GetProjectType(newdialog.RType);
-                string projectfolder = newdialog.RFolder;
-                string projectname =newdialog.RName;
-                Project PRJT= Project.Create(projectfolder, projectname, projecttype);
-                //add to recent
-                if (MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5) { MOO_APPLICATION_SETTINGS.RecentProjects.Add(projectfolder + @"\" + projectname + @"\" + projectname + ".mpr"); }
-               
-                MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
-                //load the project into the project browser
-                MOO_PROJECT_BROWSER.BuildNodes(projectfolder + @"\" + projectname, projectname + ".mpr", projectname);
-            }  
-        }
+            QuickFileCounter++;
+            string fileExtention = ".txt";
+            string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileExtention);
+            string filename = @"C:\New File" + QuickFileCounter + fileExtention;
+            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
+            MCED.SetLanguage(fileLanguage);
+            MCED.Show(MDockArea);
+            MCED.DockState = DockState.Document;
+            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+        }       
         private void OpenPrjectFile(object sender, EventArgs e)
         {
             string filter = "All files (*.*)|*.*|Moo Project (*.mpr)|*.mpr|Text file (*.txt)|*.txt|Html file ((*.html))|*.html|Xml file(*.xml)|*.xml";
@@ -424,7 +405,7 @@ namespace Moo
             } 
         }
 
-        
+        //printing
         private void PrintSetup(object sender, EventArgs e)
         {
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
@@ -977,7 +958,6 @@ namespace Moo
             MStopRunProject.Enabled = false;
             MTBBuild.Enabled = true;
             MTBRun.Enabled = true;
-            MTBBuildRun.Enabled = true;
             MTBStop.Enabled = false;
             MStatusLbl.Text = "Ready";
             MStatusProBar.Style = ProgressBarStyle.Blocks;
@@ -990,7 +970,6 @@ namespace Moo
             MStopRunProject.Enabled = true;
             MTBBuild.Enabled = false;
             MTBRun.Enabled = false;
-            MTBBuildRun.Enabled = false;
             MTBStop.Enabled = true;
             MStatusLbl.Text = "Working...";
             MStatusProBar.Style = ProgressBarStyle.Marquee;
@@ -1024,14 +1003,12 @@ namespace Moo
                     MStopRunProject.Enabled = false;
 
                     MTBBuild.Enabled = false;
-                    MTBBuildRun.Enabled = false;
                     MTBRun.Enabled = false;
                     MTBStop.Enabled = false;
                     break;
                 case ProjectCategory.Website:
                     MBuildProject.Enabled = false;
                     MTBBuild.Enabled = false;
-                    MTBBuildRun.Enabled = false;
                     MRunProject.Enabled = true;
                     MTBRun.Enabled = true;
                     MTBStop.Enabled = true;
@@ -1041,7 +1018,6 @@ namespace Moo
                     MRunProject.Enabled = true;
                     MStopRunProject.Enabled = true;
                     MTBBuild.Enabled = true;
-                    MTBBuildRun.Enabled = true;
                     MTBRun.Enabled = true;
                     MTBStop.Enabled = true;
                     break;
@@ -1049,6 +1025,8 @@ namespace Moo
         }
         
         #endregion      
+
+       
 
         
 

@@ -57,7 +57,7 @@
             // 
             // BrowserTool
             // 
-            this.BrowserTool.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.BrowserTool.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.BrowserTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TNewProject,
             this.TopenProject,
@@ -73,7 +73,7 @@
             // TNewProject
             // 
             this.TNewProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TNewProject.Image = global::Moo.Properties.Resources.project;
+            this.TNewProject.Image = global::Moo.Properties.Resources.Pnew;
             this.TNewProject.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TNewProject.Name = "TNewProject";
             this.TNewProject.Size = new System.Drawing.Size(23, 22);
@@ -83,7 +83,7 @@
             // TopenProject
             // 
             this.TopenProject.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TopenProject.Image = global::Moo.Properties.Resources.folder;
+            this.TopenProject.Image = global::Moo.Properties.Resources.Popen;
             this.TopenProject.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TopenProject.Name = "TopenProject";
             this.TopenProject.Size = new System.Drawing.Size(23, 22);
@@ -93,7 +93,7 @@
             // NewfileBt
             // 
             this.NewfileBt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewfileBt.Image = global::Moo.Properties.Resources.brunch_add;
+            this.NewfileBt.Image = global::Moo.Properties.Resources.Fnew;
             this.NewfileBt.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewfileBt.Name = "NewfileBt";
             this.NewfileBt.Size = new System.Drawing.Size(23, 22);
@@ -103,7 +103,7 @@
             // TRefresh
             // 
             this.TRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TRefresh.Image = global::Moo.Properties.Resources.projet_brow_refresh;
+            this.TRefresh.Image = global::Moo.Properties.Resources.Refresh;
             this.TRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TRefresh.Name = "TRefresh";
             this.TRefresh.Size = new System.Drawing.Size(23, 22);
@@ -119,6 +119,7 @@
             this.Controls.Add(this.BrowserTool);
             this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)(((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockLeft)
                         | Yalamo.Gui.Dock.DockAreas.DockRight)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FProjectBrowser";

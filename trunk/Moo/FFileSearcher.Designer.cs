@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFileSearcher));
             this.FileFounderList = new Moo.Controls.FileFounder();
-            this.TSearchFolder = new System.Windows.Forms.ToolStripButton();
-            this.TRecursive = new System.Windows.Forms.ToolStripButton();
             this.SearchKey = new System.Windows.Forms.ToolStripTextBox();
-            this.TSearch = new System.Windows.Forms.ToolStripButton();
             this.SearchProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.TSearchFolder = new System.Windows.Forms.ToolStripButton();
+            this.TRecursive = new System.Windows.Forms.ToolStripButton();
+            this.TSearch = new System.Windows.Forms.ToolStripButton();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,28 +59,6 @@
             this.FileFounderList.SearchProgressChanged += new Moo.Controls.DeamonProgressChanged(this.SearchProgressChanged);
             this.FileFounderList.SearchCompleted += new Moo.Controls.DeamonWorkcompleted(this.SearchCompleted);
             // 
-            // TSearchFolder
-            // 
-            this.TSearchFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TSearchFolder.Image = global::Moo.Properties.Resources.folder;
-            this.TSearchFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSearchFolder.Name = "TSearchFolder";
-            this.TSearchFolder.Size = new System.Drawing.Size(23, 22);
-            this.TSearchFolder.Text = "Search Folder";
-            this.TSearchFolder.ToolTipText = "Specify Search Folder";
-            this.TSearchFolder.Click += new System.EventHandler(this.SetFolder);
-            // 
-            // TRecursive
-            // 
-            this.TRecursive.CheckOnClick = true;
-            this.TRecursive.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TRecursive.Image = global::Moo.Properties.Resources.projet_brow_refresh;
-            this.TRecursive.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TRecursive.Name = "TRecursive";
-            this.TRecursive.Size = new System.Drawing.Size(23, 22);
-            this.TRecursive.Text = "Search in subfolder";
-            this.TRecursive.Click += new System.EventHandler(this.RecursiveHandler);
-            // 
             // SearchKey
             // 
             this.SearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -88,16 +66,6 @@
             this.SearchKey.Name = "SearchKey";
             this.SearchKey.Size = new System.Drawing.Size(200, 25);
             this.SearchKey.Text = "Search...";
-            // 
-            // TSearch
-            // 
-            this.TSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TSearch.Image = global::Moo.Properties.Resources.zoom;
-            this.TSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSearch.Name = "TSearch";
-            this.TSearch.Size = new System.Drawing.Size(23, 22);
-            this.TSearch.Text = "Search";
-            this.TSearch.Click += new System.EventHandler(this.SearchFileHandler);
             // 
             // SearchProgress
             // 
@@ -107,7 +75,7 @@
             // 
             // ToolStrip
             // 
-            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSearchFolder,
             this.TRecursive,
@@ -121,6 +89,38 @@
             this.ToolStrip.TabIndex = 0;
             this.ToolStrip.Text = "Tolstrip";
             // 
+            // TSearchFolder
+            // 
+            this.TSearchFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSearchFolder.Image = global::Moo.Properties.Resources.Foclosed;
+            this.TSearchFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSearchFolder.Name = "TSearchFolder";
+            this.TSearchFolder.Size = new System.Drawing.Size(23, 22);
+            this.TSearchFolder.Text = "Search Folder";
+            this.TSearchFolder.ToolTipText = "Specify Search Folder";
+            this.TSearchFolder.Click += new System.EventHandler(this.SetFolder);
+            // 
+            // TRecursive
+            // 
+            this.TRecursive.CheckOnClick = true;
+            this.TRecursive.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TRecursive.Image = global::Moo.Properties.Resources.Refresh;
+            this.TRecursive.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TRecursive.Name = "TRecursive";
+            this.TRecursive.Size = new System.Drawing.Size(23, 22);
+            this.TRecursive.Text = "Search in subfolder";
+            this.TRecursive.Click += new System.EventHandler(this.RecursiveHandler);
+            // 
+            // TSearch
+            // 
+            this.TSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSearch.Image = global::Moo.Properties.Resources.Search;
+            this.TSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSearch.Name = "TSearch";
+            this.TSearch.Size = new System.Drawing.Size(23, 22);
+            this.TSearch.Text = "Search";
+            this.TSearch.Click += new System.EventHandler(this.SearchFileHandler);
+            // 
             // FFileSearcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +129,7 @@
             this.Controls.Add(this.FileFounderList);
             this.Controls.Add(this.ToolStrip);
             this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockBottom)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FFileSearcher";

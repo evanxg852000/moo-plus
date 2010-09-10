@@ -87,7 +87,7 @@
             // 
             // AddPlugin
             // 
-            this.AddPlugin.Image = global::Moo.Properties.Resources.p_add;
+            this.AddPlugin.Image = global::Moo.Properties.Resources.Add;
             this.AddPlugin.Location = new System.Drawing.Point(459, 6);
             this.AddPlugin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddPlugin.Name = "AddPlugin";
@@ -105,7 +105,7 @@
             // 
             // CancelBt
             // 
-            this.CancelBt.Image = global::Moo.Properties.Resources.stop;
+            this.CancelBt.Image = global::Moo.Properties.Resources.Stop;
             this.CancelBt.Location = new System.Drawing.Point(459, 37);
             this.CancelBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CancelBt.Name = "CancelBt";

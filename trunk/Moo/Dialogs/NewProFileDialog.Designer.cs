@@ -37,7 +37,12 @@
             this.NameTbx = new System.Windows.Forms.TextBox();
             this.FolderTbx = new System.Windows.Forms.TextBox();
             this.BrowseBt = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Logo
+            // 
+            this.Logo.Size = new System.Drawing.Size(600, 50);
             // 
             // ImgList
             // 
@@ -49,11 +54,14 @@
             // CreateBt
             // 
             this.CreateBt.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateBt.Location = new System.Drawing.Point(36, 157);
+            this.CreateBt.Image = global::Moo.Properties.Resources.Fnew;
+            this.CreateBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CreateBt.Location = new System.Drawing.Point(419, 328);
             this.CreateBt.Name = "CreateBt";
-            this.CreateBt.Size = new System.Drawing.Size(75, 23);
+            this.CreateBt.Size = new System.Drawing.Size(75, 25);
             this.CreateBt.TabIndex = 4;
             this.CreateBt.Text = "Create";
+            this.CreateBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CreateBt.UseVisualStyleBackColor = true;
             this.CreateBt.Click += new System.EventHandler(this.CreateBt_Click);
             // 
@@ -61,11 +69,14 @@
             // 
             this.CancelBt.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBt.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBt.Location = new System.Drawing.Point(163, 157);
+            this.CancelBt.Image = global::Moo.Properties.Resources.Stop;
+            this.CancelBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelBt.Location = new System.Drawing.Point(511, 328);
             this.CancelBt.Name = "CancelBt";
-            this.CancelBt.Size = new System.Drawing.Size(75, 23);
+            this.CancelBt.Size = new System.Drawing.Size(75, 25);
             this.CancelBt.TabIndex = 5;
             this.CancelBt.Text = "Cancel";
+            this.CancelBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelBt.UseVisualStyleBackColor = true;
             this.CancelBt.Click += new System.EventHandler(this.CancelBt_Click);
             // 
@@ -76,7 +87,7 @@
             this.TypeCbx.FormattingEnabled = true;
             this.TypeCbx.Items.AddRange(new object[] {
             "Select type"});
-            this.TypeCbx.Location = new System.Drawing.Point(15, 19);
+            this.TypeCbx.Location = new System.Drawing.Point(132, 66);
             this.TypeCbx.Name = "TypeCbx";
             this.TypeCbx.Size = new System.Drawing.Size(253, 22);
             this.TypeCbx.TabIndex = 1;
@@ -84,7 +95,7 @@
             // NameTbx
             // 
             this.NameTbx.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTbx.Location = new System.Drawing.Point(15, 63);
+            this.NameTbx.Location = new System.Drawing.Point(132, 110);
             this.NameTbx.Name = "NameTbx";
             this.NameTbx.Size = new System.Drawing.Size(253, 22);
             this.NameTbx.TabIndex = 2;
@@ -94,7 +105,7 @@
             // 
             this.FolderTbx.Enabled = false;
             this.FolderTbx.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FolderTbx.Location = new System.Drawing.Point(15, 107);
+            this.FolderTbx.Location = new System.Drawing.Point(132, 154);
             this.FolderTbx.Name = "FolderTbx";
             this.FolderTbx.Size = new System.Drawing.Size(223, 22);
             this.FolderTbx.TabIndex = 6;
@@ -103,7 +114,7 @@
             // BrowseBt
             // 
             this.BrowseBt.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrowseBt.Location = new System.Drawing.Point(240, 107);
+            this.BrowseBt.Location = new System.Drawing.Point(357, 154);
             this.BrowseBt.Name = "BrowseBt";
             this.BrowseBt.Size = new System.Drawing.Size(28, 23);
             this.BrowseBt.TabIndex = 3;
@@ -117,12 +128,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBt;
-            this.ClientSize = new System.Drawing.Size(338, 230);
+            this.ClientSize = new System.Drawing.Size(597, 362);
+            this.Controls.Add(this.TypeCbx);
+            this.Controls.Add(this.CancelBt);
             this.Controls.Add(this.BrowseBt);
             this.Controls.Add(this.FolderTbx);
             this.Controls.Add(this.NameTbx);
-            this.Controls.Add(this.TypeCbx);
-            this.Controls.Add(this.CancelBt);
             this.Controls.Add(this.CreateBt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -133,6 +144,15 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New ";
+            this.TopMargin = 50;
+            this.Controls.SetChildIndex(this.Logo, 0);
+            this.Controls.SetChildIndex(this.CreateBt, 0);
+            this.Controls.SetChildIndex(this.NameTbx, 0);
+            this.Controls.SetChildIndex(this.FolderTbx, 0);
+            this.Controls.SetChildIndex(this.BrowseBt, 0);
+            this.Controls.SetChildIndex(this.CancelBt, 0);
+            this.Controls.SetChildIndex(this.TypeCbx, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
