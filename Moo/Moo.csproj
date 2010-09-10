@@ -124,12 +124,6 @@
     <Compile Include="Dialogs\PreferenceDialog.Designer.cs">
       <DependentUpon>PreferenceDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\UpdateDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,10 +200,6 @@
       <DependentUpon>PreferenceDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\UpdateDialog.resx">
       <DependentUpon>UpdateDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -269,159 +259,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tbackground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bmrk_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bmrk_rmv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brunch_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brunch_rmv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\build.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\compress.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cursor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cut.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doc_modified.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\drive.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\error.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page_code.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page_delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\paste.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\plugin_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\plugin_rmv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\redo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\run.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_all.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\undo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warning.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wizard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\zoom.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\zoom_in.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\zoom_out.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\replace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\endline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\buil_run.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\plugin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\preference.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\show_console.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\show_startpage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wall.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wall1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\startpage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_createproject.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_createproject1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_gotoweb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_openproject.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s_createproject2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Moo.Controls\Moo.Controls.csproj">
       <Project>{079D30F4-5015-47D8-AC97-25CF47F90479}</Project>
       <Name>Moo.Controls</Name>
@@ -436,64 +273,62 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\projet_brow_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ctxtbackgroud.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ctxtbackgroud1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tbrunchicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\whitespace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\aboutpage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\p_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\p_delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\workbacgroud.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bug.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
-    <None Include="Resources\send_bug.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Var-icon.png" />
+    <None Include="Resources\Structure-icon.png" />
+    <None Include="Resources\Namespace-icon.png" />
+    <None Include="Resources\Method-icon.png" />
+    <None Include="Resources\Keyword-icon.png" />
+    <None Include="Resources\Function-icon.png" />
+    <None Include="Resources\Event-icon.png" />
+    <None Include="Resources\Enum-icon.png" />
+    <None Include="Resources\Constant-icon.png" />
+    <None Include="Resources\Class-icon.png" />
+    <None Include="Resources\Plugin.png" />
+    <None Include="Resources\Preference.png" />
+    <None Include="Resources\Drive.png" />
+    <None Include="Resources\Bundle.png" />
+    <None Include="Resources\Console.png" />
+    <None Include="Resources\Ppanel.png" />
+    <None Include="Resources\Wstartpage.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Clean.png" />
+    <None Include="Resources\Run.png" />
+    <None Include="Resources\Pbuild.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Zoomout.png" />
+    <None Include="Resources\Zoomin.png" />
+    <None Include="Resources\Findreplace.png" />
+    <None Include="Resources\Whitespace.png" />
+    <None Include="Resources\Endline.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\Redo.png" />
+    <None Include="Resources\Undo.png" />
+    <None Include="Resources\QFile.png" />
+    <None Include="Resources\Fsaveall.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\Open.png" />
     <None Include="Resources\Project.png" />
-    <None Include="Resources\help.png" />
-    <None Include="Resources\database.png" />
-    <None Include="Resources\open.png" />
-    <None Include="Resources\keyword-icon.png" />
-    <None Include="Resources\var-icon.png" />
-    <None Include="Resources\structure-icon.png" />
-    <None Include="Resources\namespace-icon.png" />
-    <None Include="Resources\method-icon.png" />
-    <None Include="Resources\function-icon.png" />
-    <None Include="Resources\event-icon.png" />
-    <None Include="Resources\enum-icon.png" />
-    <None Include="Resources\constant-icon.png" />
-    <None Include="Resources\class-icon.png" />
+    <None Include="Resources\Startpage.png" />
+    <None Include="Resources\Fnew.png" />
+    <None Include="Resources\Popen.png" />
+    <None Include="Resources\Pnew.png" />
+    <None Include="Resources\Fsave.png" />
+    <None Include="Resources\Sendbug.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Aboutpage.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Remove.png" />
+    <None Include="Resources\Tbackground.png" />
+    <None Include="Resources\Foclosed.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Search.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

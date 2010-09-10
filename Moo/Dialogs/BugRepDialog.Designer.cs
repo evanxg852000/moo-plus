@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugRepDialog));
             this.AttachLogCkbx = new System.Windows.Forms.CheckBox();
-            this.ReportBt = new System.Windows.Forms.Button();
             this.BugContentTx = new System.Windows.Forms.TextBox();
+            this.ReportBt = new System.Windows.Forms.Button();
             this.CancelBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -48,18 +48,6 @@
             this.AttachLogCkbx.Text = "Attach log file content";
             this.AttachLogCkbx.UseVisualStyleBackColor = true;
             // 
-            // ReportBt
-            // 
-            this.ReportBt.Image = global::Moo.Properties.Resources.send_bug;
-            this.ReportBt.Location = new System.Drawing.Point(269, 119);
-            this.ReportBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ReportBt.Name = "ReportBt";
-            this.ReportBt.Size = new System.Drawing.Size(32, 32);
-            this.ReportBt.TabIndex = 1;
-            this.ReportBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ReportBt.UseVisualStyleBackColor = true;
-            this.ReportBt.Click += new System.EventHandler(this.SendReport);
-            // 
             // BugContentTx
             // 
             this.BugContentTx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -72,9 +60,21 @@
             this.BugContentTx.TabIndex = 3;
             this.BugContentTx.Text = "Your Bug Summary Here ...";
             // 
+            // ReportBt
+            // 
+            this.ReportBt.Image = global::Moo.Properties.Resources.Sendbug;
+            this.ReportBt.Location = new System.Drawing.Point(269, 119);
+            this.ReportBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ReportBt.Name = "ReportBt";
+            this.ReportBt.Size = new System.Drawing.Size(32, 32);
+            this.ReportBt.TabIndex = 1;
+            this.ReportBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReportBt.UseVisualStyleBackColor = true;
+            this.ReportBt.Click += new System.EventHandler(this.SendReport);
+            // 
             // CancelBt
             // 
-            this.CancelBt.Image = global::Moo.Properties.Resources.stop;
+            this.CancelBt.Image = global::Moo.Properties.Resources.Stop;
             this.CancelBt.Location = new System.Drawing.Point(269, 157);
             this.CancelBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CancelBt.Name = "CancelBt";

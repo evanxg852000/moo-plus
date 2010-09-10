@@ -29,31 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
-            this.SGotoWebsite = new System.Windows.Forms.Button();
             this.SHelp = new System.Windows.Forms.Button();
+            this.SGotoWebsite = new System.Windows.Forms.Button();
             this.SOpenProject = new System.Windows.Forms.Button();
             this.SNewProject = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // SGotoWebsite
-            // 
-            this.SGotoWebsite.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SGotoWebsite.Image = global::Moo.Properties.Resources.database;
-            this.SGotoWebsite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SGotoWebsite.Location = new System.Drawing.Point(22, 293);
-            this.SGotoWebsite.Name = "SGotoWebsite";
-            this.SGotoWebsite.Size = new System.Drawing.Size(189, 55);
-            this.SGotoWebsite.TabIndex = 4;
-            this.SGotoWebsite.Text = "Mysql";
-            this.SGotoWebsite.UseVisualStyleBackColor = true;
-            this.SGotoWebsite.Click += new System.EventHandler(this.GotoEvansoft);
-            // 
             // SHelp
             // 
             this.SHelp.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHelp.Image = global::Moo.Properties.Resources.help;
+            this.SHelp.Image = global::Moo.Properties.Resources.Help;
             this.SHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SHelp.Location = new System.Drawing.Point(22, 362);
             this.SHelp.Name = "SHelp";
@@ -63,10 +50,23 @@
             this.SHelp.UseVisualStyleBackColor = true;
             this.SHelp.Click += new System.EventHandler(this.GetHelpContent);
             // 
+            // SGotoWebsite
+            // 
+            this.SGotoWebsite.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SGotoWebsite.Image = global::Moo.Properties.Resources.Database;
+            this.SGotoWebsite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SGotoWebsite.Location = new System.Drawing.Point(22, 293);
+            this.SGotoWebsite.Name = "SGotoWebsite";
+            this.SGotoWebsite.Size = new System.Drawing.Size(189, 55);
+            this.SGotoWebsite.TabIndex = 4;
+            this.SGotoWebsite.Text = "Mysql";
+            this.SGotoWebsite.UseVisualStyleBackColor = true;
+            this.SGotoWebsite.Click += new System.EventHandler(this.OpenDatabaseDesigner);
+            // 
             // SOpenProject
             // 
             this.SOpenProject.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SOpenProject.Image = global::Moo.Properties.Resources.open;
+            this.SOpenProject.Image = global::Moo.Properties.Resources.Open;
             this.SOpenProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SOpenProject.Location = new System.Drawing.Point(22, 224);
             this.SOpenProject.Name = "SOpenProject";
@@ -79,7 +79,7 @@
             // SNewProject
             // 
             this.SNewProject.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SNewProject.Image = global::Moo.Properties.Resources.project;
+            this.SNewProject.Image = global::Moo.Properties.Resources.Project;
             this.SNewProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SNewProject.Location = new System.Drawing.Point(22, 155);
             this.SNewProject.Name = "SNewProject";
@@ -92,7 +92,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Moo.Properties.Resources.startpage;
+            this.pictureBox1.Image = global::Moo.Properties.Resources.Startpage;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1170, 558);

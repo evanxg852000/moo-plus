@@ -57,7 +57,7 @@
             // 
             // ToolStrip
             // 
-            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddBrunch,
             this.RemoveBrunch,
@@ -72,7 +72,7 @@
             // AddBrunch
             // 
             this.AddBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddBrunch.Image = global::Moo.Properties.Resources.brunch_add;
+            this.AddBrunch.Image = global::Moo.Properties.Resources.Add;
             this.AddBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBrunch.Name = "AddBrunch";
             this.AddBrunch.Size = new System.Drawing.Size(23, 22);
@@ -82,7 +82,7 @@
             // RemoveBrunch
             // 
             this.RemoveBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RemoveBrunch.Image = global::Moo.Properties.Resources.brunch_rmv;
+            this.RemoveBrunch.Image = global::Moo.Properties.Resources.Remove;
             this.RemoveBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RemoveBrunch.Name = "RemoveBrunch";
             this.RemoveBrunch.Size = new System.Drawing.Size(23, 22);
@@ -92,7 +92,7 @@
             // RefreshBrunch
             // 
             this.RefreshBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RefreshBrunch.Image = global::Moo.Properties.Resources.projet_brow_refresh;
+            this.RefreshBrunch.Image = global::Moo.Properties.Resources.Refresh;
             this.RefreshBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBrunch.Name = "RefreshBrunch";
             this.RefreshBrunch.Size = new System.Drawing.Size(23, 22);
@@ -108,6 +108,7 @@
             this.Controls.Add(this.ToolStrip);
             this.DockAreas = ((Yalamo.Gui.Dock.DockAreas)(((Yalamo.Gui.Dock.DockAreas.Float | Yalamo.Gui.Dock.DockAreas.DockLeft)
                         | Yalamo.Gui.Dock.DockAreas.DockRight)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FBrunchBrowser";

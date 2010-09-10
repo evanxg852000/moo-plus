@@ -6,3 +6,4 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debu
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.Gui.YForm.resources

@@ -60,492 +60,366 @@ namespace Moo.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap aboutpage {
+        internal static System.Drawing.Bitmap Aboutpage {
             get {
-                object obj = ResourceManager.GetObject("aboutpage", resourceCulture);
+                object obj = ResourceManager.GetObject("Aboutpage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap Add {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("Add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap bmrk_add {
+        internal static System.Drawing.Bitmap Bundle {
             get {
-                object obj = ResourceManager.GetObject("bmrk_add", resourceCulture);
+                object obj = ResourceManager.GetObject("Bundle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap bmrk_rmv {
+        internal static System.Drawing.Bitmap Class_icon {
             get {
-                object obj = ResourceManager.GetObject("bmrk_rmv", resourceCulture);
+                object obj = ResourceManager.GetObject("Class_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap brunch_add {
+        internal static System.Drawing.Bitmap Clean {
             get {
-                object obj = ResourceManager.GetObject("brunch_add", resourceCulture);
+                object obj = ResourceManager.GetObject("Clean", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap brunch_rmv {
+        internal static System.Drawing.Bitmap Console {
             get {
-                object obj = ResourceManager.GetObject("brunch_rmv", resourceCulture);
+                object obj = ResourceManager.GetObject("Console", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap bug {
+        internal static System.Drawing.Bitmap Constant_icon {
             get {
-                object obj = ResourceManager.GetObject("bug", resourceCulture);
+                object obj = ResourceManager.GetObject("Constant_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap buil_run {
+        internal static System.Drawing.Bitmap Copy {
             get {
-                object obj = ResourceManager.GetObject("buil_run", resourceCulture);
+                object obj = ResourceManager.GetObject("Copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap build {
+        internal static System.Drawing.Bitmap Cut {
             get {
-                object obj = ResourceManager.GetObject("build", resourceCulture);
+                object obj = ResourceManager.GetObject("Cut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap class_icon {
+        internal static System.Drawing.Bitmap Database {
             get {
-                object obj = ResourceManager.GetObject("class_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Database", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap compress {
+        internal static System.Drawing.Bitmap Drive {
             get {
-                object obj = ResourceManager.GetObject("compress", resourceCulture);
+                object obj = ResourceManager.GetObject("Drive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap constant_icon {
+        internal static System.Drawing.Bitmap Endline {
             get {
-                object obj = ResourceManager.GetObject("constant_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Endline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap copy {
+        internal static System.Drawing.Bitmap Enum_icon {
             get {
-                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                object obj = ResourceManager.GetObject("Enum_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap cursor {
+        internal static System.Drawing.Bitmap Event_icon {
             get {
-                object obj = ResourceManager.GetObject("cursor", resourceCulture);
+                object obj = ResourceManager.GetObject("Event_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap cut {
+        internal static System.Drawing.Bitmap Findreplace {
             get {
-                object obj = ResourceManager.GetObject("cut", resourceCulture);
+                object obj = ResourceManager.GetObject("Findreplace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap database {
+        internal static System.Drawing.Bitmap Fnew {
             get {
-                object obj = ResourceManager.GetObject("database", resourceCulture);
+                object obj = ResourceManager.GetObject("Fnew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap delete {
+        internal static System.Drawing.Bitmap Foclosed {
             get {
-                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                object obj = ResourceManager.GetObject("Foclosed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap doc_modified {
+        internal static System.Drawing.Bitmap Fsave {
             get {
-                object obj = ResourceManager.GetObject("doc_modified", resourceCulture);
+                object obj = ResourceManager.GetObject("Fsave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap drive {
+        internal static System.Drawing.Bitmap Fsaveall {
             get {
-                object obj = ResourceManager.GetObject("drive", resourceCulture);
+                object obj = ResourceManager.GetObject("Fsaveall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap endline {
+        internal static System.Drawing.Bitmap Function_icon {
             get {
-                object obj = ResourceManager.GetObject("endline", resourceCulture);
+                object obj = ResourceManager.GetObject("Function_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap enum_icon {
+        internal static System.Drawing.Bitmap Help {
             get {
-                object obj = ResourceManager.GetObject("enum_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Help", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap error {
+        internal static System.Drawing.Bitmap Keyword_icon {
             get {
-                object obj = ResourceManager.GetObject("error", resourceCulture);
+                object obj = ResourceManager.GetObject("Keyword_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap event_icon {
+        internal static System.Drawing.Bitmap Method_icon {
             get {
-                object obj = ResourceManager.GetObject("event_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Method_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap exit {
+        internal static System.Drawing.Bitmap Namespace_icon {
             get {
-                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                object obj = ResourceManager.GetObject("Namespace_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap file {
+        internal static System.Drawing.Bitmap Open {
             get {
-                object obj = ResourceManager.GetObject("file", resourceCulture);
+                object obj = ResourceManager.GetObject("Open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap folder {
+        internal static System.Drawing.Bitmap Paste {
             get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                object obj = ResourceManager.GetObject("Paste", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap function_icon {
+        internal static System.Drawing.Bitmap Pbuild {
             get {
-                object obj = ResourceManager.GetObject("function_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Pbuild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap help {
+        internal static System.Drawing.Bitmap Plugin {
             get {
-                object obj = ResourceManager.GetObject("help", resourceCulture);
+                object obj = ResourceManager.GetObject("Plugin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap icon {
+        internal static System.Drawing.Bitmap Pnew {
             get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Pnew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap keyword_icon {
+        internal static System.Drawing.Bitmap Popen {
             get {
-                object obj = ResourceManager.GetObject("keyword_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Popen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap method_icon {
+        internal static System.Drawing.Bitmap Ppanel {
             get {
-                object obj = ResourceManager.GetObject("method_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Ppanel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap namespace_icon {
+        internal static System.Drawing.Bitmap Preference {
             get {
-                object obj = ResourceManager.GetObject("namespace_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Preference", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap open {
+        internal static System.Drawing.Bitmap Print {
             get {
-                object obj = ResourceManager.GetObject("open", resourceCulture);
+                object obj = ResourceManager.GetObject("Print", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap p_add {
+        internal static System.Drawing.Bitmap Project {
             get {
-                object obj = ResourceManager.GetObject("p_add", resourceCulture);
+                object obj = ResourceManager.GetObject("Project", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap p_delete {
+        internal static System.Drawing.Bitmap QFile {
             get {
-                object obj = ResourceManager.GetObject("p_delete", resourceCulture);
+                object obj = ResourceManager.GetObject("QFile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap page_add {
+        internal static System.Drawing.Bitmap Redo {
             get {
-                object obj = ResourceManager.GetObject("page_add", resourceCulture);
+                object obj = ResourceManager.GetObject("Redo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap page_code {
+        internal static System.Drawing.Bitmap Refresh {
             get {
-                object obj = ResourceManager.GetObject("page_code", resourceCulture);
+                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap page_delete {
+        internal static System.Drawing.Bitmap Remove {
             get {
-                object obj = ResourceManager.GetObject("page_delete", resourceCulture);
+                object obj = ResourceManager.GetObject("Remove", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap paste {
+        internal static System.Drawing.Bitmap Run {
             get {
-                object obj = ResourceManager.GetObject("paste", resourceCulture);
+                object obj = ResourceManager.GetObject("Run", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap plugin {
+        internal static System.Drawing.Bitmap Search {
             get {
-                object obj = ResourceManager.GetObject("plugin", resourceCulture);
+                object obj = ResourceManager.GetObject("Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap plugin_add {
+        internal static System.Drawing.Bitmap Sendbug {
             get {
-                object obj = ResourceManager.GetObject("plugin_add", resourceCulture);
+                object obj = ResourceManager.GetObject("Sendbug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap plugin_rmv {
+        internal static System.Drawing.Bitmap Settings {
             get {
-                object obj = ResourceManager.GetObject("plugin_rmv", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap preference {
+        internal static System.Drawing.Bitmap Startpage {
             get {
-                object obj = ResourceManager.GetObject("preference", resourceCulture);
+                object obj = ResourceManager.GetObject("Startpage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap print {
+        internal static System.Drawing.Bitmap Stop {
             get {
-                object obj = ResourceManager.GetObject("print", resourceCulture);
+                object obj = ResourceManager.GetObject("Stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap project {
+        internal static System.Drawing.Bitmap Structure_icon {
             get {
-                object obj = ResourceManager.GetObject("project", resourceCulture);
+                object obj = ResourceManager.GetObject("Structure_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap projet_brow_refresh {
+        internal static System.Drawing.Bitmap Tbackground {
             get {
-                object obj = ResourceManager.GetObject("projet_brow_refresh", resourceCulture);
+                object obj = ResourceManager.GetObject("Tbackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap redo {
+        internal static System.Drawing.Bitmap Undo {
             get {
-                object obj = ResourceManager.GetObject("redo", resourceCulture);
+                object obj = ResourceManager.GetObject("Undo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap replace {
+        internal static System.Drawing.Bitmap Var_icon {
             get {
-                object obj = ResourceManager.GetObject("replace", resourceCulture);
+                object obj = ResourceManager.GetObject("Var_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap run {
+        internal static System.Drawing.Bitmap Whitespace {
             get {
-                object obj = ResourceManager.GetObject("run", resourceCulture);
+                object obj = ResourceManager.GetObject("Whitespace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap s_help {
+        internal static System.Drawing.Bitmap Wstartpage {
             get {
-                object obj = ResourceManager.GetObject("s_help", resourceCulture);
+                object obj = ResourceManager.GetObject("Wstartpage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap save {
+        internal static System.Drawing.Bitmap Zoomin {
             get {
-                object obj = ResourceManager.GetObject("save", resourceCulture);
+                object obj = ResourceManager.GetObject("Zoomin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap save_all {
+        internal static System.Drawing.Bitmap Zoomout {
             get {
-                object obj = ResourceManager.GetObject("save_all", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap send_bug {
-            get {
-                object obj = ResourceManager.GetObject("send_bug", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap settings {
-            get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap show_console {
-            get {
-                object obj = ResourceManager.GetObject("show_console", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap show_startpage {
-            get {
-                object obj = ResourceManager.GetObject("show_startpage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap startpage {
-            get {
-                object obj = ResourceManager.GetObject("startpage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap stop {
-            get {
-                object obj = ResourceManager.GetObject("stop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap structure_icon {
-            get {
-                object obj = ResourceManager.GetObject("structure_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap tbackground {
-            get {
-                object obj = ResourceManager.GetObject("tbackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap tbrunchicon {
-            get {
-                object obj = ResourceManager.GetObject("tbrunchicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap undo {
-            get {
-                object obj = ResourceManager.GetObject("undo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap var_icon {
-            get {
-                object obj = ResourceManager.GetObject("var_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap warning {
-            get {
-                object obj = ResourceManager.GetObject("warning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap whitespace {
-            get {
-                object obj = ResourceManager.GetObject("whitespace", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap wizard {
-            get {
-                object obj = ResourceManager.GetObject("wizard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap workbacgroud {
-            get {
-                object obj = ResourceManager.GetObject("workbacgroud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zoom {
-            get {
-                object obj = ResourceManager.GetObject("zoom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zoom_in {
-            get {
-                object obj = ResourceManager.GetObject("zoom_in", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zoom_out {
-            get {
-                object obj = ResourceManager.GetObject("zoom_out", resourceCulture);
+                object obj = ResourceManager.GetObject("Zoomout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -51,16 +51,16 @@ namespace Moo
         {
             InitializeComponent();
             CompletionImages = new ImageList();
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.keyword_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.namespace_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.class_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.structure_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.method_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.event_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.function_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.constant_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.enum_icon);
-            CompletionImages.Images.Add(global::Moo.Properties.Resources.var_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Keyword_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Namespace_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Class_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Structure_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Method_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Event_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Function_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Constant_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Enum_icon);
+            CompletionImages.Images.Add(global::Moo.Properties.Resources.Var_icon);
             this.EditorView.AutoComplete.RegisterImages(CompletionImages,Color.Black);
             //this.EditorView.AutoComplete.
 

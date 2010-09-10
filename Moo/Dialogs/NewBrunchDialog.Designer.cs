@@ -29,22 +29,53 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewBrunchDialog));
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BrunchTxt = new ScintillaNet.Scintilla();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.NewBrunch = new System.Windows.Forms.ToolStripButton();
             this.NameTxt = new System.Windows.Forms.ToolStripTextBox();
             this.BruchTypeCbx = new System.Windows.Forms.ToolStripComboBox();
             this.SaveBrunch = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BrunchTxt = new ScintillaNet.Scintilla();
-            this.ToolStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).BeginInit();
+            this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusMsg});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 232);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(378, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 3;
+            // 
+            // StatusMsg
+            // 
+            this.StatusMsg.Name = "StatusMsg";
+            this.StatusMsg.Size = new System.Drawing.Size(0, 17);
+            // 
+            // BrunchTxt
+            // 
+            this.BrunchTxt.ConfigurationManager.Language = "cs";
+            this.BrunchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BrunchTxt.Folding.MarkerScheme = ScintillaNet.FoldMarkerScheme.PlusMinus;
+            this.BrunchTxt.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrunchTxt.IsBraceMatching = true;
+            this.BrunchTxt.Location = new System.Drawing.Point(0, 25);
+            this.BrunchTxt.Margins.Margin0.Width = 20;
+            this.BrunchTxt.Margins.Margin1.Width = 5;
+            this.BrunchTxt.Margins.Margin2.Width = 17;
+            this.BrunchTxt.Name = "BrunchTxt";
+            this.BrunchTxt.Size = new System.Drawing.Size(378, 207);
+            this.BrunchTxt.TabIndex = 0;
+            this.BrunchTxt.UseFont = true;
             // 
             // ToolStrip
             // 
-            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.tbackground;
+            this.ToolStrip.BackgroundImage = global::Moo.Properties.Resources.Tbackground;
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewBrunch,
             this.NameTxt,
@@ -60,7 +91,7 @@
             // NewBrunch
             // 
             this.NewBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewBrunch.Image = global::Moo.Properties.Resources.brunch_add;
+            this.NewBrunch.Image = global::Moo.Properties.Resources.Add;
             this.NewBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewBrunch.Name = "NewBrunch";
             this.NewBrunch.Size = new System.Drawing.Size(23, 22);
@@ -100,43 +131,12 @@
             // SaveBrunch
             // 
             this.SaveBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SaveBrunch.Image = global::Moo.Properties.Resources.save;
+            this.SaveBrunch.Image = global::Moo.Properties.Resources.Fsave;
             this.SaveBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveBrunch.Name = "SaveBrunch";
             this.SaveBrunch.Size = new System.Drawing.Size(23, 22);
             this.SaveBrunch.Text = "Remove Brunch";
             this.SaveBrunch.Click += new System.EventHandler(this.SaveBrunchHandler);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusMsg});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 232);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(378, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 3;
-            // 
-            // StatusMsg
-            // 
-            this.StatusMsg.Name = "StatusMsg";
-            this.StatusMsg.Size = new System.Drawing.Size(0, 17);
-            // 
-            // BrunchTxt
-            // 
-            this.BrunchTxt.ConfigurationManager.Language = "cs";
-            this.BrunchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BrunchTxt.Folding.MarkerScheme = ScintillaNet.FoldMarkerScheme.PlusMinus;
-            this.BrunchTxt.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrunchTxt.IsBraceMatching = true;
-            this.BrunchTxt.Location = new System.Drawing.Point(0, 25);
-            this.BrunchTxt.Margins.Margin0.Width = 20;
-            this.BrunchTxt.Margins.Margin1.Width = 5;
-            this.BrunchTxt.Margins.Margin2.Width = 17;
-            this.BrunchTxt.Name = "BrunchTxt";
-            this.BrunchTxt.Size = new System.Drawing.Size(378, 207);
-            this.BrunchTxt.TabIndex = 0;
-            this.BrunchTxt.UseFont = true;
             // 
             // NewBrunchDialog
             // 
@@ -153,11 +153,11 @@
             this.Name = "NewBrunchDialog";
             this.ShowInTaskbar = false;
             this.Text = "New Brunch ";
-            this.ToolStrip.ResumeLayout(false);
-            this.ToolStrip.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).EndInit();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

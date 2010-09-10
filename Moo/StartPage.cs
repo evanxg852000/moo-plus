@@ -48,15 +48,15 @@ namespace Moo
                 }
             }
         }
+        private void OpenDatabaseDesigner(object sender, EventArgs e)
+        {
+            MessageBox.Show("to do");
+        }
         private void GetHelpContent(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://mooplus.evansofts.com/");
         }        
-        private void GotoEvansoft(object sender, EventArgs e)
-        {
-            Dialogs.Test f = new Moo.Dialogs.Test();
-            f.ShowDialog();
-        }
+        
 
        
 

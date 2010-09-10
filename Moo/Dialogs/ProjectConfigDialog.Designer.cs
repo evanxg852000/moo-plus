@@ -219,7 +219,7 @@
             // 
             // RemoveRefBt
             // 
-            this.RemoveRefBt.Image = global::Moo.Properties.Resources.delete;
+            this.RemoveRefBt.Image = global::Moo.Properties.Resources.Remove;
             this.RemoveRefBt.Location = new System.Drawing.Point(549, 176);
             this.RemoveRefBt.Name = "RemoveRefBt";
             this.RemoveRefBt.Size = new System.Drawing.Size(25, 25);
@@ -229,7 +229,7 @@
             // 
             // AddRefBt
             // 
-            this.AddRefBt.Image = global::Moo.Properties.Resources.add;
+            this.AddRefBt.Image = global::Moo.Properties.Resources.Add;
             this.AddRefBt.Location = new System.Drawing.Point(549, 122);
             this.AddRefBt.Name = "AddRefBt";
             this.AddRefBt.Size = new System.Drawing.Size(25, 25);
@@ -287,7 +287,7 @@
             // 
             // RefreshBt
             // 
-            this.RefreshBt.Image = global::Moo.Properties.Resources.projet_brow_refresh;
+            this.RefreshBt.Image = global::Moo.Properties.Resources.Refresh;
             this.RefreshBt.Location = new System.Drawing.Point(549, 149);
             this.RefreshBt.Name = "RefreshBt";
             this.RefreshBt.Size = new System.Drawing.Size(25, 25);
