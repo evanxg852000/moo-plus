@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBt;
-            this.ClientSize = new System.Drawing.Size(284, 192);
+            this.ClientSize = new System.Drawing.Size(338, 230);
             this.Controls.Add(this.BrowseBt);
             this.Controls.Add(this.FolderTbx);
             this.Controls.Add(this.NameTbx);

@@ -54,7 +54,8 @@ namespace Moo
         }        
         private void GotoEvansoft(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://evansofts.com/");
+            Dialogs.Test f = new Moo.Dialogs.Test();
+            f.ShowDialog();
         }
 
        

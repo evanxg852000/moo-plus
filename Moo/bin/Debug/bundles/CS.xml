@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bundle name="CS">
+	<snippet>
+		foreach($array as $val) 
+		{
+			$val ;
+		}
+	</snippet>
+	<snippet>
+	
+	</snippet>
+</bundle>
