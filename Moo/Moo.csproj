@@ -278,6 +278,12 @@
   <ItemGroup>
     <Content Include="Application-icon.ico" />
     <Content Include="icon.ico" />
+    <Content Include="Resources\Prodbdesign.png" />
+    <Content Include="Resources\Prodesktop.png" />
+    <Content Include="Resources\Profile.png" />
+    <Content Include="Resources\Protodo.png" />
+    <Content Include="Resources\Proweb.png" />
+    <Content Include="Resources\Prozip.png" />
     <None Include="Resources\Var-icon.png" />
     <None Include="Resources\Structure-icon.png" />
     <None Include="Resources\Namespace-icon.png" />
