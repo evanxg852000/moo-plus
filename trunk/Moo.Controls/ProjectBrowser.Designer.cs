@@ -37,10 +37,10 @@
             // 
             this.ListImage.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListImage.ImageStream")));
             this.ListImage.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListImage.Images.SetKeyName(0, "root.png");
-            this.ListImage.Images.SetKeyName(1, "cnode.png");
-            this.ListImage.Images.SetKeyName(2, "onode.png");
-            this.ListImage.Images.SetKeyName(3, "file.png");
+            this.ListImage.Images.SetKeyName(0, "Workspace.png");
+            this.ListImage.Images.SetKeyName(1, "Foclosed.png");
+            this.ListImage.Images.SetKeyName(2, "Foopened.png");
+            this.ListImage.Images.SetKeyName(3, "File.png");
             // 
             // ProjectBrowser
             // 

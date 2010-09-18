@@ -37,10 +37,10 @@
             // 
             this.ListImage.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListImage.ImageStream")));
             this.ListImage.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListImage.Images.SetKeyName(0, "e_drive.png");
-            this.ListImage.Images.SetKeyName(1, "e_fclose.png");
-            this.ListImage.Images.SetKeyName(2, "e_fopen.png");
-            this.ListImage.Images.SetKeyName(3, "e_file.png");
+            this.ListImage.Images.SetKeyName(0, "Drive.png");
+            this.ListImage.Images.SetKeyName(1, "Foclosed.png");
+            this.ListImage.Images.SetKeyName(2, "Foopened.png");
+            this.ListImage.Images.SetKeyName(3, "File.png");
             // 
             // FileBrowser
             // 

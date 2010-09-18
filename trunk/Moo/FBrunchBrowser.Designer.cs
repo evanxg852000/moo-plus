@@ -47,9 +47,8 @@
             this.BrunchBrowserTree.ImageIndex = 0;
             this.BrunchBrowserTree.Location = new System.Drawing.Point(0, 24);
             this.BrunchBrowserTree.Name = "BrunchBrowserTree";
-            this.BrunchBrowserTree.RootFolder = "brunchs";
+         
             this.BrunchBrowserTree.SelectedImageIndex = 0;
-            this.BrunchBrowserTree.ShowPlusMinus = false;
             this.BrunchBrowserTree.ShowRootLines = false;
             this.BrunchBrowserTree.Size = new System.Drawing.Size(216, 240);
             this.BrunchBrowserTree.TabIndex = 1;

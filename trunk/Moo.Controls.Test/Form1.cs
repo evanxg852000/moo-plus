@@ -25,10 +25,12 @@ namespace Moo.Controls.Test
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            projectBrowser1.BuildNodes(@"C:\Users\Administrator\Desktop\projects\sample",
+            projectBrowser1.BuildNodes(@"c:\\fakep\",
                 "sample.mpr", 
                 "sample");
+            
             brunchBrowser1.BuildNodes();
+
             fileBrowser1.BuildNodes();
         }
 

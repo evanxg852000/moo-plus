@@ -5,81 +5,42 @@ using System.IO;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data;
+ 
 
 namespace Moo.Controls
 {
     public partial class BrunchBrowser : TreeView
     {
         public event ItemSelectedHandler ItemSelected;
-        private string rootfolder = "brunchs";
-        public string RootFolder
-        {
-            get { return rootfolder; }
-            set { rootfolder = value; }
+        private DataSet brunchstructure;
+        private string file = "";
+        public DataSet BrunchStructure {
+            get { return brunchstructure; }
         }
-       
+        
+        public string File {
+            get { return file; }
+            set { file = value; }
+        }
+
         public BrunchBrowser()
         {
             InitializeComponent();
+            
         }
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
+        }                              
         public override void Refresh()
         {
             this.Nodes.Clear();
             BuildNodes();
             this.CollapseAll();
         }
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }        
-        public void BuildNodes()
-        {
-            //building the root node 
-            TreeNode Root = new TreeNode("Brunchs");
-            Root.Name = "Brunchs";
-            Root.StateImageIndex = (int)Images.home;
-            Root.SelectedImageIndex = (int)Images.home;
-            Root.Tag = this.RootFolder;
-
-            try
-            {
-                DirectoryInfo di = new DirectoryInfo(this.RootFolder);
-                foreach (DirectoryInfo item in di.GetDirectories())
-                {
-                    TreeNode BrunchFolder = new TreeNode(item.Name);
-                    BrunchFolder.Name = item.Name;
-                    BrunchFolder.ImageIndex = (int)Images.cnode;
-                    BrunchFolder.SelectedImageIndex = (int)Images.onode;
-                    BrunchFolder.Tag = item.FullName;
-
-                    DirectoryInfo dibis = new DirectoryInfo(item.FullName);
-                    foreach (FileInfo itembis in dibis.GetFiles())
-                    {
-                        TreeNode BrunchItem = new TreeNode(Path.GetFileNameWithoutExtension(itembis.Name));
-                        BrunchItem.Name = itembis.Name;
-                        BrunchItem.ImageIndex = (int)Images.brunch;
-                        BrunchItem.SelectedImageIndex = (int)Images.brunch;
-                        BrunchItem.Tag = itembis.FullName;
-
-                        BrunchFolder.Nodes.Add(BrunchItem);
-                    }
-                    //add the folder to the root
-                    Root.Nodes.Add(BrunchFolder);
-                }
-            }
-            catch
-            {
-                //be sillent to say that notthing was found as brunch
-            }
-            //add the root to the brunchbrowserview
-            this.Nodes.Add(Root);
-            this.CollapseAll();
-            //add handler
-            this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
-
-        }
         void BrunchBrowser_DoubleClick(object sender, EventArgs e)
-        {  
+        {
             if (this.SelectedNode.Level == 2)
             {
                 if (ItemSelected != null)
@@ -92,9 +53,67 @@ namespace Moo.Controls
                     {
                         //do nothing
                     }
-                } 
+                }
             }
         }
+        public void BuildNodes()
+        {
+            //read the xml file
+            try {
+                this.brunchstructure = new DataSet();
+                this.brunchstructure.ReadXml(Path.GetDirectoryName(Application.ExecutablePath)+this.file);
+            } catch {  /*Silence is golden*/ }
+            DataSet Structure = this.brunchstructure;
+            DataView categoryTable = new DataView(Structure.Tables["Btype"]);
+            categoryTable.Sort = "Name";
+            DataView brunchTable = new DataView(Structure.Tables["Brunch"]);
+
+            //building the root node 
+            TreeNode Root = new TreeNode("Brunches");    
+            Root.Name = "Brunches";
+            Root.StateImageIndex = (int)FBrunchImages.Bundle;
+            Root.SelectedImageIndex = (int)FBrunchImages.Bundle;
+            Root.Tag = "Brunches";
+
+            foreach (DataRowView Row in categoryTable)
+            {
+                //counter to check the relation key
+                int counter = 0;
+                //create brunch type  node
+                TreeNode BType = new TreeNode(Row["Name"].ToString());
+                BType.Name = Row["Name"].ToString();
+                BType.ImageIndex = (int)FBrunchImages.Btype;
+                BType.SelectedImageIndex = (int)FBrunchImages.Btype;
+                BType.Tag = Row["Name"].ToString();
+                
+                foreach (DataRowView BRow in brunchTable)
+                {
+                    if(counter== int.Parse(BRow["Btid"].ToString()) ){
+                        TreeNode Brunch = new TreeNode(BRow["Name"].ToString());
+                        Brunch.Name = BRow["Name"].ToString();
+                        Brunch.ImageIndex = (int)FBrunchImages.Brunch;
+                        Brunch.SelectedImageIndex = (int)FBrunchImages.Brunch;
+                        Brunch.Tag = BRow["Content"].ToString();
+
+                        BType.Nodes.Add(Brunch);
+                    }
+                }
+                
+                counter++;
+                //add the folder to the root
+                Root.Nodes.Add(BType);
+            }
+            
+            
+
+            //add the root to the brunchbrowserview
+            this.Nodes.Add(Root);
+            this.CollapseAll();
+            //add handler
+            this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
+
+        }
+       
 
         
     }

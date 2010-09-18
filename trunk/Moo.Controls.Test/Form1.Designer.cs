@@ -93,15 +93,18 @@
             // 
             // brunchBrowser1
             // 
+            this.brunchBrowser1.File = "C:\\Users\\Administrator\\Documents\\Visual Studio 2008\\Projects\\Moo\\Moo.Controls.Tes" +
+                "t\\bin\\Debug\\brunchs\\BRUNCHES.xml";
             this.brunchBrowser1.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.brunchBrowser1.ImageIndex = 0;
             this.brunchBrowser1.Location = new System.Drawing.Point(12, 194);
             this.brunchBrowser1.Name = "brunchBrowser1";
-            this.brunchBrowser1.RootFolder = "brunchs";
             this.brunchBrowser1.SelectedImageIndex = 0;
+            this.brunchBrowser1.ShowPlusMinus = false;
             this.brunchBrowser1.ShowRootLines = false;
             this.brunchBrowser1.Size = new System.Drawing.Size(210, 159);
             this.brunchBrowser1.TabIndex = 2;
+            this.brunchBrowser1.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.projectBrowser1_ItemSelected);
             // 
             // projectBrowser1
             // 
