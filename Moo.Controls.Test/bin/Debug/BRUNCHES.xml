@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BRUNCHES>
+  <ALL>
+    <ITEM>
+      <TEXT>Php Tag</TEXT>
+      <CODE>
+        <?php ?>
+      </CODE>
+      <KEY>K</KEY>
+      <TRIGER>php</TRIGER>
+    </ITEM>
+    <ITEM>
+      <TEXT>Php Tag</TEXT>
+      <CODE>
+        <?php ?>
+      </CODE>
+      <KEY>K</KEY>
+      <TRIGER>php</TRIGER>
+    </ITEM>
+  <ALL> 
+  <PHP>
+    <ITEM>
+      <TEXT>Php Tag</TEXT>
+      <CODE><?php ?></CODE>
+      <KEY>K</KEY>
+      <TRIGER>php</TRIGER>
+    </ITEM>
+    <ITEM>
+      <TEXT>Php Tag</TEXT>
+      <CODE>
+        <?php ?>
+      </CODE>
+      <KEY>K</KEY>
+      <TRIGER>php</TRIGER>
+    </ITEM>
+  </PHP>
+   
+</BRUNCHES>

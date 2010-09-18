@@ -1,9 +1,26 @@
 ﻿namespace Moo.Controls
 {
     #region Global
-    public enum Images { home = 0, cnode, onode, brunch, file }
+    public enum FBrunchImages { 
+        Bundle=0,
+        Btype, 
+        Brunch 
+    }
 
-    public enum FSystemImages { drive = 0, folder, ofolder, file }
+    public enum FSystemImages { 
+        Drive = 0,
+        Foclose, 
+        Foopen, 
+        File 
+    }
+    public enum FProjectImages
+    {
+        Workspace = 0,
+        Foclose,
+        Foopen,
+        File
+    }
+
     public delegate void ItemSelectedHandler(string itemTag);
     #endregion
 }

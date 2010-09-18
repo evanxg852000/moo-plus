@@ -157,7 +157,6 @@ namespace Moo.Helpers
                 foreach (FileInfo fi in di.GetFiles())
                 {
                     fi.Delete(); 
-                    
                 }
            }
            catch(Exception e)

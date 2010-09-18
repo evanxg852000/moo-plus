@@ -11,9 +11,9 @@ namespace Moo.Controls
     public partial class ProjectBrowser : TreeView
     {
         public event ItemSelectedHandler ItemSelected;
-        private string projectfolder = ""; // is a fullpath like c:\\projects\sample\
-        private string projectfile = "";   // is a fullpath like c:\\projects\sample\sample.mpr
-        private string projectname = "";   // is a file name sample.mpr without extention
+        private string projectfolder ="";  // is a fullpath like c:\\projects\sample\
+        private string projectfile = "";              // is a fullpath like c:\\projects\sample\sample.mpr
+        private string projectname = "";            // is a file name sample.mpr without extention
 
         public ProjectBrowser()
         {
@@ -39,12 +39,13 @@ namespace Moo.Controls
             this.projectfile = pfile;
             this.projectname = pname;
 
-            //building the root node 
+            //building the root node of the project  
             TreeNode Root = new TreeNode(this.projectname);
             Root.Name = this.projectname;
-            Root.StateImageIndex = (int)Images.home;
-            Root.SelectedImageIndex = (int)Images.home;
+            Root.StateImageIndex = (int)FProjectImages.Workspace;
+            Root.SelectedImageIndex = (int)FProjectImages.Workspace;
             Root.Tag = this.projectfolder;
+
 
             try
             {
@@ -54,7 +55,7 @@ namespace Moo.Controls
             {
                 //be sillent to say that notthing was found as brunch
             }
-            //add the root to the brunchbrowserview
+            //add the root(workspace) to the brunchbrowserview
             this.Nodes.Add(Root);
             this.ExpandAll();
             //add handler
@@ -74,8 +75,8 @@ namespace Moo.Controls
                 {
                     TreeNode sbn = new TreeNode(folder.Name);
                     sbn.Name = folder.Name;
-                    sbn.ImageIndex = (int)Images.cnode;
-                    sbn.SelectedImageIndex = (int)Images.onode;
+                    sbn.ImageIndex = (int)FProjectImages.Foclose;
+                    sbn.SelectedImageIndex = (int)FProjectImages.Foopen;
                     sbn.Tag = folder.FullName;
                     //add to tn
                     parent.Nodes.Add(sbn);
@@ -85,8 +86,8 @@ namespace Moo.Controls
                 {
                     TreeNode sbn = new TreeNode(fi.Name);
                     sbn.Name = fi.Name;
-                    sbn.ImageIndex = (int)Images.file;
-                    sbn.SelectedImageIndex = (int)Images.file;
+                    sbn.ImageIndex = (int)FProjectImages.File;
+                    sbn.SelectedImageIndex = (int)FProjectImages.File;
                     sbn.Tag = fi.FullName;
                     //add to tn
                     parent.Nodes.Add(sbn);

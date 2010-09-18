@@ -1427,7 +1427,7 @@
             this.MFileToolBar.Location = new System.Drawing.Point(0, 0);
             this.MFileToolBar.Name = "MFileToolBar";
             this.MFileToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MFileToolBar.Size = new System.Drawing.Size(223, 28);
+            this.MFileToolBar.Size = new System.Drawing.Size(192, 28);
             this.MFileToolBar.TabIndex = 0;
             this.MFileToolBar.Text = "mainToolstrip";
             // 

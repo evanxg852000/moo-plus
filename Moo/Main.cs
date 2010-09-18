@@ -184,7 +184,7 @@ namespace Moo
             NewProFileDialog newdialog = new NewProFileDialog("FILE", @"C:\");
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("cool");
+                MessageBox.Show("cool to do");
             } 
         }        
         private void QuickFile(object sender, EventArgs e)
@@ -495,9 +495,8 @@ namespace Moo
                 ce.InsertCodeSummary();
             }
         }
-        private void InsertCodeBrunch(string file)
+        private void InsertCodeBrunch(string content)
         {
-            string content = FileHelper.GetContent(file); 
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
             {
                 CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;

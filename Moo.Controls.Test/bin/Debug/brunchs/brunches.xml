@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Brunches>
+	<Brunch>
+		<Btid>1</Btid>
+		<Name>Php tag</Name>
+		<Triger>php</Triger>
+		<Key>K</Key>
+		<Content>function $Name (){ ;}</Content>
+	</Brunch>
+	<Brunch>
+		<Btid>1</Btid>
+		<Name>Php tag</Name>
+		<Triger>php</Triger>
+		<Key>K</Key>
+		<Content>function $Name (){ ;}</Content>
+	</Brunch>
+	<Brunch>
+		<Btid>0</Btid>
+		<Name>func</Name>
+		<Triger>php</Triger>
+		<Key>K</Key>
+		<Content>function Name (){ ;}</Content>
+	</Brunch>
+	<Btype>
+		<Name>ZS</Name>
+	</Btype>
+	<Btype>
+		<Name>JS</Name>
+	</Btype>
+	<Btype>
+		<Name>PHP</Name>
+	</Btype>
+	
+</Brunches>

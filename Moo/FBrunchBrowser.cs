@@ -19,6 +19,7 @@ namespace Moo
         public FBrunchBrowser()
         {
             InitializeComponent();
+            BrunchBrowserTree.File = AppSettings.Get("brunchsfile");
             BrunchBrowserTree.BuildNodes();
         }
 

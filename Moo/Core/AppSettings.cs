@@ -162,6 +162,10 @@ namespace Moo.Core
         {
             return System.Configuration.ConfigurationManager.AppSettings.Get(key+"folder");
         }
+        public static string Get(string key)
+        {
+            return System.Configuration.ConfigurationManager.AppSettings.Get(key);
+        }
         public static string GetSdk(string key)
         {
             //key= csharp

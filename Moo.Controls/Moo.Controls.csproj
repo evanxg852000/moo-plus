@@ -93,7 +93,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="icons\" />
+    <Content Include="icons\Brunch.png" />
+    <Content Include="icons\Btype.png" />
+    <Content Include="icons\Bundle.png" />
+    <Content Include="icons\Drive.png" />
+    <Content Include="icons\File.png" />
+    <Content Include="icons\Foclosed.png" />
+    <Content Include="icons\Foopened.png" />
+    <Content Include="icons\Workspace.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

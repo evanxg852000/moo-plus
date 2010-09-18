@@ -15,3 +15,43 @@ Moo
 ------------Message------------
 Object reference not set to an instance of an object.
 ------------Data------------
+
+=======================NEW EXCEPTION================
+18/09/2010 07:46:06
+------------Source------------
+System
+------------Message------------
+The remote server returned an error: (404) Not Found.
+------------Data------------
+
+=======================NEW EXCEPTION================
+18/09/2010 13:11:19
+------------Source------------
+mscorlib
+------------Message------------
+Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\function Name (){ ;}'.
+------------Data------------
+
+=======================NEW EXCEPTION================
+18/09/2010 13:11:24
+------------Source------------
+mscorlib
+------------Message------------
+Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\function Name (){ ;}'.
+------------Data------------
+
+=======================NEW EXCEPTION================
+18/09/2010 13:11:45
+------------Source------------
+mscorlib
+------------Message------------
+Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\function Name (){ ;}'.
+------------Data------------
+
+=======================NEW EXCEPTION================
+18/09/2010 13:11:47
+------------Source------------
+mscorlib
+------------Message------------
+Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\function Name (){ ;}'.
+------------Data------------

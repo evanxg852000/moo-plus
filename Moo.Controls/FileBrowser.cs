@@ -36,8 +36,8 @@ namespace Moo.Controls
                 {
                     TreeNode drive = new TreeNode(s);
                     drive.Name = s;
-                    drive.StateImageIndex = (int)FSystemImages.drive;
-                    drive.SelectedImageIndex = (int)FSystemImages.drive;
+                    drive.StateImageIndex = (int)FSystemImages.Drive;
+                    drive.SelectedImageIndex = (int)FSystemImages.Drive;
                     drive.Tag = s;
                     drive.ToolTipText = s;
                     this.Nodes.Add(drive);
@@ -73,8 +73,8 @@ namespace Moo.Controls
                    
                         TreeNode sbn = new TreeNode(folder.Name);
                         sbn.Name = folder.Name;
-                        sbn.ImageIndex = (int)Images.cnode;
-                        sbn.SelectedImageIndex = (int)Images.onode;
+                        sbn.ImageIndex = (int)FSystemImages.Foclose;
+                        sbn.SelectedImageIndex = (int)FSystemImages.Foopen;
                         sbn.Tag = folder.FullName;
                         sbn.ToolTipText = folder.FullName;    
                         //add to tn
@@ -94,8 +94,8 @@ namespace Moo.Controls
 
                     TreeNode sbn = new TreeNode(fi.Name);
                     sbn.Name = fi.Name;
-                    sbn.ImageIndex = (int)Images.file;
-                    sbn.SelectedImageIndex = (int)Images.file;
+                    sbn.ImageIndex = (int)FSystemImages.File;
+                    sbn.SelectedImageIndex = (int)FSystemImages.File;
                     sbn.Tag = fi.FullName;
                     sbn.ToolTipText = fi.FullName;
                     //add to tn
