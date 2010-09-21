@@ -32,9 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.searchterm = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.brunchBrowser1 = new Moo.Controls.BrunchBrowser();
             this.fileFounder1 = new Moo.Controls.FileFounder();
             this.fileBrowser1 = new Moo.Controls.FileBrowser();
-            this.brunchBrowser1 = new Moo.Controls.BrunchBrowser();
             this.projectBrowser1 = new Moo.Controls.ProjectBrowser();
             this.SuspendLayout();
             // 
@@ -65,13 +66,36 @@
             this.searchterm.Size = new System.Drawing.Size(100, 20);
             this.searchterm.TabIndex = 5;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(273, 203);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Brunch Prop";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // brunchBrowser1
+            // 
+            this.brunchBrowser1.File = "brunchs.xml";
+            this.brunchBrowser1.Font = new System.Drawing.Font("Verdana", 9.75F);
+            this.brunchBrowser1.ImageIndex = 0;
+            this.brunchBrowser1.Location = new System.Drawing.Point(12, 185);
+            this.brunchBrowser1.Name = "brunchBrowser1";
+            this.brunchBrowser1.SelectedImageIndex = 0;
+            this.brunchBrowser1.ShowRootLines = false;
+            this.brunchBrowser1.Size = new System.Drawing.Size(210, 168);
+            this.brunchBrowser1.TabIndex = 7;
+            this.brunchBrowser1.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.brunchBrowser1_ItemSelected);
+            // 
             // fileFounder1
             // 
             this.fileFounder1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileFounder1.FullRowSelect = true;
             this.fileFounder1.GridLines = true;
             this.fileFounder1.IsRecurssive = false;
-            this.fileFounder1.Location = new System.Drawing.Point(228, 256);
+            this.fileFounder1.Location = new System.Drawing.Point(246, 256);
             this.fileFounder1.Name = "fileFounder1";
             this.fileFounder1.SearchFolder = "C:\\";
             this.fileFounder1.Size = new System.Drawing.Size(611, 97);
@@ -90,21 +114,6 @@
             this.fileBrowser1.Size = new System.Drawing.Size(232, 147);
             this.fileBrowser1.TabIndex = 3;
             this.fileBrowser1.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.fileBrowser1_ItemSelected);
-            // 
-            // brunchBrowser1
-            // 
-            this.brunchBrowser1.File = "C:\\Users\\Administrator\\Documents\\Visual Studio 2008\\Projects\\Moo\\Moo.Controls.Tes" +
-                "t\\bin\\Debug\\brunchs\\BRUNCHES.xml";
-            this.brunchBrowser1.Font = new System.Drawing.Font("Verdana", 9.75F);
-            this.brunchBrowser1.ImageIndex = 0;
-            this.brunchBrowser1.Location = new System.Drawing.Point(12, 194);
-            this.brunchBrowser1.Name = "brunchBrowser1";
-            this.brunchBrowser1.SelectedImageIndex = 0;
-            this.brunchBrowser1.ShowPlusMinus = false;
-            this.brunchBrowser1.ShowRootLines = false;
-            this.brunchBrowser1.Size = new System.Drawing.Size(210, 159);
-            this.brunchBrowser1.TabIndex = 2;
-            this.brunchBrowser1.ItemSelected += new Moo.Controls.ItemSelectedHandler(this.projectBrowser1_ItemSelected);
             // 
             // projectBrowser1
             // 
@@ -125,11 +134,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 365);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.brunchBrowser1);
             this.Controls.Add(this.fileFounder1);
             this.Controls.Add(this.searchterm);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fileBrowser1);
-            this.Controls.Add(this.brunchBrowser1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.projectBrowser1);
             this.Name = "Form1";
@@ -144,11 +154,12 @@
 
         private ProjectBrowser projectBrowser1;
         private System.Windows.Forms.Button button1;
-        private BrunchBrowser brunchBrowser1;
         private FileBrowser fileBrowser1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox searchterm;
         private FileFounder fileFounder1;
+        private BrunchBrowser brunchBrowser1;
+        private System.Windows.Forms.Button button3;
 
 
 

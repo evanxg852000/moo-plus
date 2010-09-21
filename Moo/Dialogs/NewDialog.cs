@@ -10,7 +10,7 @@ using Yalamo.Gui;
 
 namespace Moo.Dialogs
 {
-    public partial class NewProFileDialog : YForm
+    public partial class NewDialog : YForm
     {
         public string RType
         {
@@ -26,7 +26,7 @@ namespace Moo.Dialogs
         }
 
  
-        public NewProFileDialog(string type,string currentprojectfolder)
+        public NewDialog(string type,string currentprojectfolder)
         {
             InitializeComponent();
             this.SetupMargin();

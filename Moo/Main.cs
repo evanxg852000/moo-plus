@@ -26,6 +26,7 @@ namespace Moo
         private FFileSystBrowser MOO_FILE_SYSTBROWSER;
         private FFileSearcher MOO_FILE_SEARCHER;
         private BuildOutput MOO_BUILD_OUTPUT;
+        private TodoList MOO_TODO_LIST;
         private List<Type> MOO_PLUGIN_LIST;
         private Builder MOO_BUILDER;
         #endregion
@@ -78,11 +79,15 @@ namespace Moo
             MOO_FILE_SEARCHER.DockState = DockState.DockBottomAutoHide;
             MOO_FILE_SEARCHER.OpenSelectedFileRequested += new OpenFileRequestHandler(OpenSelectedFileNode);
             
-
             //creating buildoutput window
             MOO_BUILD_OUTPUT = new BuildOutput();
             MOO_BUILD_OUTPUT.Show(MDockArea);
-            MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide;    
+            MOO_BUILD_OUTPUT.DockState = DockState.DockBottomAutoHide; 
+            
+            //todo list
+            MOO_TODO_LIST = new TodoList();
+            MOO_TODO_LIST.Show(MDockArea);
+            MOO_TODO_LIST.DockState = DockState.DockBottomAutoHide;
         }
         private void LoadAppState()
         {
@@ -181,7 +186,7 @@ namespace Moo
         //file menu handlers
         private void NewPrjectFile(object sender, EventArgs e)
         {
-            NewProFileDialog newdialog = new NewProFileDialog("FILE", @"C:\");
+            NewDialog newdialog = new NewDialog("FILE", @"C:\");
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("cool to do");
@@ -690,7 +695,7 @@ namespace Moo
         }
         private void CreateBrunch(object sender, EventArgs e)
         {
-            NewBrunchDialog.Show();
+            BrunchEditorDialog.Show();
         }
         private void ManageUpdate(object sender, EventArgs e)
         {

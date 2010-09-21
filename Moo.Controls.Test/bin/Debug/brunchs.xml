@@ -3,35 +3,35 @@
 	<PHP>
 		<Num>1</Num>
 		<Name>Php tag</Name>
-		<Triger>foreach</Triger>
+		<Triger>php</Triger>
 		<Key>K</Key>
 		<Content>foreach($array as $val) {$val ;}</Content>
 	</PHP>
 	<PHP>
 		<Num>2</Num>
 		<Name>echo</Name>
-		<Triger>echo</Triger>
+		<Triger>php</Triger>
 		<Key>K</Key>
 		<Content>echo ""</Content>
 	</PHP>
 	<JS>
 		<Num>1</Num>
-		<Name>function</Name>
-		<Triger>funct</Triger>
+		<Name>func</Name>
+		<Triger>php</Triger>
 		<Key>K</Key>
 		<Content>function Name (){ ;}</Content>
 	</JS>
 	<HTML>
 		<Num>1</Num>
 		<Name>qote</Name>
-		<Triger>q</Triger>
+		<Triger>php</Triger>
 		<Key>K</Key>
 		<Content>qtote ver </Content>
 	</HTML>
 	<HTML>
 		<Num>2</Num>
 		<Name>copyright</Name>
-		<Triger>copy</Triger>
+		<Triger>php</Triger>
 		<Key>K</Key>
 		<Content>Copyright 2010</Content>
 	</HTML>

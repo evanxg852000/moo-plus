@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TodoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TodoList.Designer.cs">
+      <DependentUpon>TodoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Core\AutoCompleteImages.cs" />
     <Compile Include="BuildOutput.cs">
       <SubType>Form</SubType>
@@ -100,11 +106,11 @@
     <Compile Include="Dialogs\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\NewBrunchDialog.cs">
+    <Compile Include="Dialogs\BrunchEditorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\NewBrunchDialog.Designer.cs">
-      <DependentUpon>NewBrunchDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\BrunchEditorDialog.Designer.cs">
+      <DependentUpon>BrunchEditorDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\BugRepDialog.cs">
       <SubType>Form</SubType>
@@ -112,11 +118,11 @@
     <Compile Include="Dialogs\BugRepDialog.Designer.cs">
       <DependentUpon>BugRepDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\NewProFileDialog.cs">
+    <Compile Include="Dialogs\NewDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\NewProFileDialog.Designer.cs">
-      <DependentUpon>NewProFileDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\NewDialog.Designer.cs">
+      <DependentUpon>NewDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\PreferenceDialog.cs">
       <SubType>Form</SubType>
@@ -180,20 +186,24 @@
       <DependentUpon>CodeEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TodoList.resx">
+      <DependentUpon>TodoList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewBrunchDialog.resx">
-      <DependentUpon>NewBrunchDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\BrunchEditorDialog.resx">
+      <DependentUpon>BrunchEditorDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\BugRepDialog.resx">
       <DependentUpon>BugRepDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewProFileDialog.resx">
-      <DependentUpon>NewProFileDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\NewDialog.resx">
+      <DependentUpon>NewDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\PreferenceDialog.resx">
@@ -278,6 +288,8 @@
   <ItemGroup>
     <Content Include="Application-icon.ico" />
     <Content Include="icon.ico" />
+    <None Include="Resources\Edit.png" />
+    <Content Include="Resources\Proadobe.png" />
     <Content Include="Resources\Prodbdesign.png" />
     <Content Include="Resources\Prodesktop.png" />
     <Content Include="Resources\Profile.png" />

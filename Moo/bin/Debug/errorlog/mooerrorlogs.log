@@ -55,3 +55,11 @@ mscorlib
 ------------Message------------
 Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\function Name (){ ;}'.
 ------------Data------------
+
+=======================NEW EXCEPTION================
+20/09/2010 10:41:14
+------------Source------------
+mscorlib
+------------Message------------
+Could not find a part of the path 'C:\Users\Administrator\Desktop\Train\bin'.
+------------Data------------

@@ -35,6 +35,7 @@
             this.AddBrunch = new System.Windows.Forms.ToolStripButton();
             this.RemoveBrunch = new System.Windows.Forms.ToolStripButton();
             this.RefreshBrunch = new System.Windows.Forms.ToolStripButton();
+            this.EditBrunch = new System.Windows.Forms.ToolStripButton();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,11 +44,11 @@
             this.BrunchBrowserTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.BrunchBrowserTree.File = "";
             this.BrunchBrowserTree.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.BrunchBrowserTree.ImageIndex = 0;
             this.BrunchBrowserTree.Location = new System.Drawing.Point(0, 24);
             this.BrunchBrowserTree.Name = "BrunchBrowserTree";
-         
             this.BrunchBrowserTree.SelectedImageIndex = 0;
             this.BrunchBrowserTree.ShowRootLines = false;
             this.BrunchBrowserTree.Size = new System.Drawing.Size(216, 240);
@@ -60,7 +61,8 @@
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddBrunch,
             this.RemoveBrunch,
-            this.RefreshBrunch});
+            this.RefreshBrunch,
+            this.EditBrunch});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -98,6 +100,15 @@
             this.RefreshBrunch.Text = "Refresh View";
             this.RefreshBrunch.Click += new System.EventHandler(this.RefreshView);
             // 
+            // EditBrunch
+            // 
+            this.EditBrunch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EditBrunch.Image = global::Moo.Properties.Resources.Edit;
+            this.EditBrunch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditBrunch.Name = "EditBrunch";
+            this.EditBrunch.Size = new System.Drawing.Size(23, 22);
+            this.EditBrunch.Text = "toolStripButton1";
+            // 
             // FBrunchBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,5 +138,6 @@
         private System.Windows.Forms.ToolStripButton RemoveBrunch;
         private System.Windows.Forms.ToolStripButton RefreshBrunch;
         private Moo.Controls.BrunchBrowser BrunchBrowserTree;
+        private System.Windows.Forms.ToolStripButton EditBrunch;
     }
 }
