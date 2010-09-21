@@ -15,6 +15,7 @@ namespace Moo
     public partial class FBrunchBrowser : DockContent
     {
         public event InsertBrunchRequestHandler InsertSelectedBrunchNodeRequested;
+        
       
         public FBrunchBrowser()
         {
@@ -29,6 +30,9 @@ namespace Moo
         }
         private void DeleteBruch(object sender, EventArgs e)
         {
+            if (this.BrunchBrowserTree.SelectedNode == null) {
+                return;
+            }
             string path =this.BrunchBrowserTree.SelectedNode.Tag.ToString();
             if(FileHelper.IsFile(path))
             {
@@ -43,7 +47,7 @@ namespace Moo
         }
         private void NewBrunch(object sender, EventArgs e)
         {
-            Moo.Dialogs.NewBrunchDialog.Show();
+            Moo.Dialogs.BrunchEditorDialog.Show();
         }
         private void RequestInsertSelectedBrunchNode(string itemTag)
         {

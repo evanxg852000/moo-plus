@@ -1,6 +1,6 @@
 ﻿namespace Moo.Dialogs
 {
-    partial class NewProFileDialog
+    partial class NewDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProFileDialog));
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewDialog));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Desktop"}, 2, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Web "}, 3, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Database"}, 4, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "File"}, 5, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Zip"}, 6, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ajax"}, 5, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "File"}, 6, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Todo"}, 7, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             this.ImgList = new System.Windows.Forms.ImageList(this.components);
             this.CreateBt = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@
             this.ImgList.Images.SetKeyName(2, "Prodesktop.png");
             this.ImgList.Images.SetKeyName(3, "Proweb.png");
             this.ImgList.Images.SetKeyName(4, "Prodbdesign.png");
-            this.ImgList.Images.SetKeyName(5, "Profile.png");
-            this.ImgList.Images.SetKeyName(6, "Prozip.png");
+            this.ImgList.Images.SetKeyName(5, "Proadobe.png");
+            this.ImgList.Images.SetKeyName(6, "Profile.png");
             this.ImgList.Images.SetKeyName(7, "Protodo.png");
             // 
             // CreateBt
@@ -82,7 +82,7 @@
             this.CreateBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateBt.Location = new System.Drawing.Point(417, 307);
             this.CreateBt.Name = "CreateBt";
-            this.CreateBt.Size = new System.Drawing.Size(75, 25);
+            this.CreateBt.Size = new System.Drawing.Size(75, 26);
             this.CreateBt.TabIndex = 4;
             this.CreateBt.Text = "Create";
             this.CreateBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -97,7 +97,7 @@
             this.CancelBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelBt.Location = new System.Drawing.Point(507, 307);
             this.CancelBt.Name = "CancelBt";
-            this.CancelBt.Size = new System.Drawing.Size(75, 25);
+            this.CancelBt.Size = new System.Drawing.Size(75, 26);
             this.CancelBt.TabIndex = 5;
             this.CancelBt.Text = "Cancel";
             this.CancelBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,33 +148,33 @@
             // 
             // NewCategory
             // 
-            this.NewCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            listViewItem7.Tag = "DESKTOP";
-            listViewItem7.ToolTipText = "Create a desktop project";
-            listViewItem8.Tag = "WEB";
-            listViewItem8.ToolTipText = "Create a web project";
-            listViewItem9.Tag = "DATABASE";
-            listViewItem9.ToolTipText = "Create a databse project";
-            listViewItem10.Tag = "FILE";
-            listViewItem10.ToolTipText = "Create a new file";
-            listViewItem11.Tag = "ZIP";
-            listViewItem11.ToolTipText = "Create a zip package";
-            listViewItem12.Tag = "TODO";
-            listViewItem12.ToolTipText = "Create  new task list";
+            this.NewCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            listViewItem1.Tag = "DESKTOP";
+            listViewItem1.ToolTipText = "Create a desktop project";
+            listViewItem2.Tag = "WEB";
+            listViewItem2.ToolTipText = "Create a web project";
+            listViewItem3.Tag = "DATABASE";
+            listViewItem3.ToolTipText = "Create a databse project";
+            listViewItem4.Tag = "ZIP";
+            listViewItem4.ToolTipText = "Create an Ajax project";
+            listViewItem5.Tag = "FILE";
+            listViewItem5.ToolTipText = "Create a new file";
+            listViewItem6.Tag = "TODO";
+            listViewItem6.ToolTipText = "Create  new task list";
             this.NewCategory.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.NewCategory.LargeImageList = this.ImgList;
-            this.NewCategory.Location = new System.Drawing.Point(0, 50);
+            this.NewCategory.Location = new System.Drawing.Point(3, 55);
             this.NewCategory.MultiSelect = false;
             this.NewCategory.Name = "NewCategory";
             this.NewCategory.Scrollable = false;
             this.NewCategory.ShowItemToolTips = true;
-            this.NewCategory.Size = new System.Drawing.Size(192, 294);
+            this.NewCategory.Size = new System.Drawing.Size(192, 282);
             this.NewCategory.SmallImageList = this.ImgList;
             this.NewCategory.TabIndex = 7;
             this.NewCategory.UseCompatibleStateImageBehavior = false;
@@ -220,13 +220,13 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Type :";
             // 
-            // NewProFileDialog
+            // NewDialog
             // 
             this.AcceptButton = this.CreateBt;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBt;
-            this.ClientSize = new System.Drawing.Size(597, 344);
+            this.ClientSize = new System.Drawing.Size(597, 341);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -243,7 +243,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NewProFileDialog";
+            this.Name = "NewDialog";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New ";

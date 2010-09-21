@@ -21,6 +21,7 @@ namespace Moo.Controls.Test
         private void brunchBrowser1_ItemSelected(string itemTag)
         {
             MessageBox.Show(itemTag);
+         
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,6 +61,14 @@ namespace Moo.Controls.Test
         private void fileFounder1_DoubleClick(object sender, EventArgs e)
         {
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(brunchBrowser1.File);
+            brunchBrowser1.Refresh();
+           object o=(object) brunchBrowser1.Structure;
+            DataSet S = brunchBrowser1.Structure;
         }
 
         

@@ -46,6 +46,10 @@ namespace Moo
         {
             this.FileFounderList.IsRecurssive = TRecursive.Checked;
         }
+        private void ClearResultHandler(object sender, EventArgs e)
+        {
+            this.FileFounderList.Items.Clear();
+        }
         
         private void SearchProgressChanged(int percentage)
         {
@@ -72,7 +76,10 @@ namespace Moo
                 }
             }
         }
-      
+
+        
+
+        
 
        
         

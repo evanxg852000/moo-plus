@@ -36,6 +36,7 @@
             this.TSearchFolder = new System.Windows.Forms.ToolStripButton();
             this.TRecursive = new System.Windows.Forms.ToolStripButton();
             this.TSearch = new System.Windows.Forms.ToolStripButton();
+            this.TClear = new System.Windows.Forms.ToolStripButton();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             this.TRecursive,
             this.SearchKey,
             this.TSearch,
+            this.TClear,
             this.SearchProgress});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
@@ -121,6 +123,16 @@
             this.TSearch.Text = "Search";
             this.TSearch.Click += new System.EventHandler(this.SearchFileHandler);
             // 
+            // TClear
+            // 
+            this.TClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TClear.Image = global::Moo.Properties.Resources.Clean;
+            this.TClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TClear.Name = "TClear";
+            this.TClear.Size = new System.Drawing.Size(23, 22);
+            this.TClear.ToolTipText = "Clear";
+            this.TClear.Click += new System.EventHandler(this.ClearResultHandler);
+            // 
             // FFileSearcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.ToolStripButton TSearch;
         private System.Windows.Forms.ToolStripProgressBar SearchProgress;
         private System.Windows.Forms.ToolStrip ToolStrip;
+        private System.Windows.Forms.ToolStripButton TClear;
     }
 }

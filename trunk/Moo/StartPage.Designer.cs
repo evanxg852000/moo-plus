@@ -59,7 +59,7 @@
             this.SGotoWebsite.Name = "SGotoWebsite";
             this.SGotoWebsite.Size = new System.Drawing.Size(189, 55);
             this.SGotoWebsite.TabIndex = 4;
-            this.SGotoWebsite.Text = "Mysql";
+            this.SGotoWebsite.Text = "Database";
             this.SGotoWebsite.UseVisualStyleBackColor = true;
             this.SGotoWebsite.Click += new System.EventHandler(this.OpenDatabaseDesigner);
             // 

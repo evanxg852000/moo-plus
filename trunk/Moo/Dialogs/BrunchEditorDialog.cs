@@ -7,27 +7,29 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using Yalamo.Gui;
 using Moo.Helpers;
 
 namespace Moo.Dialogs
 {
-    public partial class NewBrunchDialog : Form
+    public partial class BrunchEditorDialog : YForm
     {
-        public NewBrunchDialog()
+        public BrunchEditorDialog()
         {
             InitializeComponent();
+            this.SetupMargin();
             initialisefield();   
         }
         public static new void Show()
         {
-            NewBrunchDialog Instance = new NewBrunchDialog();
+            BrunchEditorDialog Instance = new BrunchEditorDialog();
             Instance.ShowDialog();
         }
 
         private void initialisefield()
         {
             this.NameTxt.Text = "Brunch name...";
-            this.BruchTypeCbx.SelectedIndex = 0;
+            this.BTypeCbx.SelectedIndex = 0;
             this.BrunchTxt.Text = "Brunch content here...";
             this.StatusMsg.Text = "";
         }
@@ -35,18 +37,24 @@ namespace Moo.Dialogs
         {
             initialisefield();
         }
-        private void SaveBrunchHandler(object sender, EventArgs e)
+       
+        private void BruchTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string bname=this.NameTxt.Text;
-            string btype = this.BruchTypeCbx.SelectedItem.ToString();
-            string bcontent=this.BrunchTxt.Text;
+            BrunchTxt.ConfigurationManager.Language = BTypeCbx.SelectedItem.ToString();
+        }
 
-            if (( bname== "Brunch name..."))
+        private void ApplyChangesHandler(object sender, EventArgs e)
+        {
+            string bname = this.NameTxt.Text;
+            string btype = this.BTypeCbx.SelectedItem.ToString();
+            string bcontent = this.BrunchTxt.Text;
+
+            if ((bname == "Brunch name..."))
             {
                 this.StatusMsg.Text = "Brunch name is required";
                 return;
             }
-            if ((this.BruchTypeCbx.SelectedIndex ==0))
+            if ((this.BTypeCbx.SelectedIndex == 0))
             {
                 this.StatusMsg.Text = "Brunch Type is required";
                 return;
@@ -55,15 +63,11 @@ namespace Moo.Dialogs
             {
                 this.StatusMsg.Text = "Brunch content is required";
                 return;
-            }   
-            string filepath=Path.GetDirectoryName(Application.ExecutablePath);
-            filepath += Moo.Core.AppSettings.GetFolder("brunchs")+btype + @"\" + bname + ".mcb";
+            }
+            string filepath = Path.GetDirectoryName(Application.ExecutablePath);
+            filepath += Moo.Core.AppSettings.GetFolder("brunchs") + btype + @"\" + bname + ".mcb";
             FileHelper.Save(filepath, bcontent);
             this.Close();
-        }
-        private void BruchTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BrunchTxt.ConfigurationManager.Language = BruchTypeCbx.SelectedItem.ToString();
         }
  
        
