@@ -78,7 +78,7 @@
             // 
             // brunchBrowser1
             // 
-            this.brunchBrowser1.File = "brunchs.xml";
+            
             this.brunchBrowser1.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.brunchBrowser1.ImageIndex = 0;
             this.brunchBrowser1.Location = new System.Drawing.Point(12, 185);

@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Moo.Core;
 using Yalamo.Gui;
 
 namespace Moo.Dialogs
 {
     public partial class NewDialog : YForm
     {
+        private Project createdproject;
+        private string currentfolder;
+        public Project CreateProject {
+            get { return createdproject; }
+        }
+
         public string RType
         {
             get { return TypeCbx.SelectedItem.ToString(); }
@@ -26,31 +34,50 @@ namespace Moo.Dialogs
         }
 
  
-        public NewDialog(string type,string currentprojectfolder)
+        public NewDialog(Project currentProject)
         {
             InitializeComponent();
             this.SetupMargin();
-            if (type == "FILE")
+            this.currentfolder=Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Moo Workspace";
+            if (currentProject != null)
             {
-                this.Text += "File";
-                this.NameTbx.Text = "< File Name >";
-                this.FolderTbx.Text = "< File Folder >";
-                if (currentprojectfolder!=String.Empty)
-                {
-                    this.FolderTbx.Text = currentprojectfolder;
-                }
-                this.TypeCbx.Items.AddRange(new string[]{"ASP","Batch","C++ Source","C++ Header","C#","D","Html", "Hydro",
-                                     "Ilasm","Java","Javascript","Pascal","Php","SQL","V Basic","XML" });
+                this.currentfolder = currentProject.ProjectFolder;
             }
-            else 
+            
+            //initialise           
+            this.TypeCbx.Items.AddRange(new string[]{"C Sharp Project","Visual Basic Project","Ilasm Project","Hydro Project" });
+            this.NameTbx.Text="";
+            this.FolderTbx.Text = this.currentfolder;  
+            this.TypeCbx.SelectedIndex = 0; 
+        }
+        private void ProjectCategoryChangeHandler(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            this.TypeCbx.Items.Clear();
+            switch (e.Item.Tag.ToString())
             {
-                this.Text += "Project";
-                this.NameTbx.Text = "< Project Name >";
-                this.FolderTbx.Text = "< Project Folder >";
-                this.TypeCbx.Items.AddRange(new string[] { "C Sharp", "Hydro", "Ilasm", "Website","V Basic" ,"Unmanaged" });
-
+                case "DESKTOP":
+                    this.TypeCbx.Items.AddRange(new string[] { "C Sharp Project", "Visual Basic Project", "Ilasm Project", "Hydro Project" });
+                    break;
+                case "WEB":
+                    this.TypeCbx.Items.AddRange(new string[] { "Html Website", "Yalamo Framework Project" });
+                    break;
+                case "DATABASE":
+                    this.TypeCbx.Items.AddRange(new string[] { "Edml Project", "Mysql Management" });
+                    break;
+                case "AJAX":
+                    this.TypeCbx.Items.AddRange(new string[] { "Adobe Air Project", "ExtJs Project" });
+                    break;
+                case "FILE":
+                    this.TypeCbx.Items.AddRange(new string[]{"Asp","Batch","C++","C#","D","Html", "Hydro","Java","Javascript",
+                                                             "Pascal","Php","Sql","VBasic","Xml" });
+                    break;
+                case "UNMANAGED":
+                    this.TypeCbx.Items.AddRange(new string[] { "Unmanaged" });
+                    break;
             }
-           this.TypeCbx.SelectedIndex = 0; 
+            this.StatusMsg.Text = e.Item.ToolTipText;
+            this.TypeCbx.SelectedIndex = 0;
+           
         }
         private void BrowseBt_Click(object sender, EventArgs e)
         {
@@ -67,22 +94,24 @@ namespace Moo.Dialogs
         }
         private void CreateBt_Click(object sender, EventArgs e)
         {
-            //check for validation before closing
-            //a litle hard code in this area (really d'ont like ) 
-            if(TypeCbx.SelectedIndex !=0 )                 
-            {
-                if ((NameTbx.Text != "< File Name >") && (NameTbx.Text != "< Project Name >"))
+                if (NameTbx.Text !=String.Empty)
                 {
-                    if ((FolderTbx.Text != "< File Folder >") && (FolderTbx.Text != "< Project Folder >"))
+                    if (FolderTbx.Text != String.Empty)
                     {
                         this.DialogResult = DialogResult.OK;
+                        this.createdproject = new Project();
                         this.Close();
                         return;
                     }
                 }
-            }
-            MessageBox.Show("Please Complete the form !","Moo {+}",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            this.StatusMsg.Text="Please Complete the form !";
         }
+
+        
+
+        
+
+        
 
 
 

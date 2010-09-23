@@ -13,39 +13,42 @@ namespace Moo.Controls
     public partial class BrunchBrowser : TreeView
     {
         public event ItemSelectedHandler ItemSelected;
-        private DataSet structure;
-        private Dictionary<string, string> brunchdictionary;
-        private string file;
-        public DataSet Structure {
-            get { return structure; }
+        private string brunchfile;
+        private DataSet brunchdatastructure;
+        private Dictionary<string, string> brunchtriggerdictionary;
+
+        public string BrunchFile {
+            get { return brunchfile; }
         }
-        public Dictionary<string, string> BrunchDictionary
+        public DataSet BrunchDataStructure {
+            get { return brunchdatastructure; }
+            set { this.brunchdatastructure = value; }
+        }
+        public Dictionary<string, string> BrunchTriggerDictionary
         {
-            get { return brunchdictionary; }
+            get { return brunchtriggerdictionary; }
+            set { this.brunchtriggerdictionary = value; }
+        }        
+       
+        public BrunchBrowser(){  
+            InitializeComponent();
+            this.brunchfile =Path.GetDirectoryName(Application.ExecutablePath) +@"\brunchs\brunchs.xml";
+            this.GetData();
         }
         
-        public string File {
-            get { return file; }
-            set { file = value; }
+        public override void Refresh(){
+            this.Nodes.Clear();
+            this.BuildNodes(this.brunchdatastructure);
+        }
+        public void SaveData(){
+            this.brunchdatastructure.WriteXml(this.brunchfile);
         }
 
-        public BrunchBrowser()
-        {  
-            InitializeComponent();
-        }
-        protected override void OnPaint(PaintEventArgs pe)
-        {
+        protected override void OnPaint(PaintEventArgs pe){
             base.OnPaint(pe);
-        }                              
-        public override void Refresh()
-        {
-            this.Nodes.Clear();
-            BuildNodes();
-            this.CollapseAll();
-        }      
-        public void BuildNodes()
-        {
-            this.GetData();
+        }                                      
+        public void BuildNodes(DataSet DataStructure)
+        {   
             //building the root node 
             TreeNode Root = new TreeNode("Brunches");    
             Root.Name = "Brunches";
@@ -53,9 +56,9 @@ namespace Moo.Controls
             Root.SelectedImageIndex = (int)FBrunchImages.Bundle;
             Root.Tag = "Brunches";
             //build the nodes using structure
-            if (this.structure == null){return; }
+            if (DataStructure == null) { return; }
 
-            foreach (DataTable table in this.structure.Tables)
+            foreach (DataTable table in DataStructure.Tables)
             {
                 //create brunch category  node
                 TreeNode BType = new TreeNode(table.TableName);
@@ -77,19 +80,19 @@ namespace Moo.Controls
                 Root.Nodes.Add(BType);
             }
             //add the root to the brunchbrowserview
+            Root.Expand();
             this.Nodes.Add(Root);
-            this.CollapseAll();
             //add handler
             this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
-        }
-
+        }       
         private void GetData() 
         {  
             //read the xml file
             DataSet XmlDs = new DataSet();
             try
             {
-                XmlDs.ReadXml(Path.GetDirectoryName(Application.ExecutablePath) +@"\"+ this.file);
+
+                XmlDs.ReadXml(this.brunchfile);
             }
             catch {return;}
             //sort the dataset structure
@@ -99,31 +102,27 @@ namespace Moo.Controls
                 dv.Sort = "Name";
             }
             //fill the structure field  
-            this.structure = new DataSet();
-            this.structure = XmlDs;
+            this.brunchdatastructure = new DataSet();
+            this.brunchdatastructure = XmlDs;
 
             //fill the dictionarry
-            this.brunchdictionary = new Dictionary<string, string>();
+            this.brunchtriggerdictionary = new Dictionary<string, string>();
             foreach (DataTable category in XmlDs.Tables) {
-                foreach (DataRow item in category.Rows) { 
-                    this.brunchdictionary.Add(item["Triger"].ToString(),item["Content"].ToString());
+                foreach (DataRow item in category.Rows) {
+                    this.brunchtriggerdictionary.Add(item["Triger"].ToString(), item["Content"].ToString());
                 }
             }
         }
+              
         private void BrunchBrowser_DoubleClick(object sender, EventArgs e)
         {
-            if (this.SelectedNode.Level == 2)
-            {
-                if (ItemSelected != null)
-                {
-                    try
-                    {
+            if (this.SelectedNode==null){return;}
+            if (this.SelectedNode.Level == 2) {
+                if (ItemSelected != null){
+                    try{
                         ItemSelected(this.SelectedNode.Tag.ToString());
                     }
-                    catch
-                    {
-                        //do nothing
-                    }
+                    catch{ /*do nothing*/ }
                 }
             }
         }

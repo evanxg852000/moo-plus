@@ -186,7 +186,7 @@ namespace Moo
         //file menu handlers
         private void NewPrjectFile(object sender, EventArgs e)
         {
-            NewDialog newdialog = new NewDialog("FILE", @"C:\");
+            NewDialog newdialog = new NewDialog(null);
             if (newdialog.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("cool to do");
@@ -695,7 +695,7 @@ namespace Moo
         }
         private void CreateBrunch(object sender, EventArgs e)
         {
-            BrunchEditorDialog.Show();
+            BrunchEditorDialog.Show(this.MOO_BRUNCH_BROWSER.BrunchDataStructure);
         }
         private void ManageUpdate(object sender, EventArgs e)
         {

@@ -30,7 +30,7 @@ namespace Moo.Controls.Test
                 "sample.mpr", 
                 "sample");
             
-            brunchBrowser1.BuildNodes();
+            brunchBrowser1.Refresh();
 
             fileBrowser1.BuildNodes();
         }
@@ -65,10 +65,10 @@ namespace Moo.Controls.Test
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(brunchBrowser1.File);
+            MessageBox.Show(brunchBrowser1.BrunchFile);
             brunchBrowser1.Refresh();
-           object o=(object) brunchBrowser1.Structure;
-            DataSet S = brunchBrowser1.Structure;
+           object o=(object) brunchBrowser1.BrunchDataStructure;
+            DataSet S = brunchBrowser1.BrunchDataStructure;
         }
 
         
