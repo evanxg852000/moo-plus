@@ -30,6 +30,7 @@ namespace Moo
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message+ ex.Source);
                     Exceptioner.Log(ex);
                 }
             }

@@ -16,39 +16,38 @@ namespace Moo
     {
         public event InsertBrunchRequestHandler InsertSelectedBrunchNodeRequested;
         
+        //provide data to the main window to instanciate brunch editor from main menu
+        public DataSet BrunchDataStructure {
+            get { return this.BrunchBrowserTree.BrunchDataStructure; }
+        }
+        //provide data to the main menu to check for code editing bruch call
+        public Dictionary<string, string> BrunchTriggerDictionary {
+            get { return BrunchBrowserTree.BrunchTriggerDictionary; }
+        }
       
-        public FBrunchBrowser()
-        {
+        public FBrunchBrowser(){
             InitializeComponent();
-            BrunchBrowserTree.File = AppSettings.Get("brunchsfile");
-            BrunchBrowserTree.BuildNodes();
+            this.BrunchBrowserTree.Refresh();
+        }
+        
+        //this will be called when user edit brunch and click apply 
+        public void UpdateData(DataSet NewBrunchDataStructure, Dictionary<string, string> NewBrunchTriggerDictionary){
+            this.BrunchBrowserTree.BrunchDataStructure = NewBrunchDataStructure;
+            this.BrunchBrowserTree.BrunchTriggerDictionary = NewBrunchTriggerDictionary;
+            this.BrunchBrowserTree.Refresh();
         }
 
         private void RefreshView(object sender, EventArgs e)
         {
             this.BrunchBrowserTree.Refresh();
         }
-        private void DeleteBruch(object sender, EventArgs e)
-        {
-            if (this.BrunchBrowserTree.SelectedNode == null) {
-                return;
-            }
-            string path =this.BrunchBrowserTree.SelectedNode.Tag.ToString();
-            if(FileHelper.IsFile(path))
-            {
-                DialogResult dr= MessageBox.Show("Do you want to delete the brunch '" + this.BrunchBrowserTree.SelectedNode.Text + "' ", "Moo {+}",
-                    MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                if(dr==DialogResult.Yes)
-                {
-                    this.BrunchBrowserTree.SelectedNode.Remove();
-                    FileHelper.DeleteFile(path);
-                }
-            }
+        private void NewBrunch(object sender, EventArgs e){
+            Moo.Dialogs.BrunchEditorDialog.Show(this.BrunchBrowserTree.BrunchDataStructure);
         }
-        private void NewBrunch(object sender, EventArgs e)
-        {
-            Moo.Dialogs.BrunchEditorDialog.Show();
+        private void BrunchEditor(object sender, EventArgs e){
+            Moo.Dialogs.BrunchEditorDialog.Show(this.BrunchBrowserTree.BrunchDataStructure);
         }
+        
         private void RequestInsertSelectedBrunchNode(string itemTag)
         {
             if (InsertSelectedBrunchNodeRequested != null)
@@ -63,6 +62,7 @@ namespace Moo
                 }
             }
         }
+        
 
         
 

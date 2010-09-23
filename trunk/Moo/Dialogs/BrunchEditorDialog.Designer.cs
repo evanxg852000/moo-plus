@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrunchEditorDialog));
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusBar = new System.Windows.Forms.StatusStrip();
             this.StatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
             this.BrunchTxt = new ScintillaNet.Scintilla();
-            this.brunchBrowser1 = new Moo.Controls.BrunchBrowser();
-            this.AddCatBt = new System.Windows.Forms.Button();
+            this.BrunchTree = new Moo.Controls.BrunchBrowser();
+            this.EditBrunchBt = new System.Windows.Forms.Button();
             this.AddBrunchBt = new System.Windows.Forms.Button();
             this.NameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,12 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ApplyBt = new System.Windows.Forms.Button();
             this.CancelBt = new System.Windows.Forms.Button();
-            this.Remove = new System.Windows.Forms.Button();
+            this.RemoveBrunchBt = new System.Windows.Forms.Button();
             this.KeyTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BTypeCbx = new System.Windows.Forms.ComboBox();
+            this.SaveCurrentEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            this.statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,15 +58,15 @@
             this.Logo.Location = new System.Drawing.Point(0, 49);
             this.Logo.Size = new System.Drawing.Size(624, 1);
             // 
-            // statusStrip1
+            // statusBar
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusMsg});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 373);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(611, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 3;
+            this.statusBar.Location = new System.Drawing.Point(0, 373);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(611, 22);
+            this.statusBar.SizingGrip = false;
+            this.statusBar.TabIndex = 3;
             // 
             // StatusMsg
             // 
@@ -76,7 +77,7 @@
             // 
             this.BrunchTxt.ConfigurationManager.Language = "cs";
             this.BrunchTxt.Folding.MarkerScheme = ScintillaNet.FoldMarkerScheme.PlusMinus;
-            this.BrunchTxt.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrunchTxt.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrunchTxt.IsBraceMatching = true;
             this.BrunchTxt.Location = new System.Drawing.Point(189, 54);
             this.BrunchTxt.Margins.Margin0.Width = 20;
@@ -87,72 +88,81 @@
             this.BrunchTxt.TabIndex = 0;
             this.BrunchTxt.UseFont = true;
             // 
-            // brunchBrowser1
+            // BrunchTree
             // 
-            this.brunchBrowser1.File = null;
-            this.brunchBrowser1.Font = new System.Drawing.Font("Verdana", 9.75F);
-            this.brunchBrowser1.ImageIndex = 0;
-            this.brunchBrowser1.Location = new System.Drawing.Point(2, 54);
-            this.brunchBrowser1.Name = "brunchBrowser1";
-            this.brunchBrowser1.SelectedImageIndex = 0;
-            this.brunchBrowser1.ShowRootLines = false;
-            this.brunchBrowser1.Size = new System.Drawing.Size(178, 313);
-            this.brunchBrowser1.TabIndex = 4;
+            this.BrunchTree.BrunchDataStructure = null;
+            this.BrunchTree.BrunchTriggerDictionary = null;
+            this.BrunchTree.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrunchTree.ImageIndex = 0;
+            this.BrunchTree.Location = new System.Drawing.Point(2, 54);
+            this.BrunchTree.Name = "BrunchTree";
+            this.BrunchTree.SelectedImageIndex = 0;
+            this.BrunchTree.ShowRootLines = false;
+            this.BrunchTree.Size = new System.Drawing.Size(178, 313);
+            this.BrunchTree.TabIndex = 4;
             // 
-            // AddCatBt
+            // EditBrunchBt
             // 
-            this.AddCatBt.Image = global::Moo.Properties.Resources.Add;
-            this.AddCatBt.Location = new System.Drawing.Point(573, 83);
-            this.AddCatBt.Name = "AddCatBt";
-            this.AddCatBt.Size = new System.Drawing.Size(35, 25);
-            this.AddCatBt.TabIndex = 5;
-            this.AddCatBt.UseVisualStyleBackColor = true;
+            this.EditBrunchBt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBrunchBt.Image = global::Moo.Properties.Resources.Edit;
+            this.EditBrunchBt.Location = new System.Drawing.Point(573, 56);
+            this.EditBrunchBt.Name = "EditBrunchBt";
+            this.EditBrunchBt.Size = new System.Drawing.Size(35, 25);
+            this.EditBrunchBt.TabIndex = 5;
+            this.EditBrunchBt.UseVisualStyleBackColor = true;
+            this.EditBrunchBt.Click += new System.EventHandler(this.EditSelectedBrunch);
             // 
             // AddBrunchBt
             // 
+            this.AddBrunchBt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBrunchBt.Image = global::Moo.Properties.Resources.Add;
-            this.AddBrunchBt.Location = new System.Drawing.Point(573, 54);
+            this.AddBrunchBt.Location = new System.Drawing.Point(573, 108);
             this.AddBrunchBt.Name = "AddBrunchBt";
             this.AddBrunchBt.Size = new System.Drawing.Size(35, 25);
             this.AddBrunchBt.TabIndex = 6;
             this.AddBrunchBt.UseVisualStyleBackColor = true;
+            this.AddBrunchBt.Click += new System.EventHandler(this.AddNewBrunch);
             // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(248, 262);
+            this.NameTxt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameTxt.Location = new System.Drawing.Point(248, 265);
             this.NameTxt.Name = "NameTxt";
-            this.NameTxt.Size = new System.Drawing.Size(160, 22);
+            this.NameTxt.Size = new System.Drawing.Size(160, 23);
             this.NameTxt.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(186, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 14);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Name :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(420, 268);
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(420, 265);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 14);
+            this.label2.Size = new System.Drawing.Size(45, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "Type :";
             // 
             // TrigerTxt
             // 
-            this.TrigerTxt.Location = new System.Drawing.Point(248, 301);
+            this.TrigerTxt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrigerTxt.Location = new System.Drawing.Point(248, 304);
             this.TrigerTxt.Name = "TrigerTxt";
-            this.TrigerTxt.Size = new System.Drawing.Size(160, 22);
+            this.TrigerTxt.Size = new System.Drawing.Size(160, 23);
             this.TrigerTxt.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 304);
+            this.label3.Location = new System.Drawing.Point(186, 306);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 14);
             this.label3.TabIndex = 12;
@@ -160,11 +170,12 @@
             // 
             // ApplyBt
             // 
+            this.ApplyBt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplyBt.Image = global::Moo.Properties.Resources.Fsave;
             this.ApplyBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ApplyBt.Location = new System.Drawing.Point(457, 341);
+            this.ApplyBt.Location = new System.Drawing.Point(453, 341);
             this.ApplyBt.Name = "ApplyBt";
-            this.ApplyBt.Size = new System.Drawing.Size(66, 26);
+            this.ApplyBt.Size = new System.Drawing.Size(75, 27);
             this.ApplyBt.TabIndex = 13;
             this.ApplyBt.Text = "Apply";
             this.ApplyBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -174,63 +185,78 @@
             // CancelBt
             // 
             this.CancelBt.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelBt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBt.Image = global::Moo.Properties.Resources.Stop;
             this.CancelBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelBt.Location = new System.Drawing.Point(534, 341);
             this.CancelBt.Name = "CancelBt";
-            this.CancelBt.Size = new System.Drawing.Size(74, 26);
+            this.CancelBt.Size = new System.Drawing.Size(75, 27);
             this.CancelBt.TabIndex = 14;
             this.CancelBt.Text = "Cancel";
             this.CancelBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelBt.UseVisualStyleBackColor = true;
             // 
-            // Remove
+            // RemoveBrunchBt
             // 
-            this.Remove.Image = global::Moo.Properties.Resources.Remove;
-            this.Remove.Location = new System.Drawing.Point(573, 114);
-            this.Remove.Name = "Remove";
-            this.Remove.Size = new System.Drawing.Size(35, 25);
-            this.Remove.TabIndex = 15;
-            this.Remove.UseVisualStyleBackColor = true;
+            this.RemoveBrunchBt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveBrunchBt.Image = global::Moo.Properties.Resources.Remove;
+            this.RemoveBrunchBt.Location = new System.Drawing.Point(573, 136);
+            this.RemoveBrunchBt.Name = "RemoveBrunchBt";
+            this.RemoveBrunchBt.Size = new System.Drawing.Size(35, 25);
+            this.RemoveBrunchBt.TabIndex = 15;
+            this.RemoveBrunchBt.UseVisualStyleBackColor = true;
+            this.RemoveBrunchBt.Click += new System.EventHandler(this.RemoveSelectedBrunch);
             // 
             // KeyTxt
             // 
+            this.KeyTxt.Enabled = false;
+            this.KeyTxt.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyTxt.Location = new System.Drawing.Point(504, 301);
             this.KeyTxt.Name = "KeyTxt";
-            this.KeyTxt.Size = new System.Drawing.Size(104, 22);
+            this.KeyTxt.Size = new System.Drawing.Size(104, 23);
             this.KeyTxt.TabIndex = 17;
+            this.KeyTxt.Text = "N/A";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(420, 304);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 14);
+            this.label4.Size = new System.Drawing.Size(73, 18);
             this.label4.TabIndex = 16;
             this.label4.Text = "Key :  Ctrl+";
             // 
             // BTypeCbx
             // 
+            this.BTypeCbx.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTypeCbx.FormattingEnabled = true;
-            this.BTypeCbx.Items.AddRange(new object[] {
-            "PHP",
-            "HTML",
-            "JS"});
             this.BTypeCbx.Location = new System.Drawing.Point(472, 262);
             this.BTypeCbx.Name = "BTypeCbx";
-            this.BTypeCbx.Size = new System.Drawing.Size(136, 22);
+            this.BTypeCbx.Size = new System.Drawing.Size(136, 26);
             this.BTypeCbx.TabIndex = 18;
+            // 
+            // SaveCurrentEdit
+            // 
+            this.SaveCurrentEdit.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveCurrentEdit.Image = global::Moo.Properties.Resources.Fsave;
+            this.SaveCurrentEdit.Location = new System.Drawing.Point(573, 82);
+            this.SaveCurrentEdit.Name = "SaveCurrentEdit";
+            this.SaveCurrentEdit.Size = new System.Drawing.Size(35, 25);
+            this.SaveCurrentEdit.TabIndex = 19;
+            this.SaveCurrentEdit.UseVisualStyleBackColor = true;
             // 
             // BrunchEditorDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 395);
+            this.Controls.Add(this.SaveCurrentEdit);
             this.Controls.Add(this.BTypeCbx);
             this.Controls.Add(this.KeyTxt);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.Remove);
+            this.Controls.Add(this.statusBar);
+            this.Controls.Add(this.RemoveBrunchBt);
             this.Controls.Add(this.CancelBt);
             this.Controls.Add(this.ApplyBt);
             this.Controls.Add(this.label3);
@@ -239,8 +265,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameTxt);
             this.Controls.Add(this.AddBrunchBt);
-            this.Controls.Add(this.AddCatBt);
-            this.Controls.Add(this.brunchBrowser1);
+            this.Controls.Add(this.EditBrunchBt);
+            this.Controls.Add(this.BrunchTree);
             this.Controls.Add(this.BrunchTxt);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -254,8 +280,8 @@
             this.Text = "Brunch Editor ";
             this.TopMargin = 50;
             this.Controls.SetChildIndex(this.BrunchTxt, 0);
-            this.Controls.SetChildIndex(this.brunchBrowser1, 0);
-            this.Controls.SetChildIndex(this.AddCatBt, 0);
+            this.Controls.SetChildIndex(this.BrunchTree, 0);
+            this.Controls.SetChildIndex(this.EditBrunchBt, 0);
             this.Controls.SetChildIndex(this.AddBrunchBt, 0);
             this.Controls.SetChildIndex(this.NameTxt, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -264,15 +290,16 @@
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.ApplyBt, 0);
             this.Controls.SetChildIndex(this.CancelBt, 0);
-            this.Controls.SetChildIndex(this.Remove, 0);
-            this.Controls.SetChildIndex(this.statusStrip1, 0);
+            this.Controls.SetChildIndex(this.RemoveBrunchBt, 0);
+            this.Controls.SetChildIndex(this.statusBar, 0);
             this.Controls.SetChildIndex(this.Logo, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.KeyTxt, 0);
             this.Controls.SetChildIndex(this.BTypeCbx, 0);
+            this.Controls.SetChildIndex(this.SaveCurrentEdit, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -281,11 +308,10 @@
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel StatusMsg;
         private ScintillaNet.Scintilla BrunchTxt;
-        private Moo.Controls.BrunchBrowser brunchBrowser1;
-        private System.Windows.Forms.Button AddCatBt;
+        private System.Windows.Forms.Button EditBrunchBt;
         private System.Windows.Forms.Button AddBrunchBt;
         private System.Windows.Forms.TextBox NameTxt;
         private System.Windows.Forms.Label label1;
@@ -294,9 +320,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ApplyBt;
         private System.Windows.Forms.Button CancelBt;
-        private System.Windows.Forms.Button Remove;
+        private System.Windows.Forms.Button RemoveBrunchBt;
         private System.Windows.Forms.TextBox KeyTxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox BTypeCbx;
+        private Moo.Controls.BrunchBrowser BrunchTree;
+        private System.Windows.Forms.Button SaveCurrentEdit;
     }
 }

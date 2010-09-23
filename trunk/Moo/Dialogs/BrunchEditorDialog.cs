@@ -8,41 +8,70 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using Yalamo.Gui;
+using Moo.Core;
 using Moo.Helpers;
+
 
 namespace Moo.Dialogs
 {
     public partial class BrunchEditorDialog : YForm
     {
-        public BrunchEditorDialog()
+        private DataSet brunchdatastructure;
+        private Dictionary<string, string> brunchtrigerdictionary;
+
+        public DataSet BrunchDataStructure{
+            get { return this.brunchdatastructure; }
+        }
+        public Dictionary<string, string> BrunchTrigerDictionary {
+            get { return this.brunchtrigerdictionary; }
+        }
+
+        public BrunchEditorDialog(DataSet brunchdatastructure)
         {
             InitializeComponent();
             this.SetupMargin();
-            initialisefield();   
+            this.brunchdatastructure = brunchdatastructure;
+            this.brunchtrigerdictionary = new Dictionary<string, string>();
+            this.BrunchTree.BuildNodes(this.brunchdatastructure);
+            foreach (DataTable type in this.brunchdatastructure.Tables)
+            {
+                this.BTypeCbx.Items.Add(type.TableName.ToString());
+            }
+            this.SaveCurrentEdit.Enabled = false;
+            this.KeyTxt.Enabled = false;
         }
-        public static new void Show()
+        public static void Show(DataSet bruncstructure)
         {
-            BrunchEditorDialog Instance = new BrunchEditorDialog();
+            BrunchEditorDialog Instance = new BrunchEditorDialog(bruncstructure);
             Instance.ShowDialog();
         }
 
-        private void initialisefield()
-        {
-            this.NameTxt.Text = "Brunch name...";
+        private void initialisefield(){
+            this.SaveCurrentEdit.Enabled = true;
+            this.BrunchTxt.Text = String.Empty;
+            this.NameTxt.Text = String.Empty;
             this.BTypeCbx.SelectedIndex = 0;
-            this.BrunchTxt.Text = "Brunch content here...";
-            this.StatusMsg.Text = "";
+            this.TrigerTxt.Text = String.Empty;       
         }
-        private void NewClear(object sender, EventArgs e)
+        
+      
+        private void AddNewBrunch(object sender, EventArgs e)
         {
-            initialisefield();
+
         }
-       
+        private void EditSelectedBrunch(object sender, EventArgs e)
+        {
+            MessageBox.Show("edit todo");
+        }
+        private void RemoveSelectedBrunch(object sender, EventArgs e)
+        {
+            MessageBox.Show("remove todo");
+        }      
+
         private void BruchTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             BrunchTxt.ConfigurationManager.Language = BTypeCbx.SelectedItem.ToString();
         }
-
         private void ApplyChangesHandler(object sender, EventArgs e)
         {
             string bname = this.NameTxt.Text;

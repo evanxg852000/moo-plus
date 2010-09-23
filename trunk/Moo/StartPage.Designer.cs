@@ -39,7 +39,7 @@
             // 
             // SHelp
             // 
-            this.SHelp.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SHelp.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SHelp.Image = global::Moo.Properties.Resources.Help;
             this.SHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SHelp.Location = new System.Drawing.Point(22, 362);
@@ -52,7 +52,7 @@
             // 
             // SGotoWebsite
             // 
-            this.SGotoWebsite.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SGotoWebsite.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SGotoWebsite.Image = global::Moo.Properties.Resources.Database;
             this.SGotoWebsite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SGotoWebsite.Location = new System.Drawing.Point(22, 293);
@@ -65,7 +65,7 @@
             // 
             // SOpenProject
             // 
-            this.SOpenProject.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SOpenProject.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SOpenProject.Image = global::Moo.Properties.Resources.Open;
             this.SOpenProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SOpenProject.Location = new System.Drawing.Point(22, 224);
@@ -78,7 +78,7 @@
             // 
             // SNewProject
             // 
-            this.SNewProject.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SNewProject.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SNewProject.Image = global::Moo.Properties.Resources.Project;
             this.SNewProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SNewProject.Location = new System.Drawing.Point(22, 155);

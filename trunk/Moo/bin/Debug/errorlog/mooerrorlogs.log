@@ -63,3 +63,100 @@ mscorlib
 ------------Message------------
 Could not find a part of the path 'C:\Users\Administrator\Desktop\Train\bin'.
 ------------Data------------
+
+=======================NEW EXCEPTION================
+21/09/2010 23:56:05
+------------Source------------
+System
+------------Message------------
+The remote server returned an error: (404) Not Found.
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 09:53:12
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 09:53:20
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 09:53:33
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 09:58:49
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 09:59:22
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 10:03:24
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 10:05:02
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 10:14:15
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 10:19:35
+------------Source------------
+System.Windows.Forms
+------------Message------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+------------Data------------
+
+=======================NEW EXCEPTION================
+23/09/2010 11:12:43
+------------Source------------
+System
+------------Message------------
+The remote server returned an error: (404) Not Found.
+------------Data------------
