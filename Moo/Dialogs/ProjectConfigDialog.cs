@@ -25,8 +25,8 @@ namespace Moo.Dialogs
         private ProjectConfigDialog(Project Project)
         {
             InitializeComponent();
-            this.CurrentProject = Project;
-            this.ProjectAssemblies = Project.Refferences;
+            //this.CurrentProject = Project;
+           // this.ProjectAssemblies = Project.Refferences;
             InitializeToCurrentproject();
         }
         public static void Show(Project currentproject)
@@ -40,6 +40,7 @@ namespace Moo.Dialogs
 
         private void InitializeToCurrentproject()
         {
+            /*
             this.Text += " [ " + CurrentProject.ProjectName + " ]";
             this.AssemblyNameTbx.Text = CurrentProject.AssemblyName;
             if (CurrentProject.AssemblyType == "Console Executable (.exe)")
@@ -77,7 +78,9 @@ namespace Moo.Dialogs
             //retrieve installed assemblies
             StatusMsg.Text = "Retrieving Assemblies ...";
             statusProgress.Style = ProgressBarStyle.Marquee;
-            this.AssemblySearcher.RunWorkerAsync();    
+            this.AssemblySearcher.RunWorkerAsync();  
+             */
+             
         }      
         private void SetAppIcon(object sender, EventArgs e)
         {
@@ -108,11 +111,12 @@ namespace Moo.Dialogs
         }       
         private void SaveBt_Click(object sender, EventArgs e)
         {
-            //apply changes and save the project state
+            /*
+             apply changes and save the project state
             CurrentProject.AssemblyName = this.AssemblyNameTbx.Text;
             CurrentProject.AssemblyType = this.AssemblyTypeCbx.SelectedItem.ToString();
             CurrentProject.BuildTarget = this.BuildTargetCbx.SelectedItem.ToString();
-            CurrentProject.ProjectIcon = this.ProjectIconTbx.Text;
+            CurrentProject.Icon = this.ProjectIconTbx.Text;
             CurrentProject.Refferences.Clear();
             foreach (ListViewItem item in RefferencesListView.Items )
             {
@@ -124,6 +128,7 @@ namespace Moo.Dialogs
             CurrentProject.Save();
             this.DialogResult = DialogResult.OK;
             this.Close();
+           */ 
         }
         private void Cancel_Click(object sender, EventArgs e)
         {

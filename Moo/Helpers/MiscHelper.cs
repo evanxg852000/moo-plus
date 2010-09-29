@@ -5,32 +5,33 @@ using System.Text;
 using System.Net.Mail;
 using Moo.Core;
 
+
 namespace Moo.Helpers
 {
     class MiscHelper
     {
-        public static ProjectCategory GetProjectType(string type)
+        public static PType GetProjectType(string type)
         {
-            ProjectCategory pcat = ProjectCategory.Unmanaged;
+            PType pcat = PType.Unmanaged;
             switch (type)
             {       
                 case "C Sharp":
-                    pcat = ProjectCategory.Csharp;
+                    pcat = PType.Csharp;
                     break;
                 case "Hydro":
-                    pcat = ProjectCategory.Hydro;
+                    pcat = PType.Hydro;
                     break;
                 case "Ilasm":
-                    pcat = ProjectCategory.Ilasm;
+                    pcat = PType.Ilasm;
                     break;
                 case "Website":
-                    pcat = ProjectCategory.Website;
+                    pcat = PType.Website;
                     break;
                 case "V Basic":
-                    pcat = ProjectCategory.Vbasic;
+                    pcat = PType.Vbasic;
                     break;
                 case "Unmanaged":
-                    pcat = ProjectCategory.Unmanaged;
+                    pcat = PType.Unmanaged;
                     break;
             }
             return pcat;

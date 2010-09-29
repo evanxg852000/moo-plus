@@ -76,6 +76,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ProjectFactory.cs" />
+    <Compile Include="Core\Projects\Adobeair.cs" />
+    <Compile Include="Core\Projects\Databse.cs" />
+    <Compile Include="Core\Projects\Hydro.cs" />
+    <Compile Include="Core\Projects\Ilasm.cs" />
+    <Compile Include="Core\Projects\Unmanaged.cs" />
+    <Compile Include="Core\Projects\Vbasic.cs" />
+    <Compile Include="Core\Projects\Csharp.cs" />
+    <Compile Include="Core\PType.cs" />
+    <Compile Include="Core\Projects\Website.cs" />
+    <Compile Include="Core\Projects\Yalamof.cs" />
     <Compile Include="TodoList.cs">
       <SubType>Form</SubType>
     </Compile>
