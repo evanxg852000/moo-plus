@@ -16,29 +16,28 @@ namespace Moo.Dialogs
 {
     public partial class BrunchEditorDialog : YForm
     {
-        private DataSet brunchdatastructure;
         private Dictionary<string, string> brunchtrigerdictionary;
+        private DataSet brunchdatastructure;
 
-        public DataSet BrunchDataStructure{
-            get { return this.brunchdatastructure; }
-        }
+        private string currenteditedtable;
+        private int currenteditedrowindex;
+
+
         public Dictionary<string, string> BrunchTrigerDictionary {
             get { return this.brunchtrigerdictionary; }
+        }
+        public DataSet BrunchDataStructure
+        {
+            get { return this.brunchdatastructure; }
         }
 
         public BrunchEditorDialog(DataSet brunchdatastructure)
         {
             InitializeComponent();
             this.SetupMargin();
-            this.brunchdatastructure = brunchdatastructure;
             this.brunchtrigerdictionary = new Dictionary<string, string>();
-            this.BrunchTree.BuildNodes(this.brunchdatastructure);
-            foreach (DataTable type in this.brunchdatastructure.Tables)
-            {
-                this.BTypeCbx.Items.Add(type.TableName.ToString());
-            }
-            this.SaveCurrentEdit.Enabled = false;
-            this.KeyTxt.Enabled = false;
+            this.BrunchTree.BrunchDataStructure = brunchdatastructure;
+            initialisefield();
         }
         public static void Show(DataSet bruncstructure)
         {
@@ -47,59 +46,156 @@ namespace Moo.Dialogs
         }
 
         private void initialisefield(){
+            this.BrunchTree.Refresh();
+            this.BTypeCbx.Items.Clear();
+            foreach (DataTable type in this.BrunchTree.BrunchDataStructure.Tables)
+            {
+                this.BTypeCbx.Items.Add(type.TableName.ToString());
+            }
             this.SaveCurrentEdit.Enabled = true;
             this.BrunchTxt.Text = String.Empty;
             this.NameTxt.Text = String.Empty;
             this.BTypeCbx.SelectedIndex = 0;
-            this.TrigerTxt.Text = String.Empty;       
+            this.TrigerTxt.Text = String.Empty;
+            this.KeyTxt.Text = "K";
+            this.KeyTxt.Enabled = false;
+            this.SaveCurrentEdit.Enabled = false;
         }
-        
+        private bool checkinput()
+        {
+            if (BrunchTxt.Text == String.Empty) { return false; }
+            if (NameTxt.Text == String.Empty) { return false; }
+            if (BTypeCbx.Text == String.Empty) { return false; }
+            if (TrigerTxt.Text == String.Empty) { return false; }
+            return true;
+        }
       
         private void AddNewBrunch(object sender, EventArgs e)
         {
+            if (this.checkinput() == false)
+            {
+                StatusBarMsg.Text = "Please fill the brunch form";
+                return;
+            }
+            else 
+            {
+                StatusBarMsg.Text = String.Empty;
+            }
+            if(BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text]==null){
+                //create the table
+                DataTable table = new DataTable(BTypeCbx.Text);
+                table.Columns.Add("Num", typeof(string));
+                table.Columns.Add("Name", typeof(string));
+                table.Columns.Add("Triger", typeof(string));
+                table.Columns.Add("Key", typeof(string));
+                table.Columns.Add("Content", typeof(string));
 
-        }
-        private void EditSelectedBrunch(object sender, EventArgs e)
-        {
-            MessageBox.Show("edit todo");
+                BrunchTree.BrunchDataStructure.Tables.Add(table);
+            }
+            DataRow Brow = BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text].NewRow();
+            Brow["Num"] ="0";
+            Brow["Name"]=NameTxt.Text;
+            Brow["Triger"]=TrigerTxt.Text;
+            Brow["Key"]=KeyTxt.Text;
+            Brow["Content"] = BrunchTxt.Text;
+            BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text].Rows.Add(Brow);
+            initialisefield();
         }
         private void RemoveSelectedBrunch(object sender, EventArgs e)
         {
-            MessageBox.Show("remove todo");
-        }      
+            if (this.BrunchTree.SelectedNode == null) {
+                StatusBarMsg.Text = "Please select a category or brunch";
+                return;
+            }
+            else
+            {
+                StatusBarMsg.Text = String.Empty;
+            }
+            string message;
+            if (this.BrunchTree.SelectedNode.Level == 1)
+            {
+                message = "You are about to remove the category " + this.BrunchTree.SelectedNode.Text;
+                if (MessageBox.Show(message, "Moo { + }", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                { 
+                    return; 
+                }
+                this.BrunchTree.BrunchDataStructure.Tables.Remove(this.BrunchTree.SelectedNode.Text);
+                this.BTypeCbx.Items.Remove(this.BrunchTree.SelectedNode.Text);
+            }
+            if (this.BrunchTree.SelectedNode.Level == 2)
+            {
+                message = "You are about to remove the brunch " + this.BrunchTree.SelectedNode.Text;
+                if (MessageBox.Show(message, "Moo { + }", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                {
+                    return;
+                }
+                string brunchtable = this.BrunchTree.SelectedNode.Parent.Text;
+                this.BrunchTree.BrunchDataStructure.Tables[brunchtable].Rows.RemoveAt(this.BrunchTree.SelectedNode.Index);
+            }
+            this.BrunchTree.Refresh();
 
+        }      
+       
+        private void EditSelectedBrunch(object sender, EventArgs e)
+        {
+            if (this.BrunchTree.SelectedNode == null) {
+                StatusBarMsg.Text = "Please select a brunch";
+                return;
+            }
+            else
+            {
+                StatusBarMsg.Text = String.Empty;
+            }
+            if (this.BrunchTree.SelectedNode.Level == 2)
+            {
+                this.currenteditedtable=this.BrunchTree.SelectedNode.Parent.Text;
+                this.currenteditedrowindex = this.BrunchTree.SelectedNode.Index;
+                DataRow Brow = this.BrunchTree.BrunchDataStructure.Tables[currenteditedtable].Rows[currenteditedrowindex];
+                BrunchTxt.Text = Brow["Content"].ToString();
+                NameTxt.Text = Brow["Name"].ToString();
+                TrigerTxt.Text = Brow["Triger"].ToString();
+                KeyTxt.Text = Brow["Key"].ToString();
+                BTypeCbx.Text = currenteditedtable;
+                BTypeCbx.Enabled = false;
+                SaveCurrentEdit.Enabled = true;  
+            }
+        }
+        private void SaveCurrentEditHandler(object sender, EventArgs e)
+        {
+            DataRow Brow = this.BrunchTree.BrunchDataStructure.Tables[currenteditedtable].Rows[currenteditedrowindex];
+            Brow["Num"] = "0";
+            Brow["Name"] = NameTxt.Text;
+            Brow["Triger"] = TrigerTxt.Text;
+            Brow["Key"] = KeyTxt.Text;
+            Brow["Content"] = BrunchTxt.Text;
+            initialisefield();
+        }
+        private void CleanHandler(object sender, EventArgs e)
+        {
+            this.initialisefield();
+        }
+
+        
         private void BruchTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             BrunchTxt.ConfigurationManager.Language = BTypeCbx.SelectedItem.ToString();
-        }
+        }       
         private void ApplyChangesHandler(object sender, EventArgs e)
         {
-            string bname = this.NameTxt.Text;
-            string btype = this.BTypeCbx.SelectedItem.ToString();
-            string bcontent = this.BrunchTxt.Text;
-
-            if ((bname == "Brunch name..."))
-            {
-                this.StatusMsg.Text = "Brunch name is required";
-                return;
+            this.brunchdatastructure = this.BrunchTree.BrunchDataStructure;
+            //fill the dictionarry
+            foreach (DataTable category in this.BrunchTree.BrunchDataStructure.Tables) {
+                foreach (DataRow item in category.Rows) {
+                    this.brunchtrigerdictionary.Add(item["Triger"].ToString(), item["Content"].ToString());
+                }
             }
-            if ((this.BTypeCbx.SelectedIndex == 0))
-            {
-                this.StatusMsg.Text = "Brunch Type is required";
-                return;
-            }
-            if ((bcontent == "Brunch content here..."))
-            {
-                this.StatusMsg.Text = "Brunch content is required";
-                return;
-            }
-            string filepath = Path.GetDirectoryName(Application.ExecutablePath);
-            filepath += Moo.Core.AppSettings.GetFolder("brunchs") + btype + @"\" + bname + ".mcb";
-            FileHelper.Save(filepath, bcontent);
-            this.Close();
+            this.DialogResult=DialogResult.OK;
         }
- 
-       
-        
+        private void CancelChangesHandler(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+             
     }
 }

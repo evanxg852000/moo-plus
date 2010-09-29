@@ -3,7 +3,7 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\bin\Debu
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.Gui.Dock.Resources.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.Gui.Dock.Strings.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.Gui.YForm.resources
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.dll
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.pdb
-C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Yalamo\obj\Debug\Yalamo.Gui.YForm.resources

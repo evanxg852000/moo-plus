@@ -41,7 +41,7 @@ namespace Moo.Dialogs
             this.currentfolder=Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Moo Workspace";
             if (currentProject != null)
             {
-                this.currentfolder = currentProject.ProjectFolder;
+                this.currentfolder = currentProject.Folder;
             }
             
             //initialise           

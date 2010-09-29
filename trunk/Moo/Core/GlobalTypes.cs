@@ -5,16 +5,7 @@ using System.Text;
 
 namespace Moo.Core
 {
-   public enum ProjectCategory
-    {
-        Csharp=0 ,
-        Hydro,
-        Ilasm,
-        Website,
-        Vbasic,
-        Unmanaged
-    }
-   
+      
     /// <summary>
    /// delegate for dock windows that need to provide general fuctionality
    /// like open project on start page 
@@ -25,6 +16,8 @@ namespace Moo.Core
    public delegate void OpenProjectRequestHandler(object sender, EventArgs e);
    public delegate void NewFileRequestHandler(object sender, EventArgs e);
    public delegate void OpenFileRequestHandler ( string file);
-   public delegate void InsertBrunchRequestHandler( string file); 
+   public delegate void InsertBrunchRequestHandler( string file);
+
+
 
 }

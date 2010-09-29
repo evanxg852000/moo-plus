@@ -323,12 +323,13 @@ namespace Moo
             //update line marging to suit the content
             const int LINENUMBER_MARGIN=0;
             const int STYLE_LINENUMBER = 33;
-            int Ratio = (int)this.EditorView.Styles[STYLE_LINENUMBER].Size;
+            int Ratio = (int)this.EditorView.Styles[STYLE_LINENUMBER].Font.Size;
 
-            if (LineMarginWidth < Ratio * this.EditorView.Lines.Count.ToString().Length)
+            if (this.LineMarginWidth < Ratio * this.EditorView.Lines.Count.ToString().Length)
             {
                 this.LineMarginWidth = Ratio * this.EditorView.Lines.Count.ToString().Length;
-                this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth;    
+                this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth+10; 
+                
             }
             //update the title to notify that the doc has changed
             if (this.EditorView.Modified)

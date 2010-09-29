@@ -224,10 +224,10 @@ namespace Moo
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
-                    Project PRJT = Project.Open(openfilepath);
+                    Project PRJT = ProjectFactory.Open(openfilepath);
                     MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                     //load the project into the project browser
-                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder,PRJT.ProjectFile,PRJT.ProjectName);
+                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.Folder,PRJT.File,PRJT.Name);
                     //add to recent
                     if (MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5)
                     {
@@ -285,10 +285,10 @@ namespace Moo
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
-                    Project PRJT = Project.Open(openfilepath);
+                    Project PRJT = ProjectFactory.Open(openfilepath);
                     MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                     //load the project into the project browser
-                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.ProjectFolder, PRJT.ProjectFile, PRJT.ProjectName);
+                    MOO_PROJECT_BROWSER.BuildNodes(PRJT.Folder, PRJT.File, PRJT.Name);
                 }
                 else
                 {
@@ -951,7 +951,7 @@ namespace Moo
         {
             if (this.MOO_APPLICATION_SETTINGS.CurrentProject != null)
             {
-                FileHelper.EmptyFolder(this.MOO_APPLICATION_SETTINGS.CurrentProject.ProjectFolder + @"\bin\");
+                FileHelper.EmptyFolder(this.MOO_APPLICATION_SETTINGS.CurrentProject.Folder + @"\bin\");
             }  
         }
         private void activateBuildtoolbts()
@@ -999,9 +999,9 @@ namespace Moo
         private void UIUpdate()
         { //update the ui when the project change
             //we desactivate so build button according to the curren project
-            switch (MOO_APPLICATION_SETTINGS.CurrentProject.ProjectType)
+            switch (MOO_APPLICATION_SETTINGS.CurrentProject.Type)
             {
-                case ProjectCategory.Unmanaged:
+                case PType.Unmanaged:
                     MBuildProject.Enabled = false;
                     MRunProject.Enabled = false;
                     MStopRunProject.Enabled = false;
@@ -1010,7 +1010,7 @@ namespace Moo
                     MTBRun.Enabled = false;
                     MTBStop.Enabled = false;
                     break;
-                case ProjectCategory.Website:
+                case PType.Website:
                     MBuildProject.Enabled = false;
                     MTBBuild.Enabled = false;
                     MRunProject.Enabled = true;
