@@ -16,16 +16,13 @@ namespace Moo.Dialogs
 {
     public partial class BrunchEditorDialog : YForm
     {
-        private Dictionary<string, string> brunchtrigerdictionary;
+        
         private DataSet brunchdatastructure;
-
         private string currenteditedtable;
         private int currenteditedrowindex;
 
 
-        public Dictionary<string, string> BrunchTrigerDictionary {
-            get { return this.brunchtrigerdictionary; }
-        }
+        
         public DataSet BrunchDataStructure
         {
             get { return this.brunchdatastructure; }
@@ -35,8 +32,12 @@ namespace Moo.Dialogs
         {
             InitializeComponent();
             this.SetupMargin();
-            this.brunchtrigerdictionary = new Dictionary<string, string>();
             this.BrunchTree.BrunchDataStructure = brunchdatastructure;
+            this.BTypeCbx.Items.Clear();
+            foreach (DataTable type in this.BrunchTree.BrunchDataStructure.Tables)
+            {
+                this.BTypeCbx.Items.Add(type.TableName.ToString());
+            }
             initialisefield();
         }
         public static void Show(DataSet bruncstructure)
@@ -47,19 +48,15 @@ namespace Moo.Dialogs
 
         private void initialisefield(){
             this.BrunchTree.Refresh();
-            this.BTypeCbx.Items.Clear();
-            foreach (DataTable type in this.BrunchTree.BrunchDataStructure.Tables)
-            {
-                this.BTypeCbx.Items.Add(type.TableName.ToString());
-            }
-            this.SaveCurrentEdit.Enabled = true;
             this.BrunchTxt.Text = String.Empty;
             this.NameTxt.Text = String.Empty;
             this.BTypeCbx.SelectedIndex = 0;
+            this.BTypeCbx.Enabled = true;
             this.TrigerTxt.Text = String.Empty;
-            this.KeyTxt.Text = "K";
-            this.KeyTxt.Enabled = false;
             this.SaveCurrentEdit.Enabled = false;
+
+            this.KeyTxt.Text = "K";
+            this.KeyTxt.Enabled = false;       
         }
         private bool checkinput()
         {
@@ -81,47 +78,21 @@ namespace Moo.Dialogs
             {
                 StatusBarMsg.Text = String.Empty;
             }
-            if(BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text]==null){
-                //create the table
-                DataTable table = new DataTable(BTypeCbx.Text);
-                table.Columns.Add("Num", typeof(string));
-                table.Columns.Add("Name", typeof(string));
-                table.Columns.Add("Triger", typeof(string));
-                table.Columns.Add("Key", typeof(string));
-                table.Columns.Add("Content", typeof(string));
-
-                BrunchTree.BrunchDataStructure.Tables.Add(table);
-            }
             DataRow Brow = BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text].NewRow();
-            Brow["Num"] ="0";
             Brow["Name"]=NameTxt.Text;
             Brow["Triger"]=TrigerTxt.Text;
-            Brow["Key"]=KeyTxt.Text;
             Brow["Content"] = BrunchTxt.Text;
             BrunchTree.BrunchDataStructure.Tables[BTypeCbx.Text].Rows.Add(Brow);
             initialisefield();
         }
         private void RemoveSelectedBrunch(object sender, EventArgs e)
         {
-            if (this.BrunchTree.SelectedNode == null) {
-                StatusBarMsg.Text = "Please select a category or brunch";
+            if ((this.BrunchTree.SelectedNode == null)||(this.BrunchTree.SelectedNode.Level == 1) ) {
+                StatusBarMsg.Text = "Please select a brunch";
                 return;
             }
-            else
-            {
-                StatusBarMsg.Text = String.Empty;
-            }
+            StatusBarMsg.Text = String.Empty;
             string message;
-            if (this.BrunchTree.SelectedNode.Level == 1)
-            {
-                message = "You are about to remove the category " + this.BrunchTree.SelectedNode.Text;
-                if (MessageBox.Show(message, "Moo { + }", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                { 
-                    return; 
-                }
-                this.BrunchTree.BrunchDataStructure.Tables.Remove(this.BrunchTree.SelectedNode.Text);
-                this.BTypeCbx.Items.Remove(this.BrunchTree.SelectedNode.Text);
-            }
             if (this.BrunchTree.SelectedNode.Level == 2)
             {
                 message = "You are about to remove the brunch " + this.BrunchTree.SelectedNode.Text;
@@ -142,10 +113,7 @@ namespace Moo.Dialogs
                 StatusBarMsg.Text = "Please select a brunch";
                 return;
             }
-            else
-            {
-                StatusBarMsg.Text = String.Empty;
-            }
+            StatusBarMsg.Text = String.Empty;
             if (this.BrunchTree.SelectedNode.Level == 2)
             {
                 this.currenteditedtable=this.BrunchTree.SelectedNode.Parent.Text;
@@ -154,7 +122,6 @@ namespace Moo.Dialogs
                 BrunchTxt.Text = Brow["Content"].ToString();
                 NameTxt.Text = Brow["Name"].ToString();
                 TrigerTxt.Text = Brow["Triger"].ToString();
-                KeyTxt.Text = Brow["Key"].ToString();
                 BTypeCbx.Text = currenteditedtable;
                 BTypeCbx.Enabled = false;
                 SaveCurrentEdit.Enabled = true;  
@@ -163,10 +130,8 @@ namespace Moo.Dialogs
         private void SaveCurrentEditHandler(object sender, EventArgs e)
         {
             DataRow Brow = this.BrunchTree.BrunchDataStructure.Tables[currenteditedtable].Rows[currenteditedrowindex];
-            Brow["Num"] = "0";
             Brow["Name"] = NameTxt.Text;
             Brow["Triger"] = TrigerTxt.Text;
-            Brow["Key"] = KeyTxt.Text;
             Brow["Content"] = BrunchTxt.Text;
             initialisefield();
         }
@@ -183,12 +148,6 @@ namespace Moo.Dialogs
         private void ApplyChangesHandler(object sender, EventArgs e)
         {
             this.brunchdatastructure = this.BrunchTree.BrunchDataStructure;
-            //fill the dictionarry
-            foreach (DataTable category in this.BrunchTree.BrunchDataStructure.Tables) {
-                foreach (DataRow item in category.Rows) {
-                    this.brunchtrigerdictionary.Add(item["Triger"].ToString(), item["Content"].ToString());
-                }
-            }
             this.DialogResult=DialogResult.OK;
         }
         private void CancelChangesHandler(object sender, EventArgs e)

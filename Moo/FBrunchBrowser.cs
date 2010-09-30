@@ -20,20 +20,15 @@ namespace Moo
         public DataSet BrunchDataStructure {
             get { return this.BrunchBrowserTree.BrunchDataStructure; }
         }
-        //provide data to the main menu to check for code editing bruch call
-        public Dictionary<string, string> BrunchTriggerDictionary {
-            get { return BrunchBrowserTree.BrunchTriggerDictionary; }
-        }
-      
+        
         public FBrunchBrowser(){
             InitializeComponent();
             this.BrunchBrowserTree.Refresh();
         }
         
         //this will be called when user edit brunch and click apply 
-        public void UpdateData(DataSet NewBrunchDataStructure, Dictionary<string, string> NewBrunchTriggerDictionary){
+        public void UpdateData(DataSet NewBrunchDataStructure){
             this.BrunchBrowserTree.BrunchDataStructure = NewBrunchDataStructure;
-            this.BrunchBrowserTree.BrunchTriggerDictionary = NewBrunchTriggerDictionary;
             this.BrunchBrowserTree.Refresh();
         }
 

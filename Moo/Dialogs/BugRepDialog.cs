@@ -6,15 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Yalamo.Gui;
 using Moo.Core;
 
 namespace Moo.Dialogs
 {
-    public partial class BugRepDialog : Form
+    public partial class BugRepDialog : YForm
     {
         public BugRepDialog()
         {
             InitializeComponent();
+            this.SetupMargin();
         }
         public static new void Show()
         {
