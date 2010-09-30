@@ -15,6 +15,8 @@ namespace Moo.Controls
         public FileBrowser()
         {
             InitializeComponent();
+            //add handler
+            this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);
         }     
         public override void Refresh()
         {
@@ -48,8 +50,6 @@ namespace Moo.Controls
                 //be sillent to say that notthing was found as brunch
             }
             this.ExpandAll();
-            //add handler
-            this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);
         }
         private void ScanDir(string dirpath, TreeNode parent)
         {

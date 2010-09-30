@@ -12,33 +12,42 @@ namespace Moo.Core.Projects
          
         }
 
+        
+
         #region Overriden Methods
+
+        public override void CopyTemplate()
+        {
+            base.CopyTemplate(this.ToString());
+        }
+        public override List<string> GetFiles()
+        {
+            return base.GetFiles(this.ToString());
+        }
+        public override List<string> GetKeywords()
+        {
+            return base.GetKeywords(this.ToString());
+        }
 
         public override void Build()
         {
 
         }
-
         public override void Run()
         {
 
         }
-
         public override void GetBuildTool()
         {
 
         }
-
         public override void GetCmdArgs()
         {
 
         }
-
-        public override List<string> GetFiles()
-        {
-            return new List<string>();
-        }
+        
 
         #endregion
+   
     }
 }

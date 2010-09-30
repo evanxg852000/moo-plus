@@ -28,21 +28,26 @@ namespace Moo
         
         //this will be called when user edit brunch and click apply 
         public void UpdateData(DataSet NewBrunchDataStructure){
-            this.BrunchBrowserTree.BrunchDataStructure = NewBrunchDataStructure;
+            this.BrunchBrowserTree.UpdateData(NewBrunchDataStructure);
             this.BrunchBrowserTree.Refresh();
         }
+        public Dictionary<string, string> GetBrunchDictionary(string brunchtype)
+        {
+           return this.BrunchBrowserTree.GetBrunchDictionary(brunchtype);
+        }
+
 
         private void RefreshView(object sender, EventArgs e)
         {
             this.BrunchBrowserTree.Refresh();
         }
-        private void NewBrunch(object sender, EventArgs e){
-            Moo.Dialogs.BrunchEditorDialog.Show(this.BrunchBrowserTree.BrunchDataStructure);
-        }
         private void BrunchEditor(object sender, EventArgs e){
-            Moo.Dialogs.BrunchEditorDialog.Show(this.BrunchBrowserTree.BrunchDataStructure);
+            Moo.Dialogs.BrunchEditorDialog BEditorInstance = new Moo.Dialogs.BrunchEditorDialog (this.BrunchDataStructure);
+            if (BEditorInstance.ShowDialog() == DialogResult.OK)
+            {
+               this.UpdateData(BEditorInstance.BrunchDataStructure);
+            }
         }
-        
         private void RequestInsertSelectedBrunchNode(string itemTag)
         {
             if (InsertSelectedBrunchNodeRequested != null)
@@ -56,6 +61,26 @@ namespace Moo
                     Exceptioner.Log(e);
                 }
             }
+        }
+        private void InsertBrunchHandler(object sender, EventArgs e)
+        {
+            if (this.BrunchBrowserTree.SelectedNode == null) { return; }
+            if(this.BrunchBrowserTree.SelectedNode.Level==2)
+            {
+                if (InsertSelectedBrunchNodeRequested != null)
+                {
+                    try
+                    {
+                        InsertSelectedBrunchNodeRequested(this.BrunchBrowserTree.SelectedNode.Tag.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        Exceptioner.Log(ex);
+                    }
+                }
+            
+            }
+            
         }
         
 

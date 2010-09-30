@@ -19,6 +19,8 @@ namespace Moo.Controls
         {
             InitializeComponent();
             this.ShowPlusMinus = true;
+            //add handler
+            this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);       
         }
         public override void Refresh()
         {
@@ -58,8 +60,7 @@ namespace Moo.Controls
             //add the root(workspace) to the brunchbrowserview
             this.Nodes.Add(Root);
             this.ExpandAll();
-            //add handler
-            this.DoubleClick += new EventHandler(ProjectBrowser_DoubleClick);       
+            
         }       
         private void ScanDir(string dirpath, TreeNode  parent)
         {

@@ -68,12 +68,25 @@ namespace Moo
             this.FilePath = filepath;
             this.Text = filepath;
             this.TabText = this.FileName;
+        }
 
-            //add autocomplete
-            this.EdiorViewObject.AutoComplete.List.Add("add?1");
-            //add snippets
-            this.EdiorViewObject.Snippets.List.Add("a", "test()", '$', true);
-
+        //completion setup
+        public void UpadateCompletionList(List<string> keywords) 
+        {
+            foreach (string keyword in keywords) 
+            {
+                this.EdiorViewObject.AutoComplete.List.Add(keyword);
+            }
+            
+        }
+        public void UpdateSnippets(Dictionary<string,string> snippets) 
+        { 
+            //remove all exiting snippet and fill it again
+            this.EdiorViewObject.Snippets.List.Clear();
+            foreach(KeyValuePair<string,string>snippet in snippets )
+            {
+                this.EdiorViewObject.Snippets.List.Add(snippet.Key, snippet.Value, '$', true); 
+            }
         }
 
         //code edition
@@ -334,7 +347,7 @@ namespace Moo
             if (this.LineMarginWidth < Ratio * this.EditorView.Lines.Count.ToString().Length)
             {
                 this.LineMarginWidth = Ratio * this.EditorView.Lines.Count.ToString().Length;
-                this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth+10; 
+                this.EditorView.Margins[LINENUMBER_MARGIN].Width = this.LineMarginWidth+4; 
                 
             }
             //update the title to notify that the doc has changed

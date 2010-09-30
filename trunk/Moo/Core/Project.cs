@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.AccessControl;
 using System.IO;
+using System.Data;
 using Moo.Helpers;
 
 namespace Moo.Core
@@ -53,8 +54,7 @@ namespace Moo.Core
             this.folder = Path.GetDirectoryName(filepath);
             this.name = Path.GetFileNameWithoutExtension(filepath);
             this.icon = this.folder + @"\moobuild.ico";
-            this.date = DateTime.Now.Date; 
-        
+            this.date = DateTime.Now.Date;         
         }      
         public void Save()
         {
@@ -72,44 +72,74 @@ namespace Moo.Core
                 Exceptioner.Log(e);
             }
         }
-        public void CopyTemplate()
+        //public void CopyTemplate()
+        //{
+            
+        //}
+
+
+        protected void CopyTemplate(string templatename) 
         {
-            string source = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\templates\" + this.ToString(); 
+            string source = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Templates\" + templatename;
             FileHelper.CopyFolder(source, this.folder);
         }
-       
+        protected List<string> GetFiles(string filters)
+        {
+            return new List<string>();
+        }
+        protected List<string> GetKeywords(string datafile) 
+        {
+            string file = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Keywords\" + datafile + ".xml";
+            try
+            {
+                DataSet Ds = new DataSet();
+                Ds.ReadXml(file);
+                List<string> keywords= new List<string>();
+                foreach(DataRow r in  Ds.Tables[0].Rows)
+                {
+                    keywords.Add(r[0].ToString());
+                }
+                return keywords;
+            }
+            catch (Exception e)
+            {
+                Exceptioner.Log(e);
+                return new List<string>();
+            }    
+        }
+        
         #region Overridable Members
+
+        public virtual void CopyTemplate() 
+        {
+        
+        }
+        public virtual List<string> GetFiles()
+        {
+            return new List<string>();
+        }
+        public virtual List<string> GetKeywords()
+        {
+            return new List<string>();
+        }
 
         public virtual void Build()
         {
             
         }
-
         public virtual void Run()
         {
             
         }
-
         public virtual void GetBuildTool()
         {
             
         }
-
         public virtual void GetCmdArgs()
         {
             
         }
-
-        public virtual List<string> GetFiles()
-        {
-            return new List<string>();
-        }
-
-        public virtual List<string> GetKeywords() 
-        {
-            return new List<string>();
-        }
-
+        
         #endregion
 
     }   

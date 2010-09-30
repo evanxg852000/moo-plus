@@ -62,10 +62,10 @@ namespace Moo.Dialogs
                     this.TypeCbx.Items.AddRange(new string[] { "Html Website", "Yalamo Framework Project" });
                     break;
                 case "DATABASE":
-                    this.TypeCbx.Items.AddRange(new string[] { "Edml Project", "Mysql Management" });
+                    this.TypeCbx.Items.AddRange(new string[] { "Edml Project"});
                     break;
                 case "AJAX":
-                    this.TypeCbx.Items.AddRange(new string[] { "Adobe Air Project", "ExtJs Project" });
+                    this.TypeCbx.Items.AddRange(new string[] { "Adobe Air Project" });
                     break;
                 case "FILE":
                     this.TypeCbx.Items.AddRange(new string[]{"Asp","Batch","C++","C#","D","Html", "Hydro","Java","Javascript",

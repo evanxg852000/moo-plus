@@ -60,8 +60,7 @@ namespace Moo
         {
             Font userFont = new Font(codeeditorcong.Font, codeeditorcong.FontSize, codeeditorcong.FontStyle, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            //config-style line marging
-            scintilla.Margins[LINENUMBER_MARGIN].Width = 20; 
+            //config-style line marging 
             scintilla.Styles[STYLE_LINENUMBER].BackColor = Color.White;
             scintilla.Styles[STYLE_LINENUMBER].ForeColor = Color.DarkTurquoise;
             scintilla.Styles[STYLE_LINENUMBER].Bold = true;
@@ -70,6 +69,12 @@ namespace Moo
             scintilla.UseFont = true;
             scintilla.Font = userFont;
             scintilla.Styles[STYLE_LINENUMBER].Size =(float)codeeditorcong.FontSize;
+
+            int Ratio = (int)codeeditorcong.FontSize;
+            scintilla.Margins[LINENUMBER_MARGIN].Width = Ratio * scintilla.Lines.Count.ToString().Length + 4;
+
+            
+
             scintilla.Folding.MarkerScheme = codeeditorcong.FoldingMarker;
             scintilla.Caret.HighlightCurrentLine = codeeditorcong.IsLineHilighting;
         }

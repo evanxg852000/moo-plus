@@ -90,11 +90,12 @@
             this.MUnfoldAll = new System.Windows.Forms.MenuItem();
             this.MViewMenu = new System.Windows.Forms.MenuItem();
             this.MLanguage = new System.Windows.Forms.MenuItem();
+            this.MTEXTLanguage = new System.Windows.Forms.MenuItem();
             this.MASPLanguage = new System.Windows.Forms.MenuItem();
             this.MBatchLanguage = new System.Windows.Forms.MenuItem();
             this.MCsharpLanguage = new System.Windows.Forms.MenuItem();
-            this.MCppLanguage = new System.Windows.Forms.MenuItem();
             this.MCssLanguage = new System.Windows.Forms.MenuItem();
+            this.MCppLanguage = new System.Windows.Forms.MenuItem();
             this.MDLanguage = new System.Windows.Forms.MenuItem();
             this.MHtmlLanguage = new System.Windows.Forms.MenuItem();
             this.MHydroLanguage = new System.Windows.Forms.MenuItem();
@@ -525,11 +526,12 @@
             // 
             this.MLanguage.Index = 0;
             this.MLanguage.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.MTEXTLanguage,
             this.MASPLanguage,
             this.MBatchLanguage,
             this.MCsharpLanguage,
-            this.MCppLanguage,
             this.MCssLanguage,
+            this.MCppLanguage,
             this.MDLanguage,
             this.MHtmlLanguage,
             this.MHydroLanguage,
@@ -543,33 +545,32 @@
             this.MXmlLanguage});
             this.MLanguage.Text = "Language";
             // 
+            // MTEXTLanguage
+            // 
+            this.MTEXTLanguage.Index = 0;
+            this.MTEXTLanguage.Tag = "txt";
+            this.MTEXTLanguage.Text = "TEXT";
+            // 
             // MASPLanguage
             // 
-            this.MASPLanguage.Index = 0;
+            this.MASPLanguage.Index = 1;
             this.MASPLanguage.Tag = "asp";
             this.MASPLanguage.Text = "ASP";
             this.MASPLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MBatchLanguage
             // 
-            this.MBatchLanguage.Index = 1;
+            this.MBatchLanguage.Index = 2;
             this.MBatchLanguage.Tag = "batch";
-            this.MBatchLanguage.Text = "Batch";
+            this.MBatchLanguage.Text = "BATCH";
             this.MBatchLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MCsharpLanguage
             // 
-            this.MCsharpLanguage.Index = 2;
+            this.MCsharpLanguage.Index = 3;
             this.MCsharpLanguage.Tag = "cs";
-            this.MCsharpLanguage.Text = "C#";
+            this.MCsharpLanguage.Text = "CS";
             this.MCsharpLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
-            // 
-            // MCppLanguage
-            // 
-            this.MCppLanguage.Index = 3;
-            this.MCppLanguage.Tag = "cpp";
-            this.MCppLanguage.Text = "C++";
-            this.MCppLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MCssLanguage
             // 
@@ -578,79 +579,86 @@
             this.MCssLanguage.Text = "CSS";
             this.MCssLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
+            // MCppLanguage
+            // 
+            this.MCppLanguage.Index = 5;
+            this.MCppLanguage.Tag = "cpp";
+            this.MCppLanguage.Text = "CPP";
+            this.MCppLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
+            // 
             // MDLanguage
             // 
-            this.MDLanguage.Index = 5;
+            this.MDLanguage.Index = 6;
             this.MDLanguage.Tag = "D";
             this.MDLanguage.Text = "D";
             this.MDLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MHtmlLanguage
             // 
-            this.MHtmlLanguage.Index = 6;
+            this.MHtmlLanguage.Index = 7;
             this.MHtmlLanguage.Tag = "html";
             this.MHtmlLanguage.Text = "HTML";
             this.MHtmlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MHydroLanguage
             // 
-            this.MHydroLanguage.Index = 7;
+            this.MHydroLanguage.Index = 8;
             this.MHydroLanguage.Tag = "hydro";
-            this.MHydroLanguage.Text = "Hydro";
+            this.MHydroLanguage.Text = "HYDRO";
             this.MHydroLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MIlasmLanguage
             // 
-            this.MIlasmLanguage.Index = 8;
+            this.MIlasmLanguage.Index = 9;
             this.MIlasmLanguage.Tag = "ilasm";
-            this.MIlasmLanguage.Text = "Ilasm";
+            this.MIlasmLanguage.Text = "ILASM";
             this.MIlasmLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MJavaLanguage
             // 
-            this.MJavaLanguage.Index = 9;
+            this.MJavaLanguage.Index = 10;
             this.MJavaLanguage.Tag = "java";
-            this.MJavaLanguage.Text = "Java";
+            this.MJavaLanguage.Text = "JAVA";
             this.MJavaLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MJavascriptLanguage
             // 
-            this.MJavascriptLanguage.Index = 10;
+            this.MJavascriptLanguage.Index = 11;
             this.MJavascriptLanguage.Tag = "js";
-            this.MJavascriptLanguage.Text = "Javascript";
+            this.MJavascriptLanguage.Text = "JAVASCRIPT";
             this.MJavascriptLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MPascalLanguage
             // 
-            this.MPascalLanguage.Index = 11;
+            this.MPascalLanguage.Index = 12;
             this.MPascalLanguage.Tag = "pascal";
-            this.MPascalLanguage.Text = "Pascal";
+            this.MPascalLanguage.Text = "PASCAL";
             this.MPascalLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MPhpLanguage
             // 
-            this.MPhpLanguage.Index = 12;
+            this.MPhpLanguage.Index = 13;
             this.MPhpLanguage.Tag = "phpscript";
             this.MPhpLanguage.Text = "PHP";
             this.MPhpLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MSqlLanguage
             // 
-            this.MSqlLanguage.Index = 13;
+            this.MSqlLanguage.Index = 14;
             this.MSqlLanguage.Tag = "mssql";
             this.MSqlLanguage.Text = "SQL";
             this.MSqlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MVbLanguage
             // 
-            this.MVbLanguage.Index = 14;
+            this.MVbLanguage.Index = 15;
             this.MVbLanguage.Tag = "vb";
             this.MVbLanguage.Text = "VB";
             this.MVbLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
             // 
             // MXmlLanguage
             // 
-            this.MXmlLanguage.Index = 15;
+            this.MXmlLanguage.Index = 16;
             this.MXmlLanguage.Tag = "xml";
             this.MXmlLanguage.Text = "XML";
             this.MXmlLanguage.Click += new System.EventHandler(this.SetCodeLanguage);
@@ -1689,6 +1697,7 @@
         private System.Windows.Forms.MenuItem MPageSetup;
         private System.Windows.Forms.MenuItem MVbLanguage;
         private System.Windows.Forms.MenuItem MBuildRunProject;
+        private System.Windows.Forms.MenuItem MTEXTLanguage;
 
 
     }
