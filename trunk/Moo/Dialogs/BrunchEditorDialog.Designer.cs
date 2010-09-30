@@ -99,7 +99,6 @@
             // BrunchTree
             // 
             this.BrunchTree.BrunchDataStructure = null;
-            this.BrunchTree.BrunchTriggerDictionary = null;
             this.BrunchTree.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrunchTree.ImageIndex = 0;
             this.BrunchTree.Location = new System.Drawing.Point(2, 53);
@@ -238,6 +237,7 @@
             // 
             // BTypeCbx
             // 
+            this.BTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BTypeCbx.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTypeCbx.FormattingEnabled = true;
             this.BTypeCbx.Location = new System.Drawing.Point(472, 261);

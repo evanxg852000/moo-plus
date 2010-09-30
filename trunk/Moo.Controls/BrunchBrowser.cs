@@ -15,7 +15,7 @@ namespace Moo.Controls
         public event ItemSelectedHandler ItemSelected;
         private string brunchfile;
         private DataSet brunchdatastructure;
-        private Dictionary<string, string> brunchtriggerdictionary;
+        
 
         public string BrunchFile {
             get { return brunchfile; }
@@ -24,15 +24,10 @@ namespace Moo.Controls
             get { return brunchdatastructure; }
             set { this.brunchdatastructure = value; }
         }
-        public Dictionary<string, string> BrunchTriggerDictionary
-        {
-            get { return brunchtriggerdictionary; }
-            set { this.brunchtriggerdictionary = value; }
-        }        
-       
+        
         public BrunchBrowser(){  
             InitializeComponent();
-            this.brunchfile =Path.GetDirectoryName(Application.ExecutablePath) +@"\brunchs\brunchs.xml";
+            this.brunchfile =Path.GetDirectoryName(Application.ExecutablePath) +@"\Configuration\brunchs.xml";
             this.GetData();
         }
         
@@ -69,7 +64,7 @@ namespace Moo.Controls
                 foreach(DataRow Brow in table.Rows)
                 {
                     TreeNode Brunch = new TreeNode(Brow["Name"].ToString());
-                    Brunch.Name = Brow["Num"].ToString();
+                    Brunch.Name = Brow["Name"].ToString();
                     Brunch.ImageIndex = (int)FBrunchImages.Brunch;
                     Brunch.SelectedImageIndex = (int)FBrunchImages.Brunch;
                     Brunch.Tag = Brow["Content"].ToString();
@@ -104,14 +99,6 @@ namespace Moo.Controls
             //fill the structure field  
             this.brunchdatastructure = new DataSet();
             this.brunchdatastructure = XmlDs;
-
-            //fill the dictionarry
-            this.brunchtriggerdictionary = new Dictionary<string, string>();
-            foreach (DataTable category in XmlDs.Tables) {
-                foreach (DataRow item in category.Rows) {
-                    this.brunchtriggerdictionary.Add(item["Triger"].ToString(), item["Content"].ToString());
-                }
-            }
         }
               
         private void BrunchBrowser_DoubleClick(object sender, EventArgs e)

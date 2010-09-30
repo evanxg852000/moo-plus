@@ -105,6 +105,11 @@ namespace Moo.Core
             return new List<string>();
         }
 
+        public virtual List<string> GetKeywords() 
+        {
+            return new List<string>();
+        }
+
         #endregion
 
     }   

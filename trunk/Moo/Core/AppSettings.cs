@@ -135,7 +135,7 @@ namespace Moo.Core
             //serialize the object to save
             try
             {
-                using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Write))
+                using (FileStream fs = new FileStream(@"Configuration/mooconf.mco", FileMode.Open, FileAccess.Write))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(fs, MooAppSettings);
@@ -149,7 +149,7 @@ namespace Moo.Core
             AppSettings ASObject = new AppSettings();
             try
             {
-                using (FileStream fs = new FileStream(@"config/mooconf.mco", FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new FileStream(@"Configuration/mooconf.mco", FileMode.Open, FileAccess.Read))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     ASObject = (AppSettings)bf.Deserialize(fs);
