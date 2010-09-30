@@ -214,6 +214,13 @@ namespace Moo.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Insert {
+            get {
+                object obj = ResourceManager.GetObject("Insert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Keyword_icon {
             get {
                 object obj = ResourceManager.GetObject("Keyword_icon", resourceCulture);

@@ -180,6 +180,23 @@ namespace Moo
                 MRecentProjects.MenuItems.Add(mi);
             }
         }
+        private CodeEditor CreateEditor(string filename,string filetype) 
+        {
+            string lexer = SupportedFiles.GetLexer(filetype);
+            filename += SupportedFiles.GetExtension(filetype);
+            CodeEditor ce = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
+           
+            //TODO : get keywordlist from current project but keep dummie date for now
+            List<string> ls = new List<string>() { "function?0", "Cookie?2", "Load->View()?6", "AppConfig()?6", "Yalamo::Void?8" };
+            ce.UpadateCompletionList(ls);
+
+            //add brunchs to editor list
+            Dictionary<string,string> dic= MOO_BRUNCH_BROWSER.GetBrunchDictionary(filetype);
+            ce.UpdateSnippets(dic);   
+            ce.SetLanguage(lexer);         
+            ce.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+            return ce;
+        }
         
 
         #region Menu Event Handlers
@@ -193,16 +210,12 @@ namespace Moo
             } 
         }        
         private void QuickFile(object sender, EventArgs e)
-        {
+        {    
             QuickFileCounter++;
-            string fileExtention = ".txt";
-            string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileExtention);
-            string filename = @"C:\New File" + QuickFileCounter + fileExtention;
-            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
-            MCED.SetLanguage(fileLanguage);
-            MCED.Show(MDockArea);
-            MCED.DockState = DockState.Document;
-            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
+            string file = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +@"\New " +QuickFileCounter; 
+            CodeEditor MCDE= this.CreateEditor(file,"TEXT");
+            MCDE.Show(MDockArea);
+            MCDE.DockState = DockState.Document;
         }       
         private void OpenPrjectFile(object sender, EventArgs e)
         {
@@ -563,16 +576,16 @@ namespace Moo
             MenuItem m = (MenuItem)(sender);
             if (MDockArea.ActiveDocument.GetType().Equals(typeof(CodeEditor)))
             {
-                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument;
-                ce.SetLanguage(m.Tag.ToString());
-                m.Checked=true;
+                CodeEditor ce = (CodeEditor)MDockArea.ActiveDocument; 
                 foreach (MenuItem item in MLanguage.MenuItems)
                 {
-                    if (item.Tag.ToString() != m.Tag.ToString())
-                    {
                         item.Checked = false;
-                    }
                 }
+                //change brunch
+                Dictionary<string, string> dic = MOO_BRUNCH_BROWSER.GetBrunchDictionary(m.Text);
+                ce.UpdateSnippets(dic);   
+                ce.SetLanguage(m.Tag.ToString());
+                m.Checked = true;
             } 
         }
         private void ZoomInCode(object sender, EventArgs e)
@@ -695,11 +708,15 @@ namespace Moo
         }
         private void CreateBrunch(object sender, EventArgs e)
         {
-            BrunchEditorDialog.Show(this.MOO_BRUNCH_BROWSER.BrunchDataStructure);
+            BrunchEditorDialog BEditorInstance=new BrunchEditorDialog(this.MOO_BRUNCH_BROWSER.BrunchDataStructure);
+            if(BEditorInstance.ShowDialog()==DialogResult.OK)
+            {
+                this.MOO_BRUNCH_BROWSER.UpdateData(BEditorInstance.BrunchDataStructure);
+                this.MOO_BRUNCH_BROWSER.Refresh();
+            }
         }
         private void ManageUpdate(object sender, EventArgs e)
-        {
-            
+        {            
             UpdateDialog.Show();
         }
 

@@ -20,4 +20,40 @@ namespace Moo.Core
 
 
 
+   class SupportedFiles{
+       private static Dictionary<string, string> Supportedfiles = new Dictionary<string, string>()
+       {
+           {"TEXT",".txt"}, {"ASP", ".asp"}, {"BATCH", ".bat"}, {"CS", ".cs"}, {"CSS", ".css"},
+           {"CPP", ".cpp"},{"CPPB", ".h"}, {"D", ".d"}, {"HTML", ".html"},{"HTMLB", ".htm"},
+           {"HTMLC", ".xhtml"},{"HYDRO", ".hyd"},{"ILASM", ".il"},{"JAVA", ".java"},{"JAVASCRIPT", ".js"},
+           {"PASCAL", ".pas"},{"PHP", ".php"},{"SQL", ".sql"},{"VB", ".vb"},{"XML", ".xml"}
+       };
+
+       public static string GetExtension(string title){
+           if(SupportedFiles.Supportedfiles.ContainsKey(title))
+           {
+               return SupportedFiles.Supportedfiles[title];
+           }
+           else
+           {
+            return String.Empty;
+           }
+           
+       }
+       public static string GetLexer(string title){
+           if(SupportedFiles.Supportedfiles.ContainsKey(title))
+           {
+               return SupportedFiles.Supportedfiles[title].Replace(".", ""); 
+           }
+           else
+           {
+            return String.Empty;
+           }
+       }
+   
+   }
+
+
+
+
 }

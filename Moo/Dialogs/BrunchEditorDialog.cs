@@ -32,18 +32,13 @@ namespace Moo.Dialogs
         {
             InitializeComponent();
             this.SetupMargin();
-            this.BrunchTree.BrunchDataStructure = brunchdatastructure;
+            this.BrunchTree.UpdateData(brunchdatastructure);
             this.BTypeCbx.Items.Clear();
             foreach (DataTable type in this.BrunchTree.BrunchDataStructure.Tables)
             {
                 this.BTypeCbx.Items.Add(type.TableName.ToString());
             }
             initialisefield();
-        }
-        public static void Show(DataSet bruncstructure)
-        {
-            BrunchEditorDialog Instance = new BrunchEditorDialog(bruncstructure);
-            Instance.ShowDialog();
         }
 
         private void initialisefield(){

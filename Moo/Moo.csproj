@@ -300,6 +300,7 @@
     <Content Include="Application-icon.ico" />
     <Content Include="icon.ico" />
     <None Include="Resources\Edit.png" />
+    <None Include="Resources\Insert.png" />
     <Content Include="Resources\Proadobe.png" />
     <Content Include="Resources\Prodbdesign.png" />
     <Content Include="Resources\Prodesktop.png" />

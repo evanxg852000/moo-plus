@@ -98,7 +98,6 @@
             // 
             // BrunchTree
             // 
-            this.BrunchTree.BrunchDataStructure = null;
             this.BrunchTree.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrunchTree.ImageIndex = 0;
             this.BrunchTree.Location = new System.Drawing.Point(2, 53);
