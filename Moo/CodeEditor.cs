@@ -68,6 +68,12 @@ namespace Moo
             this.FilePath = filepath;
             this.Text = filepath;
             this.TabText = this.FileName;
+
+            //add autocomplete
+            this.EdiorViewObject.AutoComplete.List.Add("add?1");
+            //add snippets
+            this.EdiorViewObject.Snippets.List.Add("a", "test()", '$', true);
+
         }
 
         //code edition
