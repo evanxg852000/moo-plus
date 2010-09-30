@@ -1,1 +1,0 @@
-ildasm /tok /byt inputfile.exe /out=outpoutfile.il
