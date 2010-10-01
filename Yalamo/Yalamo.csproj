@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensibility\IPAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IPAbout.Designer.cs">
+      <DependentUpon>IPAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensibility\IPlugable.cs" />
     <Compile Include="Gui\Dock\AutoHideStripBase.cs">
       <SubType>Component</SubType>
@@ -157,8 +163,16 @@
     <Compile Include="Helpers\YXml.cs" />
     <Compile Include="Core\Exceptioner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Extensibility\IPAbout.resx">
+      <DependentUpon>IPAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Dock\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -167,6 +181,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\YForm.resx">
       <DependentUpon>YForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
