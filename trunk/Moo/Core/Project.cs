@@ -72,23 +72,21 @@ namespace Moo.Core
                 Exceptioner.Log(e);
             }
         }
-        //public void CopyTemplate()
-        //{
-            
-        //}
-
+       
 
         protected void CopyTemplate(string templatename) 
         {
             string source = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Templates\" + templatename;
-            FileHelper.CopyFolder(source, this.folder);
+            FileHelper.CopyFolder(source,this.folder);
         }
         protected List<string> GetFiles(string filters)
         {
+            //TODO : implement the right here because it is common
             return new List<string>();
         }
         protected List<string> GetKeywords(string datafile) 
         {
+            //TODO: implement the right here because it is common
             string file = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Keywords\" + datafile + ".xml";
             try
             {
@@ -112,7 +110,7 @@ namespace Moo.Core
 
         public virtual void CopyTemplate() 
         {
-        
+            //nothing to do here
         }
         public virtual List<string> GetFiles()
         {

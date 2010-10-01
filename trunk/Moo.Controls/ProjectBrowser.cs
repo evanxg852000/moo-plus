@@ -102,6 +102,7 @@ namespace Moo.Controls
         }  
         void ProjectBrowser_DoubleClick(object sender, EventArgs e)
         {
+            if ((this.SelectedNode == null)||(this.SelectedNode.Level==0)) { return; }
            bool isfile= Path.HasExtension(this.SelectedNode.Tag.ToString());
            if (isfile)
            {

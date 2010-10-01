@@ -14,23 +14,28 @@ namespace Moo.Dialogs
 {
     public partial class NewDialog : YForm
     {
+        private string newoption;
         private Project createdproject;
         private string currentfolder;
         public Project CreateProject {
             get { return createdproject; }
         }
 
-        public string RType
+        public string ResultObjectType
         {
             get { return TypeCbx.SelectedItem.ToString(); }
         }
-        public string RName
+        public string ResultObjectName
         {
             get { return NameTbx.Text; }
         }
-        public string RFolder
+        public string ResultObjectFolder
         {
             get { return FolderTbx.Text; }
+        }
+        public string NewOption 
+        {
+            get { return newoption; }
         }
 
  
@@ -44,8 +49,10 @@ namespace Moo.Dialogs
                 this.currentfolder = currentProject.Folder;
             }
             
-            //initialise           
-            this.TypeCbx.Items.AddRange(new string[]{"C Sharp Project","Visual Basic Project","Ilasm Project","Hydro Project" });
+            //initialise   
+            this.newoption = "PROJECT";
+            this.createdproject = null;
+            this.TypeCbx.Items.AddRange(new string[] { "C SHARP", "ILASM", "HYDRO", "V BASIC" });
             this.NameTbx.Text="";
             this.FolderTbx.Text = this.currentfolder;  
             this.TypeCbx.SelectedIndex = 0; 
@@ -56,28 +63,33 @@ namespace Moo.Dialogs
             switch (e.Item.Tag.ToString())
             {
                 case "DESKTOP":
-                    this.TypeCbx.Items.AddRange(new string[] { "C Sharp Project", "Visual Basic Project", "Ilasm Project", "Hydro Project" });
+                    this.TypeCbx.Items.AddRange(new string[] { "C SHARP", "ILASM", "HYDRO", "V BASIC" });
+                    this.newoption = "PROJECT";
                     break;
                 case "WEB":
-                    this.TypeCbx.Items.AddRange(new string[] { "Html Website", "Yalamo Framework Project" });
+                    this.TypeCbx.Items.AddRange(new string[] { "HTML WEBSITE", "YALAMO WEBSITE" });
+                    this.newoption = "PROJECT";
                     break;
                 case "DATABASE":
-                    this.TypeCbx.Items.AddRange(new string[] { "Edml Project"});
+                    this.TypeCbx.Items.AddRange(new string[] { "DATABASE"});
+                    this.newoption = "PROJECT";
                     break;
                 case "AJAX":
-                    this.TypeCbx.Items.AddRange(new string[] { "Adobe Air Project" });
+                    this.TypeCbx.Items.AddRange(new string[] { "ADOBE AIR" });
+                    this.newoption = "PROJECT";
                     break;
                 case "FILE":
-                    this.TypeCbx.Items.AddRange(new string[]{"Asp","Batch","C++","C#","D","Html", "Hydro","Java","Javascript",
-                                                             "Pascal","Php","Sql","VBasic","Xml" });
+                    this.TypeCbx.Items.AddRange(new string[]{"TEXT","ASP","BATCH","CS","CSS","CPP","CPPH","D","HTML","HTM",
+                                           "XHTML","HYDRO","ILASM", "JAVA","JAVASCRIPT","PASCAL","PHP", "SQL","VB","XML" });
+                    this.newoption = "FILE";
                     break;
                 case "UNMANAGED":
-                    this.TypeCbx.Items.AddRange(new string[] { "Unmanaged" });
+                    this.TypeCbx.Items.AddRange(new string[] { "UNMANAGED" });
+                    this.newoption = "PROJECT";
                     break;
             }
             this.StatusMsg.Text = e.Item.ToolTipText;
             this.TypeCbx.SelectedIndex = 0;
-           
         }
         private void BrowseBt_Click(object sender, EventArgs e)
         {
@@ -94,17 +106,47 @@ namespace Moo.Dialogs
         }
         private void CreateBt_Click(object sender, EventArgs e)
         {
-                if (NameTbx.Text !=String.Empty)
+            if (NameTbx.Text == String.Empty) { this.StatusMsg.Text = "Please Complete the form !"; return; }
+            if (FolderTbx.Text == String.Empty) { this.StatusMsg.Text = "Please Complete the form !"; return; }
+            //if the user setsup a project we create it , if he sets up a file we just leave properties to be taken by the caller
+            if (this.newoption == "PROJECT")
+            {
+                PType protype= PType.Unmanaged;
+                switch (TypeCbx.SelectedItem.ToString())
                 {
-                    if (FolderTbx.Text != String.Empty)
-                    {
-                        this.DialogResult = DialogResult.OK;
-                        this.createdproject = new Project();
-                        this.Close();
-                        return;
-                    }
+                    case "ADOBE AIR":
+                        protype = PType.Adobeair;
+                        break;
+                    case "C SHARP":
+                        protype = PType.Csharp;
+                        break;
+                    case "DATABASE":
+                        protype = PType.Databse;
+                        break;
+                    case "ILASM":
+                        protype = PType.Ilasm;
+                        break;
+                    case "HTML WEBSITE":
+                        protype = PType.Website;
+                        break;
+                    case "HYDRO":
+                        protype = PType.Hydro;
+                        break;
+                    case "UNMANAGED":
+                        protype = PType.Unmanaged;
+                        break;
+                    case "V BASIC":
+                        protype = PType.Vbasic;
+                        break;
+                    case "YALAMO WEBSITE":
+                        protype = PType.Yalamof;
+                        break;
                 }
-            this.StatusMsg.Text="Please Complete the form !";
+                this.createdproject = ProjectFactory.Create(FolderTbx.Text, NameTbx.Text, protype,IncTemplate.Checked);
+            }    
+            this.DialogResult = DialogResult.OK;
+            this.Close();           
+            
         }
 
         
