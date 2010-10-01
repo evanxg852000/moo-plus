@@ -8,37 +8,39 @@ using Yalamo.Gui.Dock;
 namespace Yalamo.Extensibility
 {
      //each plugin must implement IPlugable 
+    public interface IPlugable
+    {
+        DockContent Main();         
+        Bitmap Icon();               
+        DockContent Toolbox();                    
+    }
 
-    //this class hold the properties of a plugin
-    public class PluginProperties
-    {   
-        private string name;
-        private string author;
-        private string description; 
-        private string website;
-        private string version;
+    //each plugin must inherit PluginBase 
+    public class PluginBase {
+        protected string name;
+        protected string author;
+        protected string description;
+        protected string website;
+        protected string version;
         public string Name { get { return name; } }
         public string Author { get { return author; } }
         public string Description { get { return description; } }
         public string Website { get { return website; } }
         public string Version { get { return version; } }
 
-        public PluginProperties(string name, string author, string description, string website, string version)
+        public PluginBase() 
         {
-            this.name = name;
-            this.author = author;
-            this.description = description;
-            this.website = website;
-            this.version = version;
-        }
-    }
-    //the plugin interface  
-    public interface IPlugable
-    {
-        DockContent Main();         //return the Mainpanel of the plugin
-        Image Icon();               //return the image of the plugin
-        DockContent Toolbox();      //return the Tolbox of the plugin
-        PluginProperties About();   //return the plugin properties Object
+            this.name = String.Empty;
+            this.author = String.Empty;
+            this.description = String.Empty;
+            this.website = String.Empty;
+            this.version = String.Empty;     
+        }       
+        public void About()
+        {
+            IPAbout.ShowAboutPlugin(this.Name,this.author,this.description,this.website,this.version);
+        } 
+    
     }
 
 }
