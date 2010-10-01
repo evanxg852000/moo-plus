@@ -13,44 +13,51 @@ namespace Moo.Core
     class ProjectFactory
     {
         
-        public static Project Create(string Profolder, string Proname, PType Protype)
+        public static Project Create(string Profolder, string Proname, PType Protype, bool Inctemplate)
         {
-            Project PObject =new Project();
+            Project PObject ;
+            Protype = PType.Adobeair;
             string Profile = Profolder + @"\" + Proname + @"\" + Proname + ".mpr";
             Profolder = Profolder + @"\" + Proname;
             switch (Protype) {
                 case PType.Adobeair:
-                    PObject = new Adobeair();
+                    PObject = new Adobeair(Profile);
                     break;
                 case PType.Csharp:
-                        PObject=new Csharp();
+                    PObject = new Csharp(Profile);
                     break;
                 case PType.Databse:
-                    PObject = new Databse();
+                    PObject = new Database(Profile);
                     break;
                 case PType.Hydro:
-                    PObject = new Hydro();
+                    PObject = new Hydro(Profile);
                     break;
                 case PType.Ilasm:
-                    PObject = new Ilasm();
+                    PObject = new Ilasm(Profile);
                     break;
                 case PType.Unmanaged:
-                    PObject = new Unmanaged();
+                    PObject = new Unmanaged(Profile);
                     break;
                 case PType.Vbasic:
-                        PObject=new Vbasic();
+                    PObject = new Vbasic(Profile);
                     break;
                 case PType.Website:
-                    PObject = new Website();
+                    PObject = new Website(Profile);
                     break;
                 case PType.Yalamof:
-                    PObject = new Yalamof();
-                    break;       
+                    PObject = new Yalamof(Profile);
+                    break;    
+                default:
+                    PObject = new Unmanaged();
+                    break;
             }
             try
             {
                 Directory.CreateDirectory(Profolder);
-                PObject.CopyTemplate();
+                if (Inctemplate == true) 
+                {
+                    PObject.CopyTemplate();
+                }         
                 PObject.Save();
             }
             catch (Exception e)

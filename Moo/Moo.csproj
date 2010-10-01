@@ -78,7 +78,7 @@
   <ItemGroup>
     <Compile Include="Core\ProjectFactory.cs" />
     <Compile Include="Core\Projects\Adobeair.cs" />
-    <Compile Include="Core\Projects\Databse.cs" />
+    <Compile Include="Core\Projects\Database.cs" />
     <Compile Include="Core\Projects\Hydro.cs" />
     <Compile Include="Core\Projects\Ilasm.cs" />
     <Compile Include="Core\Projects\Unmanaged.cs" />

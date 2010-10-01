@@ -204,10 +204,23 @@ namespace Moo
         private void NewPrjectFile(object sender, EventArgs e)
         {
             NewDialog newdialog = new NewDialog(null);
-            if (newdialog.ShowDialog() == DialogResult.OK)
+            if (newdialog.ShowDialog() != DialogResult.OK) { return; }
+            if (newdialog.NewOption == "PROJECT")
             {
-                MessageBox.Show("cool to do");
-            } 
+                if (newdialog.CreateProject != null)
+                {
+                    MOO_APPLICATION_SETTINGS.CurrentProject = newdialog.CreateProject;              
+                    MOO_PROJECT_BROWSER.BuildNodes(newdialog.CreateProject.Folder, newdialog.CreateProject.File, newdialog.CreateProject.Name);
+                }
+            }
+            else 
+            {
+                MessageBox.Show(newdialog.ResultObjectType+" only for file");
+                CodeEditor MCDE = this.CreateEditor(newdialog.ResultObjectFolder+@"\"+ newdialog.ResultObjectName, newdialog.ResultObjectType);
+                MCDE.Show(MDockArea);
+                MCDE.DockState = DockState.Document;   
+            }
+            
         }        
         private void QuickFile(object sender, EventArgs e)
         {    

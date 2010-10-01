@@ -24,8 +24,8 @@ namespace Moo.Core
        private static Dictionary<string, string> Supportedfiles = new Dictionary<string, string>()
        {
            {"TEXT",".txt"}, {"ASP", ".asp"}, {"BATCH", ".bat"}, {"CS", ".cs"}, {"CSS", ".css"},
-           {"CPP", ".cpp"},{"CPPB", ".h"}, {"D", ".d"}, {"HTML", ".html"},{"HTMLB", ".htm"},
-           {"HTMLC", ".xhtml"},{"HYDRO", ".hyd"},{"ILASM", ".il"},{"JAVA", ".java"},{"JAVASCRIPT", ".js"},
+           {"CPP", ".cpp"},{"CPPH", ".h"}, {"D", ".d"}, {"HTML", ".html"},{"HTM", ".htm"},
+           {"XHTML", ".xhtml"},{"HYDRO", ".hyd"},{"ILASM", ".il"},{"JAVA", ".java"},{"JAVASCRIPT", ".js"},
            {"PASCAL", ".pas"},{"PHP", ".php"},{"SQL", ".sql"},{"VB", ".vb"},{"XML", ".xml"}
        };
 
@@ -50,6 +50,7 @@ namespace Moo.Core
             return String.Empty;
            }
        }
+
    
    }
 

@@ -50,7 +50,7 @@
             this.FolderTbx = new System.Windows.Forms.TextBox();
             this.BrowseBt = new System.Windows.Forms.Button();
             this.NewCategory = new System.Windows.Forms.ListView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.IncTemplate = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -181,17 +181,19 @@
             this.NewCategory.UseCompatibleStateImageBehavior = false;
             this.NewCategory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.ProjectCategoryChangeHandler);
             // 
-            // checkBox1
+            // IncTemplate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(433, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(149, 22);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Use default template";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.IncTemplate.AutoSize = true;
+            this.IncTemplate.Checked = true;
+            this.IncTemplate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.IncTemplate.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncTemplate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IncTemplate.Location = new System.Drawing.Point(424, 230);
+            this.IncTemplate.Name = "IncTemplate";
+            this.IncTemplate.Size = new System.Drawing.Size(158, 22);
+            this.IncTemplate.TabIndex = 8;
+            this.IncTemplate.Text = "Use default template ?";
+            this.IncTemplate.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -251,7 +253,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.IncTemplate);
             this.Controls.Add(this.NewCategory);
             this.Controls.Add(this.TypeCbx);
             this.Controls.Add(this.CancelBt);
@@ -277,7 +279,7 @@
             this.Controls.SetChildIndex(this.CancelBt, 0);
             this.Controls.SetChildIndex(this.TypeCbx, 0);
             this.Controls.SetChildIndex(this.NewCategory, 0);
-            this.Controls.SetChildIndex(this.checkBox1, 0);
+            this.Controls.SetChildIndex(this.IncTemplate, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -300,7 +302,7 @@
         private System.Windows.Forms.TextBox FolderTbx;
         private System.Windows.Forms.Button BrowseBt;
         private System.Windows.Forms.ListView NewCategory;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox IncTemplate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -5,34 +5,33 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
-    class Ilasm: Project
+    class Database : Project
     {
-        public Ilasm() : base()
+        public Database() : base()             
         {
             //nothing to do
         }
-        public Ilasm(string filepath) : base(filepath)
+        public Database(string filepath) : base(filepath)
         {
             //just initialise with the base constructor
         }
-
 
         #region Overriden Methods
 
         public override void CopyTemplate()
         {
-            base.CopyTemplate("Ilasm");
+            base.CopyTemplate("Database");
             base.CopyTemplate();
         }
         public override List<string> GetFiles()
         {
             base.GetFiles();
-            return base.GetFiles("Ilasm");
+            return base.GetFiles("Database");
         }
         public override List<string> GetKeywords()
         {
             base.GetKeywords();
-            return base.GetKeywords("Ilasm");
+            return base.GetKeywords("Database");
         }
 
         public override void Build()
@@ -50,9 +49,10 @@ namespace Moo.Core.Projects
         public override void GetCmdArgs()
         {
 
-        }
+        }    
 
         #endregion
+
 
     }
 }

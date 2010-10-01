@@ -86,6 +86,8 @@ namespace Moo.Controls
 
         public Dictionary<string, string> GetBrunchDictionary(string brunchtype) 
         {
+            if (brunchtype == "CPPH") { brunchtype = "CPP"; }
+            if ((brunchtype == "XHTML")||(brunchtype == "HTM")) { brunchtype = "HTML";}
             Dictionary<string, string> Dic = new Dictionary<string, string>();
             foreach (DataRow dr in this.brunchdatastructure.Tables[brunchtype].Rows)
             {
