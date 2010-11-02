@@ -25,8 +25,8 @@ namespace Moo.Dialogs
         private ProjectConfigDialog(Project Project)
         {
             InitializeComponent();
-            //this.CurrentProject = Project;
-           // this.ProjectAssemblies = Project.Refferences;
+            this.CurrentProject = Project;
+            //this.ProjectAssemblies = Project.Refferences;
             InitializeToCurrentproject();
         }
         public static void Show(Project currentproject)

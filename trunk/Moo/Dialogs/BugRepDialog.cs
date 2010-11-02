@@ -16,7 +16,6 @@ namespace Moo.Dialogs
         public BugRepDialog()
         {
             InitializeComponent();
-            this.SetupMargin();
         }
         public static new void Show()
         {

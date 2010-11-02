@@ -33,13 +33,7 @@
             this.BugContentTx = new System.Windows.Forms.TextBox();
             this.ReportBt = new System.Windows.Forms.Button();
             this.CancelBt = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.Location = new System.Drawing.Point(0, 29);
-            this.Logo.Size = new System.Drawing.Size(384, 1);
             // 
             // AttachLogCkbx
             // 
@@ -96,6 +90,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Border.Bottom = 0;
+            this.Border.Left = 0;
+            this.Border.Right = 0;
+            this.Border.Top = 50;
             this.ClientSize = new System.Drawing.Size(373, 247);
             this.Controls.Add(this.BugContentTx);
             this.Controls.Add(this.AttachLogCkbx);
@@ -111,13 +109,6 @@
             this.Name = "BugRepDialog";
             this.ShowInTaskbar = false;
             this.Text = "Bugs";
-            this.TopMargin = 30;
-            this.Controls.SetChildIndex(this.ReportBt, 0);
-            this.Controls.SetChildIndex(this.CancelBt, 0);
-            this.Controls.SetChildIndex(this.AttachLogCkbx, 0);
-            this.Controls.SetChildIndex(this.BugContentTx, 0);
-            this.Controls.SetChildIndex(this.Logo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

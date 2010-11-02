@@ -42,7 +42,7 @@ namespace Moo.Dialogs
         public NewDialog(Project currentProject)
         {
             InitializeComponent();
-            this.SetupMargin();
+           
             this.currentfolder=Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Moo Workspace";
             if (currentProject != null)
             {

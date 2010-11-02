@@ -89,24 +89,36 @@ namespace Moo.Controls
             if (brunchtype == "CPPH") { brunchtype = "CPP"; }
             if ((brunchtype == "XHTML")||(brunchtype == "HTM")) { brunchtype = "HTML";}
             Dictionary<string, string> Dic = new Dictionary<string, string>();
-            foreach (DataRow dr in this.brunchdatastructure.Tables[brunchtype].Rows)
+            try
             {
-                if (!Dic.ContainsKey(dr["Triger"].ToString()))
+                foreach (DataRow dr in this.brunchdatastructure.Tables[brunchtype].Rows)
                 {
-                    Dic.Add(dr["Triger"].ToString(), dr["Content"].ToString());
+                    if (!Dic.ContainsKey(dr["Triger"].ToString()))
+                    {
+                        Dic.Add(dr["Triger"].ToString(), dr["Content"].ToString());
+                    }
                 }
+            }catch {
+                //just keep quiete
             }
             if (brunchtype == "TEXT")
             {
                 return Dic;
             }
-            foreach (DataRow dr in this.brunchdatastructure.Tables["TEXT"].Rows)
+            try
             {
-                if (!Dic.ContainsKey(dr["Triger"].ToString()))
+
+            }
+            catch 
+            {
+                foreach (DataRow dr in this.brunchdatastructure.Tables["TEXT"].Rows)
                 {
-                    Dic.Add(dr["Triger"].ToString(), dr["Content"].ToString());
-                }   
-            }            
+                    if (!Dic.ContainsKey(dr["Triger"].ToString()))
+                    {
+                        Dic.Add(dr["Triger"].ToString(), dr["Content"].ToString());
+                    }
+                }  
+            }        
             return Dic;
         }
         private void GetData() 

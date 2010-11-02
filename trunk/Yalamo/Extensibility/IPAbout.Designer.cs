@@ -34,16 +34,8 @@
             this.PluginDescription = new System.Windows.Forms.TextBox();
             this.PluginVersion = new System.Windows.Forms.Label();
             this.PluginAuthor = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.Location = new System.Drawing.Point(0, 25);
-            this.Logo.Size = new System.Drawing.Size(377, 1);
-            // 
-            // Okbt
-            // 
+
             this.Okbt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Okbt.Location = new System.Drawing.Point(300, 164);
             this.Okbt.Name = "Okbt";
@@ -119,14 +111,11 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IPAbout";
-            this.TopMargin = 26;
             this.Controls.SetChildIndex(this.PluginWebsite, 0);
             this.Controls.SetChildIndex(this.PluginDescription, 0);
             this.Controls.SetChildIndex(this.PluginVersion, 0);
             this.Controls.SetChildIndex(this.Okbt, 0);
-            this.Controls.SetChildIndex(this.Logo, 0);
             this.Controls.SetChildIndex(this.PluginAuthor, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

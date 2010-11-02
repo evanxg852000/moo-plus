@@ -50,15 +50,9 @@
             this.BTypeCbx = new System.Windows.Forms.ComboBox();
             this.SaveCurrentEdit = new System.Windows.Forms.Button();
             this.CleanBt = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.Location = new System.Drawing.Point(0, 49);
-            this.Logo.Size = new System.Drawing.Size(624, 1);
             // 
             // statusBar
             // 
@@ -270,6 +264,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Border.Bottom = 0;
+            this.Border.Left = 0;
+            this.Border.Right = 0;
+            this.Border.Top = 50;
             this.ClientSize = new System.Drawing.Size(611, 391);
             this.Controls.Add(this.CleanBt);
             this.Controls.Add(this.SaveCurrentEdit);
@@ -299,27 +297,6 @@
             this.Name = "BrunchEditorDialog";
             this.ShowInTaskbar = false;
             this.Text = "Brunch Editor ";
-            this.TopMargin = 50;
-            this.Controls.SetChildIndex(this.BrunchTxt, 0);
-            this.Controls.SetChildIndex(this.BrunchTree, 0);
-            this.Controls.SetChildIndex(this.EditBrunchBt, 0);
-            this.Controls.SetChildIndex(this.AddBrunchBt, 0);
-            this.Controls.SetChildIndex(this.NameTxt, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.TrigerTxt, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.ApplyBt, 0);
-            this.Controls.SetChildIndex(this.CancelBt, 0);
-            this.Controls.SetChildIndex(this.RemoveBrunchBt, 0);
-            this.Controls.SetChildIndex(this.statusBar, 0);
-            this.Controls.SetChildIndex(this.Logo, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.KeyTxt, 0);
-            this.Controls.SetChildIndex(this.BTypeCbx, 0);
-            this.Controls.SetChildIndex(this.SaveCurrentEdit, 0);
-            this.Controls.SetChildIndex(this.CleanBt, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrunchTxt)).EndInit();
