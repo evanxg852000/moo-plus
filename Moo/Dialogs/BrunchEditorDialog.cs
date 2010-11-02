@@ -21,8 +21,7 @@ namespace Moo.Dialogs
         private string currenteditedtable;
         private int currenteditedrowindex;
 
-
-        
+     
         public DataSet BrunchDataStructure
         {
             get { return this.brunchdatastructure; }
@@ -31,7 +30,6 @@ namespace Moo.Dialogs
         public BrunchEditorDialog(DataSet brunchdatastructure)
         {
             InitializeComponent();
-            this.SetupMargin();
             this.BrunchTree.UpdateData(brunchdatastructure);
             this.BTypeCbx.Items.Clear();
             foreach (DataTable type in this.BrunchTree.BrunchDataStructure.Tables)

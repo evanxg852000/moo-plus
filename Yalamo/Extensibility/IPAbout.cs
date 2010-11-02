@@ -10,12 +10,11 @@ using Yalamo.Gui;
 
 namespace Yalamo.Extensibility
 {
-    internal partial class IPAbout : YForm
+    internal partial class IPAbout :Form
     {
         public IPAbout()
         {
             InitializeComponent();
-            this.SetupMargin();
             this.Okbt.Click += new EventHandler(Okbt_Click);
             this.PluginWebsite.Click += new EventHandler(PluginWebsite_Click);
         }

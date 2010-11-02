@@ -56,14 +56,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.statusbar = new System.Windows.Forms.StatusStrip();
             this.StatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.statusbar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.Location = new System.Drawing.Point(0, 49);
-            this.Logo.Size = new System.Drawing.Size(600, 1);
             // 
             // ImgList
             // 
@@ -170,7 +164,7 @@
             listViewItem5,
             listViewItem6});
             this.NewCategory.LargeImageList = this.ImgList;
-            this.NewCategory.Location = new System.Drawing.Point(1, 51);
+            this.NewCategory.Location = new System.Drawing.Point(0, 51);
             this.NewCategory.MultiSelect = false;
             this.NewCategory.Name = "NewCategory";
             this.NewCategory.Scrollable = false;
@@ -230,9 +224,9 @@
             this.statusbar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusMsg});
-            this.statusbar.Location = new System.Drawing.Point(0, 314);
+            this.statusbar.Location = new System.Drawing.Point(0, 315);
             this.statusbar.Name = "statusbar";
-            this.statusbar.Size = new System.Drawing.Size(589, 22);
+            this.statusbar.Size = new System.Drawing.Size(586, 22);
             this.statusbar.SizingGrip = false;
             this.statusbar.TabIndex = 12;
             this.statusbar.Text = "statusStrip1";
@@ -247,8 +241,12 @@
             this.AcceptButton = this.CreateBt;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Border.Bottom = 0;
+            this.Border.Left = 0;
+            this.Border.Right = 0;
+            this.Border.Top = 50;
             this.CancelButton = this.CancelBt;
-            this.ClientSize = new System.Drawing.Size(589, 336);
+            this.ClientSize = new System.Drawing.Size(586, 337);
             this.Controls.Add(this.statusbar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -270,8 +268,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New ";
-            this.TopMargin = 50;
-            this.Controls.SetChildIndex(this.Logo, 0);
             this.Controls.SetChildIndex(this.CreateBt, 0);
             this.Controls.SetChildIndex(this.NameTbx, 0);
             this.Controls.SetChildIndex(this.FolderTbx, 0);
@@ -284,7 +280,6 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.statusbar, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.statusbar.ResumeLayout(false);
             this.statusbar.PerformLayout();
             this.ResumeLayout(false);
