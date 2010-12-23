@@ -16,13 +16,9 @@ namespace Moo.Core
         public static Project Create(string Profolder, string Proname, PType Protype, bool Inctemplate)
         {
             Project PObject ;
-            Protype = PType.Adobeair;
             string Profile = Profolder + @"\" + Proname + @"\" + Proname + ".mpr";
             Profolder = Profolder + @"\" + Proname;
             switch (Protype) {
-                case PType.Adobeair:
-                    PObject = new Adobeair(Profile);
-                    break;
                 case PType.Csharp:
                     PObject = new Csharp(Profile);
                     break;
@@ -34,6 +30,9 @@ namespace Moo.Core
                     break;
                 case PType.Ilasm:
                     PObject = new Ilasm(Profile);
+                    break;
+                case PType.Java:
+                    PObject = new Java(Profile);
                     break;
                 case PType.Unmanaged:
                     PObject = new Unmanaged(Profile);

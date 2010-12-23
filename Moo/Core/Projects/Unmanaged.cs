@@ -5,15 +5,16 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
+    [Serializable]
     class Unmanaged: Project
     {
         public Unmanaged() : base()
         {
-            //nothing to do
+            this.type = PType.Unmanaged;
         }
         public Unmanaged(string filepath) : base(filepath)
         {
-            //just initialise with the base constructor
+            this.type = PType.Unmanaged;
         }
 
         #region Overriden Methods
@@ -21,16 +22,13 @@ namespace Moo.Core.Projects
         public override void CopyTemplate()
         {
             base.CopyTemplate("Unmanaged");
-            base.CopyTemplate();
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Unmanaged");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Unmanaged");
         }
 

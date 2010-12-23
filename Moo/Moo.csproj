@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\ProjectFactory.cs" />
-    <Compile Include="Core\Projects\Adobeair.cs" />
+    <Compile Include="Core\Projects\Java.cs" />
     <Compile Include="Core\Projects\Database.cs" />
     <Compile Include="Core\Projects\Hydro.cs" />
     <Compile Include="Core\Projects\Ilasm.cs" />
@@ -87,6 +87,12 @@
     <Compile Include="Core\PType.cs" />
     <Compile Include="Core\Projects\Website.cs" />
     <Compile Include="Core\Projects\Yalamof.cs" />
+    <Compile Include="Dialogs\TemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TemplateDialog.Designer.cs">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="TodoList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CodeEditor.resx">
       <DependentUpon>CodeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TemplateDialog.resx">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TodoList.resx">

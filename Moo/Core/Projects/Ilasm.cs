@@ -5,15 +5,16 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
+    [Serializable]
     class Ilasm: Project
     {
         public Ilasm() : base()
         {
-            //nothing to do
+            this.type = PType.Ilasm;
         }
         public Ilasm(string filepath) : base(filepath)
         {
-            //just initialise with the base constructor
+            this.type = PType.Ilasm;
         }
 
 
@@ -22,16 +23,13 @@ namespace Moo.Core.Projects
         public override void CopyTemplate()
         {
             base.CopyTemplate("Ilasm");
-            base.CopyTemplate();
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Ilasm");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Ilasm");
         }
 

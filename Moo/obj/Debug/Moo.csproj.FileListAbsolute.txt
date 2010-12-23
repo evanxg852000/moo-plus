@@ -30,3 +30,4 @@ C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Y
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\bin\Debug\Moo.Controls.pdb
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.exe
 C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo\obj\Debug\Moo.Dialogs.TemplateDialog.resources

@@ -19,7 +19,7 @@ namespace Moo.Core
         private string folder; 
         private string icon;
         private DateTime date;
-        private PType type= PType.Unmanaged;
+        protected PType type= PType.Unmanaged;
        
         public string File
         {
@@ -44,7 +44,7 @@ namespace Moo.Core
         }
         public PType Type
         {
-            get { return type; }
+            get { return this.type; }
         }
         
         public Project() {/*default constructor for deserialization */ }
@@ -77,7 +77,8 @@ namespace Moo.Core
         protected void CopyTemplate(string templatename) 
         {
             string source = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Templates\" + templatename;
-            FileHelper.CopyFolder(source,this.folder);
+            Dialogs.TemplateDialog td = new Moo.Dialogs.TemplateDialog();
+            td.CopyTemplate(source, this.folder);  
         }
         protected List<string> GetFiles(string filters)
         {
