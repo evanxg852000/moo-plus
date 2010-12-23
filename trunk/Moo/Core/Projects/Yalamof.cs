@@ -5,32 +5,30 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
+    [Serializable]
     class Yalamof: Project
     {
         public Yalamof(): base()
         {
-            //nothing to do
+            this.type = PType.Yalamof;
         }
         public Yalamof(string filepath) : base(filepath)
         {
-            //just initialise with the base constructor
+            this.type = PType.Yalamof;
         }
 
         #region Overriden Methods
 
         public override void CopyTemplate()
         {
-            base.CopyTemplate("Yalamof");
-            base.CopyTemplate();
+            base.CopyTemplate("yalamof");
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Yalamof");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Yalamof");
         }
 

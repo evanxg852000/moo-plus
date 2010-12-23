@@ -5,32 +5,30 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
-    class Adobeair : Project
+    [Serializable]
+    class Java : Project
     {
-        public Adobeair() : base()  
-        { 
-         //nothing to do
-        }
-        public Adobeair(string filepath): base(filepath)
+        public Java() : base()  
         {
-            //just initialise with the base constructor
+            this.type = PType.Java;
+        }
+        public Java(string filepath): base(filepath)
+        {
+            this.type = PType.Java;
         }
 
         #region Overriden Methods
 
         public override void CopyTemplate()
-        {
-            base.CopyTemplate("Adobeair");   
+        {  
             base.CopyTemplate();
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Adobeair");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Adobeair");
         }
 

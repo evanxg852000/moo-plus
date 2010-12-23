@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewDialog));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Desktop"}, 2, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Ms .NET"}, 2, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Web "}, 3, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Database"}, 4, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ajax"}, 5, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Java"}, 5, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "File"}, 6, System.Drawing.SystemColors.WindowFrame, System.Drawing.Color.Empty, new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -65,10 +65,10 @@
             this.ImgList.TransparentColor = System.Drawing.Color.Transparent;
             this.ImgList.Images.SetKeyName(0, "pro.png");
             this.ImgList.Images.SetKeyName(1, "script.png");
-            this.ImgList.Images.SetKeyName(2, "Prodesktop.png");
+            this.ImgList.Images.SetKeyName(2, "Prodotnet.png");
             this.ImgList.Images.SetKeyName(3, "Proweb.png");
             this.ImgList.Images.SetKeyName(4, "Prodbdesign.png");
-            this.ImgList.Images.SetKeyName(5, "Proadobe.png");
+            this.ImgList.Images.SetKeyName(5, "Projava.png");
             this.ImgList.Images.SetKeyName(6, "Profile.png");
             this.ImgList.Images.SetKeyName(7, "Protodo.png");
             // 
@@ -78,7 +78,7 @@
             this.CreateBt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CreateBt.Image = global::Moo.Properties.Resources.Fnew;
             this.CreateBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CreateBt.Location = new System.Drawing.Point(425, 281);
+            this.CreateBt.Location = new System.Drawing.Point(424, 281);
             this.CreateBt.Name = "CreateBt";
             this.CreateBt.Size = new System.Drawing.Size(75, 27);
             this.CreateBt.TabIndex = 4;
@@ -145,13 +145,13 @@
             // 
             this.NewCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             listViewItem1.Tag = "DESKTOP";
-            listViewItem1.ToolTipText = "Create a desktop project";
+            listViewItem1.ToolTipText = "Create .Net project";
             listViewItem2.Tag = "WEB";
             listViewItem2.ToolTipText = "Create a web project";
             listViewItem3.Tag = "DATABASE";
             listViewItem3.ToolTipText = "Create a databse project";
-            listViewItem4.Tag = "AJAX";
-            listViewItem4.ToolTipText = "Create an Ajax project";
+            listViewItem4.Tag = "JAVA";
+            listViewItem4.ToolTipText = "Create Java project";
             listViewItem5.Tag = "FILE";
             listViewItem5.ToolTipText = "Create a new file";
             listViewItem6.Tag = "UNMANAGED";
@@ -182,7 +182,7 @@
             this.IncTemplate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.IncTemplate.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IncTemplate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.IncTemplate.Location = new System.Drawing.Point(424, 230);
+            this.IncTemplate.Location = new System.Drawing.Point(424, 232);
             this.IncTemplate.Name = "IncTemplate";
             this.IncTemplate.Size = new System.Drawing.Size(158, 22);
             this.IncTemplate.TabIndex = 8;

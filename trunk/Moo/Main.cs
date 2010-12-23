@@ -203,19 +203,19 @@ namespace Moo
         //file menu handlers
         private void NewPrjectFile(object sender, EventArgs e)
         {
-            NewDialog newdialog = new NewDialog(null);
+            NewDialog newdialog = new NewDialog(MOO_APPLICATION_SETTINGS.CurrentProject);
             if (newdialog.ShowDialog() != DialogResult.OK) { return; }
             if (newdialog.NewOption == "PROJECT")
             {
-                if (newdialog.CreateProject != null)
+                Project CreateProject = ProjectFactory.Create(newdialog.ResultObjectFolder, newdialog.ResultObjectName, newdialog.ResultProjectType, newdialog.ResultTemplate);
+                if (CreateProject != null)
                 {
-                    MOO_APPLICATION_SETTINGS.CurrentProject = newdialog.CreateProject;              
-                    MOO_PROJECT_BROWSER.BuildNodes(newdialog.CreateProject.Folder, newdialog.CreateProject.File, newdialog.CreateProject.Name);
+                    MOO_APPLICATION_SETTINGS.CurrentProject = CreateProject;              
+                    MOO_PROJECT_BROWSER.BuildNodes(CreateProject.Folder, CreateProject.File, CreateProject.Name);
                 }
             }
             else 
             {
-                MessageBox.Show(newdialog.ResultObjectType+" only for file");
                 CodeEditor MCDE = this.CreateEditor(newdialog.ResultObjectFolder+@"\"+ newdialog.ResultObjectName, newdialog.ResultObjectType);
                 MCDE.Show(MDockArea);
                 MCDE.DockState = DockState.Document;   
@@ -253,6 +253,7 @@ namespace Moo
                     Project PRJT = ProjectFactory.Open(openfilepath);
                     MOO_APPLICATION_SETTINGS.CurrentProject = PRJT;
                     //load the project into the project browser
+                 
                     MOO_PROJECT_BROWSER.BuildNodes(PRJT.Folder,PRJT.File,PRJT.Name);
                     //add to recent
                     if (MOO_APPLICATION_SETTINGS.RecentProjects.Count <= 5)

@@ -5,15 +5,16 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
+    [Serializable]
     class Website: Project
     {
         public Website() : base()
         {
-            //nothing to do
+            this.type = PType.Website;
         }
         public Website(string filepath) : base(filepath)
         {
-            //just initialise with the base constructor
+            this.type = PType.Website;
         }
 
         #region Overriden Methods
@@ -21,16 +22,13 @@ namespace Moo.Core.Projects
         public override void CopyTemplate()
         {
             base.CopyTemplate("Website");
-            base.CopyTemplate();
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Website");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Website");
         }
 

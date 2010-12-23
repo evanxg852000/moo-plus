@@ -7,11 +7,11 @@ namespace Moo.Core
 {
     public enum PType
     {
-        Adobeair=0,
-        Csharp,
+        Csharp=0,
         Databse,
         Hydro,
-        Ilasm,    
+        Ilasm, 
+        Java,
         Unmanaged,
         Vbasic,      
         Website,

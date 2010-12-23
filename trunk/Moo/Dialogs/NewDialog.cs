@@ -14,11 +14,22 @@ namespace Moo.Dialogs
 {
     public partial class NewDialog : YForm
     {
+
         private string newoption;
-        private Project createdproject;
+        private PType projecttype;
         private string currentfolder;
-        public Project CreateProject {
-            get { return createdproject; }
+
+        public string NewOption
+        {
+            get { return newoption; }
+        }
+        public PType ResultProjectType
+        {
+            get { return projecttype; }
+        }
+        public bool ResultTemplate
+        {
+            get { return IncTemplate.Checked; }
         }
 
         public string ResultObjectType
@@ -32,12 +43,7 @@ namespace Moo.Dialogs
         public string ResultObjectFolder
         {
             get { return FolderTbx.Text; }
-        }
-        public string NewOption 
-        {
-            get { return newoption; }
-        }
-
+        }        
  
         public NewDialog(Project currentProject)
         {
@@ -51,7 +57,7 @@ namespace Moo.Dialogs
             
             //initialise   
             this.newoption = "PROJECT";
-            this.createdproject = null;
+            this.projecttype = PType.Csharp;
             this.TypeCbx.Items.AddRange(new string[] { "C SHARP", "ILASM", "HYDRO", "V BASIC" });
             this.NameTbx.Text="";
             this.FolderTbx.Text = this.currentfolder;  
@@ -74,8 +80,8 @@ namespace Moo.Dialogs
                     this.TypeCbx.Items.AddRange(new string[] { "DATABASE"});
                     this.newoption = "PROJECT";
                     break;
-                case "AJAX":
-                    this.TypeCbx.Items.AddRange(new string[] { "ADOBE AIR" });
+                case "JAVA":
+                    this.TypeCbx.Items.AddRange(new string[] { "JAVA" });
                     this.newoption = "PROJECT";
                     break;
                 case "FILE":
@@ -111,51 +117,40 @@ namespace Moo.Dialogs
             //if the user setsup a project we create it , if he sets up a file we just leave properties to be taken by the caller
             if (this.newoption == "PROJECT")
             {
-                PType protype= PType.Unmanaged;
                 switch (TypeCbx.SelectedItem.ToString())
                 {
-                    case "ADOBE AIR":
-                        protype = PType.Adobeair;
-                        break;
                     case "C SHARP":
-                        protype = PType.Csharp;
+                        this.projecttype = PType.Csharp;
                         break;
                     case "DATABASE":
-                        protype = PType.Databse;
+                        this.projecttype = PType.Databse;
                         break;
                     case "ILASM":
-                        protype = PType.Ilasm;
+                        this.projecttype = PType.Ilasm;
+                        break;
+                    case "JAVA":
+                        this.projecttype = PType.Java;
                         break;
                     case "HTML WEBSITE":
-                        protype = PType.Website;
+                        this.projecttype = PType.Website;
                         break;
                     case "HYDRO":
-                        protype = PType.Hydro;
+                        this.projecttype = PType.Hydro;
                         break;
                     case "UNMANAGED":
-                        protype = PType.Unmanaged;
+                        this.projecttype = PType.Unmanaged;
                         break;
                     case "V BASIC":
-                        protype = PType.Vbasic;
+                        this.projecttype = PType.Vbasic;
                         break;
                     case "YALAMO WEBSITE":
-                        protype = PType.Yalamof;
+                        this.projecttype = PType.Yalamof;
                         break;
                 }
-                this.createdproject = ProjectFactory.Create(FolderTbx.Text, NameTbx.Text, protype,IncTemplate.Checked);
             }    
             this.DialogResult = DialogResult.OK;
-            this.Close();           
-            
+            this.Close();             
         }
-
-        
-
-        
-
-        
-
-
 
     }
 }

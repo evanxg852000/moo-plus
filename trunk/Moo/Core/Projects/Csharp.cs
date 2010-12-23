@@ -5,32 +5,30 @@ using System.Text;
 
 namespace Moo.Core.Projects
 {
+    [Serializable]
     class Csharp: Project
     {
         public Csharp() : base()
         {
-            //nothing to do
+            this.type = PType.Csharp;
         }
-        public Csharp(string filepath) : base(filepath)
+        public Csharp(string filepath) :base(filepath)
         {
-            //just initialise with the base constructor
+            this.type = PType.Csharp;
         }
 
         #region Overriden Methods
 
         public override void CopyTemplate()
         {
-            base.CopyTemplate("Csharp");
-            base.CopyTemplate();
+            base.CopyTemplate("csharp");
         }
         public override List<string> GetFiles()
         {
-            base.GetFiles();
             return base.GetFiles("Csharp");
         }
         public override List<string> GetKeywords()
         {
-            base.GetKeywords();
             return base.GetKeywords("Csharp");
         }
 
