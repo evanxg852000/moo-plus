@@ -27,12 +27,12 @@ namespace Moo.Core.Projects
         {
             return base.GetFiles("Unmanaged");
         }
-        public override List<string> GetKeywords()
+        public override string[] GetKeywords()
         {
-            return base.GetKeywords("Unmanaged");
+            return base.GetKeywords("unmanaged");
         }
 
-        public override void Build()
+        public override void Build(BuildOutput console)
         {
 
         }

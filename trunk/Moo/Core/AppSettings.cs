@@ -53,7 +53,12 @@ namespace Moo.Core
         private bool Isfilesearcher = true;
         private bool Isbuildoutput = true;
 
-
+        private string csharp;
+        private string vbnet;
+        private string ilasm;
+        private string java;
+        private string hydro;
+        private string database;
 
         public List<string> ActivePlugins
         {
@@ -122,6 +127,36 @@ namespace Moo.Core
             set { Isbuildoutput=value;}
         }
 
+        public string Csharp{
+            get{return csharp;}
+            set{csharp=value;}
+        }
+        public string Vbnet
+        {
+            get { return vbnet; }
+            set { vbnet = value; }
+        }
+        public string Ilasm
+        {
+            get { return ilasm; }
+            set { ilasm = value; }
+        }
+        public string Java
+        {
+            get { return java; }
+            set { java = value; }
+        }
+        public string Hydro
+        {
+            get { return hydro; }
+            set { hydro = value; }
+        }
+        public string Databse
+        {
+            get { return database; }
+            set { database = value; }
+        }
+
         private   AppSettings()
         {
             this.recentfiles = new List<string>();
@@ -158,20 +193,21 @@ namespace Moo.Core
             catch (Exception e) { Exceptioner.Log(e); }
             return ASObject;    
         }
+        
         public static string GetFolder(string key)
         {
             return System.Configuration.ConfigurationManager.AppSettings.Get(key+"folder");
         }
+         
         public static string Get(string key)
         {
             return System.Configuration.ConfigurationManager.AppSettings.Get(key);
         }
-        public static string GetSdk(string key)
+        public static void Set(string key, string val)
         {
-            //key= csharp
-            return System.Configuration.ConfigurationManager.AppSettings.Get(key+"sdk");
+            System.Configuration.ConfigurationManager.AppSettings.Set(key, val);
+            System.Configuration.ConfigurationManager.RefreshSection("appSettings");  
         }
-
     }
 
 }

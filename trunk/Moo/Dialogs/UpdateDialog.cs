@@ -10,10 +10,11 @@ using System.IO;
 using System.Windows.Forms;
 using Moo.Core;
 using Moo.Helpers;
+using Yalamo.Gui;
 
 namespace Moo.Dialogs
 {
-    public partial class UpdateDialog : Form
+    public partial class UpdateDialog : YForm
     {
         private static UpdateDialog Instance;
         private OnlineInfo OnLineInfo;
@@ -137,10 +138,6 @@ namespace Moo.Dialogs
         {
             this.Close();
         }
-
-       
-        
-
 
     }
 }

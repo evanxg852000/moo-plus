@@ -1,46 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" standalone="yes"?>
 <Brunches>
-	<TEXT>
-		<Num>1</Num>
-		<Name>Php tag</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>foreach($array as $val) {$val ;}</Content>
-	</TEXT>
-	<PHP>
-		<Num>1</Num>
-		<Name>Php tag</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>foreach($array as $val) {$val ;}</Content>
-	</PHP>
-	<PHP>
-		<Num>2</Num>
-		<Name>echo</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>echo ""</Content>
-	</PHP>
-	<JS>
-		<Num>1</Num>
-		<Name>func</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>function Name (){ ;}</Content>
-	</JS>
-	<HTML>
-		<Num>1</Num>
-		<Name>qote</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>qtote ver </Content>
-	</HTML>
-	<HTML>
-		<Num>2</Num>
-		<Name>copyright</Name>
-		<Triger>php</Triger>
-		<Key>K</Key>
-		<Content>Copyright 2010</Content>
-	</HTML>
-
+  <TEXT>
+    <Num>1</Num>
+    <Name>Php tag</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>foreach($array as $val) {$val 
+	trevise
+;}</Content>
+  </TEXT>
+  <PHP>
+    <Num>1</Num>
+    <Name>Php tag</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>foreach($array as $val) {$val ;}</Content>
+  </PHP>
+  <PHP>
+    <Num>2</Num>
+    <Name>echo</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>echo ""</Content>
+  </PHP>
+  <JS>
+    <Num>1</Num>
+    <Name>func</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>function Name (){ ;}</Content>
+  </JS>
+  <HTML>
+    <Num>1</Num>
+    <Name>qote</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>qtote ver </Content>
+  </HTML>
+  <HTML>
+    <Num>2</Num>
+    <Name>copyright</Name>
+    <Triger>php</Triger>
+    <Key>K</Key>
+    <Content>Copyright 2010</Content>
+  </HTML>
 </Brunches>

@@ -71,13 +71,13 @@ namespace Moo
         }
 
         //completion setup
-        public void UpadateCompletionList(List<string> keywords) 
+        public void UpadateCompletionList(string[] keywords) 
         {
             foreach (string keyword in keywords) 
             {
                 this.EdiorViewObject.AutoComplete.List.Add(keyword);
             }
-            
+            this.EdiorViewObject.AutoComplete.List.Sort();
         }
         public void UpdateSnippets(Dictionary<string,string> snippets) 
         { 

@@ -27,12 +27,12 @@ namespace Moo.Core.Projects
         {
             return base.GetFiles("Csharp");
         }
-        public override List<string> GetKeywords()
+        public override string[] GetKeywords()
         {
-            return base.GetKeywords("Csharp");
+            return base.GetKeywords("csharp");
         }
 
-        public override void Build()
+        public override void Build(BuildOutput console)
         {
 
         }

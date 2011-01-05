@@ -9,10 +9,12 @@ using System.Text;
 using System.Windows.Forms;
 using Moo.Core;
 using ScintillaNet;
+using Yalamo.Gui;
+using Moo.Helpers;
 
 namespace Moo.Dialogs
 {
-    public partial class PreferenceDialog : Form
+    public partial class PreferenceDialog : YForm
     {
         private static PreferenceDialog Instance;
         private AppSettings AppSettings;
@@ -51,6 +53,14 @@ namespace Moo.Dialogs
             this.CEFoldingMarker.SelectedItem=AppSettings.EditorConfig.FoldingMarker;
             //line hilighting
             this.CEIsLineHilighting.Checked = AppSettings.EditorConfig.IsLineHilighting;   
+            //build tool
+            this.csharptool.Text = this.AppSettings.Csharp;
+            this.vbnettool.Text = this.AppSettings.Vbnet;
+            this.ilasmtool.Text = this.AppSettings.Ilasm;
+            this.javatool.Text = this.AppSettings.Java;
+            this.hydrotool.Text = this.AppSettings.Hydro;
+            this.databasetool.Text = this.AppSettings.Databse;
+
         }      
         public static void Show(AppSettings appsettings)
         {
@@ -73,9 +83,38 @@ namespace Moo.Dialogs
             this.AppSettings.EditorConfig.FontSize =(int) this.CEFontSize.Value ;
             this.AppSettings.EditorConfig.FoldingMarker = (FoldMarkerScheme)this.CEFoldingMarker.SelectedItem ;
             this.AppSettings.EditorConfig.IsLineHilighting =  this.CEIsLineHilighting.Checked ;
-            // don't need to persist here ->( AppSettings.Save(this.AppSettings))
-            //because  it will be saved when the application is shutting down
+            this.AppSettings.Csharp = this.csharptool.Text;
+            this.AppSettings.Vbnet = this.vbnettool.Text;
+            this.AppSettings.Ilasm = this.ilasmtool.Text;
+            this.AppSettings.Java = this.javatool.Text;
+            this.AppSettings.Hydro = this.hydrotool.Text;
+            this.AppSettings.Databse = this.databasetool.Text;
         }
 
+        private void ChangeCsharptool(object sender, EventArgs e)
+        {
+            this.csharptool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+        private void ChangeVbnettool(object sender, EventArgs e)
+        {
+            this.vbnettool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+        private void ChangeIlasmtool(object sender, EventArgs e)
+        {
+            this.ilasmtool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+        private void ChangeJavatool(object sender, EventArgs e)
+        {
+            this.javatool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+        private void ChangeHydrotool(object sender, EventArgs e)
+        {
+            this.hydrotool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+        private void ChangeDatabasetool(object sender, EventArgs e)
+        {
+            this.databasetool.Text = FileHelper.SelectFile("Executable file (*.exe)|*.exe");
+        }
+    
     }
 }

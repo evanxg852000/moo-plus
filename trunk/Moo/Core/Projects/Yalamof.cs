@@ -27,12 +27,12 @@ namespace Moo.Core.Projects
         {
             return base.GetFiles("Yalamof");
         }
-        public override List<string> GetKeywords()
+        public override string[] GetKeywords()
         {
-            return base.GetKeywords("Yalamof");
+            return base.GetKeywords("yalamof");
         }
 
-        public override void Build()
+        public override void Build(BuildOutput console)
         {
 
         }

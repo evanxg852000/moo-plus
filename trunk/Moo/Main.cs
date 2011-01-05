@@ -183,17 +183,16 @@ namespace Moo
         private CodeEditor CreateEditor(string filename,string filetype) 
         {
             string lexer = SupportedFiles.GetLexer(filetype);
-            filename += SupportedFiles.GetExtension(filetype);
             CodeEditor ce = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, filename);
-           
-            //TODO : get keywordlist from current project but keep dummie date for now
-            List<string> ls = new List<string>() { "function?0", "Cookie?2", "Load->View()?6", "AppConfig()?6", "Yalamo::Void?8" };
-            ce.UpadateCompletionList(ls);
-
+            ce.SetLanguage(lexer); 
+            //get keywordlist from current project 
+            if (MOO_APPLICATION_SETTINGS.CurrentProject != null) {
+                ce.UpadateCompletionList(MOO_APPLICATION_SETTINGS.CurrentProject.GetKeywords());
+            }
             //add brunchs to editor list
             Dictionary<string,string> dic= MOO_BRUNCH_BROWSER.GetBrunchDictionary(filetype);
             ce.UpdateSnippets(dic);   
-            ce.SetLanguage(lexer);         
+                    
             ce.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
             return ce;
         }
@@ -216,9 +215,11 @@ namespace Moo
             }
             else 
             {
-                CodeEditor MCDE = this.CreateEditor(newdialog.ResultObjectFolder+@"\"+ newdialog.ResultObjectName, newdialog.ResultObjectType);
+                string filename = newdialog.ResultObjectFolder + @"\" + newdialog.ResultObjectName;
+                filename += SupportedFiles.GetExtension(newdialog.ResultObjectType);
+                CodeEditor MCDE = this.CreateEditor(filename, newdialog.ResultObjectType);
                 MCDE.Show(MDockArea);
-                MCDE.DockState = DockState.Document;   
+                MCDE.DockState = DockState.Document; 
             }
             
         }        
@@ -245,8 +246,7 @@ namespace Moo
             string openfileextesion = Path.GetExtension(openfilepath);
 
             if (openfilepath != String.Empty)
-            {
-                
+            { 
                 if (openfileextesion == ".mpr")
                 {
                     //deal with project
@@ -269,14 +269,12 @@ namespace Moo
                     {
                         if (CE.FilePath == openfilepath) { CE.Activate(); return;  }
                     }   
+                    
                     //deal with file
-                    string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
-                    CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
-                    MCED.SetLanguage(fileLanguage);
+                    CodeEditor MCED =this.CreateEditor(openfilepath,SupportedFiles.GetType(openfileextesion.Replace(".","")));
                     MCED.SetContent(openfilecontent);
                     MCED.Show(MDockArea);
                     MCED.DockState = DockState.Document;
-                    MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
                     //add to recent
                     if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5)
                     {
@@ -326,13 +324,10 @@ namespace Moo
                         if (CE.FilePath == openfilepath) { CE.Activate(); return; }
                     } 
                     //deal with file
-                    string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(openfileextesion);
-                    CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, openfilepath);
-                    MCED.SetLanguage(fileLanguage);
+                    CodeEditor MCED = this.CreateEditor(openfilepath, SupportedFiles.GetType(openfileextesion.Replace(".", "")));
                     MCED.SetContent(openfilecontent);
                     MCED.Show(MDockArea);
                     MCED.DockState = DockState.Document;
-                    MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
                 }
             }
         }
@@ -347,25 +342,20 @@ namespace Moo
                     CE.Activate();
                     return;
                 }
-            }           
-            string filecontent = FileHelper.GetContent(file);
+            }
             string fileextesion = Path.GetExtension(file);
-            if (fileextesion == ".mpr")
+            if (fileextesion != ".mpr")
             {
-                return;
-            }
-            string fileLanguage = Moo.Helpers.MiscHelper.GetLanguage(fileextesion);
-            CodeEditor MCED = new CodeEditor(MOO_APPLICATION_SETTINGS.EditorConfig, file);
-            MCED.SetLanguage(fileLanguage);
-            MCED.SetContent(filecontent);
-            MCED.Show(MDockArea);
-            MCED.DockState = DockState.Document;
-            MCED.CaretPositionChanged += new CaretPositionHandler(UpdateSatutsLineColumn);
-            //add to recent
-            if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5)
-            {
-                MOO_APPLICATION_SETTINGS.RecentFiles.Add(file);
-            }
+                CodeEditor MCED = this.CreateEditor(file, SupportedFiles.GetType(fileextesion.Replace(".", "")));
+                MCED.SetContent(FileHelper.GetContent(file));
+                MCED.Show(MDockArea);
+                MCED.DockState = DockState.Document;
+                //add to recent
+                if (MOO_APPLICATION_SETTINGS.RecentFiles.Count <= 5)
+                {
+                    MOO_APPLICATION_SETTINGS.RecentFiles.Add(file);
+                }
+            } 
         }
         private void ClearRecents(object sender, EventArgs e)
         {

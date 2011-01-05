@@ -92,11 +92,6 @@ namespace Moo.Helpers
             }
             return fileextention;
         }
-        public static string GetLanguage(string FileExtention)
-        {
-            string language =FileExtention.Replace(".","");
-            return language;
-        }
         public static void SendMail(string subject, string content )
         {
             MailMessage message = new MailMessage();

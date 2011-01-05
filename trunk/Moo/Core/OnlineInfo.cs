@@ -39,7 +39,7 @@ namespace Moo.Core
     {
         private static OnlineInfo OnLineInfoIstance;
         private static string hosturl="www.evansofts.com";
-        private static string configfileurl="http://evansofts.com/moo/moo-online-info.xml";
+        private static string configfileurl=AppSettings.Get("pluginurl");
         private Configuration config;
         private List<Update> updates;
         private List<Plugin> plugins;
@@ -206,8 +206,5 @@ namespace Moo.Core
             return false;
         }
       
-       
-
-
     }
 }
