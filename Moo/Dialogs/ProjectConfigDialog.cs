@@ -10,11 +10,12 @@ using System.IO;
 using System.Windows.Forms;
 using Moo.Core;
 using Moo.Helpers;
+using Yalamo.Gui;
 
 
 namespace Moo.Dialogs
 {
-    public partial class ProjectConfigDialog : Form
+    public partial class ProjectConfigDialog : YForm
     {
         private static ProjectConfigDialog Instance;
         private Project CurrentProject;

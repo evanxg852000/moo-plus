@@ -27,12 +27,12 @@ namespace Moo.Core.Projects
         {
             return base.GetFiles("Vbasic");
         }
-        public override List<string> GetKeywords()
+        public override string[] GetKeywords()
         {
-            return base.GetKeywords("Vbasic");
+            return base.GetKeywords("vbnet");
         }
 
-        public override void Build()
+        public override void Build(BuildOutput console)
         {
 
         }

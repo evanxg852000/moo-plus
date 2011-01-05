@@ -31,6 +31,9 @@ namespace Moo.Controls
             //add handler
             this.DoubleClick += new EventHandler(BrunchBrowser_DoubleClick);
         }       
+        ~BrunchBrowser(){
+            this.SaveData();
+        }
         public override void Refresh(){
             this.Nodes.Clear();
             this.BuildNodes(this.brunchdatastructure);           
@@ -107,18 +110,18 @@ namespace Moo.Controls
             }
             try
             {
-
-            }
-            catch 
-            {
                 foreach (DataRow dr in this.brunchdatastructure.Tables["TEXT"].Rows)
                 {
                     if (!Dic.ContainsKey(dr["Triger"].ToString()))
                     {
                         Dic.Add(dr["Triger"].ToString(), dr["Content"].ToString());
                     }
-                }  
-            }        
+                }
+            }
+            catch
+            {
+                //just keep quiete 
+            }
             return Dic;
         }
         private void GetData() 
@@ -139,8 +142,7 @@ namespace Moo.Controls
             }
             //fill the structure field  
             this.brunchdatastructure = XmlDs;
-        }
-        
+        }        
         private void BrunchBrowser_DoubleClick(object sender, EventArgs e)
         {
             if (this.SelectedNode==null){return;}

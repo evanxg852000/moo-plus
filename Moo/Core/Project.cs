@@ -85,26 +85,13 @@ namespace Moo.Core
             //TODO : implement the right here because it is common
             return new List<string>();
         }
-        protected List<string> GetKeywords(string datafile) 
+        protected string[] GetKeywords(string datafile) 
         {
             //TODO: implement the right here because it is common
-            string file = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Keywords\" + datafile + ".xml";
-            try
-            {
-                DataSet Ds = new DataSet();
-                Ds.ReadXml(file);
-                List<string> keywords= new List<string>();
-                foreach(DataRow r in  Ds.Tables[0].Rows)
-                {
-                    keywords.Add(r[0].ToString());
-                }
-                return keywords;
-            }
-            catch (Exception e)
-            {
-                Exceptioner.Log(e);
-                return new List<string>();
-            }    
+            string file = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + @"\Keywords\" + datafile + ".txt";
+            string content=FileHelper.GetContent(file);
+            string[] ls= content.Split(',');
+            return ls;
         }
         
         #region Overridable Members
@@ -117,12 +104,12 @@ namespace Moo.Core
         {
             return new List<string>();
         }
-        public virtual List<string> GetKeywords()
+        public virtual string[] GetKeywords()
         {
-            return new List<string>();
+            return new string[] {};
         }
 
-        public virtual void Build()
+        public virtual void Build(BuildOutput console)
         {
             
         }

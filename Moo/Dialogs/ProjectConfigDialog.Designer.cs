@@ -54,8 +54,20 @@
             this.AssemblySearcher = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.RefreshBt = new System.Windows.Forms.Button();
+            this.configtab = new System.Windows.Forms.TabControl();
+            this.dotnettab = new System.Windows.Forms.TabPage();
+            this.ilasmtab = new System.Windows.Forms.TabPage();
+            this.webtab = new System.Windows.Forms.TabPage();
+            this.javatab = new System.Windows.Forms.TabPage();
+            this.databasetab = new System.Windows.Forms.TabPage();
+            this.hydrotab = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.Statusbar.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.configtab.SuspendLayout();
+            this.dotnettab.SuspendLayout();
+            this.webtab.SuspendLayout();
             this.SuspendLayout();
             // 
             // AssemblyNameTbx
@@ -74,11 +86,11 @@
             this.RefPath});
             this.RefferencesListView.FullRowSelect = true;
             this.RefferencesListView.GridLines = true;
-            this.RefferencesListView.Location = new System.Drawing.Point(5, 122);
+            this.RefferencesListView.Location = new System.Drawing.Point(6, 125);
             this.RefferencesListView.MultiSelect = false;
             this.RefferencesListView.Name = "RefferencesListView";
             this.RefferencesListView.ShowItemToolTips = true;
-            this.RefferencesListView.Size = new System.Drawing.Size(538, 135);
+            this.RefferencesListView.Size = new System.Drawing.Size(656, 137);
             this.RefferencesListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.RefferencesListView.TabIndex = 2;
             this.RefferencesListView.UseCompatibleStateImageBehavior = false;
@@ -159,22 +171,28 @@
             // SaveBt
             // 
             this.SaveBt.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.SaveBt.Location = new System.Drawing.Point(549, 208);
+            this.SaveBt.Image = global::Moo.Properties.Resources.Fsave;
+            this.SaveBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveBt.Location = new System.Drawing.Point(555, 352);
             this.SaveBt.Name = "SaveBt";
-            this.SaveBt.Size = new System.Drawing.Size(75, 23);
+            this.SaveBt.Size = new System.Drawing.Size(75, 25);
             this.SaveBt.TabIndex = 13;
             this.SaveBt.Text = "Save";
+            this.SaveBt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SaveBt.UseVisualStyleBackColor = true;
             this.SaveBt.Click += new System.EventHandler(this.SaveBt_Click);
             // 
             // Cancel
             // 
             this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(549, 234);
+            this.Cancel.Image = global::Moo.Properties.Resources.Stop;
+            this.Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cancel.Location = new System.Drawing.Point(636, 352);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.Size = new System.Drawing.Size(75, 25);
             this.Cancel.TabIndex = 14;
             this.Cancel.Text = "Cancel";
+            this.Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
@@ -220,7 +238,7 @@
             // RemoveRefBt
             // 
             this.RemoveRefBt.Image = global::Moo.Properties.Resources.Remove;
-            this.RemoveRefBt.Location = new System.Drawing.Point(549, 176);
+            this.RemoveRefBt.Location = new System.Drawing.Point(668, 237);
             this.RemoveRefBt.Name = "RemoveRefBt";
             this.RemoveRefBt.Size = new System.Drawing.Size(25, 25);
             this.RemoveRefBt.TabIndex = 5;
@@ -230,7 +248,7 @@
             // AddRefBt
             // 
             this.AddRefBt.Image = global::Moo.Properties.Resources.Add;
-            this.AddRefBt.Location = new System.Drawing.Point(549, 122);
+            this.AddRefBt.Location = new System.Drawing.Point(668, 183);
             this.AddRefBt.Name = "AddRefBt";
             this.AddRefBt.Size = new System.Drawing.Size(25, 25);
             this.AddRefBt.TabIndex = 4;
@@ -242,9 +260,9 @@
             this.Statusbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusProgress,
             this.StatusMsg});
-            this.Statusbar.Location = new System.Drawing.Point(0, 262);
+            this.Statusbar.Location = new System.Drawing.Point(0, 379);
             this.Statusbar.Name = "Statusbar";
-            this.Statusbar.Size = new System.Drawing.Size(640, 22);
+            this.Statusbar.Size = new System.Drawing.Size(717, 22);
             this.Statusbar.SizingGrip = false;
             this.Statusbar.TabIndex = 15;
             this.Statusbar.Text = "statusStrip1";
@@ -278,9 +296,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(5, 3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 113);
+            this.groupBox1.Size = new System.Drawing.Size(656, 113);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Global ";
@@ -288,28 +306,131 @@
             // RefreshBt
             // 
             this.RefreshBt.Image = global::Moo.Properties.Resources.Refresh;
-            this.RefreshBt.Location = new System.Drawing.Point(549, 149);
+            this.RefreshBt.Location = new System.Drawing.Point(668, 210);
             this.RefreshBt.Name = "RefreshBt";
             this.RefreshBt.Size = new System.Drawing.Size(25, 25);
             this.RefreshBt.TabIndex = 17;
             this.RefreshBt.UseVisualStyleBackColor = true;
             this.RefreshBt.Click += new System.EventHandler(this.RefreshAssembliesListView);
             // 
+            // configtab
+            // 
+            this.configtab.Controls.Add(this.dotnettab);
+            this.configtab.Controls.Add(this.ilasmtab);
+            this.configtab.Controls.Add(this.webtab);
+            this.configtab.Controls.Add(this.javatab);
+            this.configtab.Controls.Add(this.databasetab);
+            this.configtab.Controls.Add(this.hydrotab);
+            this.configtab.Location = new System.Drawing.Point(5, 55);
+            this.configtab.Name = "configtab";
+            this.configtab.SelectedIndex = 0;
+            this.configtab.Size = new System.Drawing.Size(709, 295);
+            this.configtab.TabIndex = 18;
+            // 
+            // dotnettab
+            // 
+            this.dotnettab.BackColor = System.Drawing.Color.Transparent;
+            this.dotnettab.Controls.Add(this.RefferencesListView);
+            this.dotnettab.Controls.Add(this.groupBox1);
+            this.dotnettab.Controls.Add(this.RefreshBt);
+            this.dotnettab.Controls.Add(this.AddRefBt);
+            this.dotnettab.Controls.Add(this.RemoveRefBt);
+            this.dotnettab.Location = new System.Drawing.Point(4, 23);
+            this.dotnettab.Name = "dotnettab";
+            this.dotnettab.Padding = new System.Windows.Forms.Padding(3);
+            this.dotnettab.Size = new System.Drawing.Size(701, 268);
+            this.dotnettab.TabIndex = 0;
+            this.dotnettab.Text = "Ms .Net";
+            this.dotnettab.UseVisualStyleBackColor = true;
+            // 
+            // ilasmtab
+            // 
+            this.ilasmtab.BackColor = System.Drawing.Color.Transparent;
+            this.ilasmtab.Location = new System.Drawing.Point(4, 23);
+            this.ilasmtab.Name = "ilasmtab";
+            this.ilasmtab.Padding = new System.Windows.Forms.Padding(3);
+            this.ilasmtab.Size = new System.Drawing.Size(701, 268);
+            this.ilasmtab.TabIndex = 5;
+            this.ilasmtab.Text = "ILasm";
+            this.ilasmtab.UseVisualStyleBackColor = true;
+            // 
+            // webtab
+            // 
+            this.webtab.BackColor = System.Drawing.Color.Transparent;
+            this.webtab.Controls.Add(this.textBox1);
+            this.webtab.Controls.Add(this.label6);
+            this.webtab.Location = new System.Drawing.Point(4, 23);
+            this.webtab.Name = "webtab";
+            this.webtab.Padding = new System.Windows.Forms.Padding(3);
+            this.webtab.Size = new System.Drawing.Size(701, 268);
+            this.webtab.TabIndex = 1;
+            this.webtab.Text = "Web";
+            this.webtab.UseVisualStyleBackColor = true;
+            // 
+            // javatab
+            // 
+            this.javatab.BackColor = System.Drawing.Color.Transparent;
+            this.javatab.Location = new System.Drawing.Point(4, 23);
+            this.javatab.Name = "javatab";
+            this.javatab.Size = new System.Drawing.Size(701, 268);
+            this.javatab.TabIndex = 2;
+            this.javatab.Text = "Java";
+            this.javatab.UseVisualStyleBackColor = true;
+            // 
+            // databasetab
+            // 
+            this.databasetab.BackColor = System.Drawing.Color.Transparent;
+            this.databasetab.Location = new System.Drawing.Point(4, 23);
+            this.databasetab.Name = "databasetab";
+            this.databasetab.Padding = new System.Windows.Forms.Padding(3);
+            this.databasetab.Size = new System.Drawing.Size(701, 268);
+            this.databasetab.TabIndex = 3;
+            this.databasetab.Text = "Database";
+            this.databasetab.UseVisualStyleBackColor = true;
+            // 
+            // hydrotab
+            // 
+            this.hydrotab.BackColor = System.Drawing.Color.Transparent;
+            this.hydrotab.Location = new System.Drawing.Point(4, 23);
+            this.hydrotab.Name = "hydrotab";
+            this.hydrotab.Padding = new System.Windows.Forms.Padding(3);
+            this.hydrotab.Size = new System.Drawing.Size(701, 268);
+            this.hydrotab.TabIndex = 4;
+            this.hydrotab.Text = "Hydro";
+            this.hydrotab.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(388, 22);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "http://localhost/";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 14);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Run Url";
+            // 
             // ProjectConfigDialog
             // 
             this.AcceptButton = this.SaveBt;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Border.Bottom = 0;
+            this.Border.Left = 0;
+            this.Border.Right = 0;
+            this.Border.Top = 50;
             this.CancelButton = this.Cancel;
-            this.ClientSize = new System.Drawing.Size(640, 284);
-            this.Controls.Add(this.RefreshBt);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(717, 401);
+            this.Controls.Add(this.configtab);
             this.Controls.Add(this.Statusbar);
-            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.SaveBt);
-            this.Controls.Add(this.RemoveRefBt);
-            this.Controls.Add(this.AddRefBt);
-            this.Controls.Add(this.RefferencesListView);
+            this.Controls.Add(this.Cancel);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
@@ -320,10 +441,18 @@
             this.Name = "ProjectConfigDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Configuration";
+            this.Controls.SetChildIndex(this.Cancel, 0);
+            this.Controls.SetChildIndex(this.SaveBt, 0);
+            this.Controls.SetChildIndex(this.Statusbar, 0);
+            this.Controls.SetChildIndex(this.configtab, 0);
             this.Statusbar.ResumeLayout(false);
             this.Statusbar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.configtab.ResumeLayout(false);
+            this.dotnettab.ResumeLayout(false);
+            this.webtab.ResumeLayout(false);
+            this.webtab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +485,14 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusMsg;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button RefreshBt;
+        private System.Windows.Forms.TabControl configtab;
+        private System.Windows.Forms.TabPage dotnettab;
+        private System.Windows.Forms.TabPage webtab;
+        private System.Windows.Forms.TabPage javatab;
+        private System.Windows.Forms.TabPage databasetab;
+        private System.Windows.Forms.TabPage hydrotab;
+        private System.Windows.Forms.TabPage ilasmtab;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

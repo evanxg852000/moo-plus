@@ -28,29 +28,29 @@ namespace Moo.Core
            {"XHTML", ".xhtml"},{"HYDRO", ".hyd"},{"ILASM", ".il"},{"JAVA", ".java"},{"JAVASCRIPT", ".js"},
            {"PASCAL", ".pas"},{"PHP", ".php"},{"SQL", ".sql"},{"VB", ".vb"},{"XML", ".xml"}
        };
+       private static Dictionary<string, string> FilesSupported = new Dictionary<string, string>()
+       {
+           {"txt","TEXT"}, {"asp", "ASP"}, {"bat", "BATCH"}, {"cs", "CS"}, {"css", "CSS"},
+           {"cpp", "CPP"},{"h", "CPPH"}, {"d", "D"}, {"html", "HTML"},{"htm", "HTM"},
+           {"xhtml", "XHTML"},{"hyd", "HYDRO"},{"il", "ILASM"},{"java", "JAVA"},{"js", "JAVASCRIPT"},
+           {"pas", "PASCAL"},{"php", "PHP"},{"sql", "SQL"},{"vb", "VB"},{"xml", "XML"}
+       };
 
        public static string GetExtension(string title){
-           if(SupportedFiles.Supportedfiles.ContainsKey(title))
-           {
-               return SupportedFiles.Supportedfiles[title];
-           }
-           else
-           {
-            return String.Empty;
-           }
-           
+           string val;
+           SupportedFiles.Supportedfiles.TryGetValue(title, out val);
+           return val;
        }
        public static string GetLexer(string title){
-           if(SupportedFiles.Supportedfiles.ContainsKey(title))
-           {
-               return SupportedFiles.Supportedfiles[title].Replace(".", ""); 
-           }
-           else
-           {
-            return String.Empty;
-           }
+           string val;
+           SupportedFiles.Supportedfiles.TryGetValue(title, out val);
+           return val.Replace(".", "");
        }
-
+       public static string GetType(string extension) {
+           string val;
+           SupportedFiles.FilesSupported.TryGetValue(extension,out val);
+           return val;
+       }
    
    }
 

@@ -49,7 +49,7 @@
             this.PluginListView.ForeColor = System.Drawing.SystemColors.WindowText;
             this.PluginListView.FullRowSelect = true;
             this.PluginListView.GridLines = true;
-            this.PluginListView.Location = new System.Drawing.Point(4, 6);
+            this.PluginListView.Location = new System.Drawing.Point(4, 34);
             this.PluginListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PluginListView.MultiSelect = false;
             this.PluginListView.Name = "PluginListView";
@@ -78,7 +78,7 @@
             // 
             this.PluginDescription.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PluginDescription.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.PluginDescription.Location = new System.Drawing.Point(4, 157);
+            this.PluginDescription.Location = new System.Drawing.Point(4, 185);
             this.PluginDescription.Multiline = true;
             this.PluginDescription.Name = "PluginDescription";
             this.PluginDescription.ReadOnly = true;
@@ -88,7 +88,7 @@
             // AddPlugin
             // 
             this.AddPlugin.Image = global::Moo.Properties.Resources.Add;
-            this.AddPlugin.Location = new System.Drawing.Point(459, 6);
+            this.AddPlugin.Location = new System.Drawing.Point(459, 34);
             this.AddPlugin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddPlugin.Name = "AddPlugin";
             this.AddPlugin.Size = new System.Drawing.Size(30, 25);
@@ -98,7 +98,7 @@
             // 
             // DownloadProgress
             // 
-            this.DownloadProgress.Location = new System.Drawing.Point(6, 238);
+            this.DownloadProgress.Location = new System.Drawing.Point(6, 266);
             this.DownloadProgress.Name = "DownloadProgress";
             this.DownloadProgress.Size = new System.Drawing.Size(451, 10);
             this.DownloadProgress.TabIndex = 5;
@@ -106,7 +106,7 @@
             // CancelBt
             // 
             this.CancelBt.Image = global::Moo.Properties.Resources.Stop;
-            this.CancelBt.Location = new System.Drawing.Point(459, 37);
+            this.CancelBt.Location = new System.Drawing.Point(459, 65);
             this.CancelBt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CancelBt.Name = "CancelBt";
             this.CancelBt.Size = new System.Drawing.Size(30, 25);
@@ -123,7 +123,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 251);
+            this.Border.Bottom = 0;
+            this.Border.Left = 0;
+            this.Border.Right = 0;
+            this.Border.Top = 30;
+            this.ClientSize = new System.Drawing.Size(492, 281);
             this.Controls.Add(this.DownloadProgress);
             this.Controls.Add(this.CancelBt);
             this.Controls.Add(this.PluginDescription);
@@ -139,6 +143,11 @@
             this.Name = "UpdateDialog";
             this.ShowInTaskbar = false;
             this.Text = "Update Manager ";
+            this.Controls.SetChildIndex(this.PluginListView, 0);
+            this.Controls.SetChildIndex(this.AddPlugin, 0);
+            this.Controls.SetChildIndex(this.PluginDescription, 0);
+            this.Controls.SetChildIndex(this.CancelBt, 0);
+            this.Controls.SetChildIndex(this.DownloadProgress, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
