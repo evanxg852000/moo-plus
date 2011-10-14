@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Release\Moo.Controls.Test.exe
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Release\Moo.Controls.Test.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Release\Moo.Controls.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\bin\Release\Moo.Controls.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\Moo.Controls.Test.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\Moo.Controls.Test.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\Moo.Controls.Test.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\Moo.Controls.Test.exe
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls.Test\obj\Release\Moo.Controls.Test.pdb

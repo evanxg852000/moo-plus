@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A1E6F47-A77D-42EA-946C-E56BD573519D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moo</RootNamespace>
+    <AssemblyName>Moo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Moo.Program</StartupObject>
+    <ApplicationIcon>Application-icon.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Evansofts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=341c3f5889c44ed3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Evansofts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ProjectFactory.cs" />
+    <Compile Include="Core\Projects\Java.cs" />
+    <Compile Include="Core\Projects\Database.cs" />
+    <Compile Include="Core\Projects\Hydro.cs" />
+    <Compile Include="Core\Projects\Ilasm.cs" />
+    <Compile Include="Core\Projects\Unmanaged.cs" />
+    <Compile Include="Core\Projects\Vbasic.cs" />
+    <Compile Include="Core\Projects\Csharp.cs" />
+    <Compile Include="Core\PType.cs" />
+    <Compile Include="Core\Projects\Website.cs" />
+    <Compile Include="Core\Projects\Yalamof.cs" />
+    <Compile Include="Dialogs\TemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TemplateDialog.Designer.cs">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TodoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TodoList.Designer.cs">
+      <DependentUpon>TodoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AutoCompleteImages.cs" />
+    <Compile Include="BuildOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildOutput.Designer.cs">
+      <DependentUpon>BuildOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeEditor.Designer.cs">
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AppSettings.cs" />
+    <Compile Include="Core\Builder.cs" />
+    <Compile Include="Core\Exceptioner.cs" />
+    <Compile Include="Core\GlobalTypes.cs" />
+    <Compile Include="Core\Project.cs" />
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrunchEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrunchEditorDialog.Designer.cs">
+      <DependentUpon>BrunchEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BugRepDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BugRepDialog.Designer.cs">
+      <DependentUpon>BugRepDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewDialog.Designer.cs">
+      <DependentUpon>NewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PreferenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PreferenceDialog.Designer.cs">
+      <DependentUpon>PreferenceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\UpdateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\UpdateDialog.Designer.cs">
+      <DependentUpon>UpdateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProjectConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProjectConfigDialog.Designer.cs">
+      <DependentUpon>ProjectConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBrunchBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBrunchBrowser.Designer.cs">
+      <DependentUpon>FBrunchBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFileSearcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFileSearcher.Designer.cs">
+      <DependentUpon>FFileSearcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFileSystBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFileSystBrowser.Designer.cs">
+      <DependentUpon>FFileSystBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProjectBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProjectBrowser.Designer.cs">
+      <DependentUpon>FProjectBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\MiscHelper.cs" />
+    <Compile Include="Core\OnlineInfo.cs" />
+    <Compile Include="LexerInitializer.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuildOutput.resx">
+      <DependentUpon>BuildOutput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeEditor.resx">
+      <DependentUpon>CodeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TemplateDialog.resx">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodoList.resx">
+      <DependentUpon>TodoList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrunchEditorDialog.resx">
+      <DependentUpon>BrunchEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BugRepDialog.resx">
+      <DependentUpon>BugRepDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewDialog.resx">
+      <DependentUpon>NewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PreferenceDialog.resx">
+      <DependentUpon>PreferenceDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UpdateDialog.resx">
+      <DependentUpon>UpdateDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProjectConfigDialog.resx">
+      <DependentUpon>ProjectConfigDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBrunchBrowser.resx">
+      <DependentUpon>FBrunchBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFileSearcher.resx">
+      <DependentUpon>FFileSearcher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFileSystBrowser.resx">
+      <DependentUpon>FFileSystBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProjectBrowser.resx">
+      <DependentUpon>FProjectBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moo.Controls\Moo.Controls.csproj">
+      <Project>{079D30F4-5015-47D8-AC97-25CF47F90479}</Project>
+      <Name>Moo.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScintillaNet\ScintillaNet.csproj">
+      <Project>{F9B6DABD-BBC1-4638-8CE6-A5C9506BFDCB}</Project>
+      <Name>ScintillaNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yalamo\Yalamo.csproj">
+      <Project>{0B07C08D-01DF-44BA-8729-492853AC6796}</Project>
+      <Name>Yalamo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application-icon.ico" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Insert.png" />
+    <Content Include="Resources\Proadobe.png" />
+    <Content Include="Resources\Prodbdesign.png" />
+    <Content Include="Resources\Prodesktop.png" />
+    <Content Include="Resources\Profile.png" />
+    <Content Include="Resources\Protodo.png" />
+    <Content Include="Resources\Proweb.png" />
+    <Content Include="Resources\Prozip.png" />
+    <None Include="Resources\Var-icon.png" />
+    <None Include="Resources\Structure-icon.png" />
+    <None Include="Resources\Namespace-icon.png" />
+    <None Include="Resources\Method-icon.png" />
+    <None Include="Resources\Keyword-icon.png" />
+    <None Include="Resources\Function-icon.png" />
+    <None Include="Resources\Event-icon.png" />
+    <None Include="Resources\Enum-icon.png" />
+    <None Include="Resources\Constant-icon.png" />
+    <None Include="Resources\Class-icon.png" />
+    <None Include="Resources\Plugin.png" />
+    <None Include="Resources\Preference.png" />
+    <None Include="Resources\Drive.png" />
+    <None Include="Resources\Bundle.png" />
+    <None Include="Resources\Console.png" />
+    <None Include="Resources\Ppanel.png" />
+    <None Include="Resources\Wstartpage.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Clean.png" />
+    <None Include="Resources\Run.png" />
+    <None Include="Resources\Pbuild.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Zoomout.png" />
+    <None Include="Resources\Zoomin.png" />
+    <None Include="Resources\Findreplace.png" />
+    <None Include="Resources\Whitespace.png" />
+    <None Include="Resources\Endline.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\Redo.png" />
+    <None Include="Resources\Undo.png" />
+    <None Include="Resources\QFile.png" />
+    <None Include="Resources\Fsaveall.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Project.png" />
+    <None Include="Resources\Startpage.png" />
+    <None Include="Resources\Fnew.png" />
+    <None Include="Resources\Popen.png" />
+    <None Include="Resources\Pnew.png" />
+    <None Include="Resources\Fsave.png" />
+    <None Include="Resources\Sendbug.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Aboutpage.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Remove.png" />
+    <None Include="Resources\Tbackground.png" />
+    <None Include="Resources\Foclosed.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

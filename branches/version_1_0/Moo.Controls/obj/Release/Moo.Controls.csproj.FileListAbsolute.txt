@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\bin\Release\Moo.Controls.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\bin\Release\Moo.Controls.pdb
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.BrunchBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.FileBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.FileFounder.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.ProjectBrowser.resources
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.dll
+C:\Users\Administrator\Documents\Visual Studio 2008\Projects\Moo\Moo.Controls\obj\Release\Moo.Controls.pdb
